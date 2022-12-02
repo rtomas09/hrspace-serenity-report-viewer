@@ -1,5 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"Job requisition creation ICRC form","Create approve and close ICRC job requisition","SUCCESS","2022-12-01T11:58:15.3562046+08:00[Asia/Manila]","0.0","2256.76"
-"Job requisition creation ICRC form","Create approve and decline ICRC job requisition","SUCCESS","2022-12-01T13:24:51.4709294+08:00[Asia/Manila]","0.0","812.81"
-"Job requisition creation ICRC form","Create and delete ICRC job requisition in pre approved status","SUCCESS","2022-12-01T13:39:33.9271291+08:00[Asia/Manila]","0.0","405.89"
-"Job requisition creation TAQ form","Complete TAQ job requisition creation and approval","FAILURE","2022-12-02T11:41:24.8946744+08:00[Asia/Manila]","0.0","419.27"
