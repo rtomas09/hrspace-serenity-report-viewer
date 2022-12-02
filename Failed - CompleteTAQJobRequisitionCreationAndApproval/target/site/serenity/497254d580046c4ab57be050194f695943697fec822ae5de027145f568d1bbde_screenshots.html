@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Selenium Serenity Tests FAD APPLIC</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="5ccd68d8572d55bbc82d0a6a61d6c632ab72c82fcfe57f9320dcf42ec64265c7.html">Job Requisition Creation TAQ Form</a></span>
+                > <span class="truncate-60"><a
+                    href="497254d580046c4ab57be050194f695943697fec822ae5de027145f568d1bbde.html">Complete TAQ job requisition creation and approval </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 02-12-2022 11:41</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Job Requisition Creation TAQ Form </span>
+                                    <span class="badge tag-badge" style="">Story</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-times-circle failure-icon fa-2x' title='FAILURE'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="failing-color">Complete TAQ job requisition creation and approval
+                                    <span class="related-issue-title">(A_1_1, A_1_10, A_1_4, A_1_5, A_1_6, A_1_9, A_2_1, A_2_2, A_2_3, A_2_4, A_2_6, A_3_1, A_3_2, A_3_3, A_3_4, A_3_5, A_3_6, A_4_2, A_4_3, A_4_4, A_4_5, A_4_7)</span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">Assertion error</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall""
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="far fa-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>java.lang.AssertionError </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>steps.RecruitingSteps.then_the_Revision_Complete_page_should_show_up(RecruitingSteps.java:1687)<br />steps.RCM.ICRC.JobRequisitionCreationSteps.when_the_Recruiter_adds_questions_in_TAQ_Job_Requisition_Details_and_completes_Revision(JobRequisitionCreationSteps.java:1278)<br />org.icrc.hrspace.RCM.JobRequisitionCreationTAQForm.completeTAQJobRequisitionCreationAndApproval(JobRequisitionCreationTAQForm.java:1030)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                <div class="panel-body">
+                    <a href="pagesource4811803642480605172.html.txt" target="_blank" class="btn btn-info">HTML Source</a>
+                </div>
+            </div>
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" When the Recruiter adds questions in TAQ Job Requisition Details and completes Revision (A_3_3)" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space as 'Anne-Caroline NICOLAS'" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space using 'A052485' account" width="941"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'A052485' account" width="1931"/>
+                <img src="cbba1cdf9e86af1966539e1d248729b48b3c315fcf7eec00fe06acce0f1b647d.png" title=" Given that I'm logged in to HR space using 'A052485' account" width="1931"/>
+                <img src="0fc9b09bd3c9c092e58239e2948aacf257d8b65592d35946d0f713f3ae314ea9.png" title=" Given that I'm logged in to HR space using 'A052485' account (completed)" width="1931"/>
+                <img src="9f88bd4bd2f47592b371fbdd61c80b46755978e4e9130092a82ed080b24748f9.png" title=" Given that I'm logged in to HR space as 'Anne-Caroline NICOLAS' (completed)" width="1931"/>
+                <img src="9f88bd4bd2f47592b371fbdd61c80b46755978e4e9130092a82ed080b24748f9.png" title=" When i set the module to recruiting" width="1931"/>
+                <img src="9f88bd4bd2f47592b371fbdd61c80b46755978e4e9130092a82ed080b24748f9.png" title=" When I set the header module to 'Recruiting'" width="1931"/>
+                <img src="ea7064502b0ffd5dd99865748987b38c3430a67dbfc75697e8eaa4261104e5cd.png" title=" When I set the header module to 'Recruiting' (completed)" width="1931"/>
+                <img src="ea7064502b0ffd5dd99865748987b38c3430a67dbfc75697e8eaa4261104e5cd.png" title=" When i set the module to recruiting (completed)" width="1931"/>
+                <img src="ea7064502b0ffd5dd99865748987b38c3430a67dbfc75697e8eaa4261104e5cd.png" title=" Then the job requisition page and its contents to show up" width="1931"/>
+                <img src="ea7064502b0ffd5dd99865748987b38c3430a67dbfc75697e8eaa4261104e5cd.png" title=" Then the job requisition page and its contents to show up (completed)" width="1931"/>
+                <img src="ea7064502b0ffd5dd99865748987b38c3430a67dbfc75697e8eaa4261104e5cd.png" title=" When i click on filter options button" width="1931"/>
+                <img src="7a3d140b8ed4b489995a342955d5dd998a1c7f0350c4265e52aca3874d463225.png" title=" When i click on filter options button" width="1931"/>
+                <img src="e974e7f235a872c02f12e1853d26e1b9422d2f54a8fdbf63f6596f35d1955abe.png" title=" When i click on filter options button (completed)" width="1931"/>
+                <img src="e974e7f235a872c02f12e1853d26e1b9422d2f54a8fdbf63f6596f35d1955abe.png" title=" When i set the requisition ID filter using the saved value" width="1931"/>
+                <img src="3185dfed7ac0968782fcc3bf2557212b80c3dc7e9cfefa463745058c6f1f0657.png" title=" When i set the requisition ID filter using the saved value (completed)" width="1931"/>
+                <img src="3185dfed7ac0968782fcc3bf2557212b80c3dc7e9cfefa463745058c6f1f0657.png" title=" When i click on update screen button" width="1931"/>
+                <img src="b92894ea496097f2d0b19d1ba19c682e89140c6d252d6be6ced1f0d6472b2f4d.png" title=" When i click on update screen button" width="1931"/>
+                <img src="ea7064502b0ffd5dd99865748987b38c3430a67dbfc75697e8eaa4261104e5cd.png" title=" When i click on update screen button (completed)" width="1931"/>
+                <img src="ea7064502b0ffd5dd99865748987b38c3430a67dbfc75697e8eaa4261104e5cd.png" title=" When i set the job requisition filter to all job requisitions" width="1931"/>
+                <img src="ea7064502b0ffd5dd99865748987b38c3430a67dbfc75697e8eaa4261104e5cd.png" title=" When i set the job requisition filter to all job requisitions (completed)" width="1931"/>
+                <img src="ea7064502b0ffd5dd99865748987b38c3430a67dbfc75697e8eaa4261104e5cd.png" title=" When i click the requested job position from job requisitions table" width="1931"/>
+                <img src="b77fb34c1a2e82be1ea2aa019f28a1175dedf698b364cc7ce9393ed9aebfa6ff.png" title=" When i click the requested job position from job requisitions table" width="1931"/>
+                <img src="b77fb34c1a2e82be1ea2aa019f28a1175dedf698b364cc7ce9393ed9aebfa6ff.png" title=" When i click the requested job position from job requisitions table (completed)" width="1931"/>
+                <img src="b77fb34c1a2e82be1ea2aa019f28a1175dedf698b364cc7ce9393ed9aebfa6ff.png" title=" Then the job requisition details page should show up" width="1931"/>
+                <img src="cec944996fea82598177a77f56b8fa4bd0aa3747bf5586a92ac9b2183c96373d.png" title=" Then the job requisition details page should show up (completed)" width="1931"/>
+                <img src="cec944996fea82598177a77f56b8fa4bd0aa3747bf5586a92ac9b2183c96373d.png" title=" When I add new questions" width="1931"/>
+                <img src="cec944996fea82598177a77f56b8fa4bd0aa3747bf5586a92ac9b2183c96373d.png" title=" When I add a Number format question" width="1931"/>
+                <img src="cec944996fea82598177a77f56b8fa4bd0aa3747bf5586a92ac9b2183c96373d.png" title=" When I click on Add more questions button" width="1931"/>
+                <img src="5bea9dc282a41b52045e4ce1a94ec1f22be17689bdbdfdd7d8cc9afd3b9158be.png" title=" When I click on Add more questions button" width="1931"/>
+                <img src="5bea9dc282a41b52045e4ce1a94ec1f22be17689bdbdfdd7d8cc9afd3b9158be.png" title=" When I click on Add more questions button (completed)" width="1931"/>
+                <img src="5bea9dc282a41b52045e4ce1a94ec1f22be17689bdbdfdd7d8cc9afd3b9158be.png" title=" When i click questions create tab" width="1931"/>
+                <img src="1e8e4f5de575a51cba7da3dcca13af9e567400b49200c0157b15f9a8fa669656.png" title=" When i click questions create tab" width="1931"/>
+                <img src="1e8e4f5de575a51cba7da3dcca13af9e567400b49200c0157b15f9a8fa669656.png" title=" When i click questions create tab (completed)" width="1931"/>
+                <img src="1e8e4f5de575a51cba7da3dcca13af9e567400b49200c0157b15f9a8fa669656.png" title=" When I set the question to 'Numeric Question'" width="1931"/>
+                <img src="d34c6f4703c6f469dced330f3fdd293cc5336dc6c3fa2d017492b9f99d34dd8c.png" title=" When I set the question to 'Numeric Question'" width="1931"/>
+                <img src="d34c6f4703c6f469dced330f3fdd293cc5336dc6c3fa2d017492b9f99d34dd8c.png" title=" When I set the question to 'Numeric Question' (completed)" width="1931"/>
+                <img src="d34c6f4703c6f469dced330f3fdd293cc5336dc6c3fa2d017492b9f99d34dd8c.png" title=" When i click on edit answer button" width="1931"/>
+                <img src="7cf01a7d88ba29ef6bf4770dd4791b289d5413775aaac3227c0736fa04480293.png" title=" When i click on edit answer button" width="1931"/>
+                <img src="7cf01a7d88ba29ef6bf4770dd4791b289d5413775aaac3227c0736fa04480293.png" title=" When i click on edit answer button (completed)" width="1931"/>
+                <img src="7cf01a7d88ba29ef6bf4770dd4791b289d5413775aaac3227c0736fa04480293.png" title=" When I set the Answer format to 'Numeric'" width="1931"/>
+                <img src="b19244f410c580be40ebb275b553c61d7f84f437aa84b717db4a755151b339bf.png" title=" When I set the Answer format to 'Numeric' (completed)" width="1931"/>
+                <img src="b19244f410c580be40ebb275b553c61d7f84f437aa84b717db4a755151b339bf.png" title=" When I set the Desired answer to '500' and higher to 'true'" width="1931"/>
+                <img src="726a23de2a17e42421d1996600255aca7b47276c5a961013d46ff1607acc6bb6.png" title=" When I set the Desired answer to '500' and higher to 'true'" width="1931"/>
+                <img src="726a23de2a17e42421d1996600255aca7b47276c5a961013d46ff1607acc6bb6.png" title=" When I set the Desired answer to '500' and higher to 'true' (completed)" width="1931"/>
+                <img src="726a23de2a17e42421d1996600255aca7b47276c5a961013d46ff1607acc6bb6.png" title=" When i click close question button" width="1931"/>
+                <img src="8a153893c801d01d33931330b4d4fd53a1e8336e1ddd120decc851471c53c215.png" title=" When i click close question button" width="1931"/>
+                <img src="8a153893c801d01d33931330b4d4fd53a1e8336e1ddd120decc851471c53c215.png" title=" When i click close question button (completed)" width="1931"/>
+                <img src="8a153893c801d01d33931330b4d4fd53a1e8336e1ddd120decc851471c53c215.png" title=" When i click create question button" width="1931"/>
+                <img src="3cdffd2e226a4f11727095f31c3a33578c4da9de33c5d18580fccaeaa5bab767.png" title=" When i click create question button" width="1931"/>
+                <img src="3cdffd2e226a4f11727095f31c3a33578c4da9de33c5d18580fccaeaa5bab767.png" title=" When i click create question button (completed)" width="1931"/>
+                <img src="3cdffd2e226a4f11727095f31c3a33578c4da9de33c5d18580fccaeaa5bab767.png" title=" When I add a Number format question (completed)" width="1931"/>
+                <img src="3cdffd2e226a4f11727095f31c3a33578c4da9de33c5d18580fccaeaa5bab767.png" title=" When I add a question from Browse section" width="1931"/>
+                <img src="3cdffd2e226a4f11727095f31c3a33578c4da9de33c5d18580fccaeaa5bab767.png" title=" When I click on Add more questions button" width="1931"/>
+                <img src="5676dc57322dbe17fced39a22b2e9372ddc31275feaeb606c841dd8baf07f778.png" title=" When I click on Add more questions button" width="1931"/>
+                <img src="5676dc57322dbe17fced39a22b2e9372ddc31275feaeb606c841dd8baf07f778.png" title=" When I click on Add more questions button (completed)" width="1931"/>
+                <img src="5676dc57322dbe17fced39a22b2e9372ddc31275feaeb606c841dd8baf07f778.png" title=" When i click questions browse tab" width="1931"/>
+                <img src="3fb57561105a8f401f634cf20940aab313e58efd182cd888cddcc6ec1c4e7718.png" title=" When i click questions browse tab" width="1931"/>
+                <img src="3fb57561105a8f401f634cf20940aab313e58efd182cd888cddcc6ec1c4e7718.png" title=" When i click questions browse tab (completed)" width="1931"/>
+                <img src="3fb57561105a8f401f634cf20940aab313e58efd182cd888cddcc6ec1c4e7718.png" title=" When I expand questions to browse '{General Delegate,DELEGATE}'" width="1931"/>
+                <img src="89e0f68e189674bba58b4fd9fbd71a74ec3a39b14854331886e66d7c581d5a2d.png" title=" When I expand questions to browse '{General Delegate,DELEGATE}'" width="1931"/>
+                <img src="1fb0827cea251a709809164376d3c3268e86aca7c7e6a65634b5e69b399f812f.png" title=" When I expand questions to browse '{General Delegate,DELEGATE}'" width="1931"/>
+                <img src="1fb0827cea251a709809164376d3c3268e86aca7c7e6a65634b5e69b399f812f.png" title=" When I expand questions to browse '{General Delegate,DELEGATE}' (completed)" width="1931"/>
+                <img src="1fb0827cea251a709809164376d3c3268e86aca7c7e6a65634b5e69b399f812f.png" title=" When I select questions '{0,1,2}'" width="1931"/>
+                <img src="1cc3cdefe9a0a78844cba0f2b2905e135126891ac6fe7b658549c25356b3b327.png" title=" When I select questions '{0,1,2}'" width="1931"/>
+                <img src="b9ba5b2585302058a9c252206f05fdfffff13412003bc255469d06e5b11f6cd0.png" title=" When I select questions '{0,1,2}'" width="1931"/>
+                <img src="8cd12198bf73e8398d9ff9dd431264ec7ce13af949e0f9c7e864ef74acf62f2f.png" title=" When I select questions '{0,1,2}'" width="1931"/>
+                <img src="8cd12198bf73e8398d9ff9dd431264ec7ce13af949e0f9c7e864ef74acf62f2f.png" title=" When I select questions '{0,1,2}' (completed)" width="1931"/>
+                <img src="8cd12198bf73e8398d9ff9dd431264ec7ce13af949e0f9c7e864ef74acf62f2f.png" title=" When I click on Add button" width="1931"/>
+                <img src="77582bbec89e72117c9877f68a3bbe4a5f71c8198795373078be89704b9c0dea.png" title=" When I click on Add button" width="1931"/>
+                <img src="77582bbec89e72117c9877f68a3bbe4a5f71c8198795373078be89704b9c0dea.png" title=" When I click on Add button (completed)" width="1931"/>
+                <img src="77582bbec89e72117c9877f68a3bbe4a5f71c8198795373078be89704b9c0dea.png" title=" When I add a question from Browse section (completed)" width="1931"/>
+                <img src="77582bbec89e72117c9877f68a3bbe4a5f71c8198795373078be89704b9c0dea.png" title=" When I add new questions (completed)" width="1931"/>
+                <img src="77582bbec89e72117c9877f68a3bbe4a5f71c8198795373078be89704b9c0dea.png" title=" When i remove the last question" width="1931"/>
+                <img src="a7267753d15b9653261393ff49b9b7b0f694eec40f553a5aeb8472cf52a79270.png" title=" When i remove the last question (completed)" width="1931"/>
+                <img src="a7267753d15b9653261393ff49b9b7b0f694eec40f553a5aeb8472cf52a79270.png" title=" When i remove the last question" width="1931"/>
+                <img src="31c45522820dccfcd1ca3f5e8c94a7de580bd83fc2429f8201c078c2f066b802.png" title=" When i remove the last question (completed)" width="1931"/>
+                <img src="31c45522820dccfcd1ca3f5e8c94a7de580bd83fc2429f8201c078c2f066b802.png" title=" Then the questions should be reduced by 2" width="1931"/>
+                <img src="31c45522820dccfcd1ca3f5e8c94a7de580bd83fc2429f8201c078c2f066b802.png" title=" Then the questions should be reduced by 2 (completed)" width="1931"/>
+                <img src="31c45522820dccfcd1ca3f5e8c94a7de580bd83fc2429f8201c078c2f066b802.png" title=" When I set the Remuneration specialist to 'Irish CARON'" width="1931"/>
+                <img src="31c45522820dccfcd1ca3f5e8c94a7de580bd83fc2429f8201c078c2f066b802.png" title=" When i click on remuneration specialist find user button" width="1931"/>
+                <img src="add5a48432bbc57eccc56e09389673447ecc3ae38d13198e1a05571e04db8138.png" title=" When i click on remuneration specialist find user button" width="1931"/>
+                <img src="add5a48432bbc57eccc56e09389673447ecc3ae38d13198e1a05571e04db8138.png" title=" When i click on remuneration specialist find user button (completed)" width="1931"/>
+                <img src="add5a48432bbc57eccc56e09389673447ecc3ae38d13198e1a05571e04db8138.png" title=" Then the find employee dialog should show up" width="1931"/>
+                <img src="e61fbf8da5086c60e0bb99aa16f25aff952a951e3d4a9060dbb51096121366bd.png" title=" Then the find employee dialog should show up (completed)" width="1931"/>
+                <img src="e61fbf8da5086c60e0bb99aa16f25aff952a951e3d4a9060dbb51096121366bd.png" title=" When I set the First name field to 'Irish'" width="1931"/>
+                <img src="225c5b5cd91638547ec86c7529788cc44bf494240b24b08e8c0e854f2a7431f9.png" title=" When I set the First name field to 'Irish' (completed)" width="1931"/>
+                <img src="225c5b5cd91638547ec86c7529788cc44bf494240b24b08e8c0e854f2a7431f9.png" title=" When I set the Last name field to 'CARON'" width="1931"/>
+                <img src="e6ae8c3212cc807f584ef9d2dd4e639bf44c61e694017e5e4067bfa78d0a6e2b.png" title=" When I set the Last name field to 'CARON' (completed)" width="1931"/>
+                <img src="e6ae8c3212cc807f584ef9d2dd4e639bf44c61e694017e5e4067bfa78d0a6e2b.png" title=" When i click on find employee search button" width="1931"/>
+                <img src="29fa8084f043b7d41471bfb08e24b209ba8a8f8a692c148d23f11458dc10841e.png" title=" When i click on find employee search button" width="1931"/>
+                <img src="29fa8084f043b7d41471bfb08e24b209ba8a8f8a692c148d23f11458dc10841e.png" title=" When i click on find employee search button (completed)" width="1931"/>
+                <img src="8651766aa631fa08450e685838735b4c383e632adfd5375067eb9010610dffa7.png" title=" Then the find employee search results dialog should show up" width="1931"/>
+                <img src="4749c81c70209b88dd07f55765ea1fa3994cd60dc3b6228587e447ea6d6264a2.png" title=" Then the find employee search results dialog should show up (completed)" width="1931"/>
+                <img src="4749c81c70209b88dd07f55765ea1fa3994cd60dc3b6228587e447ea6d6264a2.png" title=" When I select the user 'Irish CARON'" width="1931"/>
+                <img src="8da975508aa53ff47413eaea00c212d1a2e0098ee22cb41b492d0dd3a385ef8e.png" title=" When I select the user 'Irish CARON'" width="1931"/>
+                <img src="8da975508aa53ff47413eaea00c212d1a2e0098ee22cb41b492d0dd3a385ef8e.png" title=" When I select the user 'Irish CARON' (completed)" width="1931"/>
+                <img src="8da975508aa53ff47413eaea00c212d1a2e0098ee22cb41b492d0dd3a385ef8e.png" title=" When i click on select employee button" width="1931"/>
+                <img src="f1b5cd0435bb6b2304d5b7aecb2fd79e32af8a2a00ce53bb5c06019cb480e585.png" title=" When i click on select employee button" width="1931"/>
+                <img src="f1b5cd0435bb6b2304d5b7aecb2fd79e32af8a2a00ce53bb5c06019cb480e585.png" title=" When i click on select employee button (completed)" width="1931"/>
+                <img src="add5a48432bbc57eccc56e09389673447ecc3ae38d13198e1a05571e04db8138.png" title=" When I set the Remuneration specialist to 'Irish CARON' (completed)" width="1931"/>
+                <img src="add5a48432bbc57eccc56e09389673447ecc3ae38d13198e1a05571e04db8138.png" title=" When i click save entire form button" width="1931"/>
+                <img src="27c02d8561f4537ca34885809a8cd6ec704a4ce0f95b37f71c75779f9b87f4ac.png" title=" When i click save entire form button (completed)" width="1931"/>
+                <img src="700a3c9831581cce45c7685e40809fca722c118689d60dfb6b4213f99d309093.png" title=" When i click on revision complete button" width="1931"/>
+                <img src="27c02d8561f4537ca34885809a8cd6ec704a4ce0f95b37f71c75779f9b87f4ac.png" title=" When i click on revision complete button (completed)" width="1931"/>
+                <img src="fef4723a799447d63af0a48ef9142e1f0bcf7f1b550cb7660023d81424afea51.png" title=" Then the revision complete page should show up" width="1925"/>
+                <img src="fef4723a799447d63af0a48ef9142e1f0bcf7f1b550cb7660023d81424afea51.png" title=" Then the revision complete page should show up (completed)" width="1925"/>
+                <img src="fef4723a799447d63af0a48ef9142e1f0bcf7f1b550cb7660023d81424afea51.png" title=" After test processing" width="1925"/>
+                <img src="fef4723a799447d63af0a48ef9142e1f0bcf7f1b550cb7660023d81424afea51.png" title=" When i expand the error message details if present" width="1925"/>
+                <img src="fef4723a799447d63af0a48ef9142e1f0bcf7f1b550cb7660023d81424afea51.png" title=" When i expand the error message details if present (completed)" width="1925"/>
+                <img src="fef4723a799447d63af0a48ef9142e1f0bcf7f1b550cb7660023d81424afea51.png" title=" After test processing (completed): <span class='failing-color'>FAILURE</span>" width="1925"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.6</span>
+</div>
+</body>
+</html>
