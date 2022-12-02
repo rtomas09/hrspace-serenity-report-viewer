@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="org.icrc.hrspace.RCM.JobRequisitionCreationTAQForm" skipped="0" tests="1" time="621.13" timestamp="2022-12-02 12:21:07"><testcase classname="org.icrc.hrspace.RCM.JobRequisitionCreationTAQForm" name="Complete TAQ job requisition creation and approval"><failure type="java.lang.AssertionError"/><system-err>null&#13;
+steps.RecruitingSteps.then_the_Revision_Complete_page_should_show_up(RecruitingSteps.java:1687)&#13;
+steps.RCM.ICRC.JobRequisitionCreationSteps.when_the_Recruiter_adds_questions_in_TAQ_Job_Requisition_Details_and_completes_Revision(JobRequisitionCreationSteps.java:1278)&#13;
+org.icrc.hrspace.RCM.JobRequisitionCreationTAQForm.completeTAQJobRequisitionCreationAndApproval(JobRequisitionCreationTAQForm.java:1030)&#13;
+</system-err></testcase></testsuite>
