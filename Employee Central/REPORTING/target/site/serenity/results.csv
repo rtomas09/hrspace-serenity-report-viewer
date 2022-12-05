@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Reporting","Create launch via edit report delete","SUCCESS","2022-12-05T19:09:39.190722+08:00[Asia/Manila]","0.0","767.23"
+"Reporting","Create launch via run report delete","SUCCESS","2022-12-05T19:22:54.2921648+08:00[Asia/Manila]","0.0","508.5"
+"Reporting","Create new report","ERROR","2022-12-05T19:32:44.1022053+08:00[Asia/Manila]","0.0","40.95"
+"Reporting","Create and delete new report","SUCCESS","2022-12-05T19:34:43.9857731+08:00[Asia/Manila]","0.0","434.62"

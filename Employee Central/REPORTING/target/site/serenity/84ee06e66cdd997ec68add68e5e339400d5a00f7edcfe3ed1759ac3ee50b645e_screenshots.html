@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Selenium Serenity Tests FAD APPLIC</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="58473c799935ce41d9d7900850d78dec052868f0cb28d62f9fd6f82d5ec7e1f9.html">Reporting</a></span>
+                > <span class="truncate-60"><a
+                    href="84ee06e66cdd997ec68add68e5e339400d5a00f7edcfe3ed1759ac3ee50b645e.html">Create launch via run report delete </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 05-12-2022 19:22</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Reporting </span>
+                                    <span class="badge tag-badge" style="">Story</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Create launch via run report delete
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Create new report: admin Katrin Goyena, a_kgoyena, Durin'sBane11, Table, Person and Employment info (as of date), KcDqbc, TEST DESCRIPTION, Other Filters, Employee ID, First Name, Last Name, Date of Birth, Country of Birth, Country of birth, CHE" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space as 'admin Katrin Goyena'" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="941"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="f5c193496b7648d8cf87df29c5daa9a8ef286476eadd8d0660c7de28fd926ff7.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="0d4e379640c1325b5796ae0417c6ddbdb5597db4c8e1d46442c1521327318230.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="0d4e379640c1325b5796ae0417c6ddbdb5597db4c8e1d46442c1521327318230.png" title=" Given that I'm logged in to HR space as 'admin Katrin Goyena' (completed)" width="1931"/>
+                <img src="0d4e379640c1325b5796ae0417c6ddbdb5597db4c8e1d46442c1521327318230.png" title=" When I set the header module to 'Reporting'" width="1931"/>
+                <img src="3865a8b647d416a66c2adb3d66bde9220f5cfaf81aca0d7bfc194b9a500b1f0c.png" title=" When I set the header module to 'Reporting' (completed)" width="1931"/>
+                <img src="3865a8b647d416a66c2adb3d66bde9220f5cfaf81aca0d7bfc194b9a500b1f0c.png" title=" Then the reporting page and its content to show up" width="1931"/>
+                <img src="3865a8b647d416a66c2adb3d66bde9220f5cfaf81aca0d7bfc194b9a500b1f0c.png" title=" Then the reporting page and its content to show up (completed)" width="1931"/>
+                <img src="3865a8b647d416a66c2adb3d66bde9220f5cfaf81aca0d7bfc194b9a500b1f0c.png" title=" When i click new button" width="1931"/>
+                <img src="659083d98024c090b035a63d9fba2b551748dbf4b3574e933e8cbc8c20ff438d.png" title=" When i click new button" width="1931"/>
+                <img src="570117b814493d45195d1b4f60fd5afe367dfbc95626cfc718a83f262492e7a9.png" title=" When i click new button (completed)" width="1931"/>
+                <img src="570117b814493d45195d1b4f60fd5afe367dfbc95626cfc718a83f262492e7a9.png" title=" Then the new report dialog box is displayed" width="1931"/>
+                <img src="570117b814493d45195d1b4f60fd5afe367dfbc95626cfc718a83f262492e7a9.png" title=" Then the new report dialog box is displayed (completed)" width="1931"/>
+                <img src="570117b814493d45195d1b4f60fd5afe367dfbc95626cfc718a83f262492e7a9.png" title=" When i select report type: Table" width="1931"/>
+                <img src="8b14ed15ff05e4633e53086b647f6715a98002b96606d3278fd35af229f169f3.png" title=" When i select report type: Table" width="1931"/>
+                <img src="d26ec2b256ac045f6e25632ae0549fe19ee1cf9adeeb68388d72967f4fbb902f.png" title=" When i select report type: Table" width="1931"/>
+                <img src="981c2862025ab606f494ae2792218022f7f0bbedce557d8d256c7347647dab33.png" title=" When i select report type: Table (completed)" width="1931"/>
+                <img src="981c2862025ab606f494ae2792218022f7f0bbedce557d8d256c7347647dab33.png" title=" When i select single domain" width="1931"/>
+                <img src="7b758f352431dd561c3beebae21e2ae349241f2702f485705987f017d74a735b.png" title=" When i select single domain" width="1931"/>
+                <img src="7b758f352431dd561c3beebae21e2ae349241f2702f485705987f017d74a735b.png" title=" When i select single domain (completed)" width="1931"/>
+                <img src="7b758f352431dd561c3beebae21e2ae349241f2702f485705987f017d74a735b.png" title=" When i populate what data would you like to start with: Person and Employment info (as of date)" width="1931"/>
+                <img src="7a2ef7b3e0412f9316bcc854e35c91a98979f23264a3390aa2a42144ef8b324e.png" title=" When i populate what data would you like to start with: Person and Employment info (as of date)" width="1931"/>
+                <img src="041eaa12ad86c7271e2da002b2128e50e896f77a1831c0c1a97da60e271b739c.png" title=" When i populate what data would you like to start with: Person and Employment info (as of date) (completed)" width="1931"/>
+                <img src="041eaa12ad86c7271e2da002b2128e50e896f77a1831c0c1a97da60e271b739c.png" title=" When i click general info" width="1931"/>
+                <img src="00e4873ef6e80e409525e1742433e6fca338f9ef12073f6086630dc569dc1f8e.png" title=" When i click general info" width="1931"/>
+                <img src="00e4873ef6e80e409525e1742433e6fca338f9ef12073f6086630dc569dc1f8e.png" title=" When i click general info (completed)" width="1931"/>
+                <img src="00e4873ef6e80e409525e1742433e6fca338f9ef12073f6086630dc569dc1f8e.png" title=" Then the step wizard is displayed" width="1931"/>
+                <img src="90af8a6f646e475d5bbb832cd2b5452af026eab5bdaa61139086f8010bab9a7a.png" title=" Then the step wizard is displayed (completed)" width="1931"/>
+                <img src="90af8a6f646e475d5bbb832cd2b5452af026eab5bdaa61139086f8010bab9a7a.png" title=" Then the domain title is displayed" width="1931"/>
+                <img src="00e4873ef6e80e409525e1742433e6fca338f9ef12073f6086630dc569dc1f8e.png" title=" Then the domain title is displayed (completed)" width="1931"/>
+                <img src="00e4873ef6e80e409525e1742433e6fca338f9ef12073f6086630dc569dc1f8e.png" title=" When i populate report name: KcDqbc" width="1931"/>
+                <img src="4a785f5fb4096bd1cefc03003aab9116af4a61128c847dc46b952c0517b5026c.png" title=" When i populate report name: KcDqbc (completed)" width="1931"/>
+                <img src="4a785f5fb4096bd1cefc03003aab9116af4a61128c847dc46b952c0517b5026c.png" title=" When i populate description: TEST DESCRIPTION" width="1931"/>
+                <img src="9e2f403f96c88df7e3912d1e7461670220ebb2666e5bcc9f80710a17df3de7ce.png" title=" When i populate description: TEST DESCRIPTION (completed)" width="1931"/>
+                <img src="9e2f403f96c88df7e3912d1e7461670220ebb2666e5bcc9f80710a17df3de7ce.png" title=" When i uncheck remove styling" width="1931"/>
+                <img src="43959b3bd67cc930034e2f43c3cdc27714a468b663601eb7b1a9f55c51384c1a.png" title=" When i uncheck remove styling" width="1931"/>
+                <img src="43959b3bd67cc930034e2f43c3cdc27714a468b663601eb7b1a9f55c51384c1a.png" title=" When i uncheck remove styling (completed)" width="1931"/>
+                <img src="43959b3bd67cc930034e2f43c3cdc27714a468b663601eb7b1a9f55c51384c1a.png" title=" When i click people button" width="1931"/>
+                <img src="e882e9310c5d75b3c8b854c9a2f34c6eede2237320b388ba073af6d735959e8c.png" title=" When i click people button" width="1931"/>
+                <img src="e882e9310c5d75b3c8b854c9a2f34c6eede2237320b388ba073af6d735959e8c.png" title=" When i click people button (completed)" width="1931"/>
+                <img src="9f256d487492ea949f2b085c76acde842934a56db1d1cc61ad8ef6283fedfa37.png" title=" When i click refine criteria" width="1931"/>
+                <img src="7b29ebce7fd41f3490811a55b8b7e3bcc663308c0442f9c26e8f00c7e737821b.png" title=" When i click refine criteria" width="1931"/>
+                <img src="463c76a02b3d03e0f052e8e5ebd19fbfd5688a4b23f96e0946b16a31d64e1997.png" title=" When i click refine criteria (completed)" width="1931"/>
+                <img src="463c76a02b3d03e0f052e8e5ebd19fbfd5688a4b23f96e0946b16a31d64e1997.png" title=" When i click a radio button in team reporting type: Other Filters" width="1931"/>
+                <img src="1b7dfe503be3bbab79a0c67571ed1415c8c63b914be2624c59e84096340d118f.png" title=" When i click a radio button in team reporting type: Other Filters" width="1931"/>
+                <img src="1b7dfe503be3bbab79a0c67571ed1415c8c63b914be2624c59e84096340d118f.png" title=" When i click a radio button in team reporting type: Other Filters (completed)" width="1931"/>
+                <img src="1b7dfe503be3bbab79a0c67571ed1415c8c63b914be2624c59e84096340d118f.png" title=" When i click OK" width="1931"/>
+                <img src="2fb5ae54d0f3dd8d129b9449cd658f9baab0b5c82e42219895aa62f3720eecfc.png" title=" When i click OK" width="1931"/>
+                <img src="2fb5ae54d0f3dd8d129b9449cd658f9baab0b5c82e42219895aa62f3720eecfc.png" title=" When i click OK (completed)" width="1931"/>
+                <img src="2fb5ae54d0f3dd8d129b9449cd658f9baab0b5c82e42219895aa62f3720eecfc.png" title=" When i click columns button" width="1931"/>
+                <img src="14c0927be38d9b1a44cd8d3bd7b21b41dcc664cbeae55e20ae0bfd31786c0a00.png" title=" When i click columns button" width="1931"/>
+                <img src="14c0927be38d9b1a44cd8d3bd7b21b41dcc664cbeae55e20ae0bfd31786c0a00.png" title=" When i click columns button (completed)" width="1931"/>
+                <img src="14c0927be38d9b1a44cd8d3bd7b21b41dcc664cbeae55e20ae0bfd31786c0a00.png" title=" When i click select columns" width="1931"/>
+                <img src="b28568583fa9c906a4956d154df22cb2dd8d370a6075eaf956b78d7c7a307655.png" title=" When i click select columns" width="1931"/>
+                <img src="b28568583fa9c906a4956d154df22cb2dd8d370a6075eaf956b78d7c7a307655.png" title=" When i click select columns (completed)" width="1931"/>
+                <img src="b28568583fa9c906a4956d154df22cb2dd8d370a6075eaf956b78d7c7a307655.png" title=" When i select a column: Employee ID" width="1931"/>
+                <img src="e4189562e5c140c6648c4689322d6a7659c919dc6fb2393b8490b2adf906ec6a.png" title=" When i select a column: Employee ID" width="1931"/>
+                <img src="e4189562e5c140c6648c4689322d6a7659c919dc6fb2393b8490b2adf906ec6a.png" title=" When i select a column: Employee ID (completed)" width="1931"/>
+                <img src="e4189562e5c140c6648c4689322d6a7659c919dc6fb2393b8490b2adf906ec6a.png" title=" When i select a column: First Name" width="1931"/>
+                <img src="a22752ccac06da10c81fdc81ab4de7713f3508b5b60e307a3a074cd59e3e4bbc.png" title=" When i select a column: First Name" width="1931"/>
+                <img src="a22752ccac06da10c81fdc81ab4de7713f3508b5b60e307a3a074cd59e3e4bbc.png" title=" When i select a column: First Name (completed)" width="1931"/>
+                <img src="a22752ccac06da10c81fdc81ab4de7713f3508b5b60e307a3a074cd59e3e4bbc.png" title=" When i select a column: Last Name" width="1931"/>
+                <img src="cdc3ac40d9873b055b980ccc9f8a057af9c92642c8c239417361c61370935104.png" title=" When i select a column: Last Name" width="1931"/>
+                <img src="cdc3ac40d9873b055b980ccc9f8a057af9c92642c8c239417361c61370935104.png" title=" When i select a column: Last Name (completed)" width="1931"/>
+                <img src="cdc3ac40d9873b055b980ccc9f8a057af9c92642c8c239417361c61370935104.png" title=" When i select a column: Date of Birth" width="1931"/>
+                <img src="972e93edad96e5769048ae37c8d157a34bd1c0ae73443050365faa49348240dd.png" title=" When i select a column: Date of Birth" width="1931"/>
+                <img src="972e93edad96e5769048ae37c8d157a34bd1c0ae73443050365faa49348240dd.png" title=" When i select a column: Date of Birth (completed)" width="1931"/>
+                <img src="972e93edad96e5769048ae37c8d157a34bd1c0ae73443050365faa49348240dd.png" title=" When i select a column: Country of Birth" width="1931"/>
+                <img src="d06933c6ca407f26c6bc4541069eeb4e4e855d073b9b0e56454b38d98aa566d6.png" title=" When i select a column: Country of Birth" width="1931"/>
+                <img src="d06933c6ca407f26c6bc4541069eeb4e4e855d073b9b0e56454b38d98aa566d6.png" title=" When i select a column: Country of Birth (completed)" width="1931"/>
+                <img src="d06933c6ca407f26c6bc4541069eeb4e4e855d073b9b0e56454b38d98aa566d6.png" title=" Then the selected columns list is displayed: Employee ID, First Name, Last Name, Date of Birth, Country of Birth" width="1931"/>
+                <img src="d06933c6ca407f26c6bc4541069eeb4e4e855d073b9b0e56454b38d98aa566d6.png" title=" Then the selected columns list is displayed: Employee ID, First Name, Last Name, Date of Birth, Country of Birth (completed)" width="1931"/>
+                <img src="d06933c6ca407f26c6bc4541069eeb4e4e855d073b9b0e56454b38d98aa566d6.png" title=" When i click finish" width="1931"/>
+                <img src="74ad26290239446ccf5896f13b69ce2dea6f7c858a26d0d507e15073ecea6a3f.png" title=" When i click finish" width="1931"/>
+                <img src="74ad26290239446ccf5896f13b69ce2dea6f7c858a26d0d507e15073ecea6a3f.png" title=" When i click finish (completed)" width="1931"/>
+                <img src="74ad26290239446ccf5896f13b69ce2dea6f7c858a26d0d507e15073ecea6a3f.png" title=" When i click filters button" width="1931"/>
+                <img src="ced7b6914a7d0e61600003a0997a43e8815a49015bb109d41214bc2980f9e557.png" title=" When i click filters button" width="1931"/>
+                <img src="ced7b6914a7d0e61600003a0997a43e8815a49015bb109d41214bc2980f9e557.png" title=" When i click filters button (completed)" width="1931"/>
+                <img src="ced7b6914a7d0e61600003a0997a43e8815a49015bb109d41214bc2980f9e557.png" title=" When i click refine criteria" width="1931"/>
+                <img src="81949514f994f9258b469d5e24545a091f67d85bed43af7c0ed058cb00453f67.png" title=" When i click refine criteria" width="1931"/>
+                <img src="81949514f994f9258b469d5e24545a091f67d85bed43af7c0ed058cb00453f67.png" title=" When i click refine criteria (completed)" width="1931"/>
+                <img src="81949514f994f9258b469d5e24545a091f67d85bed43af7c0ed058cb00453f67.png" title=" When i select a column: Country of birth" width="1931"/>
+                <img src="7728a26c6435117480239add7a666ddbc066e843f55e1ff53818c33f867ec0ba.png" title=" When i select a column: Country of birth" width="1931"/>
+                <img src="39e430a17c4ca9b0a08a5f9ec0fc87576f1bf83f9a6f4edab96d6afeddbd2059.png" title=" When i select a column: Country of birth (completed)" width="1931"/>
+                <img src="39e430a17c4ca9b0a08a5f9ec0fc87576f1bf83f9a6f4edab96d6afeddbd2059.png" title=" When i select by my selection" width="1931"/>
+                <img src="3d4558298fc6ea3f4dc13091309b5a08ea1b32337d43eb74ee7317abe9e2a482.png" title=" When i select by my selection" width="1931"/>
+                <img src="3d4558298fc6ea3f4dc13091309b5a08ea1b32337d43eb74ee7317abe9e2a482.png" title=" When i select by my selection (completed)" width="1931"/>
+                <img src="3d4558298fc6ea3f4dc13091309b5a08ea1b32337d43eb74ee7317abe9e2a482.png" title=" When i select a filter: CHE" width="1931"/>
+                <img src="43f84114a27c11c955f41b2626f6db259a44ace75e76334a6b8b69440db692e5.png" title=" When i select a filter: CHE" width="1931"/>
+                <img src="43f84114a27c11c955f41b2626f6db259a44ace75e76334a6b8b69440db692e5.png" title=" When i select a filter: CHE (completed)" width="1931"/>
+                <img src="43f84114a27c11c955f41b2626f6db259a44ace75e76334a6b8b69440db692e5.png" title=" When i click finished on filter dialog box" width="1931"/>
+                <img src="d17960a38ede2fc3e3789ccd4875a467241ef3866877cf9d5410ab803c71b394.png" title=" When i click finished on filter dialog box" width="1931"/>
+                <img src="d17960a38ede2fc3e3789ccd4875a467241ef3866877cf9d5410ab803c71b394.png" title=" When i click finished on filter dialog box (completed)" width="1931"/>
+                <img src="d17960a38ede2fc3e3789ccd4875a467241ef3866877cf9d5410ab803c71b394.png" title=" When i click finish" width="1931"/>
+                <img src="5a0a196acbb8f3d5970b1f3cd13c529fc41dc33c203f4958630ea19d3fcc0d65.png" title=" When i click finish" width="1931"/>
+                <img src="5a0a196acbb8f3d5970b1f3cd13c529fc41dc33c203f4958630ea19d3fcc0d65.png" title=" When i click finish (completed)" width="1931"/>
+                <img src="5a0a196acbb8f3d5970b1f3cd13c529fc41dc33c203f4958630ea19d3fcc0d65.png" title=" When i click preview" width="1931"/>
+                <img src="444b2b2515d9f50a73a4fcdcff94c98181e77fd80e70118b4e94a2ddc87f3acb.png" title=" When i click preview" width="1931"/>
+                <img src="4526e45192494b93cbcb34896c3efad67f703dc11485f0c721022c3d0e72c8d3.png" title=" When i click preview (completed)" width="1931"/>
+                <img src="4526e45192494b93cbcb34896c3efad67f703dc11485f0c721022c3d0e72c8d3.png" title=" Then the report data preview is displayed correctly: Employee ID, First Name, Last Name, Date of Birth, Country of Birth" width="1931"/>
+                <img src="4526e45192494b93cbcb34896c3efad67f703dc11485f0c721022c3d0e72c8d3.png" title=" Then the report data preview is displayed correctly: Employee ID, First Name, Last Name, Date of Birth, Country of Birth (completed)" width="1931"/>
+                <img src="4526e45192494b93cbcb34896c3efad67f703dc11485f0c721022c3d0e72c8d3.png" title=" When i click close button" width="1931"/>
+                <img src="638d4401c7c4d21b6536d762db2d69b064d3c7230f01bc4a4e9a998477b82977.png" title=" When i click close button" width="1931"/>
+                <img src="638d4401c7c4d21b6536d762db2d69b064d3c7230f01bc4a4e9a998477b82977.png" title=" When i click close button (completed)" width="1931"/>
+                <img src="638d4401c7c4d21b6536d762db2d69b064d3c7230f01bc4a4e9a998477b82977.png" title=" When i click save button" width="1931"/>
+                <img src="bb5fe7ddd0a239193524f6bc651d3e71919577e347103e0fd0dc9610fe0cd275.png" title=" When i click save button" width="1931"/>
+                <img src="6ddc3d7a62934ecd85e927087bd15672127de78dc3a97e72502addf6e6e1fc85.png" title=" When i click save button (completed)" width="1931"/>
+                <img src="6ddc3d7a62934ecd85e927087bd15672127de78dc3a97e72502addf6e6e1fc85.png" title=" When I set the header module to 'Home'" width="1931"/>
+                <img src="0d4e379640c1325b5796ae0417c6ddbdb5597db4c8e1d46442c1521327318230.png" title=" When I set the header module to 'Home' (completed)" width="1931"/>
+                <img src="0d4e379640c1325b5796ae0417c6ddbdb5597db4c8e1d46442c1521327318230.png" title=" When I set the header module to 'Reporting'" width="1931"/>
+                <img src="b957ba2c1092738dfc212b0e445af39c3b5e2d13b6c12a779e936ee57accebf5.png" title=" When I set the header module to 'Reporting' (completed)" width="1931"/>
+                <img src="b957ba2c1092738dfc212b0e445af39c3b5e2d13b6c12a779e936ee57accebf5.png" title=" Then the created report is displayed in reports list: KcDqbc" width="1931"/>
+                <img src="b957ba2c1092738dfc212b0e445af39c3b5e2d13b6c12a779e936ee57accebf5.png" title=" Then the created report is displayed in reports list: KcDqbc (completed)" width="1931"/>
+                <img src="b957ba2c1092738dfc212b0e445af39c3b5e2d13b6c12a779e936ee57accebf5.png" title=" Create new report: admin Katrin Goyena, a_kgoyena, Durin'sBane11, Table, Person and Employment info (as of date), KcDqbc, TEST DESCRIPTION, Other Filters, Employee ID, First Name, Last Name, Date of Birth, Country of Birth, Country of birth, CHE (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Launch report via run report: admin Katrin Goyena, a_kgoyena, Durin'sBane11, KcDqbc" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'admin Katrin Goyena'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="2914af27f49c630199f7d30966f7fac7109f1f9ad3cb97e4040dc41bb97a9802.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="5d55fe9c6db1cdcced5ff18cdbb6508d5fec33f1a3d1c376e6d891b289271cc1.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="0d4e379640c1325b5796ae0417c6ddbdb5597db4c8e1d46442c1521327318230.png" title=" Given that I'm logged in to HR space as 'admin Katrin Goyena' (completed)" width="1931"/>
+                <img src="0d4e379640c1325b5796ae0417c6ddbdb5597db4c8e1d46442c1521327318230.png" title=" When I set the header module to 'Reporting'" width="1931"/>
+                <img src="952f3582dbeb1939ac03ac05ab2ee0cb43a147d4c0fc2ce90922cddf7d8b096e.png" title=" When I set the header module to 'Reporting' (completed)" width="1931"/>
+                <img src="952f3582dbeb1939ac03ac05ab2ee0cb43a147d4c0fc2ce90922cddf7d8b096e.png" title=" Then the reporting page and its content to show up" width="1931"/>
+                <img src="952f3582dbeb1939ac03ac05ab2ee0cb43a147d4c0fc2ce90922cddf7d8b096e.png" title=" Then the reporting page and its content to show up (completed)" width="1931"/>
+                <img src="952f3582dbeb1939ac03ac05ab2ee0cb43a147d4c0fc2ce90922cddf7d8b096e.png" title=" When i search for audit reports: Audit" width="1931"/>
+                <img src="952f3582dbeb1939ac03ac05ab2ee0cb43a147d4c0fc2ce90922cddf7d8b096e.png" title=" When i search for audit reports: Audit (completed)" width="1931"/>
+                <img src="952f3582dbeb1939ac03ac05ab2ee0cb43a147d4c0fc2ce90922cddf7d8b096e.png" title=" When i click run button: KcDqbc" width="1931"/>
+                <img src="a9c7498c9d42809f0876663431d58f358e4cfc47bd71adb4b1de9248d16c3006.png" title=" When i click run button: KcDqbc" width="1931"/>
+                <img src="468d4c412ae3b8a168ed3f3a353f8eb29f1d36d3318e8e61c093363b9a143f0e.png" title=" When i click run button: KcDqbc" width="1931"/>
+                <img src="b74a1c61b9ada18744a6fd004fb1c18547488c59d500d150ec313185424dcce8.png" title=" When i click run button: KcDqbc (completed)" width="1931"/>
+                <img src="fbeb6cf45726be24aa0bcadb1ac0f8db99e32a06b1d5d82a428a78bd407cf42e.png" title=" Launch report via run report: admin Katrin Goyena, a_kgoyena, Durin'sBane11, KcDqbc" width="1931"/>
+                <img src="f6812ab611a3174a2992d0cca9d42d8365d729e7f9e1f6f9b0e9e8efe28ebbf8.png" title=" Launch report via run report: admin Katrin Goyena, a_kgoyena, Durin'sBane11, KcDqbc" width="1931"/>
+                <img src="f6812ab611a3174a2992d0cca9d42d8365d729e7f9e1f6f9b0e9e8efe28ebbf8.png" title=" When i click generate report button" width="1931"/>
+                <img src="abbcf723bdee407e67d6175ff9b8331338763a25188abd90625c558c6278f147.png" title=" When i click generate report button" width="1931"/>
+                <img src="426f235e949b80fade4f9d50323c4f144d83d9741acfb6b94948adb0d28e9067.png" title=" When i click generate report button (completed)" width="1931"/>
+                <img src="426f235e949b80fade4f9d50323c4f144d83d9741acfb6b94948adb0d28e9067.png" title=" Then the excel file is saved: KcDqbc" width="1931"/>
+                <img src="eeda44d389a7facfa661eaaf4281cde924361f931736c968c5431aeb4c59be1d.png" title=" Then the excel file is saved: KcDqbc (completed)" width="1931"/>
+                <img src="eeda44d389a7facfa661eaaf4281cde924361f931736c968c5431aeb4c59be1d.png" title=" Launch report via run report: admin Katrin Goyena, a_kgoyena, Durin'sBane11, KcDqbc (completed)" width="1931"/>
+                <img src="140cc5425b90a344989e6cc180dc90ac2c35ce7d8f7ed46d169e87787109bad3.png" title=" Delete new report: KcDqbc" width="1931"/>
+                <img src="140cc5425b90a344989e6cc180dc90ac2c35ce7d8f7ed46d169e87787109bad3.png" title=" Given that I'm logged in to HR space as 'admin Katrin Goyena'" width="1931"/>
+                <img src="140cc5425b90a344989e6cc180dc90ac2c35ce7d8f7ed46d169e87787109bad3.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="c25de75f08d1eb6e5b7c19ce734b92c665f4bd6033294fc8a737f8fca145f8dc.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="84a10ea93b2a79de544e92720ee093e99a1d50e3b0cbb63f40057ec34753f4b6.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="8e495ace7f7c776c7f64eb08b274e28b354a01deb6f55ef658d87db8cfc5654d.png" title=" Given that I'm logged in to HR space as 'admin Katrin Goyena' (completed)" width="1931"/>
+                <img src="8e495ace7f7c776c7f64eb08b274e28b354a01deb6f55ef658d87db8cfc5654d.png" title=" When I set the header module to 'Reporting'" width="1931"/>
+                <img src="d9f126e6f0f52cfc86a133d0fbebfb353ccc5ce32935e8323fd57c518d836a7f.png" title=" When I set the header module to 'Reporting' (completed)" width="1931"/>
+                <img src="d9f126e6f0f52cfc86a133d0fbebfb353ccc5ce32935e8323fd57c518d836a7f.png" title=" Then the reporting page and its content to show up" width="1931"/>
+                <img src="d9f126e6f0f52cfc86a133d0fbebfb353ccc5ce32935e8323fd57c518d836a7f.png" title=" Then the reporting page and its content to show up (completed)" width="1931"/>
+                <img src="d9f126e6f0f52cfc86a133d0fbebfb353ccc5ce32935e8323fd57c518d836a7f.png" title=" When i delete report: KcDqbc" width="1931"/>
+                <img src="1ae7eb1142b87fb10114efcc70206d2dcd2c5c23e259d9f53b24971c07ca39c1.png" title=" When i delete report: KcDqbc" width="1931"/>
+                <img src="00311ac84c663ec5320984782790b12b18c8188dea40cee127382ca8011817c0.png" title=" When i delete report: KcDqbc" width="1931"/>
+                <img src="bd7269024bc5cb5dc067dbdd067fcca935bb164fdce4ca7ceaa7a8eb070dfe47.png" title=" When i delete report: KcDqbc (completed)" width="1931"/>
+                <img src="bd7269024bc5cb5dc067dbdd067fcca935bb164fdce4ca7ceaa7a8eb070dfe47.png" title=" When i confirm to delete report" width="1931"/>
+                <img src="17b2ce39cbac18dee5947536457f82692691590bf89e1918559f5e5129b5d1ba.png" title=" When i confirm to delete report" width="1931"/>
+                <img src="19b984f2144233131177df6da05a4fc4ec60af2af7ad87143ac0843e80a4898c.png" title=" When i confirm to delete report (completed)" width="1931"/>
+                <img src="19b984f2144233131177df6da05a4fc4ec60af2af7ad87143ac0843e80a4898c.png" title=" Then the report is deleted successfully popup is displayed" width="1931"/>
+                <img src="7f7532e7f6e8b5a46d8a5dfa22c8737b15e0ae4162d650ed6ed6cf1f41496a1c.png" title=" Then the report is deleted successfully popup is displayed" width="1931"/>
+                <img src="a13b266d0b3ce88b6ae6ceea1cec7e25e349a0dc86c91e0281f2d8927236bc98.png" title=" Then the report is deleted successfully popup is displayed (completed)" width="1931"/>
+                <img src="a13b266d0b3ce88b6ae6ceea1cec7e25e349a0dc86c91e0281f2d8927236bc98.png" title=" Then the report is not displayed in the reports list: KcDqbc" width="1931"/>
+                <img src="3016fa8a33fe9c68e3647190518349bbfc882dda3a1feb2bd3c07dff4bfc9cf8.png" title=" Then the report is not displayed in the reports list: KcDqbc (completed)" width="1931"/>
+                <img src="3016fa8a33fe9c68e3647190518349bbfc882dda3a1feb2bd3c07dff4bfc9cf8.png" title=" Delete new report: KcDqbc (completed): <span class='success-color'>SUCCESS</span>" width="1931"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.6</span>
+</div>
+</body>
+</html>
