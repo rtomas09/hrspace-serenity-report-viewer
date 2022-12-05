@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Selenium Serenity Tests FAD APPLIC</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="5ccd68d8572d55bbc82d0a6a61d6c632ab72c82fcfe57f9320dcf42ec64265c7.html">Job Requisition Creation TAQ Form</a></span>
+                > <span class="truncate-60"><a
+                    href="d9e0350431862faa71778fec7d6c65f485376887a21c06c0e20571e7c3ed2869.html">Create and delete TAQ job requisition in pre approved status </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 05-12-2022 17:43</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Job Requisition Creation TAQ Form </span>
+                                    <span class="badge tag-badge" style="">Story</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Create and delete TAQ job requisition in pre approved status
+                                    <span class="related-issue-title">(A_1_1, A_1_7)</span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" When the Line Manager creates a Job requisition (A_1_1)" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space as 'Boris Michel'" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space using 'A986013' account" width="941"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'A986013' account" width="1931"/>
+                <img src="12371e185654567958c5e05b1f96e74ad4a25a53d6bbc20e51d265868b5789af.png" title=" Given that I'm logged in to HR space using 'A986013' account" width="1931"/>
+                <img src="fc73bbf8737c0fb110ba64dad332b28ce2209dd25c5a790a90a69caef1910f9f.png" title=" Given that I'm logged in to HR space using 'A986013' account (completed)" width="1931"/>
+                <img src="fc73bbf8737c0fb110ba64dad332b28ce2209dd25c5a790a90a69caef1910f9f.png" title=" Given that I'm logged in to HR space as 'Boris Michel' (completed)" width="1931"/>
+                <img src="fc73bbf8737c0fb110ba64dad332b28ce2209dd25c5a790a90a69caef1910f9f.png" title=" When i set the module to organisation info" width="1931"/>
+                <img src="fc73bbf8737c0fb110ba64dad332b28ce2209dd25c5a790a90a69caef1910f9f.png" title=" When I set the header module to 'Organisation Info'" width="1931"/>
+                <img src="1891a8a913a1177870f99dc10ec82a2e8f3ecf27a14b904c8f5cadbaa4f2231e.png" title=" When I set the header module to 'Organisation Info' (completed)" width="1931"/>
+                <img src="1891a8a913a1177870f99dc10ec82a2e8f3ecf27a14b904c8f5cadbaa4f2231e.png" title=" When i set the module to organisation info (completed)" width="1931"/>
+                <img src="1891a8a913a1177870f99dc10ec82a2e8f3ecf27a14b904c8f5cadbaa4f2231e.png" title=" When i click the position org chart tab" width="1931"/>
+                <img src="f4fb8aeaaae76e6eb698f0a25439a8eb49f9bf6266066c321b6c7df497d1ba9e.png" title=" When i click the position org chart tab (completed)" width="1931"/>
+                <img src="f4fb8aeaaae76e6eb698f0a25439a8eb49f9bf6266066c321b6c7df497d1ba9e.png" title=" Then the position org chart should show up" width="1931"/>
+                <img src="8dbfcffae08061497d0ba1cd60dc93f6fbc773909c85df569b2b0e8c99dbcac2.png" title=" Then the position org chart should show up (completed)" width="1931"/>
+                <img src="8dbfcffae08061497d0ba1cd60dc93f6fbc773909c85df569b2b0e8c99dbcac2.png" title=" When I set the Org chart position ID to '800140'" width="1931"/>
+                <img src="355b88a8285554b215e810f10c8cc0366f466be664b4549be9448553e7bde258.png" title=" When I set the Org chart position ID to '800140'" width="1931"/>
+                <img src="7d99d463dc3b72cbcbd5fb72b203e81ee5ce7a57b5d9b8314faff7e47300edfd.png" title=" When I set the Org chart position ID to '800140' (completed)" width="1931"/>
+                <img src="92fb1ad1c588deebe684b362ba15000bc7d141aeef0cea92aa6e96aea529f7c0.png" title=" When the Line Manager creates a Job requisition (A_1_1)" width="1931"/>
+                <img src="01fcfa3d67a54753624de6a09a3531d54332cc5338c0d8a3d855250a33c427fa.png" title=" When the Line Manager creates a Job requisition (A_1_1)" width="1931"/>
+                <img src="4884f60aeebc6f13c1cedceb7015197276f222de738268cc7e4e14c24b991e88.png" title=" When the Line Manager creates a Job requisition (A_1_1)" width="1931"/>
+                <img src="ea4865a132bda7b37a2bb2eb9fc9e9139beaf9e20b8fd37a8a1b039498f2ceff.png" title=" When the Line Manager creates a Job requisition (A_1_1)" width="1931"/>
+                <img src="ea4865a132bda7b37a2bb2eb9fc9e9139beaf9e20b8fd37a8a1b039498f2ceff.png" title=" When the Line Manager creates a Job requisition (A_1_1)" width="1931"/>
+                <img src="ea4865a132bda7b37a2bb2eb9fc9e9139beaf9e20b8fd37a8a1b039498f2ceff.png" title=" When i click an available position" width="1931"/>
+                <img src="b033f79381affe4a8ec6f6c36b9de057fc05b956a8ef213e593354b6ca7e0abf.png" title=" When i click an available position" width="1931"/>
+                <img src="d840d276363a5b1a7dbe04385d5112a02ae01381ff3c0d5802e60b6610e745b9.png" title=" When i click an available position" width="1931"/>
+                <img src="c2dada0aa76ca7d262c09b929119f0b9d4a162fb17c5be9dabede23928086c32.png" title=" When i click an available position" width="1931"/>
+                <img src="c2dada0aa76ca7d262c09b929119f0b9d4a162fb17c5be9dabede23928086c32.png" title=" When i click an available position (completed)" width="1931"/>
+                <img src="c2dada0aa76ca7d262c09b929119f0b9d4a162fb17c5be9dabede23928086c32.png" title=" Then the position pop up should show up" width="1931"/>
+                <img src="e2eed453f13d0b34ba2fa0f720499d739f5a5b32d3cd574d2e58cc978a921354.png" title=" Then the position pop up should show up (completed)" width="1931"/>
+                <img src="e2eed453f13d0b34ba2fa0f720499d739f5a5b32d3cd574d2e58cc978a921354.png" title=" When i click on create job requisition menu" width="1931"/>
+                <img src="082f2e9d6a60a4bd1442e8b6aff7016cff8e93371db573a0e5bb4dae6dfa09c9.png" title=" When i click on create job requisition menu (completed)" width="1931"/>
+                <img src="082f2e9d6a60a4bd1442e8b6aff7016cff8e93371db573a0e5bb4dae6dfa09c9.png" title=" Then the manage job requisition pop up should show up" width="1931"/>
+                <img src="dd2350d3ad8a8bf188f315fff96918fc66fc03716d73a03a1f635c1b85099049.png" title=" Then the manage job requisition pop up should show up (completed)" width="1931"/>
+                <img src="dd2350d3ad8a8bf188f315fff96918fc66fc03716d73a03a1f635c1b85099049.png" title=" When I set the Job Requisition Template to 'HQ / Field recruitment'" width="1931"/>
+                <img src="00f41530c659b0a22675f9442b3e154e7358a80144abe1fa03dce8a34e531ce3.png" title=" When I set the Job Requisition Template to 'HQ / Field recruitment'" width="1931"/>
+                <img src="873d283fc922f3be74a0671b597e458f8bafbfc291c291007225e9c25aeb3021.png" title=" When I set the Job Requisition Template to 'HQ / Field recruitment'" width="1931"/>
+                <img src="873d283fc922f3be74a0671b597e458f8bafbfc291c291007225e9c25aeb3021.png" title=" When I set the Job Requisition Template to 'HQ / Field recruitment' (completed)" width="1931"/>
+                <img src="873d283fc922f3be74a0671b597e458f8bafbfc291c291007225e9c25aeb3021.png" title=" When i click on portlet create button" width="1931"/>
+                <img src="ef4d6aa206717fd11bc62b96281905b5e6c10b92774b8fec92c48d1ed8a80ecf.png" title=" When i click on portlet create button" width="1931"/>
+                <img src="b9cbc6642bfbf5470f152be0450bb0d9a348f97685a0c5f191ca3f6c3c91d626.png" title=" When i click on portlet create button (completed)" width="1931"/>
+                <img src="b9cbc6642bfbf5470f152be0450bb0d9a348f97685a0c5f191ca3f6c3c91d626.png" title=" Then the selected position node should show up" width="1931"/>
+                <img src="fc0e6588734d3324b503d2a565fa74ff72eb832f04bff2113d0aecdb4e493911.png" title=" Then the selected position node should show up (completed)" width="1931"/>
+                <img src="fc0e6588734d3324b503d2a565fa74ff72eb832f04bff2113d0aecdb4e493911.png" title=" When i expand the selected position" width="1931"/>
+                <img src="4c8e45063a777aac8d00e011fdf36d4af5c3f7fc926a3ab63ad8bb1540cea9aa.png" title=" When i expand the selected position" width="1931"/>
+                <img src="4c8e45063a777aac8d00e011fdf36d4af5c3f7fc926a3ab63ad8bb1540cea9aa.png" title=" When i expand the selected position (completed)" width="1931"/>
+                <img src="4c8e45063a777aac8d00e011fdf36d4af5c3f7fc926a3ab63ad8bb1540cea9aa.png" title=" Then the position pop up should show up" width="1931"/>
+                <img src="4b5cfc0d87e9f6e1de55c71d8cc5d757299020cebba4b7f4cc1a3182d497dc2e.png" title=" Then the position pop up should show up (completed)" width="1931"/>
+                <img src="4b5cfc0d87e9f6e1de55c71d8cc5d757299020cebba4b7f4cc1a3182d497dc2e.png" title=" When i expand the portlet job requisition details section" width="1931"/>
+                <img src="f9e791c4539d45a95341d3488f0b9ab8117f0a654c6da0ba984a422c7a06481f.png" title=" When i expand the portlet job requisition details section (completed)" width="1931"/>
+                <img src="f9e791c4539d45a95341d3488f0b9ab8117f0a654c6da0ba984a422c7a06481f.png" title=" When the Line Manager creates a Job requisition (A_1_1) (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" When the Line Manager deletes the Job Requisition in pre approval status (A_1_7)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'Boris Michel'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'A986013' account" width="1931"/>
+                <img src="2f4264e3a9021c0ae997e3bfac11015c5d79d8195589471603146291bf5e96c0.png" title=" Given that I'm logged in to HR space using 'A986013' account" width="1931"/>
+                <img src="6e4327d9cbc7ced5f754bf4ddd0c3568228a7424e890d57a530453ac499cfb94.png" title=" Given that I'm logged in to HR space using 'A986013' account (completed)" width="1931"/>
+                <img src="b0c92c10217b71a29bd2d2261d8e7d9cd00e6785ffb8aec481207513a928d28c.png" title=" Given that I'm logged in to HR space as 'Boris Michel' (completed)" width="1931"/>
+                <img src="b0c92c10217b71a29bd2d2261d8e7d9cd00e6785ffb8aec481207513a928d28c.png" title=" When i set the module to recruiting" width="1931"/>
+                <img src="b0c92c10217b71a29bd2d2261d8e7d9cd00e6785ffb8aec481207513a928d28c.png" title=" When I set the header module to 'Recruiting'" width="1931"/>
+                <img src="4bf6c526c40a3098c7f42dbe81481220519d527ce9f93aa5b3bfe1fa2e439e35.png" title=" When I set the header module to 'Recruiting' (completed)" width="1931"/>
+                <img src="4bf6c526c40a3098c7f42dbe81481220519d527ce9f93aa5b3bfe1fa2e439e35.png" title=" When i set the module to recruiting (completed)" width="1931"/>
+                <img src="4bf6c526c40a3098c7f42dbe81481220519d527ce9f93aa5b3bfe1fa2e439e35.png" title=" Then the job requisition page and its contents to show up" width="1931"/>
+                <img src="4bf6c526c40a3098c7f42dbe81481220519d527ce9f93aa5b3bfe1fa2e439e35.png" title=" Then the job requisition page and its contents to show up (completed)" width="1931"/>
+                <img src="4bf6c526c40a3098c7f42dbe81481220519d527ce9f93aa5b3bfe1fa2e439e35.png" title=" When i click on filter options button" width="1931"/>
+                <img src="030eba54d0f35b42bd92e079672873296aff4a40735e2da80a3a87fd72775ed3.png" title=" When i click on filter options button" width="1931"/>
+                <img src="9f928b7acdd39fde71777033aa28bfbe68da6a66de1c167c165e3e58179e57e7.png" title=" When i click on filter options button (completed)" width="1931"/>
+                <img src="9f928b7acdd39fde71777033aa28bfbe68da6a66de1c167c165e3e58179e57e7.png" title=" When i set the requisition ID filter using the saved value" width="1931"/>
+                <img src="fdeb8338857e5006d8c9440d385aca124e906b1991f35cfcfe68d90eb94cb8a2.png" title=" When i set the requisition ID filter using the saved value (completed)" width="1931"/>
+                <img src="fdeb8338857e5006d8c9440d385aca124e906b1991f35cfcfe68d90eb94cb8a2.png" title=" When i click on update screen button" width="1931"/>
+                <img src="b75c35a783cca12f3e6d063b304a00c4c805add0b70a111e7d23310c62dbd553.png" title=" When i click on update screen button" width="1931"/>
+                <img src="d37a6bc5917f1d47da4560bd7344f8f2c9ebb3712f361ac5dc2c3a8199a8b921.png" title=" When i click on update screen button (completed)" width="1931"/>
+                <img src="d37a6bc5917f1d47da4560bd7344f8f2c9ebb3712f361ac5dc2c3a8199a8b921.png" title=" When i set the job requisition filter to all job requisitions" width="1931"/>
+                <img src="d37a6bc5917f1d47da4560bd7344f8f2c9ebb3712f361ac5dc2c3a8199a8b921.png" title=" When i set the job requisition filter to all job requisitions (completed)" width="1931"/>
+                <img src="d37a6bc5917f1d47da4560bd7344f8f2c9ebb3712f361ac5dc2c3a8199a8b921.png" title=" When i click the requested job position from job requisitions table" width="1931"/>
+                <img src="d592dd2b4e404758f521289e9477e62e58dcac67e9f30728d613663035db58a4.png" title=" When i click the requested job position from job requisitions table" width="1931"/>
+                <img src="d592dd2b4e404758f521289e9477e62e58dcac67e9f30728d613663035db58a4.png" title=" When i click the requested job position from job requisitions table (completed)" width="1931"/>
+                <img src="98caa08f1c5e9c0dad46a9703fd921ebee7851a4ddf4b642cee0e6063ed69d15.png" title=" Then the job requisition details page should show up" width="1931"/>
+                <img src="be55dcfc044bcd845b2548eb9e4fccdb739412ae8d4919150c9d8b6d18a92d15.png" title=" Then the job requisition details page should show up (completed)" width="1931"/>
+                <img src="be55dcfc044bcd845b2548eb9e4fccdb739412ae8d4919150c9d8b6d18a92d15.png" title=" When i click on delete job requisition button" width="1931"/>
+                <img src="f204565e04c3bdbdfa2db8fc6639f3b2934c65666f08b2ca57d4ed4682cbc2d6.png" title=" When i click on delete job requisition button" width="1931"/>
+                <img src="f204565e04c3bdbdfa2db8fc6639f3b2934c65666f08b2ca57d4ed4682cbc2d6.png" title=" When i click on delete job requisition button (completed)" width="1931"/>
+                <img src="f204565e04c3bdbdfa2db8fc6639f3b2934c65666f08b2ca57d4ed4682cbc2d6.png" title=" Then the delete job requisition dialog box should show up" width="1931"/>
+                <img src="f204565e04c3bdbdfa2db8fc6639f3b2934c65666f08b2ca57d4ed4682cbc2d6.png" title=" Then the delete job requisition dialog box should show up (completed)" width="1931"/>
+                <img src="f204565e04c3bdbdfa2db8fc6639f3b2934c65666f08b2ca57d4ed4682cbc2d6.png" title=" When i click on dialog ok button" width="1931"/>
+                <img src="f4c57e75010c86dd752837c683912ce8b8cd07d248abb5fc67758b7042e602e2.png" title=" When i click on dialog ok button" width="1931"/>
+                <img src="f4c57e75010c86dd752837c683912ce8b8cd07d248abb5fc67758b7042e602e2.png" title=" When i click on dialog ok button (completed)" width="1931"/>
+                <img src="72fa52d8dd360c05e590405263c4ee6ba78196af4671ff519a648bec23f82409.png" title=" When i accept alert" width="1931"/>
+                <img src="d75c80b90dadff94166c3db7fc73d414b0844e98db8327e918eef75915cb5961.png" title=" When i accept alert (completed)" width="1931"/>
+                <img src="d75c80b90dadff94166c3db7fc73d414b0844e98db8327e918eef75915cb5961.png" title=" When i set the module to organisation info" width="1931"/>
+                <img src="d75c80b90dadff94166c3db7fc73d414b0844e98db8327e918eef75915cb5961.png" title=" When I set the header module to 'Organisation Info'" width="1931"/>
+                <img src="ea0e56c1ee73f09be240734a3b7df5e121ab8559456efb058057c69644549257.png" title=" When I set the header module to 'Organisation Info' (completed)" width="1931"/>
+                <img src="ea0e56c1ee73f09be240734a3b7df5e121ab8559456efb058057c69644549257.png" title=" When i set the module to organisation info (completed)" width="1931"/>
+                <img src="ea0e56c1ee73f09be240734a3b7df5e121ab8559456efb058057c69644549257.png" title=" When i click the position org chart tab" width="1931"/>
+                <img src="078bccfdf55c68840f5480f81b9001f27fd9d34e5601d4112447178c9bac2dc5.png" title=" When i click the position org chart tab (completed)" width="1931"/>
+                <img src="078bccfdf55c68840f5480f81b9001f27fd9d34e5601d4112447178c9bac2dc5.png" title=" Then the position org chart should show up" width="1931"/>
+                <img src="bd3d1b771bc15de06c8dd9edd0db790118c3ef4b2db16deb05942cb2b8c3ba56.png" title=" Then the position org chart should show up (completed)" width="1931"/>
+                <img src="bd3d1b771bc15de06c8dd9edd0db790118c3ef4b2db16deb05942cb2b8c3ba56.png" title=" When I set the Org chart position ID to '800160'" width="1931"/>
+                <img src="645c2e694a72ee88a391f9dda798b4344f17adf9dff838df77a67eda032e8b60.png" title=" When I set the Org chart position ID to '800160'" width="1931"/>
+                <img src="420e6839e5f735f04a7c4d085e385f32953d54daeeba7461174afd1f9510c7f1.png" title=" When I set the Org chart position ID to '800160' (completed)" width="1931"/>
+                <img src="9309adb2fbd8c31e83e6d33626c4b954ad1382d34764db8485f14883f20103d6.png" title=" When the Line Manager deletes the Job Requisition in pre approval status (A_1_7)" width="1931"/>
+                <img src="936cfea997e36aac69647c999c1514f796ad0796298ae0b7f408a00eabbc1f99.png" title=" When the Line Manager deletes the Job Requisition in pre approval status (A_1_7)" width="1931"/>
+                <img src="936cfea997e36aac69647c999c1514f796ad0796298ae0b7f408a00eabbc1f99.png" title=" When i expand the selected position" width="1931"/>
+                <img src="3fd225bb8c40afa0aa0cf46f0606fee3446ee235eed3d7058dc3742426e5cf9e.png" title=" When i expand the selected position" width="1931"/>
+                <img src="3fd225bb8c40afa0aa0cf46f0606fee3446ee235eed3d7058dc3742426e5cf9e.png" title=" When i expand the selected position (completed)" width="1931"/>
+                <img src="3fd225bb8c40afa0aa0cf46f0606fee3446ee235eed3d7058dc3742426e5cf9e.png" title=" Then the position pop up should show up" width="1931"/>
+                <img src="9e48818b73035b3bec8e51576797abdaa94bb0214248fbb8a0125e5102f182e8.png" title=" Then the position pop up should show up (completed)" width="1931"/>
+                <img src="9e48818b73035b3bec8e51576797abdaa94bb0214248fbb8a0125e5102f182e8.png" title=" Then the job requisition icon should be removed from the selected position" width="1931"/>
+                <img src="48e3439d58a0287b9e1b0a7b8ad9619e51dd41f6ec4548ff416f44e4101bfab2.png" title=" Then the job requisition icon should be removed from the selected position (completed)" width="1931"/>
+                <img src="48e3439d58a0287b9e1b0a7b8ad9619e51dd41f6ec4548ff416f44e4101bfab2.png" title=" When i click on selected position" width="1931"/>
+                <img src="4773afcb52c60680c5bf6b22ddd96da38ff9149030cc4192b01b2cb31e5770ed.png" title=" When i click on selected position" width="1931"/>
+                <img src="4773afcb52c60680c5bf6b22ddd96da38ff9149030cc4192b01b2cb31e5770ed.png" title=" When i click on selected position (completed)" width="1931"/>
+                <img src="4773afcb52c60680c5bf6b22ddd96da38ff9149030cc4192b01b2cb31e5770ed.png" title=" When i click on show menu icon" width="1931"/>
+                <img src="68e45c811ceb7d3e5cf023e155c43e11a3ad20edd6d7cd1f5c8ca768941ad644.png" title=" When i click on show menu icon (completed)" width="1931"/>
+                <img src="68e45c811ceb7d3e5cf023e155c43e11a3ad20edd6d7cd1f5c8ca768941ad644.png" title=" Then the create job requisition menu should be available" width="1931"/>
+                <img src="243af4fdc1d3905bb1d9309719a2223e02f141bb49f1b63e22b003696cfe7ae5.png" title=" Then the create job requisition menu should be available (completed)" width="1931"/>
+                <img src="243af4fdc1d3905bb1d9309719a2223e02f141bb49f1b63e22b003696cfe7ae5.png" title=" When the Line Manager deletes the Job Requisition in pre approval status (A_1_7) (completed)" width="1931"/>
+                <img src="a44955133edb951906806f8346475a9b3956469d77bda7f314b968bd75777258.png" title=" After test processing" width="1931"/>
+                <img src="a44955133edb951906806f8346475a9b3956469d77bda7f314b968bd75777258.png" title=" When i expand the error message details if present" width="1931"/>
+                <img src="a44955133edb951906806f8346475a9b3956469d77bda7f314b968bd75777258.png" title=" After test processing (completed): <span class='success-color'>SUCCESS</span>" width="1931"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.6</span>
+</div>
+</body>
+</html>

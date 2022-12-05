@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="org.icrc.hrspace.RCM.JobRequisitionCreationTAQForm" skipped="0" tests="1" time="1021.86" timestamp="2022-12-05 05:22:13"><testcase classname="org.icrc.hrspace.RCM.JobRequisitionCreationTAQForm" name="Create approve and decline TAQ job requisition"/></testsuite>

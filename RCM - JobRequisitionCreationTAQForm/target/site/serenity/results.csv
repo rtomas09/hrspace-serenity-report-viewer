@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Job requisition creation TAQ form","Complete TAQ job requisition creation and approval","SUCCESS","2022-12-05T13:41:51.9811662+08:00[Asia/Manila]","0.0","4573.36"
+"Job requisition creation TAQ form","Create approve and close TAQ job requisition","SUCCESS","2022-12-05T16:13:37.2593833+08:00[Asia/Manila]","0.0","2623.17"
+"Job requisition creation TAQ form","Create approve and decline TAQ job requisition","SUCCESS","2022-12-05T17:22:13.9741678+08:00[Asia/Manila]","0.0","1021.86"
+"Job requisition creation TAQ form","Create and delete TAQ job requisition in pre approved status","SUCCESS","2022-12-05T17:43:39.6107562+08:00[Asia/Manila]","0.0","332.65"
