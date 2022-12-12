@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Teleworking","Submit teleworking request","SUCCESS","2022-12-06T17:34:49.539992+08:00[Asia/Manila]","0.0","921.16"
+"Teleworking","Submit and delete teleworking request","SUCCESS","2022-12-06T19:34:50.8040407+08:00[Asia/Manila]","0.0","321.9"
+"Teleworking","Submit edit and delete teleworking request","SUCCESS","2022-12-06T19:43:52.2863869+08:00[Asia/Manila]","0.0","1880.85"
+"Teleworking","Submit add new record teleworking request","SUCCESS","2022-12-12T13:42:00.7652022+08:00[Asia/Manila]","0.0","1796.96"

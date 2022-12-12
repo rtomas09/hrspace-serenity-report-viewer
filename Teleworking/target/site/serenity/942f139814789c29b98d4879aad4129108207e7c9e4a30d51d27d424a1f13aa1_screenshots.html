@@ -1,0 +1,419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Selenium Serenity Tests FAD APPLIC</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="9ebbff1874cdbf55fe5f9e68e2c3a925602fc6550382e593d5d5564e288d6498.html">Teleworking</a></span>
+                > <span class="truncate-60"><a
+                    href="942f139814789c29b98d4879aad4129108207e7c9e4a30d51d27d424a1f13aa1.html">Submit teleworking request </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 06-12-2022 17:34</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Teleworking </span>
+                                    <span class="badge tag-badge" style="">Story</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Submit teleworking request
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" When employee submits WFH request: Kathrine Alkjaersig Vad, A186795, HRIS2022, 04/12/2022, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, On Site, On Site, Off Work, Off Work, Off Work, Off Work, Off Work, Off Work, 0.8, Yes, AUTOMATION TESTING EMPLOYEE COMMENT, Christophe HAMBYE" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space as 'Kathrine Alkjaersig Vad'" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space using 'A186795' account" width="941"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'A186795' account" width="1931"/>
+                <img src="6af408386f6ecf281a59cbe7920a3323e8797850172fce632893d2e4dc989728.png" title=" Given that I'm logged in to HR space using 'A186795' account" width="1931"/>
+                <img src="4625db84e1ff04ad0cefc07d372602c7022fb6b7842eed4d9a96691121b732cd.png" title=" Given that I'm logged in to HR space using 'A186795' account (completed)" width="1931"/>
+                <img src="4625db84e1ff04ad0cefc07d372602c7022fb6b7842eed4d9a96691121b732cd.png" title=" Given that I'm logged in to HR space as 'Kathrine Alkjaersig Vad' (completed)" width="1931"/>
+                <img src="4625db84e1ff04ad0cefc07d372602c7022fb6b7842eed4d9a96691121b732cd.png" title=" When i click tile: My Profile" width="1931"/>
+                <img src="96984511aece05af46452d5d4cb6866b9560024b4d457cdf6575dd82a318f00a.png" title=" When i click tile: My Profile" width="1931"/>
+                <img src="3776f923c6d54e33c17a88a8b7a9f831f3f617b92485ad425babf94ecbc80ff0.png" title=" When i click tile: My Profile (completed)" width="1931"/>
+                <img src="3776f923c6d54e33c17a88a8b7a9f831f3f617b92485ad425babf94ecbc80ff0.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="9a9fa88ef2b394dbfa95b66e05530b8ab1fe46c820a78813376a200027840d28.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="6ab341f11e25a45d0c74412ea01d4ef046cb506404dc59c7e98ede124cb25acd.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="152c1760d95aea51ab089747e72477cf3ceda9b0adb3f3c93cb1818a11b1837e.png" title=" When i go to my office home working days (completed)" width="1931"/>
+                <img src="152c1760d95aea51ab089747e72477cf3ceda9b0adb3f3c93cb1818a11b1837e.png" title=" Then the edit property of RES employee for my office home working days fields for EE should be correctly set" width="1931"/>
+                <img src="17f51593f43df8af102698d071d305c442b05643994a55ec447b2cfb3791b98d.png" title=" Then the edit property of RES employee for my office home working days fields for EE should be correctly set" width="1931"/>
+                <img src="473801887c1586658e86afdd89123761dbe9c862b9318de66557493181e35cbb.png" title=" Then the edit property of RES employee for my office home working days fields for EE should be correctly set" width="1931"/>
+                <img src="223116f993a671406663db8c3418b19170e2f19c4d6d41acfaf86ae3492af525.png" title=" Then the edit property of RES employee for my office home working days fields for EE should be correctly set" width="1931"/>
+                <img src="c7d5b42f96da10691a9ed2f0841d6ce9ebeaa205d6eecd598dab8fde740c0f57.png" title=" Then the edit property of RES employee for my office home working days fields for EE should be correctly set" width="1931"/>
+                <img src="5880607e116f396010929e310925f391dfe983ead832764ee372204811fb9d65.png" title=" Then the edit property of RES employee for my office home working days fields for EE should be correctly set" width="1931"/>
+                <img src="0cb04e6d5480a5243fec9aaba6dbea00796da730d9bc9c3a52b38889cb3ebbd4.png" title=" Then the edit property of RES employee for my office home working days fields for EE should be correctly set" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Monday morning, My Office/Home Working Days" width="1931"/>
+                <img src="131a86be17cb58c2a2b9b5d9ae717317047caccf726c5d14e75ea224be51029a.png" title=" Then the field should be editable: Monday morning, My Office/Home Working Days" width="1931"/>
+                <img src="c7d5b42f96da10691a9ed2f0841d6ce9ebeaa205d6eecd598dab8fde740c0f57.png" title=" Then the field should be editable: Monday morning, My Office/Home Working Days" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Monday morning, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Monday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="a607fbebc4a27fad78a70f39c7acff8d9d06d2f25f56be50b81ba5ce63fd1d2a.png" title=" Then the field should be editable: Monday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="0cb04e6d5480a5243fec9aaba6dbea00796da730d9bc9c3a52b38889cb3ebbd4.png" title=" Then the field should be editable: Monday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Monday afternoon, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Tuesday morning, My Office/Home Working Days" width="1931"/>
+                <img src="cbcc76c437230bb13ce837f8429a1b3644be6ff54cdd356e5558b801253a2a68.png" title=" Then the field should be editable: Tuesday morning, My Office/Home Working Days" width="1931"/>
+                <img src="c7d5b42f96da10691a9ed2f0841d6ce9ebeaa205d6eecd598dab8fde740c0f57.png" title=" Then the field should be editable: Tuesday morning, My Office/Home Working Days" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Tuesday morning, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Tuesday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="0102fe8fb2a9c3f75016a4b8d00601eb30ee3c3ffc3b38f8bcfbb10dc49b5ca7.png" title=" Then the field should be editable: Tuesday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="c7d5b42f96da10691a9ed2f0841d6ce9ebeaa205d6eecd598dab8fde740c0f57.png" title=" Then the field should be editable: Tuesday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Tuesday afternoon, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Wednesday morning, My Office/Home Working Days" width="1931"/>
+                <img src="34c4f1ef2e4ea2bd04646f77c85b70a1515c29805bd501380a3004a2498e1616.png" title=" Then the field should be editable: Wednesday morning, My Office/Home Working Days" width="1931"/>
+                <img src="c7d5b42f96da10691a9ed2f0841d6ce9ebeaa205d6eecd598dab8fde740c0f57.png" title=" Then the field should be editable: Wednesday morning, My Office/Home Working Days" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Wednesday morning, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Wednesday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="8e389bdf5aec7f917e5486d6939dcd509fad57e210889fcad7a9d2eaa45996b3.png" title=" Then the field should be editable: Wednesday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="a26608a86fb160ade83448883297bc75fd20c4ee4ff8ce156fcf1c72bda36418.png" title=" Then the field should be editable: Wednesday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Wednesday afternoon, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Thursday morning, My Office/Home Working Days" width="1931"/>
+                <img src="223116f993a671406663db8c3418b19170e2f19c4d6d41acfaf86ae3492af525.png" title=" Then the field should be editable: Thursday morning, My Office/Home Working Days" width="1931"/>
+                <img src="0cb04e6d5480a5243fec9aaba6dbea00796da730d9bc9c3a52b38889cb3ebbd4.png" title=" Then the field should be editable: Thursday morning, My Office/Home Working Days" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Thursday morning, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Thursday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="223116f993a671406663db8c3418b19170e2f19c4d6d41acfaf86ae3492af525.png" title=" Then the field should be editable: Thursday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="c7d5b42f96da10691a9ed2f0841d6ce9ebeaa205d6eecd598dab8fde740c0f57.png" title=" Then the field should be editable: Thursday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Thursday afternoon, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Friday morning, My Office/Home Working Days" width="1931"/>
+                <img src="12c740953bd806389862ec3535a36f15ad8c8679c1cc82668ddcc0f861d0e895.png" title=" Then the field should be editable: Friday morning, My Office/Home Working Days" width="1931"/>
+                <img src="0cb04e6d5480a5243fec9aaba6dbea00796da730d9bc9c3a52b38889cb3ebbd4.png" title=" Then the field should be editable: Friday morning, My Office/Home Working Days" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Friday morning, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Friday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="0102fe8fb2a9c3f75016a4b8d00601eb30ee3c3ffc3b38f8bcfbb10dc49b5ca7.png" title=" Then the field should be editable: Friday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="c7d5b42f96da10691a9ed2f0841d6ce9ebeaa205d6eecd598dab8fde740c0f57.png" title=" Then the field should be editable: Friday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Friday afternoon, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Saturday morning, My Office/Home Working Days" width="1931"/>
+                <img src="7be78098f818c79220ea2effae28ae3306772e83a249dea2721cff1e5307d96c.png" title=" Then the field should be editable: Saturday morning, My Office/Home Working Days" width="1931"/>
+                <img src="c8425dd041ad5484f83e91a75287549a6f1d4b480a384eef5bec2e2eb6c40fdf.png" title=" Then the field should be editable: Saturday morning, My Office/Home Working Days" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Saturday morning, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Saturday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="131a86be17cb58c2a2b9b5d9ae717317047caccf726c5d14e75ea224be51029a.png" title=" Then the field should be editable: Saturday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="0cb04e6d5480a5243fec9aaba6dbea00796da730d9bc9c3a52b38889cb3ebbd4.png" title=" Then the field should be editable: Saturday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Saturday afternoon, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Sunday morning, My Office/Home Working Days" width="1931"/>
+                <img src="ae508d745d241b06b593148cdad1ceecbdb45a830d16dcea5221b9bd3482ef3f.png" title=" Then the field should be editable: Sunday morning, My Office/Home Working Days" width="1931"/>
+                <img src="a26608a86fb160ade83448883297bc75fd20c4ee4ff8ce156fcf1c72bda36418.png" title=" Then the field should be editable: Sunday morning, My Office/Home Working Days" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Sunday morning, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Sunday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="223116f993a671406663db8c3418b19170e2f19c4d6d41acfaf86ae3492af525.png" title=" Then the field should be editable: Sunday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="0cb04e6d5480a5243fec9aaba6dbea00796da730d9bc9c3a52b38889cb3ebbd4.png" title=" Then the field should be editable: Sunday afternoon, My Office/Home Working Days" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: Sunday afternoon, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: To calculate the activity rate, confirm if you have finished, My Office/Home Working Days" width="1931"/>
+                <img src="0102fe8fb2a9c3f75016a4b8d00601eb30ee3c3ffc3b38f8bcfbb10dc49b5ca7.png" title=" Then the field should be editable: To calculate the activity rate, confirm if you have finished, My Office/Home Working Days" width="1931"/>
+                <img src="c7d5b42f96da10691a9ed2f0841d6ce9ebeaa205d6eecd598dab8fde740c0f57.png" title=" Then the field should be editable: To calculate the activity rate, confirm if you have finished, My Office/Home Working Days" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the field should be editable: To calculate the activity rate, confirm if you have finished, My Office/Home Working Days (completed)" width="1931"/>
+                <img src="0102fe8fb2a9c3f75016a4b8d00601eb30ee3c3ffc3b38f8bcfbb10dc49b5ca7.png" title=" Then the edit property of RES employee for my office home working days fields for EE should be correctly set" width="1931"/>
+                <img src="a26608a86fb160ade83448883297bc75fd20c4ee4ff8ce156fcf1c72bda36418.png" title=" Then the edit property of RES employee for my office home working days fields for EE should be correctly set" width="1931"/>
+                <img src="dd1adf8a3aa58536773c82bb1a11869a4f170c1448277e33ebe9a78a5833a4be.png" title=" Then the edit property of RES employee for my office home working days fields for EE should be correctly set" width="1931"/>
+                <img src="0cb04e6d5480a5243fec9aaba6dbea00796da730d9bc9c3a52b38889cb3ebbd4.png" title=" Then the edit property of RES employee for my office home working days fields for EE should be correctly set" width="1931"/>
+                <img src="5880607e116f396010929e310925f391dfe983ead832764ee372204811fb9d65.png" title=" Then the edit property of RES employee for my office home working days fields for EE should be correctly set" width="1931"/>
+                <img src="0cb04e6d5480a5243fec9aaba6dbea00796da730d9bc9c3a52b38889cb3ebbd4.png" title=" Then the edit property of RES employee for my office home working days fields for EE should be correctly set" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" Then the edit property of RES employee for my office home working days fields for EE should be correctly set (completed)" width="1931"/>
+                <img src="db9619d772ba3e6509c82e0637752b80047f9bf3084bcd81fd98cd658781ee39.png" title=" When i click on portlet edit button: My Office/Home Working Days" width="1931"/>
+                <img src="34c4f1ef2e4ea2bd04646f77c85b70a1515c29805bd501380a3004a2498e1616.png" title=" When i click on portlet edit button: My Office/Home Working Days" width="1931"/>
+                <img src="ea5b3fbb9cd8b0292c4c8892ceab42a3a3925d0396f4ed90064a4934a0fec541.png" title=" When i click on portlet edit button: My Office/Home Working Days (completed)" width="1931"/>
+                <img src="ea5b3fbb9cd8b0292c4c8892ceab42a3a3925d0396f4ed90064a4934a0fec541.png" title=" When i populate effective date: 04/12/2022" width="1931"/>
+                <img src="ebbe29d03c63cf62034bac42b64b3fc243f9c19d5de27fb08e6d33c9979dec04.png" title=" When i populate effective date: 04/12/2022 (completed)" width="1931"/>
+                <img src="ebbe29d03c63cf62034bac42b64b3fc243f9c19d5de27fb08e6d33c9979dec04.png" title=" When i populate monday morning field: Home Office" width="1931"/>
+                <img src="aae205f401645cba384de3926d7cad4a77e8085535ae3df8f61986e8fedb4490.png" title=" When i populate monday morning field: Home Office" width="1931"/>
+                <img src="2242f24310f78a592ed87854510e1f256b8d907f76e9de44fb47ea4e2aba0246.png" title=" When i populate monday morning field: Home Office (completed)" width="1931"/>
+                <img src="2242f24310f78a592ed87854510e1f256b8d907f76e9de44fb47ea4e2aba0246.png" title=" When i populate monday afternoon field: Home Office" width="1931"/>
+                <img src="433d3efac91a855cecf741628f62df8898e0bdb5358e02c89557e61d2e375778.png" title=" When i populate monday afternoon field: Home Office" width="1931"/>
+                <img src="81c51c322eb4baf9da817e08508f1a9997ece1968851ce61e484e5e8b06a607a.png" title=" When i populate monday afternoon field: Home Office (completed)" width="1931"/>
+                <img src="81c51c322eb4baf9da817e08508f1a9997ece1968851ce61e484e5e8b06a607a.png" title=" When i populate tuesday morning field: Home Office" width="1931"/>
+                <img src="699d354d696ec8980e9747cb347001ff948507aecdcf07345dba0cb04f26f4cc.png" title=" When i populate tuesday morning field: Home Office" width="1931"/>
+                <img src="15cc9769f8d7c37a105cea352df591024dfd208e1bfc7e35f74d7661b7b84ae1.png" title=" When i populate tuesday morning field: Home Office (completed)" width="1931"/>
+                <img src="15cc9769f8d7c37a105cea352df591024dfd208e1bfc7e35f74d7661b7b84ae1.png" title=" When i populate tuesday afternoon field: Home Office" width="1931"/>
+                <img src="b56802bdedb75bc505d6e34fea521f9759d85ef054d82dd4de19a0f0ca468233.png" title=" When i populate tuesday afternoon field: Home Office" width="1931"/>
+                <img src="ff6da12ee65e0ea813aa0bba5c05915c76dcd3b5b57b329edb1a8205cb4d3cf2.png" title=" When i populate tuesday afternoon field: Home Office (completed)" width="1931"/>
+                <img src="ff6da12ee65e0ea813aa0bba5c05915c76dcd3b5b57b329edb1a8205cb4d3cf2.png" title=" When i populate wednesday morning field: Home Office" width="1931"/>
+                <img src="90db26d3c758915eea5b615600adc8c076e229981a4a44367ac31d9ebf9ac24b.png" title=" When i populate wednesday morning field: Home Office" width="1931"/>
+                <img src="4484dfad550ac9902055bdc38797acddbc715eff9104bce4a677024e7ef0e404.png" title=" When i populate wednesday morning field: Home Office (completed)" width="1931"/>
+                <img src="4484dfad550ac9902055bdc38797acddbc715eff9104bce4a677024e7ef0e404.png" title=" When i populate wednesday afternoon field: Home Office" width="1931"/>
+                <img src="b8a9fd6c53a10f6cc42996b87617ba20ef972d967cb0b3fd7e918a69cd3c1d0f.png" title=" When i populate wednesday afternoon field: Home Office" width="1931"/>
+                <img src="e864db1ad323a70c9b8a01ab1bcf7fcf63cee54a9aaa09e0f6b21afaa4a26016.png" title=" When i populate wednesday afternoon field: Home Office (completed)" width="1931"/>
+                <img src="e864db1ad323a70c9b8a01ab1bcf7fcf63cee54a9aaa09e0f6b21afaa4a26016.png" title=" When i populate thursday morning field: On Site" width="1931"/>
+                <img src="fd0ea5e902a2bc566827ab24a5ac5d5b47197e7eb39449cf59aeb017cc365436.png" title=" When i populate thursday morning field: On Site" width="1931"/>
+                <img src="3a664a9668d94e6607c3710d13e6f05061d6709c3f954d073f67eabb81fa8eb0.png" title=" When i populate thursday morning field: On Site (completed)" width="1931"/>
+                <img src="3a664a9668d94e6607c3710d13e6f05061d6709c3f954d073f67eabb81fa8eb0.png" title=" When i populate thursday afternoon field: On Site" width="1931"/>
+                <img src="d81f0fb9b091ad24436b7501c8ed752789fdde04c67a1a511bfc467b7043705a.png" title=" When i populate thursday afternoon field: On Site" width="1931"/>
+                <img src="cef36761d9cc217b6e6c2953df10745bfddba06721ca009d2b006e4c092bd11a.png" title=" When i populate thursday afternoon field: On Site (completed)" width="1931"/>
+                <img src="cef36761d9cc217b6e6c2953df10745bfddba06721ca009d2b006e4c092bd11a.png" title=" When i populate friday morning field: Off Work" width="1931"/>
+                <img src="d84649d40d4fc83983b8f5935f7dcb6f50338ec8ad91cd88a46ec8cdf846bccd.png" title=" When i populate friday morning field: Off Work" width="1931"/>
+                <img src="8a0b2a02f3fd768c2223921974d6c48963eb7b9100289aed265e4eb409e4b839.png" title=" When i populate friday morning field: Off Work (completed)" width="1931"/>
+                <img src="8a0b2a02f3fd768c2223921974d6c48963eb7b9100289aed265e4eb409e4b839.png" title=" When i populate friday afternoon field: Off Work" width="1931"/>
+                <img src="b02205168ebebdf2b824c25e4aea4ae40c795cad88d7bcad8b4f21d443c942b5.png" title=" When i populate friday afternoon field: Off Work" width="1931"/>
+                <img src="0571a08e63faa2cb3243d279227ab2f3b69406bf9cfc3b5e410740a2ff5a8a78.png" title=" When i populate friday afternoon field: Off Work (completed)" width="1931"/>
+                <img src="0571a08e63faa2cb3243d279227ab2f3b69406bf9cfc3b5e410740a2ff5a8a78.png" title=" When i populate saturday morning field: Off Work" width="1931"/>
+                <img src="500d9bc466ca14f5234f8e94e1cf7b75479ab97e60b4645c64a551dbdea5f57a.png" title=" When i populate saturday morning field: Off Work" width="1931"/>
+                <img src="a07fd9a0dcd8706fcf626d44a03587766ea15755f5f367cc6594e47fb2f9adee.png" title=" When i populate saturday morning field: Off Work (completed)" width="1931"/>
+                <img src="a07fd9a0dcd8706fcf626d44a03587766ea15755f5f367cc6594e47fb2f9adee.png" title=" When i populate saturday afternoon field: Off Work" width="1931"/>
+                <img src="e75f7ac1213eac3c48343fbcc033b98e0ef63e780f8302f627942e8b480f18ae.png" title=" When i populate saturday afternoon field: Off Work" width="1931"/>
+                <img src="03e67d6610d4713f4cac9caa42feb75c58cc64abf18f6c6072c06db3b99fe202.png" title=" When i populate saturday afternoon field: Off Work (completed)" width="1931"/>
+                <img src="03e67d6610d4713f4cac9caa42feb75c58cc64abf18f6c6072c06db3b99fe202.png" title=" When i populate sunday morning field: Off Work" width="1931"/>
+                <img src="ea60079de72c03fd45150c0f6e6f1e69362303be7c293c1c6505d5630851c4b6.png" title=" When i populate sunday morning field: Off Work" width="1931"/>
+                <img src="bbc113dffe19ee5e40c6e5801d63d67e98ba1b654f7821049b27ced2a2a26db2.png" title=" When i populate sunday morning field: Off Work (completed)" width="1931"/>
+                <img src="bbc113dffe19ee5e40c6e5801d63d67e98ba1b654f7821049b27ced2a2a26db2.png" title=" When i populate sunday afternoon field: Off Work" width="1931"/>
+                <img src="dbac7e40d46097c97f53cbc44052b4936e0b4dcf3a9805d9ce32277b9039ff96.png" title=" When i populate sunday afternoon field: Off Work" width="1931"/>
+                <img src="04df0fc071b73ef584d43e24f421143055b94043c5308edb4fb242018821feb4.png" title=" When i populate sunday afternoon field: Off Work (completed)" width="1931"/>
+                <img src="04df0fc071b73ef584d43e24f421143055b94043c5308edb4fb242018821feb4.png" title=" When i populate to calculate the activity rate confirm if you have finished: Yes" width="1931"/>
+                <img src="14ecb5b3f5fcaffb00ef7b67154c8ecc1f4070b9a32268672b721b2e0032b90b.png" title=" When i populate to calculate the activity rate confirm if you have finished: Yes" width="1931"/>
+                <img src="d2f89461754d16fe65eb24b1904264f5e86802c00dfeaaa10043ad72d7845054.png" title=" When i populate to calculate the activity rate confirm if you have finished: Yes (completed)" width="1931"/>
+                <img src="d2f89461754d16fe65eb24b1904264f5e86802c00dfeaaa10043ad72d7845054.png" title=" Then the value of activity rate calculated is properly displayed: 0.8" width="1931"/>
+                <img src="848e07f7e324e94622b5388a282fbeff9de2b6251b7de419b0e159c51d2d4272.png" title=" Then the value of activity rate calculated is properly displayed: 0.8 (completed)" width="1931"/>
+                <img src="848e07f7e324e94622b5388a282fbeff9de2b6251b7de419b0e159c51d2d4272.png" title=" When i click save button" width="1931"/>
+                <img src="e06610a28c4b1189de6537e558a6988df6cefbe897e4eb5ffc32cd05f4a66123.png" title=" When i click save button" width="1931"/>
+                <img src="15dae16585d3f0890fc06baa30e4faf612d3f1e693f0ecd399caa7e0056e3c2f.png" title=" When i click save button (completed)" width="1931"/>
+                <img src="15dae16585d3f0890fc06baa30e4faf612d3f1e693f0ecd399caa7e0056e3c2f.png" title=" When i populate text area field: AUTOMATION TESTING EMPLOYEE COMMENT" width="1931"/>
+                <img src="3550a988a15514214c82f5529b950f0e7400077bad54a3e32167bf25a4ff5881.png" title=" When i populate text area field: AUTOMATION TESTING EMPLOYEE COMMENT (completed)" width="1931"/>
+                <img src="3550a988a15514214c82f5529b950f0e7400077bad54a3e32167bf25a4ff5881.png" title=" When i check workflow participant: Christophe HAMBYE" width="1931"/>
+                <img src="05c44d75a3a1f1a706d0a4787bd4a8cba61f9a80463d05b0eb0df87dade75a8d.png" title=" When i check workflow participant: Christophe HAMBYE" width="1931"/>
+                <img src="e761e1e67b45a3045e9c2391fd865e14f690da536c95c39a3d266f44360a81df.png" title=" When i check workflow participant: Christophe HAMBYE (completed)" width="1931"/>
+                <img src="e761e1e67b45a3045e9c2391fd865e14f690da536c95c39a3d266f44360a81df.png" title=" When i click confirm button" width="1931"/>
+                <img src="4025fa24f35cf4c013e53afdbe3026794d09caff72ffd9d0266e68de0fe2a3c9.png" title=" When i click confirm button" width="1931"/>
+                <img src="170435f4fa404b67d6611f57d61bd1289aec012105a479bcc0fb4306e1024074.png" title=" When i click confirm button (completed)" width="1931"/>
+                <img src="170435f4fa404b67d6611f57d61bd1289aec012105a479bcc0fb4306e1024074.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="d225ffbea0222f96891bf02ff73cad05410f215cd5967dc8c5ed55d0f12deb74.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="29ac4eeff5d095d15147b31ca3bf3e8624ab38bcee44607370df97849cc9eab9.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="fb9381399a1e9fd54af7f1e297ddd453191616cb396eeda115e526f097080164.png" title=" When i go to my office home working days (completed)" width="1931"/>
+                <img src="fb9381399a1e9fd54af7f1e297ddd453191616cb396eeda115e526f097080164.png" title=" When i click on portlet history button: My Office/Home Working Days" width="1931"/>
+                <img src="8a7c098490b7a321ce5c5f599f638d1899fe3bbf3af39adaf0d82d637554fe55.png" title=" When i click on portlet history button: My Office/Home Working Days" width="1931"/>
+                <img src="766438dc258b04c7362c96862989ab40d40f583b45bb1b63f4b6b8eb2bbb4ab3.png" title=" When i click on portlet history button: My Office/Home Working Days (completed)" width="1931"/>
+                <img src="766438dc258b04c7362c96862989ab40d40f583b45bb1b63f4b6b8eb2bbb4ab3.png" title=" Then the working from home request details is displayed in history: Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, On Site, On Site, Off Work, Off Work, Off Work, Off Work, Off Work, Off Work, Yes" width="1931"/>
+                <img src="766438dc258b04c7362c96862989ab40d40f583b45bb1b63f4b6b8eb2bbb4ab3.png" title=" Then the working from home request details is displayed in history: Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, On Site, On Site, Off Work, Off Work, Off Work, Off Work, Off Work, Off Work, Yes (completed)" width="1931"/>
+                <img src="766438dc258b04c7362c96862989ab40d40f583b45bb1b63f4b6b8eb2bbb4ab3.png" title=" When employee submits WFH request: Kathrine Alkjaersig Vad, A186795, HRIS2022, 04/12/2022, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, On Site, On Site, Off Work, Off Work, Off Work, Off Work, Off Work, Off Work, 0.8, Yes, AUTOMATION TESTING EMPLOYEE COMMENT, Christophe HAMBYE (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" When employee withdraws WFH request: Kathrine Alkjaersig Vad, A186795, HRIS2022" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'Kathrine Alkjaersig Vad'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'A186795' account" width="1931"/>
+                <img src="26185baae3d68d0fa56eea47696df10c9d3c1b98189fa74503614587d69c72e3.png" title=" Given that I'm logged in to HR space using 'A186795' account" width="1931"/>
+                <img src="14aab3be2be61f10e780b6c1d7b062404632c517443bb551b4ec526b8007aa0e.png" title=" Given that I'm logged in to HR space using 'A186795' account (completed)" width="1931"/>
+                <img src="5800b70218a66e3472d52f4d55438a458a9d427f1bc39039fcb7a09562f143a0.png" title=" Given that I'm logged in to HR space as 'Kathrine Alkjaersig Vad' (completed)" width="1931"/>
+                <img src="5800b70218a66e3472d52f4d55438a458a9d427f1bc39039fcb7a09562f143a0.png" title=" When I set the header module to 'Home'" width="1931"/>
+                <img src="a015aedb9064e8f85bde55e7e078526b7f4d504a339c771e613e8a8781a9d5f2.png" title=" When I set the header module to 'Home' (completed)" width="1931"/>
+                <img src="a015aedb9064e8f85bde55e7e078526b7f4d504a339c771e613e8a8781a9d5f2.png" title=" When i click tile: My Profile" width="1931"/>
+                <img src="e582b419f556f4791252eb8ef20141d056549e2f30d7e062bad12a5ddca01819.png" title=" When i click tile: My Profile" width="1931"/>
+                <img src="6c331be0d891b93982bf7a9bccad05d9779840132bbf0b2c913dd0693c0ae2d6.png" title=" When i click tile: My Profile (completed)" width="1931"/>
+                <img src="6c331be0d891b93982bf7a9bccad05d9779840132bbf0b2c913dd0693c0ae2d6.png" title=" When i click actions button" width="1931"/>
+                <img src="f1d0a3d559395fb02222992c81a5adbd50781ce16a84060945e5fd10a618e198.png" title=" When i click actions button" width="1931"/>
+                <img src="66799db4c7a98070a00cef5dfe272016acc6e3f853c3452708c0ba0d3d27e33a.png" title=" When i click actions button (completed)" width="1931"/>
+                <img src="66799db4c7a98070a00cef5dfe272016acc6e3f853c3452708c0ba0d3d27e33a.png" title=" When i click pending request" width="1931"/>
+                <img src="caf3dcb48e110f826c5701b76d7322f6d4542659b32e868799034342ecc0c054.png" title=" When i click pending request" width="1931"/>
+                <img src="caf3dcb48e110f826c5701b76d7322f6d4542659b32e868799034342ecc0c054.png" title=" When i click pending request (completed)" width="1931"/>
+                <img src="caf3dcb48e110f826c5701b76d7322f6d4542659b32e868799034342ecc0c054.png" title=" Then the pending request page is displayed" width="1931"/>
+                <img src="caf3dcb48e110f826c5701b76d7322f6d4542659b32e868799034342ecc0c054.png" title=" Then the pending request page is displayed (completed)" width="1931"/>
+                <img src="caf3dcb48e110f826c5701b76d7322f6d4542659b32e868799034342ecc0c054.png" title=" Then the pending requests portlets are displayed" width="1931"/>
+                <img src="caf3dcb48e110f826c5701b76d7322f6d4542659b32e868799034342ecc0c054.png" title=" Then the pending requests portlets are displayed (completed)" width="1931"/>
+                <img src="caf3dcb48e110f826c5701b76d7322f6d4542659b32e868799034342ecc0c054.png" title=" When i click on a pending for approval request: Kathrine Alkjaersig Vad" width="1931"/>
+                <img src="15effb213e0f9eeeaf9b6280403767b1e43dda3d7f7bea90f80a56a10d4992c7.png" title=" When i click on a pending for approval request: Kathrine Alkjaersig Vad" width="1931"/>
+                <img src="15effb213e0f9eeeaf9b6280403767b1e43dda3d7f7bea90f80a56a10d4992c7.png" title=" When i click on a pending for approval request: Kathrine Alkjaersig Vad (completed)" width="1931"/>
+                <img src="e8efcb1b9bbc1e9e8771a264714d67b21892a55bc808f62e1fb1ccd7a27fd834.png" title=" When i click withdraw button" width="1931"/>
+                <img src="a30dfa3213468b5f9f8bb846aacd0943f620042b8ec63868b2ad450d0869e3ec.png" title=" When i click withdraw button" width="1931"/>
+                <img src="7dcee700f3d2cd5d17a9408d8c4d5664732cd6632b53cd291bbcb7b237f6d1bd.png" title=" When i click withdraw button (completed)" width="1931"/>
+                <img src="7dcee700f3d2cd5d17a9408d8c4d5664732cd6632b53cd291bbcb7b237f6d1bd.png" title=" When i confirm to withdraw request" width="1931"/>
+                <img src="045430fe0955a9b83876717f5f08a65ef866dac8aea2c8e7695e65b9dcd0abce.png" title=" When i confirm to withdraw request" width="1931"/>
+                <img src="7aa715a3f4c67ed6debb3b437c6fe0df45928e974660b0fca70fa07b8d18b6c0.png" title=" When i confirm to withdraw request (completed)" width="1931"/>
+                <img src="7aa715a3f4c67ed6debb3b437c6fe0df45928e974660b0fca70fa07b8d18b6c0.png" title=" When employee withdraws WFH request: Kathrine Alkjaersig Vad, A186795, HRIS2022 (completed): <span class='success-color'>SUCCESS</span>" width="1931"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.6</span>
+</div>
+</body>
+</html>
