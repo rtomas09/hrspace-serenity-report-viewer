@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Workflow","Update marital status","SUCCESS","2022-12-12T18:18:29.7351879+08:00[Asia/Manila]","0.0","476.85"
+"Workflow","Update canton of origin","SUCCESS","2022-12-12T20:37:14.1160751+08:00[Asia/Manila]","0.0","172.33"
+"Workflow","Change address","ERROR","2022-12-12T20:41:28.3153669+08:00[Asia/Manila]","0.0","321.76"
+"Workflow","Change nationality","SUCCESS","2022-12-12T21:49:17.3909961+08:00[Asia/Manila]","0.0","455.47"
+"Workflow","Update phone information","SUCCESS","2022-12-12T22:34:40.8985594+08:00[Asia/Manila]","0.0","328.42"

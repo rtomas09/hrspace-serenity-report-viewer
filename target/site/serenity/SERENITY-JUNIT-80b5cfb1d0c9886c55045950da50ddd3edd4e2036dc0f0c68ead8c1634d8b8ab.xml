@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="org.icrc.hrspace.EC.Workflow" skipped="0" tests="1" time="321.76" timestamp="2022-12-12 08:41:28"><testcase classname="org.icrc.hrspace.EC.Workflow" name="Change address"><error message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;.//textarea&quot;}&#10;  (Session info: chrome=108.0.5359.99)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PCS13944', ip: '192.168.100.39', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.99, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\A564240\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:49699}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: c4eb3b4feeff2ca1369515146159cdce&#10;*** Element info: {Using=xpath, value=.//textarea}" type="org.openqa.selenium.NoSuchElementException">no such element: Unable to locate element: {"method":"xpath","selector":".//textarea"}
+  (Session info: chrome=108.0.5359.99)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PCS13944', ip: '192.168.100.39', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.99, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\A564240\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:49699}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: c4eb3b4feeff2ca1369515146159cdce
+*** Element info: {Using=xpath, value=.//textarea}</error><system-err>no such element: Unable to locate element: {"method":"xpath","selector":".//textarea"}
+  (Session info: chrome=108.0.5359.99)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PCS13944', ip: '192.168.100.39', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.99, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\A564240\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:49699}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: c4eb3b4feeff2ca1369515146159cdce
+*** Element info: {Using=xpath, value=.//textarea}&#13;
+pages.GenericPage.scrollIntoView(GenericPage.java:198)&#13;
+pages.GenericPage.typeIntoTextFieldInputThenEnter(GenericPage.java:84)&#13;
+pages.MyEmployeeFilePage.populateTextAreaField(MyEmployeeFilePage.java:1085)&#13;
+steps.EC.MyEmployeeFileSteps.when_I_populate_text_area_field(MyEmployeeFileSteps.java:4087)&#13;
+org.icrc.hrspace.EC.Workflow.changeAddress(Workflow.java:202)&#13;
+</system-err></testcase></testsuite>

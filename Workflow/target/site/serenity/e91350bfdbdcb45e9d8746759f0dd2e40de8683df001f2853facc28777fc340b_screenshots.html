@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Selenium Serenity Tests FAD APPLIC</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="3b74b6f2c781990f82a1016a8e5c7540df1721250d4039b778c2a90cf0045117.html">Workflow</a></span>
+                > <span class="truncate-60"><a
+                    href="e91350bfdbdcb45e9d8746759f0dd2e40de8683df001f2853facc28777fc340b.html">Update marital status </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 12-12-2022 18:18</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Workflow </span>
+                                    <span class="badge tag-badge" style="">Story</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Update marital status
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space as 'Kathrine Alkjaersig Vad'" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space using 'A186795' account" width="941"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'A186795' account" width="1931"/>
+                <img src="4b34f1647fbc09efead170fe50c1323b8f3c3ad1dc744c87b1b88d18fde43de7.png" title=" Given that I'm logged in to HR space using 'A186795' account" width="1931"/>
+                <img src="6490a45a59d5d32315fa0b5266c709044e00d9862af4bda313864394c102e497.png" title=" Given that I'm logged in to HR space using 'A186795' account (completed)" width="1931"/>
+                <img src="6490a45a59d5d32315fa0b5266c709044e00d9862af4bda313864394c102e497.png" title=" Given that I'm logged in to HR space as 'Kathrine Alkjaersig Vad' (completed)" width="1931"/>
+                <img src="89230bb182974a43e7a6db2495c05ca730378fa2f9ad8f519b2032a6f4860623.png" title=" When i click tile: My Profile" width="1931"/>
+                <img src="766826a935b5313842a7bc149b006b56a6c321bcbb2bd20a8ee22e829e92f0b5.png" title=" When i click tile: My Profile (completed)" width="1931"/>
+                <img src="16cdbdbda161aec3548ba956895c582101fd054ca4ddca93cc861ed4d837ac16.png" title=" When i go to personal info" width="1931"/>
+                <img src="3b9b6a51be31fd7497b3a0fa333302eaa75d5eb7a8ca8a2cdf1c413b694dc6bf.png" title=" When i go to personal info" width="1931"/>
+                <img src="02d8a4bd32930ad2029cb380cf5f3cd1e8753b110bd9309097d83f75adb2666d.png" title=" When i go to personal info" width="1931"/>
+                <img src="02d8a4bd32930ad2029cb380cf5f3cd1e8753b110bd9309097d83f75adb2666d.png" title=" When i go to personal info (completed)" width="1931"/>
+                <img src="ce5fde4b469d1cfb713fa564268e10b2c32a918bd5f8fca62ff2c97750834c04.png" title=" When i click on portlet edit button: Personal Information" width="1931"/>
+                <img src="8783469376971edab6b88bc3e801dddce2f5bb07929fb70aa4fa107171d0637f.png" title=" When i click on portlet edit button: Personal Information (completed)" width="1931"/>
+                <img src="ce5fde4b469d1cfb713fa564268e10b2c32a918bd5f8fca62ff2c97750834c04.png" title=" When i populate effective date: 10/12/2022" width="1931"/>
+                <img src="a916531ed770d7b52cbea69859fcbc547f3aef5ff1aa4a382ce02d6a4fd794d2.png" title=" When i populate effective date: 10/12/2022 (completed)" width="1931"/>
+                <img src="6c3137adfba2897366b2e9a4828e63e6f8c06c22b2451f850b20d12f1f4276b4.png" title=" When i update marital status: MARRIED" width="1931"/>
+                <img src="7ff2fa0ed5a653ffb92b4d08c94505714b9a4e95c2c5294716fe3ff08e19e1fe.png" title=" When i update marital status: MARRIED" width="1931"/>
+                <img src="7ff2fa0ed5a653ffb92b4d08c94505714b9a4e95c2c5294716fe3ff08e19e1fe.png" title=" When i update marital status: MARRIED (completed)" width="1931"/>
+                <img src="562b7647e00fe48dee8e2959a274267cb920e69c4738f0e25901a358679b492b.png" title=" When i update marital status since: 23/11/2021" width="1931"/>
+                <img src="c0f120fa8143627cd29c37c4c98f232157d7f0f73d6b3e1a7899d73c69153d6c.png" title=" When i update marital status since: 23/11/2021 (completed)" width="1931"/>
+                <img src="cde57a6abab406a7c136ea9972849a09eda7c0883de62e6563bbbab63abf1079.png" title=" When i click save button" width="1931"/>
+                <img src="7c565853858609029e5e10e3eb0933e1093bbef7bf92e8297d544f9c1b095a01.png" title=" When i click save button" width="1931"/>
+                <img src="9f8211e7096bb6141dd68870c5026f0e9e6fcedc1b8402a45d65ec075fd85f75.png" title=" When i click save button (completed)" width="1931"/>
+                <img src="a710e2446b9e3a1e3d0e2a2900884747fb8191ecd52b9214d85f74387cab1a8d.png" title=" When i populate text area field: CH COMMENT" width="1931"/>
+                <img src="7f4b653a7f711e371818c283d837d678ca555bfb833dfebe56ce46367e945563.png" title=" When i check workflow participant: HR Admin for CH" width="1931"/>
+                <img src="22015c256f89cd90adef796ea7ee1645299f5b7ca2373e6f498c17f2e9d61ad7.png" title=" When i check workflow participant: HR Admin for CH (completed)" width="1931"/>
+                <img src="3f8e8dfa969ca9459922b2d869aaa6668d018da1f74fcf08be3dbc36e5db541c.png" title=" When i click confirm button" width="1931"/>
+                <img src="b554b445fccd9ad291a84ca644961ae472c2825b01c7d3a36abb600595f4f3d2.png" title=" When i click confirm button (completed)" width="1931"/>
+                <img src="f8784025b75c50dc12422acd8f7a8627fc3ccb35e9680ee65c5afb39bfd7032e.png" title=" When i go to personal info" width="1931"/>
+                <img src="ab0f46ddfaba4a98ce178a5bb6c3fcea21c3129ac8067d110dc5e191ccde23d6.png" title=" When i go to personal info" width="1931"/>
+                <img src="ab0f46ddfaba4a98ce178a5bb6c3fcea21c3129ac8067d110dc5e191ccde23d6.png" title=" When i go to personal info (completed)" width="1931"/>
+                <img src="6490a45a59d5d32315fa0b5266c709044e00d9862af4bda313864394c102e497.png" title=" When I set the header module to 'Home'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'Domer DIMAYACYAC'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'A693514' account" width="1931"/>
+                <img src="def6f579fb9904ed33d5af77bbb3e57232136f17efd3ca799f15b1dc86ca56d1.png" title=" Given that I'm logged in to HR space using 'A693514' account" width="1931"/>
+                <img src="48000e1576d6b7473c2a4491cbd92597385bacf36d678740c749609ff417136e.png" title=" Given that I'm logged in to HR space using 'A693514' account (completed)" width="1931"/>
+                <img src="48000e1576d6b7473c2a4491cbd92597385bacf36d678740c749609ff417136e.png" title=" Given that I'm logged in to HR space as 'Domer DIMAYACYAC' (completed)" width="1931"/>
+                <img src="1c364191a982755ff28516af28ef4dc39283a581ac39ae213ec7f6407524ca1f.png" title=" When i click approval request tile: Review and Approve" width="1931"/>
+                <img src="1c364191a982755ff28516af28ef4dc39283a581ac39ae213ec7f6407524ca1f.png" title=" When i click approval request tile: Review and Approve (completed)" width="1931"/>
+                <img src="453933b889cc4cd6f6ab4f177d8a1103eee7905fe1de0aeb4b2b8b499bcf9b85.png" title=" Then the new value is reflected in marital status: MARRIED" width="1931"/>
+                <img src="0d75fce0edec11f253c747996d2cd3db89d47377a82141461461add02cefdaff.png" title=" Then the previous value is reflected in marital status: CIVIL UNION/PARTNERSHIP" width="1931"/>
+                <img src="0d75fce0edec11f253c747996d2cd3db89d47377a82141461461add02cefdaff.png" title=" Then the new value is reflected in marital status since: 23/11/2021" width="1931"/>
+                <img src="0d75fce0edec11f253c747996d2cd3db89d47377a82141461461add02cefdaff.png" title=" Then the previous value is reflected in marital status since: 23/10/2021" width="1931"/>
+                <img src="cd374ac13a457b88090dd5253fe003da0ab2dc21e561c4ded7f547c28a80133b.png" title=" When i populate text area field: HR ADMIN COMMENT" width="1931"/>
+                <img src="03a8fa2666c2a46431f26ee59505bd29c9334b3cd95472f513f570d3d4710ca3.png" title=" When i click post button" width="1931"/>
+                <img src="8dd3a154b36bd537b37e797feddc3109ec5597cc4943f806795266b9932e9b95.png" title=" When i click post button (completed)" width="1931"/>
+                <img src="8dd3a154b36bd537b37e797feddc3109ec5597cc4943f806795266b9932e9b95.png" title=" Then the value is reflected in activity portlet: HR ADMIN COMMENT" width="1931"/>
+                <img src="07ed8c9065371e8515cfad45c1642e2d10d20a621f132b72100f9d1dfb4e293d.png" title=" When i click approve button" width="1931"/>
+                <img src="ffb15308dc90507a5524025a6b8710ccbbab8d857fefff3230709b2fcc2649e1.png" title=" When i click approve button (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'Kathrine Alkjaersig Vad'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'A186795' account" width="1931"/>
+                <img src="440c4e49bb47c58df5fb60db67f5348a17d8ea220b7ed4cbbf355674f8bca9ee.png" title=" Given that I'm logged in to HR space using 'A186795' account" width="1931"/>
+                <img src="6490a45a59d5d32315fa0b5266c709044e00d9862af4bda313864394c102e497.png" title=" Given that I'm logged in to HR space using 'A186795' account (completed)" width="1931"/>
+                <img src="6490a45a59d5d32315fa0b5266c709044e00d9862af4bda313864394c102e497.png" title=" Given that I'm logged in to HR space as 'Kathrine Alkjaersig Vad' (completed)" width="1931"/>
+                <img src="6490a45a59d5d32315fa0b5266c709044e00d9862af4bda313864394c102e497.png" title=" When I set the header module to 'Home'" width="1931"/>
+                <img src="93e0133d69aedc3f073385cbeb2f01e109a6f007824c099c06b64a3fb9728297.png" title=" When i click tile: My Profile" width="1931"/>
+                <img src="9ee4c9e09b2c37f4dd6e77d5a0f26074625e739b699e98d04194aa4a13bdfb6b.png" title=" When i click tile: My Profile (completed)" width="1931"/>
+                <img src="80ef620ab37a80afb437c831381773c5850379bd2f67f7933eb0e64d131b99cc.png" title=" When i go to personal info" width="1931"/>
+                <img src="9fefe70ce39127defb7bc49308f201bfad5846c1da73f8a4fa1487657846915c.png" title=" When i go to personal info" width="1931"/>
+                <img src="9fefe70ce39127defb7bc49308f201bfad5846c1da73f8a4fa1487657846915c.png" title=" When i go to personal info (completed)" width="1931"/>
+                <img src="9fefe70ce39127defb7bc49308f201bfad5846c1da73f8a4fa1487657846915c.png" title=" Then the updated value is reflected in marital status: MARRIED" width="1931"/>
+                <img src="9fefe70ce39127defb7bc49308f201bfad5846c1da73f8a4fa1487657846915c.png" title=" Then the updated value is reflected in marital status since: 23 Nov 2021: <span class='success-color'>SUCCESS</span>" width="1931"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.6</span>
+</div>
+</body>
+</html>
