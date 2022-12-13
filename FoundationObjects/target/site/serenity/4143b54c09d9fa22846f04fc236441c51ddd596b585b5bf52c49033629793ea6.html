@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Stories</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            var scenarioTable = $('.scenario-result-table').DataTable({
+
+                "order": [],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+
+            $('.example-table table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('.example-table-in-scenario table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('#evidence-table').DataTable(
+                    {
+                        searching: false,
+                        ordering: false,
+                        paging: false,
+                        info: false
+                    }
+            );
+
+
+            $(".scenario-docs .card-body table").wrap("<div class='table-responsive'></div>");
+
+            $("#requirements-tabs").tabs();
+            $("#test-tabs").tabs();
+
+            var requirementsTree = [{"text":"Foundation objects","type":"story","href":"4143b54c09d9fa22846f04fc236441c51ddd596b585b5bf52c49033629793ea6.html","nodes":[],"selectable":false,"tags":["","\u003cspan class\u003d\u0027feature-count\u0027\u003e12 scenarios\u003c/span\u003e"]}];
+
+            $('#tree').treeview({
+                data: requirementsTree,
+                enableLinks: true,
+                showTags: true,
+                expandIcon: "glyphicon glyphicon-folder-close",
+                collapseIcon: "glyphicon glyphicon-folder-open",
+                emptyIcon: "glyphicon glyphicon-book"
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".scenario-docs > div > p").html(function () {
+                var text = $(this).text().trim().split(" ");
+                var first = text.shift();
+                return (text.length > 0 ? "<strong>" + first + "</strong> " : first) + text.join(" ");
+            });
+        });
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Selenium Serenity Tests FAD APPLIC</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+
+                > <a href="00a94e078b86ad8d811fe6179933c108e8d44a381baebafecac9dbfd66f7554c.html">EC</a>
+
+
+                > <span class="truncate-40">Foundation Objects</span>
+
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 13-12-2022 12:47</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="table">
+                <div class=row">
+                    <div class="col-sm-12">
+                        <div>
+                            <div clas="table">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                    <span>
+                                            <h2><i class="fa fa-book"></i> Story:  Foundation Objects</h2>
+                                        </span>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="requirementNarrativeTitle">
+                                
+                            </div>
+
+                        </div>
+                    </div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- Requirements result tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#specs"><i class="fas fa-comments"></i> Specifications</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#results"><i class="fas fa-tachometer-alt"></i> Test Results</a>
+                        </li>
+                    </ul>
+
+                    <!-- Specifications and Results tabs -->
+                    <div class="card border">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div id="specs" class="tab-pane fade in active">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+
+
+                                            <h3>Scenarios</h3>
+
+                                            <div id="toc">
+                                                <table class="table" id="toc-table">
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#225e901c75d4cd6ab830c352876b8ee2fd131f8bfc9112ca2cd4472e5b6ceda3" title="View scenario details" >Create delegation</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="db934e314d8cee547ca6adbcfccabf964ad46e095036bf765c226f7e8ecf1598.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="db934e314d8cee547ca6adbcfccabf964ad46e095036bf765c226f7e8ecf1598.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#4c78d701884af8a4ad2094e1b96790129381a4f28c0e5f18bfeec7ecf6ac5f02" title="View scenario details" >Create country</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="d07de060dd54ed34f8a0c184f1b7fb07691110351219f4ad2ab01ed3bee845de.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="d07de060dd54ed34f8a0c184f1b7fb07691110351219f4ad2ab01ed3bee845de.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#6afb5f57dc25321effa40ff63662ed30652f2a2f558dc2a96143b5ecca068f0d" title="View scenario details" >Create location</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="79c4bdbb5793d0db32d9986b9b15b88a6b821fdf1cc97b25172adf40cd0b7af9.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="79c4bdbb5793d0db32d9986b9b15b88a6b821fdf1cc97b25172adf40cd0b7af9.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#8a08b7d7e6d16d17ed8accc9c8e74d972c479cecce8c984628aafe429cb5e277" title="View scenario details" >Create job level</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="cf0607b91e613aefb0eb2a46d0cb0070aad08f7035d1207b795c30ef4c42bf27.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="cf0607b91e613aefb0eb2a46d0cb0070aad08f7035d1207b795c30ef4c42bf27.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#2aada302f9ea8cbfe5d6f728e53eb023f995dbc9a702eae0ff4676f8c59a10bd" title="View scenario details" >Create frequency</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="9d8051eca01abe3039fd28e8cb32b9be36a9ad64859a9b648edcc6c724ad32dd.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="9d8051eca01abe3039fd28e8cb32b9be36a9ad64859a9b648edcc6c724ad32dd.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#c62c6cf6666138a08d7282e8239269e60cd686c5fd7e8110537767e79bfe3cf6" title="View scenario details" >Create pay component</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="26c23305efb5a7876a728d797e9571e504560d6dc7b148fb5efde9d79ae9d2cf.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="26c23305efb5a7876a728d797e9571e504560d6dc7b148fb5efde9d79ae9d2cf.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#ae8d68efeb076bc615670ee2b9f929dc18126bacbc2233344e959ee81a829fb7" title="View scenario details" >Create legal entity</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="fd15d47c014785dc72d9e495433e551aecbd9f51632251fe6379e5359c85b7b6.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="fd15d47c014785dc72d9e495433e551aecbd9f51632251fe6379e5359c85b7b6.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#92cc4b775a6c78baf149d38b3feaf79773f94874ad3410d00295c0448dc8b746" title="View scenario details" >Create cost center</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="477b0d2aba0a172f1997d088d60b189b34ca0104bff168a366960728504ad09b.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="477b0d2aba0a172f1997d088d60b189b34ca0104bff168a366960728504ad09b.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#1d8ac4dda8a85d7ae89330677856230d5433ce209e8c89d14585841073371d1e" title="View scenario details" >Create work unit</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="0a74b114925172ae2ec7df766fc4308fbb16f34240a92c55e948a3ff3c72d618.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="0a74b114925172ae2ec7df766fc4308fbb16f34240a92c55e948a3ff3c72d618.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#c3ba145437590142092fef9ab645a539fccd4c0ff838ba6fc4859824f37a69cc" title="View scenario details" >Create job classification</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="38c1b71e5e8402691b980fa3f0235d2e065c61246728958702b2eb7dac8c684d.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="38c1b71e5e8402691b980fa3f0235d2e065c61246728958702b2eb7dac8c684d.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#22d90df022967124c42884ef3a30d9ccad869433a894d114ee39c7f1b9194a05" title="View scenario details" >Create sub family</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="b2fda303ad7d0a87187bfd3a222e6a596f08798d3b5911da80e98f5a970bf3e6.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="b2fda303ad7d0a87187bfd3a222e6a596f08798d3b5911da80e98f5a970bf3e6.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#6a5dbcf315edd8c4bbb6b19aa70e4504d27354eff4035f6ba35ff30ae21c3785" title="View scenario details" >Create position</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="c5bb8fb35ea1ced72114c7f99626943b9f2ba5f28f21e71a81dfe737f43df85e.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="c5bb8fb35ea1ced72114c7f99626943b9f2ba5f28f21e71a81dfe737f43df85e.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                </table>
+
+                                            </div>
+
+                                            <h3>Scenario details</h3>
+
+                                                <div class="scenario-docs card" id="225e901c75d4cd6ab830c352876b8ee2fd131f8bfc9112ca2cd4472e5b6ceda3">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="db934e314d8cee547ca6adbcfccabf964ad46e095036bf765c226f7e8ecf1598.html" title="View test results">Create delegation</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When HRIS reviews delegation details field: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, de5UvLybBWkErY5BaCrGvUZaACnVYBH4, aXK5BLRC1XbDkOj27iToy5JDZAfVCpS8znWBnYM6MQEzDcdwpKfX6VU0dxC6iJztoZgf3PYTt6n0c5TNWfVKNqEeJ5, iiKs7v87JUDWy98Ct6CTiMA1uAJTCp5gRfxuRs77jAVFrhxneKaSRyt5JFdtNhC8kZgQuT65Lqq5Sxp0UMQbeWWnXM5JD7ojBZdMPYRDpWj4Kx0pKtTxMnjdxrefMdOB, Active, SYcwr3uho54RET9Gzql3, IMZNP1JCl4Bpmqad6jfU2qo8jpHbkn3MXzEv5CDjj04GxXLQ8qBCtlE6U9lVcG4UXGRAFHXvFtOPejCGUMpeUZImXgKGNqnphdpsJj5uTOvMk0twO0bMSUtOfbrf28qsYmsluTW2XXUSCHEo69GkDDbuUIlh7H8JVYVFIE2XKZITfp0DACqjU8FCuBr9KrSzBd8fWVMWFDJ9SSiA56IYEjZCcsslR5PzM1GsKALqvPP9QDNCKJuos7XENpgqCqpL, GqkWDHKpLSt3L81Pjg8X, nYlxBD2ETCoBFOmoBK1QvFglwYXZ2xWNPuuzUz90HzPKVkTZqTj4HI13BfvW6ED8nHpf6XOrCxg7rUZ5mligy64aEYjMYwlWTRZBVRZrMdZDceOInl4M55fxUVqcXJ8WQFQi7y9Yoni2iFn16yrxliIKbZYZI6TvXlKGVMBB1pQJWY0gcZF0OIoSXbfQ0Zv2SwLreO3ZOJmqRlDAILhNJbkeXE1h1oQjr7MpnPuJ0gaKi7JMsw8z48WZjLM3T5AT</p>
+                                                            <p>When HRIS adds and deletes a favourite: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Manage Organisation, Pay and Job Structures</p>
+                                                            <p>When HRIS submits a delegation: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, Aa1OyWeGixLx, AaXH2LosbNYxOa9ITA877p, bYBKbCZTaL0ebSIlUpApodMG4JYdgghUvwQUufXw3yoqnYdPPqaKL4QK5JkbvlvQmWBehEiR5DqMhanYQDdPMhu5Ah, Active, AExpnO19El, CkFCDuT3TgI2pj3BDu2zlof6Fp7by2VtY82rxdz5bae3PU9nfVT23PiHgmx6wLOfRr6HkSdUr16DG1AAaVAlvgphGJ, UGb0ItMP1z, 6OuRpMgRNA37TGbrkDwMT1SQkarzpUuu4j6FgY49h0cXy1szKbk0mqTnRr5cWkHGX94NZfnc1vzmetJJcTAQY4hSgY</p>
+                                                            <p>When HRIS modify a delegation: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, AaXH2LosbNYxOa9ITA877p, 11/12/2022, Aa8alsJxfxuH, Aa1QnKfBPiXealfWJHftEj, VijIAUciYsnV1bCmSDNCHA7ULdsMbkb4ip6KY37oGRvu5cTKU2rNp5TZZKV2GR740rTu8rQAsKFXUs8SCf8tF3fzJh, Active, ybpp8hWxmi, G0jiZtDwcpDnKXQQxBENAbeTuLquYo7v5lfhfJUHelGDuGc07Dux9gkITHAmzV1lc3BkFM9HG3DfZID7cdZGpgOzaE, 0pH7xI16zw, 3O4wsfW5dZpaX9zNvY9mBtpSaiHvI5n1SaAgpEC3Z86EX9G6S0di6cGfCXXLkHODoMtgULQ6PV2o0FzZhSyxa1PwKB, Aa1OyWeGixLx, bYBKbCZTaL0ebSIlUpApodMG4JYdgghUvwQUufXw3yoqnYdPPqaKL4QK5JkbvlvQmWBehEiR5DqMhanYQDdPMhu5Ah, AExpnO19El, CkFCDuT3TgI2pj3BDu2zlof6Fp7by2VtY82rxdz5bae3PU9nfVT23PiHgmx6wLOfRr6HkSdUr16DG1AAaVAlvgphGJ, UGb0ItMP1z, 6OuRpMgRNA37TGbrkDwMT1SQkarzpUuu4j6FgY49h0cXy1szKbk0mqTnRr5cWkHGX94NZfnc1vzmetJJcTAQY4hSgY</p>
+                                                            <p>When HRIS set the status to inactive: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Delegation, Aa1QnKfBPiXealfWJHftEj, 11/12/2022</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="4c78d701884af8a4ad2094e1b96790129381a4f28c0e5f18bfeec7ecf6ac5f02">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="d07de060dd54ed34f8a0c184f1b7fb07691110351219f4ad2ab01ed3bee845de.html" title="View test results">Create country</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When HRIS reviews country details field: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, fug1aHDuSZg25m33q3RctZDOG6PHKV0M, nhoZ0Axo9D0gwRi6G0NZ3P2fv8TiXiAC4W3sToxqGZodzMiXLklAmVjTy1ImQquFRE2ubxn7mEwzq5GZK1XbPsdZFi, ulyZAn8400zerLPcQRTG1aUkJuKLFV0CdfjMhTsTqN4A8vcY7gCdq1jaZBJSFhHVvhSrHQAzxLFagO0jvuSiSrwVh0S0669wZ3nuUTYIG0L7rBdTljSth3Ho55e95Hwm, Active</p>
+                                                            <p>When HRIS adds and deletes a favourite: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Manage Organisation, Pay and Job Structures</p>
+                                                            <p>When HRIS submits a country: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, AagREk9FpZJT, Aaz3Z76mFI9Jdvc9m7WoU6, fmUJCKBIwWndsZja34ysB7xkUKJ1gmG0uZDXZECqLUXsCptRCTVsHARkeFmbpOBRrdi4HMy6VbxZEf9xJprRagVYi2, Active</p>
+                                                            <p>When HRIS modify a country: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, AaSObXv1V8M8, AaRvDAqUHtZvsrE5yW8FdR, FYAr8GgHpw7gcE2AIsJGP7mefkFv1D4Ty0vMsY8JuOHMgaQuKC03Ck1hgW9UIbiZt3FjNyRtYVtcmyojOC4C8QP19h, Active, AagREk9FpZJT, Aaz3Z76mFI9Jdvc9m7WoU6, fmUJCKBIwWndsZja34ysB7xkUKJ1gmG0uZDXZECqLUXsCptRCTVsHARkeFmbpOBRrdi4HMy6VbxZEf9xJprRagVYi2, Active</p>
+                                                            <p>When HRIS set the status to inactive: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Country, AaRvDAqUHtZvsrE5yW8FdR, 11/12/2022</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="6afb5f57dc25321effa40ff63662ed30652f2a2f558dc2a96143b5ecca068f0d">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="79c4bdbb5793d0db32d9986b9b15b88a6b821fdf1cc97b25172adf40cd0b7af9.html" title="View test results">Create location</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When HRIS reviews location details field: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, kG18MOp6EbGqlw2ZOzsxC8ibn568u7ey, LHj6aNmwGKfmQJu2NUqVM59Syh4lO4RRSGTG2eiIfH7C2EbSzjh4SKwpWLBvT100yQKt5BECAXejeCM9S4IiQrZ7b7, ozDECUsibbJx43nXUfbWibKUk4i3iEO0o5oELdVKyWxNSHsUUs1yj54JhldoEFzSb0mNKdmqvatmfuSSdQYmnYHHhpvaFVyBJlNHjbOHLdSJ0Qc4UL6L6HgGhjEhkXpq, Active, Egypt, Egypt, Africa/Cairo, Hardship level 0, Egypt, 1234, Egypt</p>
+                                                            <p>When HRIS adds and deletes a favourite: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Manage Organisation, Pay and Job Structures</p>
+                                                            <p>When HRIS submits a location: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, Aa5KwpoArgtu, AaEgLkeiJng74rsTBOYI7H, Aaz3vTsc1mbaCsUQpzyRnUXYkYWWvqVMhZF142KoKgZddXaTMiOm5HGJaAcMBSOYIMLvxgjTHXajqG6c7eJnl9r3UKc1, Active, Egypt, Egypt, Africa/Cairo, Hardship level 0, Egypt, 5.9, Egypt</p>
+                                                            <p>When HRIS modify a location: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, Aaw7scrnlAUn, Aa7v4hd8f50pC4EVbBGosr, AaEdVAFPcteIrp6E0LaJ8eeDMCXlAROFdoSQIKKa24JxQkcAvU4etil1OoksFmiQo20QaF3FiwMfnOrkp61cBkikwB2b, Active, Philippines, Philippines, Asia/Singapore, Hardship level 1, Philippines, 8.9, Philippines, Aa5KwpoArgtu, AaEgLkeiJng74rsTBOYI7H, Aaz3vTsc1mbaCsUQpzyRnUXYkYWWvqVMhZF142KoKgZddXaTMiOm5HGJaAcMBSOYIMLvxgjTHXajqG6c7eJnl9r3UKc1, Active, Egypt, Egypt, Africa/Cairo, Hardship level 0, Egypt, 5.9, Egypt</p>
+                                                            <p>When HRIS set the status to inactive: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Location, Aa7v4hd8f50pC4EVbBGosr, 11/12/2022</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="8a08b7d7e6d16d17ed8accc9c8e74d972c479cecce8c984628aafe429cb5e277">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="cf0607b91e613aefb0eb2a46d0cb0070aad08f7035d1207b795c30ef4c42bf27.html" title="View test results">Create job level</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When HRIS review job level details field: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, eE368kNgXgsnrzLqi8WZ1TpbUvinarm9, QkcKeo9g2poInGOS3sW4Y7C1ETgCLZuazUC2URY9HPUlLiNEdF7Vp8SsMRijJQdL2iV0cbnecr90zdWKsT95anc0iX, aCHAZAD0qdOBpbgFZiVNytnWfPgMpyeN7UlotJgRkd0mEygZFiE8GJjWiaIUbI2UK50K0wo7gM9UtzoMf1NTsjF2CbkOHwwj6Jgyc8bpQ5p1NsJNEEQ0tMPuuIcYL6zY, Active</p>
+                                                            <p>When HRIS adds and deletes a favourite: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Manage Organisation, Pay and Job Structures</p>
+                                                            <p>When HRIS submits a job level: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, AanS7B6Iw4KW, Aa1ecxdLl1xF07p9yrGObm, JFRxGJBZUolVNaex9VFMJmz6VBpoqphVDuxaaKLhf1VBAweGEYCswkU9YYhIv6RsixI4LdvY7vvkkqpJQbzzNxyKPJ, Active</p>
+                                                            <p>When HRIS modify a job level: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, Aapvby0Iau0N, Aa7gVJODnYJk0jvfvVxCWJ, 768mrUkr4FJ7i9xrf9gmggivvxq1AOxV2XTCdxR93K9CU28vn1vFAzUuOGHGZ1SoQd49Kg33eYYV2kCdzwE1POJ8QL, Active, AanS7B6Iw4KW, Aa1ecxdLl1xF07p9yrGObm, JFRxGJBZUolVNaex9VFMJmz6VBpoqphVDuxaaKLhf1VBAweGEYCswkU9YYhIv6RsixI4LdvY7vvkkqpJQbzzNxyKPJ, Active</p>
+                                                            <p>When HRIS set the status to inactive: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Job level, Aa7gVJODnYJk0jvfvVxCWJ, 11/12/2022</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="2aada302f9ea8cbfe5d6f728e53eb023f995dbc9a702eae0ff4676f8c59a10bd">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="9d8051eca01abe3039fd28e8cb32b9be36a9ad64859a9b648edcc6c724ad32dd.html" title="View test results">Create frequency</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When HRIS reviews frequency details field: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, tanVLVKfWmsEMkKW3OVYBoHuVLUNgDZ4, 1NVHP1sV2b16kyqKJFkM9fysFqrv3D5WRJ3lJ0icn1zDzQ3yZKkvyD4d4yrm3bZOs137IyilQA6VgCBBfx9h74gN1H, XqSV11oHPwpBYOM2JJApeT5mqAXFx8iO8GdLb3GIrSIuJfshGCyV9MB1hDSws0mITKfq5q6MhQU3KBCc4JXBvbrjmShumnGQmi36oajyy8EVC0CbqkjIfbprRFW0Hc6X, 9.9</p>
+                                                            <p>When HRIS adds and deletes a favourite: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Manage Organisation, Pay and Job Structures</p>
+                                                            <p>When HRIS submits a frequency: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, A7iqinRUABf, A5YtQu9ku3ApMvAZUu7HJ, Y3op1VuhvS3atYHj7ITV5pYkBFpsojI44QvfXaNTxaZDwYuRRCyiN9FqHaBVZCf3QhgTLqg8bVxupQHrjNeiEwQBct, 9.9</p>
+                                                            <p>When HRIS modify a frequency: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, AKFnVynkkci, AuFdY9ImMPktabGYeTcPD, CeWa22RzqBHcHnq9VSxGEJyhHZTHitR2IdNNXJAZW7DMlFFvpXstT0MI2GXowvW7EAp7FIUFqB47uMcgFnzOZvtsEu, 12, A7iqinRUABf, A5YtQu9ku3ApMvAZUu7HJ, Y3op1VuhvS3atYHj7ITV5pYkBFpsojI44QvfXaNTxaZDwYuRRCyiN9FqHaBVZCf3QhgTLqg8bVxupQHrjNeiEwQBct, 9.9</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="c62c6cf6666138a08d7282e8239269e60cd686c5fd7e8110537767e79bfe3cf6">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="26c23305efb5a7876a728d797e9571e504560d6dc7b148fb5efde9d79ae9d2cf.html" title="View test results">Create pay component</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When HRIS reviews pay component details field: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, q8dEIdcDuU2WGysbrjhZuF3nlQH0YLPq, cPL5eVaOYELUpr71LcVPXdJFgJga2tTj, XqHbDJBMfvH4XDsO0vk7dLOFrjLUoPVywYEPB0o6WoCkpKPWwG38WJOESc1wMAhIm9cZtDCM1ljikQmyLNfM7CQ4I6UnLbOM7RMXNnBEqsws0QOYv5XcAkO1DTIheJQb, Active, Amount, No, CHF, 100, Annual, Yes, Gross, Yes, fhg9Vg99pgxbpTcUUYWI480PBcub567r, Yes, Comp, No, 2, No</p>
+                                                            <p>When HRIS adds and deletes a favourite: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Manage Organisation, Pay and Job Structures</p>
+                                                            <p>When HRIS submits a pay component: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, AbT2jPRjJX4, A7IIxudvA0x, HZvke6SPEmRTIAurydirOsJ1gjh0S3kADWQvOGYn18OgxkDdlC, Active, Amount, No, CHF, 100, Annual, Yes, Gross, Yes, PZfMxUl3OSYl3pGXJv1h67IGXrPiPMKF, Yes, Comp, No, 2, No</p>
+                                                            <p>When HRIS modify a pay component: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, AsOpgKqn3JQ, A4uk9j2K1Yr, ZQ5iduZaM4k28EwxzHIgxRHbXnBViZJevyGy1N43hD7gKnt1AA, Active, Percentage, Yes, PHP, 90, Total Deduction Period, No, Regular, No, DcUQjTnADHZbtQ7G9DAlDlaBvpnF7VZw, No, Varpay, Yes, 1, Yes, AbT2jPRjJX4, A7IIxudvA0x, HZvke6SPEmRTIAurydirOsJ1gjh0S3kADWQvOGYn18OgxkDdlC, Active, Amount, No, CHF, 100, Annual, Yes, Gross, Yes, PZfMxUl3OSYl3pGXJv1h67IGXrPiPMKF, Yes, Comp, No, 2, No, Base Salary</p>
+                                                            <p>When HRIS set the status to inactive: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Pay Component, A4uk9j2K1Yr, 11/12/2022</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="ae8d68efeb076bc615670ee2b9f929dc18126bacbc2233344e959ee81a829fb7">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="fd15d47c014785dc72d9e495433e551aecbd9f51632251fe6379e5359c85b7b6.html" title="View test results">Create legal entity</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When HRIS reviews legal entity details field: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, QWYLxdSSvYjFiiIwpWgV6neMSKpWz87U, E8yQKCpC2vWt5Yk7F3DpYegjKTMEgKzMnsbPhaoSkxfvqln6C3hZYsFhjgtYzs7nXu3DL2tKWYBcdIS42uCMtPcfYc, Ez27ehE5RPwTPHUBtBYg8NOaNUnyXoFeraJBAHvqS98vjofBtLUU8NJGuc0LtgjWWxCk6frl8msdDMbo3ni1Yml8jibMscfOonNfJThhiu3IVTvHG402DZGWaZxBySHT, Active, PeopleNet, 48, SWISS FRANCS, Switzerland, Mobile, English, Base Salary, Legal entity change</p>
+                                                            <p>When HRIS adds and deletes a favourite: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Manage Data</p>
+                                                            <p>When HRIS submits a legal entity: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, Avke4LPFva3, AEJDIz9d5Mg, s7jhkAALGALTTmuV7brRjbqTHlrCQV3RwhfW24uz, Active, PeopleNet, 48, SWISS FRANCS, Switzerland, Mobile, English, Base Salary, Legal entity change</p>
+                                                            <p>When HRIS modify a legal entity: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, AO7EQmp1OCH, AAqngs4cFZt, NMs6oJ7MzcNEgr91LodRl0w7496JsBRwdtWwTQ24, Active, Strategic MSC, 40, Philippine Peso, Philippines, Direct From the Field, Spanish, Hardship incentive, ANNUAL SALARY REVIEW, Avke4LPFva3, AEJDIz9d5Mg, s7jhkAALGALTTmuV7brRjbqTHlrCQV3RwhfW24uz, Active, PeopleNet, 48, SWISS FRANCS, Switzerland, Mobile, English, Base Salary, Legal entity change</p>
+                                                            <p>When HRIS set the status of managed data to inactive: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Legal Entity, AAqngs4cFZt, 11/12/2022</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="92cc4b775a6c78baf149d38b3feaf79773f94874ad3410d00295c0448dc8b746">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="477b0d2aba0a172f1997d088d60b189b34ca0104bff168a366960728504ad09b.html" title="View test results">Create cost center</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When HRIS reviews cost center details field: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, GUdm4sZxm8TIxt4wY9tjSOqd5QxzdxhS, 5T0Ovf26Rud53RjgVUJVm00DVnWQoRqrGZI3G1gWQpGCBqwaJIvrAqMtsSD4eILLk8g9wLgqvkBeH49y7ngngXWrCd, c7O6h9mndYFLRUIhf2sUkLTkqovUc6lwRG0g7r1HHRydI618PEtr9jZoJeuVVxCuirpACbOazBizCmArEwsrjgx5U5xyuqhsgtjNmcsCTpSydPM6Gei2jd1X0Y423Tsf, Active</p>
+                                                            <p>When HRIS adds and deletes a favourite: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Manage Data</p>
+                                                            <p>When HRIS submits cost center: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, AKaTIcxdS46, Atnnh99LwVd, DzPEEy8xrC5qOkec70U4T8VjDbb6lDuAw755WqusUnDDZM1bOI, Active</p>
+                                                            <p>When HRIS modify a cost center: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Atnnh99LwVd, 11/12/2022, APLtT5GslDY, AWOnNj9jqnu, weCD7vJ1CNoGflQ1SymWNLJEoM93u3TkjRYlgDLXnfpfVauHmE, Active</p>
+                                                            <p>When HRIS set the status of managed data to inactive: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Cost Center, AWOnNj9jqnu, 11/12/2022</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="1d8ac4dda8a85d7ae89330677856230d5433ce209e8c89d14585841073371d1e">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="0a74b114925172ae2ec7df766fc4308fbb16f34240a92c55e948a3ff3c72d618.html" title="View test results">Create work unit</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When HRIS reviews work unit details field: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, LlfxUEoyXowkW2h2gXCfAkZQgruPZSri, W3qO1d4xpuVowCxWTutjI25W1xwBshS7O3mBD8NTPdTOzp6luRj98NS6GjOZ4klsupp8FO7NAVHNyuUOXp5E327ITz, 5SO1iA7V8h8HE8nF3vYbaU0SylzjK0eBvPYvc3bugrjpHCN28GEmjH5hv23XT1SByqpGxAZPeVYA7r69qtcVA9tYpIykbO3BeRrsFfT58XpoFOc0JkjNDThqoHKKTSlN, Active, OFFICE OF THE DIRECTOR-GENERAL, HQ, OFFICE OF THE DIRECTOR-GENERAL, Legal Division, Innovation</p>
+                                                            <p>When HRIS adds and deletes a favourite: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Manage Data</p>
+                                                            <p>When HRIS submits a work unit: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, AaPTdIny5hG5, AaQmuJoHmKSS, Aa9PPI6k78wXK67ArmduNkX6luccqZSNbBCA3MSHZqahfOtp62rX, Active, OFFICE OF THE DIRECTOR-GENERAL, HQ, OFFICE OF THE DIRECTOR-GENERAL, Legal Division, Innovation</p>
+                                                            <p>When HRIS modify a work unit: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, AaQmuJoHmKSS, 11/12/2022, AsyLmdWqQUU, AYtjOhyVTlQ, BPeACoLmcrZN9Ob2iJidQYY1Xr2yU8ZLd5slmGrOFjo6esleE3, Active, Financial Applications Support, FD, STAFF ASSOCIATION, Assembly, Forensic Unit</p>
+                                                            <p>When HRIS set the status of managed data to inactive: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Work Unit, AYtjOhyVTlQ, 11/12/2022</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="c3ba145437590142092fef9ab645a539fccd4c0ff838ba6fc4859824f37a69cc">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="38c1b71e5e8402691b980fa3f0235d2e065c61246728958702b2eb7dac8c684d.html" title="View test results">Create job classification</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When HRIS reviews job classification details field: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, AGcyYnNUvkrQHZLPE170iu7mj7mqkiQXX, Ascv5fopzDX5Dt6ZMcc7GDUqfGb7ZuymRGe72xg1QMEYSMbtg7KXwV2CQaChFpB6BOysY71r5RXoqSZR6pQwupicUJo, Q8xqE9eRQxu3X7Ht0sUGGOpUGBJVvo, Active, FAD Applications Manager, Top Management, B1, wM2xzjXB6amnbJWM8SqsPoRkd7tVcS6OT3Zm4Kdpfg6aHzJVgbShecflKB75S2hDPJ4cf3TlMMllTT6lSQyHd9d11t6a38ysEpwaivOGQ66tMIBmnMkaWyHZQrkbVQ1t, Canada, Finance &amp; Administration, Canada</p>
+                                                            <p>When HRIS adds and deletes a favourite: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Manage Data</p>
+                                                            <p>When HRIS submits a job classification: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, Ass2umhSDKF, AoFkOv9SWjj, q6fm2QQ8fghDdzL, Active, FAD Applications Manager, Top Management, B1, NwfDhp3FwhJmgzeZ0VpIjOEoM7Qvw4yuDFuKP0cKl75pqWoEfs5GTExnQHKI, Canada, Finance &amp; Administration, Canada</p>
+                                                            <p>When HRIS modify a job classification: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, AoFkOv9SWjj, AqCWGVoKq3p, AIqaPPEiyvE, yrGuixPSnOiKWY9, Active, ICT Application Manager, Middle Management, B2, gI0A2djMDMTssikkgwIVfuL876AIOv700l0D04JuUPIPhnZfdNkLvs7Jk7T1, Australia, Information Technology Supply, Australia</p>
+                                                            <p>When HRIS set the status of managed data to inactive: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Job Classification, AIqaPPEiyvE, 11/12/2022</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="22d90df022967124c42884ef3a30d9ccad869433a894d114ee39c7f1b9194a05">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="b2fda303ad7d0a87187bfd3a222e6a596f08798d3b5911da80e98f5a970bf3e6.html" title="View test results">Create sub family</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When HRIS reviews sub family details field: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, trjD3ommqOqISwpiv1Oid9wW0kELIzw4MTs6qxwRcPz8O6PXyk9YznfyTuOwMI8FiuRT0uKIKC9gWR7meVboqJ9mRyAkpNBtMXpbcbgHubGsb3z0dIKqhky1zYy3x6Ve, Active, Others, Rolando RUBIN</p>
+                                                            <p>When HRIS adds and deletes a favourite: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Manage Data</p>
+                                                            <p>When HRIS submits a sub family: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Aj7eh7UqdD5as0yd, Active, Others, Rolando RUBIN</p>
+                                                            <p>When HRIS modify a sub family: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Aj7eh7UqdD5as0yd, AMhl1Genr1vjMqKo, Active, Communication, Rolando Modina</p>
+                                                            <p>When HRIS set the status of managed data to inactive: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Sub-Family, AMhl1Genr1vjMqKo, 11/12/2022</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="6a5dbcf315edd8c4bbb6b19aa70e4504d27354eff4035f6ba35ff30ae21c3785">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="c5bb8fb35ea1ced72114c7f99626943b9f2ba5f28f21e71a81dfe737f43df85e.html" title="View test results">Create position</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given that I'm logged in to HR space as 'admin Katrin GOYENA'</p>
+                                                            <p>When I set the header module to 'Organisation Info'</p>
+                                                            <p>When i click the position org chart tab</p>
+                                                            <p>Then the position org chart should show up</p>
+                                                            <p>When I set the Org chart position ID to '856593'</p>
+                                                            <p>When i click a position: 0</p>
+                                                            <p>When i click show position icon</p>
+                                                            <p>When i click edit button</p>
+                                                            <p>When i populate enter effective date for this change: 14/12/2022</p>
+                                                            <p>When i click proceed button</p>
+                                                            <p>When i populate dropdown field: Status, Active</p>
+                                                            <p>When i populate textfield: Start Date, 14/12/2022</p>
+                                                            <p>When i populate textfield: Estimated end date of position, 14/03/2023</p>
+                                                            <p>When i populate dropdown field by input: Legal entity, CH_MOB_HQ</p>
+                                                            <p>When i populate dropdown field: Mobility, NA</p>
+                                                            <p>When i populate dropdown field: Position enabling overlapping, SP</p>
+                                                            <p>When i populate dropdown field by input: Sub-family, Digital Communication</p>
+                                                            <p>When i populate textfield: Standard Weekly Hours of the position-Full time, 45</p>
+                                                            <p>When i populate dropdown field by input: Job code, Digital Officer</p>
+                                                            <p>When i populate textfield: Position, LKOwIVqUjpqJ</p>
+                                                            <p>When i populate dropdown field by input: Location, Geneva</p>
+                                                            <p>When i populate dropdown field by input: Work unit, Financial Applications Support</p>
+                                                            <p>When i populate dropdown field by input: Cost Center, Application Support</p>
+                                                            <p>When i populate textfield: Budgeted FTE, 2</p>
+                                                            <p>When i populate dropdown field: To Be Recruited, No</p>
+                                                            <p>When i populate dropdown field: Critical Position, Yes</p>
+                                                            <p>When i populate dropdown field: Position Type, Senior</p>
+                                                            <p>When i populate text area: Comment, 1GrTXJKdgremEIdrYANb7Ufke</p>
+                                                            <p>When i populate dropdown field by input: Job Role, Communication Adviser 1</p>
+                                                            <p>When i populate dropdown field by input: UCC Position, ADMIN</p>
+                                                            <p>When i populate dropdown field by input: Vacancy Status, FILLED</p>
+                                                            <p>When i populate dropdown field by input: Vacancy status in 3 months, FILLED</p>
+                                                            <p>When i click save</p>
+                                                            <p>Then the field value details in position portlet are saved: Active, 14/12/2022, 14/03/2023, CH_MOB_HQ, NA, 45, {null}, Digital Communication, Digital Officer, LKOwIVqUjpqJ, Geneva, Financial Applications Support, Application Support, 2, No, Yes, Senior, 1GrTXJKdgremEIdrYANb7Ufke, Communication Adviser 1, ADMIN, FILLED, FILLED</p>
+                                                            <p>When i click cancel</p>
+                                                            <p>When HRIS set the status of position to inactive: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 14/12/2022</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="results" class="tab-pane fade">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <div style="width:300px;" class="chart-container automated-and-manual-results">
+                                                <div class="ct-chart ct-square"></div>
+                                            </div>
+                                            <script>
+
+                                                var labels = ['100%', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
+                                                // Our series array that contains series objects or in this case series data arrays
+
+                                                var series = [{meta: 'Passing tests (automated)', value: 12}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 0}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 0}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
+
+                                                // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                // as you saw in the previous example
+                                                var options = {
+                                                    width: 350,
+                                                    height: 300
+                                                };
+
+                                                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                    new Chartist.Pie('.ct-chart', {
+                                                        series: series,
+                                                        labels: labels,
+                                                    }, {
+                                                        donut: true,
+                                                        donutWidth: 60,
+                                                        donutSolid: true,
+                                                        startAngle: 270,
+                                                        showLabel: true
+                                                    }, options);
+                                                });
+
+                                            </script>
+                                        </div>
+                                        <div class="col-sm-8">
+
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Scenario Results (including rows of test data)</th>
+                                                <th scope="col" colspan="2" class="automated-stats">
+                                                    Automated
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                                    <td class="aggregate-result-count">
+                                                                        <a href="ee1a3c09ec6d5d07ac947a7950e77616ab4434098b8ecff9091a0bbf5455f13b.html"><i
+                                                                                class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
+                                                                    </td>
+                                                <td class="automated-stats">12</td>
+                                                <td class="automated-stats">100%</td>
+                                            </tr>
+                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                            class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending
+                                                                    </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                            <td colspan="3"><i
+                                                                                class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                            </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-times-circle failure-icon'></i>&nbsp;Failed
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr class="summary-stats">
+                                                <td class="aggregate-result-count">Total</td>
+                                                <td class="automated-stats">12</td>
+                                                <td class="automated-stats"></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Execution Time</th>
+                                                        <th>Clock Time</th>
+                                                        <th>Fastest Test</th>
+                                                        <th>Slowest Test</th>
+                                                        <th>Average Execution Time</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td> 3h  20m 56s</td>
+                                                        <td> 11h  29m 32s</td>
+                                                        <td> 10m 10s</td>
+                                                        <td> 20m 20s</td>
+                                                        <td> 16m 44s</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                            <table class="scenario-result-table table" id="scenario-results">
+                                                <thead>
+                                                <tr>
+                                                    <th class="test-name-column">Scenario</th>
+                                                    <th>Steps</th>
+                                                    <th>Start Time</th>
+                                                    <th>Duration</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="db934e314d8cee547ca6adbcfccabf964ad46e095036bf765c226f7e8ecf1598.html">Create delegation</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>12:47:37</td>
+                                                    <td>15m 32s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="d07de060dd54ed34f8a0c184f1b7fb07691110351219f4ad2ab01ed3bee845de.html">Create country</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>13:12:02</td>
+                                                    <td>15m 17s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="79c4bdbb5793d0db32d9986b9b15b88a6b821fdf1cc97b25172adf40cd0b7af9.html">Create location</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>13:29:12</td>
+                                                    <td>18m 37s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="cf0607b91e613aefb0eb2a46d0cb0070aad08f7035d1207b795c30ef4c42bf27.html">Create job level</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>14:13:15</td>
+                                                    <td>15m 53s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="9d8051eca01abe3039fd28e8cb32b9be36a9ad64859a9b648edcc6c724ad32dd.html">Create frequency</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td>16:11:20</td>
+                                                    <td>10m 10s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="26c23305efb5a7876a728d797e9571e504560d6dc7b148fb5efde9d79ae9d2cf.html">Create pay component</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>16:22:33</td>
+                                                    <td>20m 14s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="fd15d47c014785dc72d9e495433e551aecbd9f51632251fe6379e5359c85b7b6.html">Create legal entity</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>16:47:16</td>
+                                                    <td>17m 27s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="477b0d2aba0a172f1997d088d60b189b34ca0104bff168a366960728504ad09b.html">Create cost center</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>17:07:02</td>
+                                                    <td>14m 21s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="0a74b114925172ae2ec7df766fc4308fbb16f34240a92c55e948a3ff3c72d618.html">Create work unit</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>17:23:52</td>
+                                                    <td>19m 1s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="38c1b71e5e8402691b980fa3f0235d2e065c61246728958702b2eb7dac8c684d.html">Create job classification</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>20:13:43</td>
+                                                    <td>18m 27s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="b2fda303ad7d0a87187bfd3a222e6a596f08798d3b5911da80e98f5a970bf3e6.html">Create sub family</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>20:36:18</td>
+                                                    <td>15m 36s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="c5bb8fb35ea1ced72114c7f99626943b9f2ba5f28f21e71a81dfe737f43df85e.html">Create position</a>
+                                                    </td>
+                                                    <td>36</td>
+                                                    <td>00:17:09</td>
+                                                    <td>20m 21s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                                No manual tests were recorded
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span class="version">Serenity BDD version 2.1.6</span>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

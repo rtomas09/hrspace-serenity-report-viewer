@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Selenium Serenity Tests FAD APPLIC</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="4143b54c09d9fa22846f04fc236441c51ddd596b585b5bf52c49033629793ea6.html">Foundation Objects</a></span>
+                > <span class="truncate-60"><a
+                    href="477b0d2aba0a172f1997d088d60b189b34ca0104bff168a366960728504ad09b.html">Create cost center </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 13-12-2022 17:07</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Foundation Objects </span>
+                                    <span class="badge tag-badge" style="">Story</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Create cost center
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" When HRIS reviews cost center details field: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, GUdm4sZxm8TIxt4wY9tjSOqd5QxzdxhS, 5T0Ovf26Rud53RjgVUJVm00DVnWQoRqrGZI3G1gWQpGCBqwaJIvrAqMtsSD4eILLk8g9wLgqvkBeH49y7ngngXWrCd, c7O6h9mndYFLRUIhf2sUkLTkqovUc6lwRG0g7r1HHRydI618PEtr9jZoJeuVVxCuirpACbOazBizCmArEwsrjgx5U5xyuqhsgtjNmcsCTpSydPM6Gei2jd1X0Y423Tsf, Active" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="941"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="60759ced109b4d51df91c02ad928fe2453b7994b0ac98eb79fbdd75fc023606c.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="ebfe15f77e045deda624da4d4e2112c269516600a8cc7597fbea07351ef78e4d.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="ebfe15f77e045deda624da4d4e2112c269516600a8cc7597fbea07351ef78e4d.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="ebfe15f77e045deda624da4d4e2112c269516600a8cc7597fbea07351ef78e4d.png" title=" Then the admin centre page is displayed (completed)" width="1931"/>
+                <img src="ebfe15f77e045deda624da4d4e2112c269516600a8cc7597fbea07351ef78e4d.png" title=" When i click a company process: Employee Files, Manage Data" width="1931"/>
+                <img src="03073baaf9f884bdecbc6af89471fc62470dc77760a8e826c647d2aa353d96ed.png" title=" When i click a company process: Employee Files, Manage Data" width="1931"/>
+                <img src="a9ec0e8c5b5049e74ce100654fcb4f327ed4fb7604de0d9e6fb40e8062328513.png" title=" When i click a company process: Employee Files, Manage Data" width="1931"/>
+                <img src="a9ec0e8c5b5049e74ce100654fcb4f327ed4fb7604de0d9e6fb40e8062328513.png" title=" When i click a company process: Employee Files, Manage Data (completed)" width="1931"/>
+                <img src="a9ec0e8c5b5049e74ce100654fcb4f327ed4fb7604de0d9e6fb40e8062328513.png" title=" Then the manage data page is displayed" width="1931"/>
+                <img src="a9ec0e8c5b5049e74ce100654fcb4f327ed4fb7604de0d9e6fb40e8062328513.png" title=" Then the manage data page is displayed (completed)" width="1931"/>
+                <img src="a9ec0e8c5b5049e74ce100654fcb4f327ed4fb7604de0d9e6fb40e8062328513.png" title=" When i populate create new field in manage data: Cost Center" width="1931"/>
+                <img src="161fee4831e7e589b8e518e8321cefc16c405de04da6c48fbb1f3587a13c1148.png" title=" When i populate create new field in manage data: Cost Center" width="1931"/>
+                <img src="161fee4831e7e589b8e518e8321cefc16c405de04da6c48fbb1f3587a13c1148.png" title=" When i populate create new field in manage data: Cost Center (completed)" width="1931"/>
+                <img src="4365d462ae5c94ecf2cd125cb4bc303bacd1719d1b4474956f2736910b9437f6.png" title=" Then the portlet is displayed: Cost Center" width="1931"/>
+                <img src="790d464c9af729e9058858f0bf9bcd3c09003e747e30bf458024c038d9092b20.png" title=" Then the portlet is displayed: Cost Center (completed)" width="1931"/>
+                <img src="790d464c9af729e9058858f0bf9bcd3c09003e747e30bf458024c038d9092b20.png" title=" When i set date picker of effective as of: 11/12/2022" width="1931"/>
+                <img src="28352b26d65f5dbdbb627236a22d266220d151225372317768a2f3dc1b8a022e.png" title=" When i set date picker of effective as of: 11/12/2022 (completed)" width="1931"/>
+                <img src="28352b26d65f5dbdbb627236a22d266220d151225372317768a2f3dc1b8a022e.png" title=" When i populate cost center code: GUdm4sZxm8TIxt4wY9tjSOqd5QxzdxhS" width="1931"/>
+                <img src="d3507f8ef417b8acc5fae5f747c4a2d2603f7b99e980a316e9ac69821794f7b6.png" title=" When i populate cost center code: GUdm4sZxm8TIxt4wY9tjSOqd5QxzdxhS (completed)" width="1931"/>
+                <img src="d3507f8ef417b8acc5fae5f747c4a2d2603f7b99e980a316e9ac69821794f7b6.png" title=" Then a maximum character warning message is displayed in manage data: Cost Center Code, 32" width="1931"/>
+                <img src="299c43308f72335467384fdbdd7659840c0812c054e40a886dfc73097ff54d4e.png" title=" Then a maximum character warning message is displayed in manage data: Cost Center Code, 32 (completed)" width="1931"/>
+                <img src="299c43308f72335467384fdbdd7659840c0812c054e40a886dfc73097ff54d4e.png" title=" When i populate cost center name: 5T0Ovf26Rud53RjgVUJVm00DVnWQoRqrGZI3G1gWQpGCBqwaJIvrAqMtsSD4eILLk8g9wLgqvkBeH49y7ngngXWrCd" width="1931"/>
+                <img src="5d1ec1ac14966b084e2673097d9d98bbcb145e875e7b5666491c8af778df6e3c.png" title=" When i populate cost center name: 5T0Ovf26Rud53RjgVUJVm00DVnWQoRqrGZI3G1gWQpGCBqwaJIvrAqMtsSD4eILLk8g9wLgqvkBeH49y7ngngXWrCd (completed)" width="1931"/>
+                <img src="5d1ec1ac14966b084e2673097d9d98bbcb145e875e7b5666491c8af778df6e3c.png" title=" Then a maximum character warning message is displayed in manage data: Cost Center Name, 90" width="1931"/>
+                <img src="0c7e8a5243e78f6c1bbd2988338a907d3687bc826a201a7f631685dee915b8c6.png" title=" Then a maximum character warning message is displayed in manage data: Cost Center Name, 90 (completed)" width="1931"/>
+                <img src="0c7e8a5243e78f6c1bbd2988338a907d3687bc826a201a7f631685dee915b8c6.png" title=" When i populate descriptions: c7O6h9mndYFLRUIhf2sUkLTkqovUc6lwRG0g7r1HHRydI618PEtr9jZoJeuVVxCuirpACbOazBizCmArEwsrjgx5U5xyuqhsgtjNmcsCTpSydPM6Gei2jd1X0Y423Tsf" width="1931"/>
+                <img src="bc051229ffda1fc5135e842dd8965fddcb4c99e7bd102606ad9024341be913f1.png" title=" When i populate descriptions: c7O6h9mndYFLRUIhf2sUkLTkqovUc6lwRG0g7r1HHRydI618PEtr9jZoJeuVVxCuirpACbOazBizCmArEwsrjgx5U5xyuqhsgtjNmcsCTpSydPM6Gei2jd1X0Y423Tsf (completed)" width="1931"/>
+                <img src="bc051229ffda1fc5135e842dd8965fddcb4c99e7bd102606ad9024341be913f1.png" title=" Then a maximum character warning message is displayed in manage data: Description, 128" width="1931"/>
+                <img src="948bce19aceb0f7f5bbf76d9b6366a551297c6c212479d517ab9fdffb723f212.png" title=" Then a maximum character warning message is displayed in manage data: Description, 128 (completed)" width="1931"/>
+                <img src="948bce19aceb0f7f5bbf76d9b6366a551297c6c212479d517ab9fdffb723f212.png" title=" When i populate status: Active" width="1931"/>
+                <img src="0a48282fbdc955c0f78f3061f3b0c42fc45ad520cb0a772d4b8adac0ee079c0e.png" title=" When i populate status: Active" width="1931"/>
+                <img src="6bb9defe60a28a2ab221a39930cbf2e2bfdcaf7875fc728718848545deb2a9bb.png" title=" When i populate status: Active" width="1931"/>
+                <img src="6bb9defe60a28a2ab221a39930cbf2e2bfdcaf7875fc728718848545deb2a9bb.png" title=" When i populate status: Active (completed)" width="1931"/>
+                <img src="6bb9defe60a28a2ab221a39930cbf2e2bfdcaf7875fc728718848545deb2a9bb.png" title=" When i click cancel button" width="1931"/>
+                <img src="331229d861a6fc208049945ce787272284564af840a957f862d77784204ba6d3.png" title=" When i click cancel button" width="1931"/>
+                <img src="b3cefb422e878bb0aab2d63b0d3e11d3c81870a7236224664060c8fcc360d1cc.png" title=" When i click cancel button (completed)" width="1931"/>
+                <img src="b3cefb422e878bb0aab2d63b0d3e11d3c81870a7236224664060c8fcc360d1cc.png" title=" When i click dont save button" width="1931"/>
+                <img src="321d64773b8315c2631d3c18ad917105d08ae3bd536505c0ce58aa4d43198b05.png" title=" When i click dont save button" width="1931"/>
+                <img src="321d64773b8315c2631d3c18ad917105d08ae3bd536505c0ce58aa4d43198b05.png" title=" When i click dont save button (completed)" width="1931"/>
+                <img src="321d64773b8315c2631d3c18ad917105d08ae3bd536505c0ce58aa4d43198b05.png" title=" When HRIS reviews cost center details field: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, GUdm4sZxm8TIxt4wY9tjSOqd5QxzdxhS, 5T0Ovf26Rud53RjgVUJVm00DVnWQoRqrGZI3G1gWQpGCBqwaJIvrAqMtsSD4eILLk8g9wLgqvkBeH49y7ngngXWrCd, c7O6h9mndYFLRUIhf2sUkLTkqovUc6lwRG0g7r1HHRydI618PEtr9jZoJeuVVxCuirpACbOazBizCmArEwsrjgx5U5xyuqhsgtjNmcsCTpSydPM6Gei2jd1X0Y423Tsf, Active (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" When HRIS adds and deletes a favourite: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Manage Data" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="18fcf451155bf32ee3405d32776b1f3a2e6ccfbabc0d51c72022d299c1480494.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="a24304155972c2c3778bda1c995d8c722e0375b3f8990eb93ecc44b91292928f.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="1ee911f93608510b5160871d6f2be76f1f0b7b0aeaff2a0d1fe1863145873e03.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="1ee911f93608510b5160871d6f2be76f1f0b7b0aeaff2a0d1fe1863145873e03.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="1ee911f93608510b5160871d6f2be76f1f0b7b0aeaff2a0d1fe1863145873e03.png" title=" Then the admin centre page is displayed (completed)" width="1931"/>
+                <img src="1ee911f93608510b5160871d6f2be76f1f0b7b0aeaff2a0d1fe1863145873e03.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Data" width="1931"/>
+                <img src="4cfa0ecede3d2be1273d47e2325b8106b5fb84473efe8e2bd8878b91331840cb.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Data" width="1931"/>
+                <img src="57d0cc24ae63a4b6bd439e9b375494f729de9fce22cc2b5e20d6394039f541f0.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Data" width="1931"/>
+                <img src="2f83ae6a76e588b46ac38bcff55c364ba1573437b51e08a43e03bf304b4d901e.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Data" width="1931"/>
+                <img src="2f83ae6a76e588b46ac38bcff55c364ba1573437b51e08a43e03bf304b4d901e.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Data (completed)" width="1931"/>
+                <img src="2f83ae6a76e588b46ac38bcff55c364ba1573437b51e08a43e03bf304b4d901e.png" title=" Then the company process is displayed in my favourites portlet: Manage Data" width="1931"/>
+                <img src="2f83ae6a76e588b46ac38bcff55c364ba1573437b51e08a43e03bf304b4d901e.png" title=" Then the company process is displayed in my favourites portlet: Manage Data (completed)" width="1931"/>
+                <img src="2f83ae6a76e588b46ac38bcff55c364ba1573437b51e08a43e03bf304b4d901e.png" title=" When i remove the tool in favourites: Manage Data" width="1931"/>
+                <img src="2bd192f72bc9d8d39341fcfcf93c3458b04cb121131a3023868152894902ec56.png" title=" When i remove the tool in favourites: Manage Data" width="1931"/>
+                <img src="1ee911f93608510b5160871d6f2be76f1f0b7b0aeaff2a0d1fe1863145873e03.png" title=" When i remove the tool in favourites: Manage Data (completed)" width="1931"/>
+                <img src="1ee911f93608510b5160871d6f2be76f1f0b7b0aeaff2a0d1fe1863145873e03.png" title=" Then the company process is not displayed in my favourites portlet: Manage Data" width="1931"/>
+                <img src="1ee911f93608510b5160871d6f2be76f1f0b7b0aeaff2a0d1fe1863145873e03.png" title=" Then the company process is not displayed in my favourites portlet: Manage Data (completed)" width="1931"/>
+                <img src="1ee911f93608510b5160871d6f2be76f1f0b7b0aeaff2a0d1fe1863145873e03.png" title=" When HRIS adds and deletes a favourite: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Manage Data (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" When HRIS submits cost center: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, AKaTIcxdS46, Atnnh99LwVd, DzPEEy8xrC5qOkec70U4T8VjDbb6lDuAw755WqusUnDDZM1bOI, Active" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="cedf6cfdd8839137bed22094f0c34937fbb71cacffefeb8e28666f20e479ba3e.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="ebfe15f77e045deda624da4d4e2112c269516600a8cc7597fbea07351ef78e4d.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="ebfe15f77e045deda624da4d4e2112c269516600a8cc7597fbea07351ef78e4d.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="ebfe15f77e045deda624da4d4e2112c269516600a8cc7597fbea07351ef78e4d.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="ebfe15f77e045deda624da4d4e2112c269516600a8cc7597fbea07351ef78e4d.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="ebfe15f77e045deda624da4d4e2112c269516600a8cc7597fbea07351ef78e4d.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="ebfe15f77e045deda624da4d4e2112c269516600a8cc7597fbea07351ef78e4d.png" title=" Then the admin centre page is displayed (completed)" width="1931"/>
+                <img src="ebfe15f77e045deda624da4d4e2112c269516600a8cc7597fbea07351ef78e4d.png" title=" When i click a company process: Employee Files, Manage Data" width="1931"/>
+                <img src="fa6e0cdfbad4a09d61c7524345c2a2a3f47edd7393795631f61b8430a2bbef36.png" title=" When i click a company process: Employee Files, Manage Data" width="1931"/>
+                <img src="bc6437ef53751161c0a888373752a55ab852bc8965dff85f4294b0cbd4a196ac.png" title=" When i click a company process: Employee Files, Manage Data" width="1931"/>
+                <img src="bc6437ef53751161c0a888373752a55ab852bc8965dff85f4294b0cbd4a196ac.png" title=" When i click a company process: Employee Files, Manage Data (completed)" width="1931"/>
+                <img src="d7c021bec50aba69f0b4013a9611bf21fa775b3aeb86a609510bb26a4eb308b9.png" title=" Then the manage data page is displayed" width="1931"/>
+                <img src="a9ec0e8c5b5049e74ce100654fcb4f327ed4fb7604de0d9e6fb40e8062328513.png" title=" Then the manage data page is displayed (completed)" width="1931"/>
+                <img src="a9ec0e8c5b5049e74ce100654fcb4f327ed4fb7604de0d9e6fb40e8062328513.png" title=" When i populate create new field in manage data: Cost Center" width="1931"/>
+                <img src="161fee4831e7e589b8e518e8321cefc16c405de04da6c48fbb1f3587a13c1148.png" title=" When i populate create new field in manage data: Cost Center" width="1931"/>
+                <img src="161fee4831e7e589b8e518e8321cefc16c405de04da6c48fbb1f3587a13c1148.png" title=" When i populate create new field in manage data: Cost Center (completed)" width="1931"/>
+                <img src="f70891a679982db8641c002635e1bfcbc858705d72f935f15ee47631bf742587.png" title=" Then the portlet is displayed: Cost Center" width="1931"/>
+                <img src="790d464c9af729e9058858f0bf9bcd3c09003e747e30bf458024c038d9092b20.png" title=" Then the portlet is displayed: Cost Center (completed)" width="1931"/>
+                <img src="790d464c9af729e9058858f0bf9bcd3c09003e747e30bf458024c038d9092b20.png" title=" When i populate effective as of: 11/12/2022" width="1931"/>
+                <img src="28352b26d65f5dbdbb627236a22d266220d151225372317768a2f3dc1b8a022e.png" title=" When i populate effective as of: 11/12/2022 (completed)" width="1931"/>
+                <img src="28352b26d65f5dbdbb627236a22d266220d151225372317768a2f3dc1b8a022e.png" title=" When i populate cost center code: AKaTIcxdS46" width="1931"/>
+                <img src="29c1b358cca8ad12b2757d636feee8c955bf1a995ed55823ec875570f35c54ee.png" title=" When i populate cost center code: AKaTIcxdS46 (completed)" width="1931"/>
+                <img src="29c1b358cca8ad12b2757d636feee8c955bf1a995ed55823ec875570f35c54ee.png" title=" When i populate cost center name: Atnnh99LwVd" width="1931"/>
+                <img src="a9f988dd5ae9cc72033778094f93b07e78074b5cbc4b1c7072f01e395e882d82.png" title=" When i populate cost center name: Atnnh99LwVd (completed)" width="1931"/>
+                <img src="a9f988dd5ae9cc72033778094f93b07e78074b5cbc4b1c7072f01e395e882d82.png" title=" When i populate descriptions: DzPEEy8xrC5qOkec70U4T8VjDbb6lDuAw755WqusUnDDZM1bOI" width="1931"/>
+                <img src="44d0a923d0a2779bc350e4a7f2fd24413c33c101eea6a28888b1e766c0cee928.png" title=" When i populate descriptions: DzPEEy8xrC5qOkec70U4T8VjDbb6lDuAw755WqusUnDDZM1bOI (completed)" width="1931"/>
+                <img src="44d0a923d0a2779bc350e4a7f2fd24413c33c101eea6a28888b1e766c0cee928.png" title=" When i populate status: Active" width="1931"/>
+                <img src="1a1709ab08a28b7d0d2cdc2ecbde489030468c3fc6579325dbf7878a75cd8a6d.png" title=" When i populate status: Active" width="1931"/>
+                <img src="809e4ac6ac599f07adf6c4e3ddc73c9a52e3edad0c371ef6985884127890af6e.png" title=" When i populate status: Active" width="1931"/>
+                <img src="809e4ac6ac599f07adf6c4e3ddc73c9a52e3edad0c371ef6985884127890af6e.png" title=" When i populate status: Active (completed)" width="1931"/>
+                <img src="809e4ac6ac599f07adf6c4e3ddc73c9a52e3edad0c371ef6985884127890af6e.png" title=" When i click save button" width="1931"/>
+                <img src="3ce996d894a0db2c44d7e947bbba5d22f80fd794a17f6c5412288df7ab10d87f.png" title=" When i click save button" width="1931"/>
+                <img src="4d68c47a6aefef9d64fff85b095527316b5f241ae555c540311afc190e452f22.png" title=" When i click save button (completed)" width="1931"/>
+                <img src="4d68c47a6aefef9d64fff85b095527316b5f241ae555c540311afc190e452f22.png" title=" Then the name and code is displayed in header: AKaTIcxdS46, Atnnh99LwVd" width="1931"/>
+                <img src="4d68c47a6aefef9d64fff85b095527316b5f241ae555c540311afc190e452f22.png" title=" Then the name and code is displayed in header: AKaTIcxdS46, Atnnh99LwVd (completed)" width="1931"/>
+                <img src="4d68c47a6aefef9d64fff85b095527316b5f241ae555c540311afc190e452f22.png" title=" Then a cost center is saved: AKaTIcxdS46, Atnnh99LwVd, DzPEEy8xrC5qOkec70U4T8VjDbb6lDuAw755WqusUnDDZM1bOI, Active" width="1931"/>
+                <img src="4d68c47a6aefef9d64fff85b095527316b5f241ae555c540311afc190e452f22.png" title=" Then a cost center is saved: AKaTIcxdS46, Atnnh99LwVd, DzPEEy8xrC5qOkec70U4T8VjDbb6lDuAw755WqusUnDDZM1bOI, Active (completed)" width="1931"/>
+                <img src="4d68c47a6aefef9d64fff85b095527316b5f241ae555c540311afc190e452f22.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="1ee911f93608510b5160871d6f2be76f1f0b7b0aeaff2a0d1fe1863145873e03.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="1ee911f93608510b5160871d6f2be76f1f0b7b0aeaff2a0d1fe1863145873e03.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="1ee911f93608510b5160871d6f2be76f1f0b7b0aeaff2a0d1fe1863145873e03.png" title=" When HRIS submits cost center: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, AKaTIcxdS46, Atnnh99LwVd, DzPEEy8xrC5qOkec70U4T8VjDbb6lDuAw755WqusUnDDZM1bOI, Active (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" When HRIS modify a cost center: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Atnnh99LwVd, 11/12/2022, APLtT5GslDY, AWOnNj9jqnu, weCD7vJ1CNoGflQ1SymWNLJEoM93u3TkjRYlgDLXnfpfVauHmE, Active" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="dcf0dbf3db514036945939343f57baf8b026c3510ba4edd4d5a139cc0f0e5b55.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="1ee911f93608510b5160871d6f2be76f1f0b7b0aeaff2a0d1fe1863145873e03.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="1ee911f93608510b5160871d6f2be76f1f0b7b0aeaff2a0d1fe1863145873e03.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Home'" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="ebfe15f77e045deda624da4d4e2112c269516600a8cc7597fbea07351ef78e4d.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="ebfe15f77e045deda624da4d4e2112c269516600a8cc7597fbea07351ef78e4d.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="ebfe15f77e045deda624da4d4e2112c269516600a8cc7597fbea07351ef78e4d.png" title=" Then the admin centre page is displayed (completed)" width="1931"/>
+                <img src="ebfe15f77e045deda624da4d4e2112c269516600a8cc7597fbea07351ef78e4d.png" title=" When i click a company process: Employee Files, Manage Data" width="1931"/>
+                <img src="a1112a35650dbe289074974b82b19e855762ee52d9ff5685739e2f5c7c2b8878.png" title=" When i click a company process: Employee Files, Manage Data" width="1931"/>
+                <img src="fe2a85902b1c7fac4c928be6c92e292543900ff7650923c006e106887bb5c8c7.png" title=" When i click a company process: Employee Files, Manage Data" width="1931"/>
+                <img src="fe2a85902b1c7fac4c928be6c92e292543900ff7650923c006e106887bb5c8c7.png" title=" When i click a company process: Employee Files, Manage Data (completed)" width="1931"/>
+                <img src="ba89a9049502b88627216729e10f1bb3120d173fd99e763033ea04f97352cdec.png" title=" Then the manage data page is displayed" width="1931"/>
+                <img src="a9ec0e8c5b5049e74ce100654fcb4f327ed4fb7604de0d9e6fb40e8062328513.png" title=" Then the manage data page is displayed (completed)" width="1931"/>
+                <img src="a9ec0e8c5b5049e74ce100654fcb4f327ed4fb7604de0d9e6fb40e8062328513.png" title=" When i search for an object in manage data: Cost Center" width="1931"/>
+                <img src="ec72009ca472cf32051cb8c1d6f1624d771d140db264738aad2c90b087427aaa.png" title=" When i search for an object in manage data: Cost Center" width="1931"/>
+                <img src="ec72009ca472cf32051cb8c1d6f1624d771d140db264738aad2c90b087427aaa.png" title=" When i search for an object in manage data: Cost Center (completed)" width="1931"/>
+                <img src="ec72009ca472cf32051cb8c1d6f1624d771d140db264738aad2c90b087427aaa.png" title=" When i search for an object name in manage data: Atnnh99LwVd" width="1931"/>
+                <img src="522205c3373c454e375821e67441f21c7a3cbf301905eda2de231f1b6cec8197.png" title=" When i search for an object name in manage data: Atnnh99LwVd" width="1931"/>
+                <img src="522205c3373c454e375821e67441f21c7a3cbf301905eda2de231f1b6cec8197.png" title=" When i search for an object name in manage data: Atnnh99LwVd (completed)" width="1931"/>
+                <img src="68a172e711574ae64f65680b1a60b26d5e54489c0f691ee1f0252a5d7e531513.png" title=" When i click take action in manage data" width="1931"/>
+                <img src="a7dac30551889504375d744bf146d1faa308591d8fab41506810244133604313.png" title=" When i click take action in manage data" width="1931"/>
+                <img src="c873464e2ad886c0da9010e93c9f6431d1979087af1b04c5d2987da56a616b25.png" title=" When i click take action in manage data" width="1931"/>
+                <img src="c873464e2ad886c0da9010e93c9f6431d1979087af1b04c5d2987da56a616b25.png" title=" When i click take action in manage data (completed)" width="1931"/>
+                <img src="c351241363d14bca0f04436292b81a17982928b47541a0306419234547156830.png" title=" When i populate effective as of: 11/12/2022" width="1931"/>
+                <img src="e3f3f5db3f0a6d87da9d2da543bac0aec164596e981fec9eb87210989a90547c.png" title=" When i populate effective as of: 11/12/2022 (completed)" width="1931"/>
+                <img src="e3f3f5db3f0a6d87da9d2da543bac0aec164596e981fec9eb87210989a90547c.png" title=" When i populate cost center code: APLtT5GslDY" width="1931"/>
+                <img src="e866e270d0e6da4c57a83e58322d5b8e506c3aacc20d8d0d864375fd15520e0c.png" title=" When i populate cost center code: APLtT5GslDY (completed)" width="1931"/>
+                <img src="e866e270d0e6da4c57a83e58322d5b8e506c3aacc20d8d0d864375fd15520e0c.png" title=" When i populate cost center name: AWOnNj9jqnu" width="1931"/>
+                <img src="6a31e844cff14e8571b13c28dbdfb8803d06b739081e1797e159b275d928e37a.png" title=" When i populate cost center name: AWOnNj9jqnu (completed)" width="1931"/>
+                <img src="6a31e844cff14e8571b13c28dbdfb8803d06b739081e1797e159b275d928e37a.png" title=" When i populate descriptions: weCD7vJ1CNoGflQ1SymWNLJEoM93u3TkjRYlgDLXnfpfVauHmE" width="1931"/>
+                <img src="e32e3b33bcd437576e29ca8f14a2393bc72c61ab3a4f0ac7a5c30bea01385b6a.png" title=" When i populate descriptions: weCD7vJ1CNoGflQ1SymWNLJEoM93u3TkjRYlgDLXnfpfVauHmE (completed)" width="1931"/>
+                <img src="e32e3b33bcd437576e29ca8f14a2393bc72c61ab3a4f0ac7a5c30bea01385b6a.png" title=" When i populate status: Active" width="1931"/>
+                <img src="0339c10bc8e72335847c3e368298d5cf77fd6b305440f6486cb38fdabf34d11f.png" title=" When i populate status: Active" width="1931"/>
+                <img src="c1157df5a11483c84f95dbdd02141be86d2458f0eae0f2d5cc338e08f49dad00.png" title=" When i populate status: Active" width="1931"/>
+                <img src="c1157df5a11483c84f95dbdd02141be86d2458f0eae0f2d5cc338e08f49dad00.png" title=" When i populate status: Active (completed)" width="1931"/>
+                <img src="c1157df5a11483c84f95dbdd02141be86d2458f0eae0f2d5cc338e08f49dad00.png" title=" When i click save button" width="1931"/>
+                <img src="adc1f89d300025fadcd931e94f4144b1cf470728b7b036eac2d1979a647bbc17.png" title=" When i click save button" width="1931"/>
+                <img src="622a56e6e67f0e137817a9f17ee6f59f2d77d852f84978458378f7b21741978b.png" title=" When i click save button (completed)" width="1931"/>
+                <img src="622a56e6e67f0e137817a9f17ee6f59f2d77d852f84978458378f7b21741978b.png" title=" Then the name and code is displayed in header: APLtT5GslDY, AWOnNj9jqnu" width="1931"/>
+                <img src="622a56e6e67f0e137817a9f17ee6f59f2d77d852f84978458378f7b21741978b.png" title=" Then the name and code is displayed in header: APLtT5GslDY, AWOnNj9jqnu (completed)" width="1931"/>
+                <img src="622a56e6e67f0e137817a9f17ee6f59f2d77d852f84978458378f7b21741978b.png" title=" Then the records is saved: Cost Center Code, APLtT5GslDY, Cost Center Name, AWOnNj9jqnu, Description, weCD7vJ1CNoGflQ1SymWNLJEoM93u3TkjRYlgDLXnfpfVauHmE, Status, Active, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;" width="1931"/>
+                <img src="622a56e6e67f0e137817a9f17ee6f59f2d77d852f84978458378f7b21741978b.png" title=" Then the records is saved: Cost Center Code, APLtT5GslDY, Cost Center Name, AWOnNj9jqnu, Description, weCD7vJ1CNoGflQ1SymWNLJEoM93u3TkjRYlgDLXnfpfVauHmE, Status, Active, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt; (completed)" width="1931"/>
+                <img src="622a56e6e67f0e137817a9f17ee6f59f2d77d852f84978458378f7b21741978b.png" title=" When HRIS modify a cost center: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Atnnh99LwVd, 11/12/2022, APLtT5GslDY, AWOnNj9jqnu, weCD7vJ1CNoGflQ1SymWNLJEoM93u3TkjRYlgDLXnfpfVauHmE, Active (completed)" width="1931"/>
+                <img src="ebe797569dac9f3424dcca7bffdec30ee3e8814aa1c4192ac521a832691cd329.png" title=" When HRIS set the status of managed data to inactive: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Cost Center, AWOnNj9jqnu, 11/12/2022" width="1931"/>
+                <img src="ebe797569dac9f3424dcca7bffdec30ee3e8814aa1c4192ac521a832691cd329.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="1931"/>
+                <img src="ebe797569dac9f3424dcca7bffdec30ee3e8814aa1c4192ac521a832691cd329.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="fe0ba4f0f1798170c6dc48a259f7ef689a8721b618bf2a0fe47e1605eb0cb842.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="daf5d939f6e45874e488aa41e630181e237dac8ccc0f0d1fa4e4ae2993251c61.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Home'" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Home' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="1ee911f93608510b5160871d6f2be76f1f0b7b0aeaff2a0d1fe1863145873e03.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="1ee911f93608510b5160871d6f2be76f1f0b7b0aeaff2a0d1fe1863145873e03.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="1ee911f93608510b5160871d6f2be76f1f0b7b0aeaff2a0d1fe1863145873e03.png" title=" Then the admin centre page is displayed (completed)" width="1931"/>
+                <img src="1ee911f93608510b5160871d6f2be76f1f0b7b0aeaff2a0d1fe1863145873e03.png" title=" When i click a company process: Employee Files, Manage Data" width="1931"/>
+                <img src="4cfa0ecede3d2be1273d47e2325b8106b5fb84473efe8e2bd8878b91331840cb.png" title=" When i click a company process: Employee Files, Manage Data" width="1931"/>
+                <img src="01d05fb0fc1937bb9d3bce23ff43a7f131c713fa37fbe22be167ef0c38cdf5f4.png" title=" When i click a company process: Employee Files, Manage Data" width="1931"/>
+                <img src="01d05fb0fc1937bb9d3bce23ff43a7f131c713fa37fbe22be167ef0c38cdf5f4.png" title=" When i click a company process: Employee Files, Manage Data (completed)" width="1931"/>
+                <img src="a9ec0e8c5b5049e74ce100654fcb4f327ed4fb7604de0d9e6fb40e8062328513.png" title=" Then the manage data page is displayed" width="1931"/>
+                <img src="a9ec0e8c5b5049e74ce100654fcb4f327ed4fb7604de0d9e6fb40e8062328513.png" title=" Then the manage data page is displayed (completed)" width="1931"/>
+                <img src="a9ec0e8c5b5049e74ce100654fcb4f327ed4fb7604de0d9e6fb40e8062328513.png" title=" When i search for an object in manage data: Cost Center" width="1931"/>
+                <img src="ec72009ca472cf32051cb8c1d6f1624d771d140db264738aad2c90b087427aaa.png" title=" When i search for an object in manage data: Cost Center" width="1931"/>
+                <img src="ec72009ca472cf32051cb8c1d6f1624d771d140db264738aad2c90b087427aaa.png" title=" When i search for an object in manage data: Cost Center (completed)" width="1931"/>
+                <img src="ec72009ca472cf32051cb8c1d6f1624d771d140db264738aad2c90b087427aaa.png" title=" When i search for an object name in manage data: AWOnNj9jqnu" width="1931"/>
+                <img src="8b75c51e3f1bfbc61daf200062b62243aac80fbefa4f2939770762dffe1db0c0.png" title=" When i search for an object name in manage data: AWOnNj9jqnu" width="1931"/>
+                <img src="8b75c51e3f1bfbc61daf200062b62243aac80fbefa4f2939770762dffe1db0c0.png" title=" When i search for an object name in manage data: AWOnNj9jqnu (completed)" width="1931"/>
+                <img src="7d80fa18eaf800c2f33266254300a79987057789fc24bcc14945111214f47a42.png" title=" When i click take action in manage data" width="1931"/>
+                <img src="1e946a7cb908252a577b3fc04a4eb2c88706c14140ef17ff91d62a02b0f3cc0f.png" title=" When i click take action in manage data" width="1931"/>
+                <img src="52e91b79d380d1c3ba80561f7069568092a6a36388b6469af161676f34270674.png" title=" When i click take action in manage data" width="1931"/>
+                <img src="52e91b79d380d1c3ba80561f7069568092a6a36388b6469af161676f34270674.png" title=" When i click take action in manage data (completed)" width="1931"/>
+                <img src="7f883531926263b67f2402f5287ea270e97f9fffc3291a2c8c84b2ff4b484f81.png" title=" When i populate status: Inactive" width="1931"/>
+                <img src="58c148e68d2d5be54d51440dde59b26bb2b5ad374f8dc49bc8de4ad12db790ca.png" title=" When i populate status: Inactive" width="1931"/>
+                <img src="ea19d8fefae2dff00c9f315f153cf073badcaf5f972435bf454430869b4c2f3c.png" title=" When i populate status: Inactive" width="1931"/>
+                <img src="83b6588f4a674b50b06f6846cc17bf4e8db50909249dc99c812547dbeda70d60.png" title=" When i populate status: Inactive (completed)" width="1931"/>
+                <img src="83b6588f4a674b50b06f6846cc17bf4e8db50909249dc99c812547dbeda70d60.png" title=" When i click save button" width="1931"/>
+                <img src="5129cfb4187ef32b6ac7d9f60e5c7f8493b16bad2fd7f2ee0c602ff66bdeed4c.png" title=" When i click save button" width="1931"/>
+                <img src="4ff7da0c5ef79b8d9150ff9681efc2b7d8ecc3745af12926d48b31cb6cbd4145.png" title=" When i click save button (completed)" width="1931"/>
+                <img src="4ff7da0c5ef79b8d9150ff9681efc2b7d8ecc3745af12926d48b31cb6cbd4145.png" title=" Then the status of managed data is set to inactive" width="1931"/>
+                <img src="4ff7da0c5ef79b8d9150ff9681efc2b7d8ecc3745af12926d48b31cb6cbd4145.png" title=" Then the status of managed data is set to inactive (completed)" width="1931"/>
+                <img src="7e3abb204d488e4fa9751d17ca984d13bf9e3f102b12fe1f1192e0612c85f030.png" title=" When i search for an object in manage data: Cost Center" width="1931"/>
+                <img src="6b8a6498091bb710e2e8318bf54ffdf65a861f9c334c41d757c507ec4798129d.png" title=" When i search for an object in manage data: Cost Center" width="1931"/>
+                <img src="6b8a6498091bb710e2e8318bf54ffdf65a861f9c334c41d757c507ec4798129d.png" title=" When i search for an object in manage data: Cost Center (completed)" width="1931"/>
+                <img src="6b8a6498091bb710e2e8318bf54ffdf65a861f9c334c41d757c507ec4798129d.png" title=" Then the object created is not displayed in search result: AWOnNj9jqnu" width="1931"/>
+                <img src="5766bbb64308052acb56388355be6c5fa26fae30715996b1c3e11b92c07dd7c2.png" title=" Then the object created is not displayed in search result: AWOnNj9jqnu (completed)" width="1931"/>
+                <img src="5766bbb64308052acb56388355be6c5fa26fae30715996b1c3e11b92c07dd7c2.png" title=" When I set the header module to 'Home'" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Home' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When HRIS set the status of managed data to inactive: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Cost Center, AWOnNj9jqnu, 11/12/2022 (completed): <span class='success-color'>SUCCESS</span>" width="1931"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.6</span>
+</div>
+</body>
+</html>

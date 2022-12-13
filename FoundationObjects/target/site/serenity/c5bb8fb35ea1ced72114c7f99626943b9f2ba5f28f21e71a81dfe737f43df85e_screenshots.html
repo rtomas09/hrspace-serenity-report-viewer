@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Selenium Serenity Tests FAD APPLIC</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="4143b54c09d9fa22846f04fc236441c51ddd596b585b5bf52c49033629793ea6.html">Foundation Objects</a></span>
+                > <span class="truncate-60"><a
+                    href="c5bb8fb35ea1ced72114c7f99626943b9f2ba5f28f21e71a81dfe737f43df85e.html">Create position </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 14-12-2022 00:17</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Foundation Objects </span>
+                                    <span class="badge tag-badge" style="">Story</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Create position
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="941"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="a9a997543b59a1af8f7309d9ba5a230d77e22f82fb37184cd257e17cb9c15e8a.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="a66417518996037eea414ef1787e8c0a5545b22ef6c06177a5ef5a7861b60a71.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="a66417518996037eea414ef1787e8c0a5545b22ef6c06177a5ef5a7861b60a71.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="1756aaabd788b8b172611964eadc83d8d3014633da84303bde3fcdf7042ae716.png" title=" When I set the header module to 'Organisation Info'" width="1931"/>
+                <img src="99dc17f33a05342f674fc7cfac95a0eed3130cf061bc3cd233e3412c5fffe307.png" title=" When i click the position org chart tab" width="1931"/>
+                <img src="99dc17f33a05342f674fc7cfac95a0eed3130cf061bc3cd233e3412c5fffe307.png" title=" Then the position org chart should show up" width="1931"/>
+                <img src="f2e16281946555665095e4771d3f3721e8b4e26d8a2cbc192382e3e7129add21.png" title=" When I set the Org chart position ID to '856593'" width="1931"/>
+                <img src="2527d36d2b27880ed8d0483fa0bd540050e324b0aaa0874b5df83d8ca375d99a.png" title=" When I set the Org chart position ID to '856593' (completed)" width="1931"/>
+                <img src="f0c3a22c9cf0cfedf8af6ad010a3280dacc4e1fd3d7faf038ce6da76fa70c8ed.png" title=" When i click a position: 0" width="1931"/>
+                <img src="f0c3a22c9cf0cfedf8af6ad010a3280dacc4e1fd3d7faf038ce6da76fa70c8ed.png" title=" When i click a position: 0 (completed)" width="1931"/>
+                <img src="d9084bd9b0c09a7a4a9f65b0bf245d62ebb5e974ec92386771a25b53a5ffb519.png" title=" When i click show position icon" width="1931"/>
+                <img src="3aee92cfdb613e4ef94c617ae4ba748494870b602bbd1b041e07c1fa0127e2b7.png" title=" When i click edit button" width="1931"/>
+                <img src="3aee92cfdb613e4ef94c617ae4ba748494870b602bbd1b041e07c1fa0127e2b7.png" title=" When i click edit button (completed)" width="1931"/>
+                <img src="3aee92cfdb613e4ef94c617ae4ba748494870b602bbd1b041e07c1fa0127e2b7.png" title=" When i populate enter effective date for this change: 14/12/2022" width="1931"/>
+                <img src="1cbbd2d1dc122635789f05acb83034cfd785a435ffe0824ecff62a2537fdf7f9.png" title=" When i click proceed button" width="1931"/>
+                <img src="c6817a98034d59ae61b009909fe0de1130b694c109080411527c8d4058b7c17c.png" title=" When i click proceed button (completed)" width="1931"/>
+                <img src="bd6a49921e811731d7d06603d5c15915fe779a4ba2cf3f17a82a5a6b669495e1.png" title=" When i populate dropdown field: Status, Active" width="1931"/>
+                <img src="d9b447dadc059536efa5689126b3b72101a3ef3adb30bfd663164efcf90ba2cc.png" title=" When i populate dropdown field: Status, Active (completed)" width="1931"/>
+                <img src="41aec5109e7432c31bc3e699d84c7f9bd844467955dd9a66a068f26602abe114.png" title=" When i populate textfield: Start Date, 14/12/2022" width="1931"/>
+                <img src="777a20d096d74a276c89246d6541869d830c7f162c4e6dfe1f297ee2392591c4.png" title=" When i populate textfield: Estimated end date of position, 14/03/2023" width="1931"/>
+                <img src="91a5ec76a366b61bd82a365eadb2fcca7d361a7e6ba8a563e4df590032fa328a.png" title=" When i populate dropdown field by input: Legal entity, CH_MOB_HQ" width="1931"/>
+                <img src="e966e0f36f4efe8e31c0834f031cd16ed49f610dacf83831b5c5b46390eb5955.png" title=" When i populate dropdown field by input: Legal entity, CH_MOB_HQ (completed)" width="1931"/>
+                <img src="dceb9f1af3d9cae5d9fd3cc3f5172ff9f3e06f61a604c066f2c84dc67ee25ec1.png" title=" When i populate dropdown field: Mobility, NA" width="1931"/>
+                <img src="2b5c4dd5bd018f6a9a5778d4f9110572a860be2dfce2421ccc9db12dce5571aa.png" title=" When i populate dropdown field: Position enabling overlapping, SP" width="1931"/>
+                <img src="a404573f1af96984c48b9c775be4795b12f05fd2687ef2251ac73eb022d89c22.png" title=" When i populate dropdown field: Position enabling overlapping, SP (completed)" width="1931"/>
+                <img src="33cfabc398206011c662b84ce1dcc31916a37353b5ceacd0baad2a9a25535e24.png" title=" When i populate dropdown field by input: Sub-family, Digital Communication" width="1931"/>
+                <img src="98ca72bedebc97cd794d0e41e5971a955249b04a2addd79857bb5c8789c02ebe.png" title=" When i populate dropdown field by input: Sub-family, Digital Communication (completed)" width="1931"/>
+                <img src="88ccfb30d6c0a87b34bb1651e2d1cb30414d0760df35612be91666736e52b129.png" title=" When i populate textfield: Standard Weekly Hours of the position-Full time, 45" width="1931"/>
+                <img src="34644e3b5be463e4c89e38900e92148373b24440a437fe31bf313a071997a5f5.png" title=" When i populate dropdown field by input: Job code, Digital Officer" width="1931"/>
+                <img src="ab82e9aa44d8456bc8f62d69710e901831e2ce6b540d737c17d229fe95860507.png" title=" When i populate dropdown field by input: Job code, Digital Officer (completed)" width="1931"/>
+                <img src="ee9a5486f63aa7ebe456b4519d0ee381dd1acc6f4fbcd357618fff02d4a6d7c0.png" title=" When i populate textfield: Position, LKOwIVqUjpqJ" width="1931"/>
+                <img src="82b3b6a11a7ae982355abcc83e7a8e2d6718406bcc2016849f9cf1be4472e591.png" title=" When i populate dropdown field by input: Location, Geneva" width="1931"/>
+                <img src="377b0c91e0349ea3047c56e9fb76d9eb7bfb029108104042c94fea11f8c03842.png" title=" When i populate dropdown field by input: Location, Geneva (completed)" width="1931"/>
+                <img src="d36fe3fc5bc5a8c6b36cba3a2e3df1a972325803cadf95041e50529f0db1a091.png" title=" When i populate dropdown field by input: Work unit, Financial Applications Support" width="1931"/>
+                <img src="9ddbbd2ddbef7691ab492a38f7d7e52ff7b0b6dee584c2a1bd9570d0189a2d1b.png" title=" When i populate dropdown field by input: Work unit, Financial Applications Support (completed)" width="1931"/>
+                <img src="97b39bc30e99527e843f83106cc0a413ac7bda71a5a07877527b2a5be13b1288.png" title=" When i populate dropdown field by input: Cost Center, Application Support" width="1931"/>
+                <img src="524251282d07a304c6a0ab507bf716a589408ac37fcc9a5166b5df81c9592d60.png" title=" When i populate dropdown field by input: Cost Center, Application Support (completed)" width="1931"/>
+                <img src="3484378d21b4a9b5dc9fcad4ad48a5f7adadb4cea20d0a5f1a793235ea66a450.png" title=" When i populate textfield: Budgeted FTE, 2" width="1931"/>
+                <img src="aa558b5a379ca98e9f41896105fc6fa8f233f156df0838d0be585f794a0a278e.png" title=" When i populate dropdown field: To Be Recruited, No" width="1931"/>
+                <img src="6ced7bb2f910df2d2edb07545e90760834de9b3451ed03666071616d3692bfdf.png" title=" When i populate dropdown field: To Be Recruited, No (completed)" width="1931"/>
+                <img src="9389e22380cde6db08e1a97263ebc911b5db825d8c3b3cb64672cb521f3c8f37.png" title=" When i populate dropdown field: Critical Position, Yes" width="1931"/>
+                <img src="3556de92b1f486f72c9198f56696ed1671758d6eaf6eab93caac2d4e9bdfc147.png" title=" When i populate dropdown field: Critical Position, Yes (completed)" width="1931"/>
+                <img src="197b4beaa3e859a82f4f82154be08e7c06def1b7a0beb128401b626c039d1b95.png" title=" When i populate dropdown field: Position Type, Senior" width="1931"/>
+                <img src="97375dd15dacba881f171d1febf6ca0dc4997b7d1b651a7746a1d881702a7c85.png" title=" When i populate dropdown field: Position Type, Senior (completed)" width="1931"/>
+                <img src="3d21e77e85b7fbff7a00daba11fd91f728b8f42f09d28b2bdfbad08f40cc85ff.png" title=" When i populate text area: Comment, 1GrTXJKdgremEIdrYANb7Ufke" width="1931"/>
+                <img src="3385bf532a6913851ed37a0fd4c4c9c9b423592e3f4ab17c39cf8b4fc7ff1efd.png" title=" When i populate dropdown field by input: Job Role, Communication Adviser 1" width="1931"/>
+                <img src="e66bf13fe9268a6d1a75f6a43d75651dd9ff8213d434632eb4ae559695191c53.png" title=" When i populate dropdown field by input: Job Role, Communication Adviser 1 (completed)" width="1931"/>
+                <img src="d031004e3d3b5c7db9bddec1e7f4b7d5101afbb3dec59b8e4f2ddd7c408a73c8.png" title=" When i populate dropdown field by input: UCC Position, ADMIN" width="1931"/>
+                <img src="fa384d626b3a9a57ef47aacabb65bacdfcae8c2d6f73b4998a47a555e889d70c.png" title=" When i populate dropdown field by input: UCC Position, ADMIN (completed)" width="1931"/>
+                <img src="d22d4d4a9c4a8b224ad26f96129db77213c43c3fa374687a466c1e2cbd2219c8.png" title=" When i populate dropdown field by input: Vacancy Status, FILLED" width="1931"/>
+                <img src="aebc63610b55c0f6eef7c0f63d66138abd6f3bc6ae9559767af8ecf04c46b801.png" title=" When i populate dropdown field by input: Vacancy Status, FILLED (completed)" width="1931"/>
+                <img src="2161972a8f2cc425c2bd0a18c3af8876226ea6c28c4f6a4558d7b199b0f79b7a.png" title=" When i populate dropdown field by input: Vacancy status in 3 months, FILLED" width="1931"/>
+                <img src="9c5fc1ef37af0b7d6fb80b894edc7d8df50b4b870a97892acc8b0a296bbed84f.png" title=" When i populate dropdown field by input: Vacancy status in 3 months, FILLED (completed)" width="1931"/>
+                <img src="1e33a36ff8260f225505abbf969a5f11536d0afb4b338ee42660bba1e8e0fd10.png" title=" When i click save" width="1931"/>
+                <img src="06f5cdf5e12da3e50cb127dbba64f349129b51a2d8f7dc344758e4e96663b3d3.png" title=" When i click save (completed)" width="1931"/>
+                <img src="06f5cdf5e12da3e50cb127dbba64f349129b51a2d8f7dc344758e4e96663b3d3.png" title=" Then the field value details in position portlet are saved: Active, 14/12/2022, 14/03/2023, CH_MOB_HQ, NA, 45, &lt;null&gt;, Digital Communication, Digital Officer, LKOwIVqUjpqJ, Geneva, Financial Applications Support, Application Support, 2, No, Yes, Senior, 1GrTXJKdgremEIdrYANb7Ufke, Communication Adviser 1, ADMIN, FILLED, FILLED" width="1931"/>
+                <img src="8435633c75be21142a2faa056d698e5e6c4274706f31e562230568f8b0358462.png" title=" When i click cancel" width="1931"/>
+                <img src="9c135f5ae0a38d82c62027a6c2186a87287ea1a0d1f993fa7618a5de0848a0b7.png" title=" When i click cancel (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" When HRIS set the status of position to inactive: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 14/12/2022" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="c66d56b8032e8edf1295026e917a0b22facac22f3ce26a90912116bd21a1a16b.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="9c135f5ae0a38d82c62027a6c2186a87287ea1a0d1f993fa7618a5de0848a0b7.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="9c135f5ae0a38d82c62027a6c2186a87287ea1a0d1f993fa7618a5de0848a0b7.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="1756aaabd788b8b172611964eadc83d8d3014633da84303bde3fcdf7042ae716.png" title=" When I set the header module to 'Organisation Info'" width="1931"/>
+                <img src="1756aaabd788b8b172611964eadc83d8d3014633da84303bde3fcdf7042ae716.png" title=" When i click the position org chart tab" width="1931"/>
+                <img src="4587ba4ec34f8bde20cc39211e7072d7ab0df5a9d0d058010dcc7d5d73b08b51.png" title=" When i click the position org chart tab (completed)" width="1931"/>
+                <img src="4587ba4ec34f8bde20cc39211e7072d7ab0df5a9d0d058010dcc7d5d73b08b51.png" title=" Then the position org chart should show up" width="1931"/>
+                <img src="4587ba4ec34f8bde20cc39211e7072d7ab0df5a9d0d058010dcc7d5d73b08b51.png" title=" Then the position org chart should show up (completed)" width="1931"/>
+                <img src="4587ba4ec34f8bde20cc39211e7072d7ab0df5a9d0d058010dcc7d5d73b08b51.png" title=" When I set the Org chart position ID to '856593'" width="1931"/>
+                <img src="f979901e68f8a1d76c5534260d46fa30d9732e719f621a88d13320154c954de2.png" title=" When I set the Org chart position ID to '856593'" width="1931"/>
+                <img src="921f342bc2ea263d557b4d37f34bfdf6b06df4910493b81e6d5a70e119706513.png" title=" When I set the Org chart position ID to '856593' (completed)" width="1931"/>
+                <img src="921f342bc2ea263d557b4d37f34bfdf6b06df4910493b81e6d5a70e119706513.png" title=" When i click a position: 0" width="1931"/>
+                <img src="5687b15988e721c09a7f3213e06795f0bd71cdc11b6162c424850e16faa96a7a.png" title=" When i click a position: 0" width="1931"/>
+                <img src="5687b15988e721c09a7f3213e06795f0bd71cdc11b6162c424850e16faa96a7a.png" title=" When i click a position: 0 (completed)" width="1931"/>
+                <img src="5687b15988e721c09a7f3213e06795f0bd71cdc11b6162c424850e16faa96a7a.png" title=" When i click show position icon" width="1931"/>
+                <img src="5fb2edb321d6697dd75a94510ddca8f5aa81c71ab2bb9530c5d2b2151affd690.png" title=" When i click show position icon (completed)" width="1931"/>
+                <img src="5fb2edb321d6697dd75a94510ddca8f5aa81c71ab2bb9530c5d2b2151affd690.png" title=" When i click edit button" width="1931"/>
+                <img src="743305db9c822a7fc17ce612f344ad6765b4ed5c4a339c6d6e7babb7023285c6.png" title=" When i click edit button" width="1931"/>
+                <img src="743305db9c822a7fc17ce612f344ad6765b4ed5c4a339c6d6e7babb7023285c6.png" title=" When i click edit button (completed)" width="1931"/>
+                <img src="743305db9c822a7fc17ce612f344ad6765b4ed5c4a339c6d6e7babb7023285c6.png" title=" When i populate enter effective date for this change: 14/12/2022" width="1931"/>
+                <img src="743305db9c822a7fc17ce612f344ad6765b4ed5c4a339c6d6e7babb7023285c6.png" title=" When i populate enter effective date for this change: 14/12/2022 (completed)" width="1931"/>
+                <img src="743305db9c822a7fc17ce612f344ad6765b4ed5c4a339c6d6e7babb7023285c6.png" title=" When i click proceed button" width="1931"/>
+                <img src="2bf137d810cf40892a64bd8c257636a15623cac7dc516196b5e4b8535fa8f258.png" title=" When i click proceed button" width="1931"/>
+                <img src="ebfda6ee3be005df0a5f8986d2717f59e531233dcef105a7c54f009cc5e14372.png" title=" When i click proceed button (completed)" width="1931"/>
+                <img src="ebfda6ee3be005df0a5f8986d2717f59e531233dcef105a7c54f009cc5e14372.png" title=" When i populate dropdown field: Status, InActive" width="1931"/>
+                <img src="b167d9400125cd4722148e0bc6b5b029bc7c0ebeae73a1ac8fdfb747bc1265c9.png" title=" When i populate dropdown field: Status, InActive" width="1931"/>
+                <img src="912aa8352fc92a532fe43a829f2f68577c148cc47baa509997a2ca26d750b632.png" title=" When i populate dropdown field: Status, InActive (completed)" width="1931"/>
+                <img src="912aa8352fc92a532fe43a829f2f68577c148cc47baa509997a2ca26d750b632.png" title=" When i click save" width="1931"/>
+                <img src="7bd877aa4c74d6cc6c79fbb4e9e3babba95edb7102ac9400d2b3f8b3d8c48c9e.png" title=" When i click save" width="1931"/>
+                <img src="41ff10a3c7f8f17b47b3efe526f94f2632beeb83380a4e187d89f3214e7b74b0.png" title=" When i click save (completed)" width="1931"/>
+                <img src="41ff10a3c7f8f17b47b3efe526f94f2632beeb83380a4e187d89f3214e7b74b0.png" title=" When i click cancel" width="1931"/>
+                <img src="9c135f5ae0a38d82c62027a6c2186a87287ea1a0d1f993fa7618a5de0848a0b7.png" title=" When i click cancel" width="1931"/>
+                <img src="49dbc82410d2b7744498ecb028f0304e5bff2e234ebbf3f5fc1eae88f072ef09.png" title=" When i click cancel (completed)" width="1931"/>
+                <img src="49dbc82410d2b7744498ecb028f0304e5bff2e234ebbf3f5fc1eae88f072ef09.png" title=" When HRIS set the status of position to inactive: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 14/12/2022 (completed): <span class='success-color'>SUCCESS</span>" width="1931"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.6</span>
+</div>
+</body>
+</html>

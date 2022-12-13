@@ -1,0 +1,602 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Selenium Serenity Tests FAD APPLIC</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="4143b54c09d9fa22846f04fc236441c51ddd596b585b5bf52c49033629793ea6.html">Foundation Objects</a></span>
+                > <span class="truncate-60"><a
+                    href="26c23305efb5a7876a728d797e9571e504560d6dc7b148fb5efde9d79ae9d2cf.html">Create pay component </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 13-12-2022 16:22</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Foundation Objects </span>
+                                    <span class="badge tag-badge" style="">Story</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Create pay component
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" When HRIS reviews pay component details field: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, q8dEIdcDuU2WGysbrjhZuF3nlQH0YLPq, cPL5eVaOYELUpr71LcVPXdJFgJga2tTj, XqHbDJBMfvH4XDsO0vk7dLOFrjLUoPVywYEPB0o6WoCkpKPWwG38WJOESc1wMAhIm9cZtDCM1ljikQmyLNfM7CQ4I6UnLbOM7RMXNnBEqsws0QOYv5XcAkO1DTIheJQb, Active, Amount, No, CHF, 100, Annual, Yes, Gross, Yes, fhg9Vg99pgxbpTcUUYWI480PBcub567r, Yes, Comp, No, 2, No" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="941"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="60759ced109b4d51df91c02ad928fe2453b7994b0ac98eb79fbdd75fc023606c.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="c382ff9b02c4cd8c8678de7c2a137187cecf498735cd016348ec84209105914b.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="c382ff9b02c4cd8c8678de7c2a137187cecf498735cd016348ec84209105914b.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="c382ff9b02c4cd8c8678de7c2a137187cecf498735cd016348ec84209105914b.png" title=" Then the admin centre page is displayed (completed)" width="1931"/>
+                <img src="c382ff9b02c4cd8c8678de7c2a137187cecf498735cd016348ec84209105914b.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="03073baaf9f884bdecbc6af89471fc62470dc77760a8e826c647d2aa353d96ed.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" Then the manage organisation pay and job structure page is displayed" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" Then the manage organisation pay and job structure page is displayed (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i populate create new field: Pay component" width="1931"/>
+                <img src="bc9b82141cffc92e78d511a5f21307dc559d9bf863f0038da9ac1548f2b6f78c.png" title=" When i populate create new field: Pay component" width="1931"/>
+                <img src="ff0e300278de5e51ebc31ee7de7ceafeb850435a4efac5d90bac96f3786f833b.png" title=" When i populate create new field: Pay component" width="1931"/>
+                <img src="ff0e300278de5e51ebc31ee7de7ceafeb850435a4efac5d90bac96f3786f833b.png" title=" When i populate create new field: Pay component (completed)" width="1931"/>
+                <img src="ac2f0b70c71c10238c6616237bc28ffd352b5bc5ffa7160606906c3e493fda45.png" title=" Then the portlet is displayed: Pay Component" width="1931"/>
+                <img src="e48d500e925f0c3880e8dcd5b9bc9f4669154d77a625c189ff3273abf361ab43.png" title=" Then the portlet is displayed: Pay Component (completed)" width="1931"/>
+                <img src="e48d500e925f0c3880e8dcd5b9bc9f4669154d77a625c189ff3273abf361ab43.png" title=" When i populate effective date: 11/12/2022" width="1931"/>
+                <img src="99093b01eb048d09093952db16e3e9cb3dc7b542895a569e6c65aefb87cae8cc.png" title=" When i populate effective date: 11/12/2022 (completed)" width="1931"/>
+                <img src="99093b01eb048d09093952db16e3e9cb3dc7b542895a569e6c65aefb87cae8cc.png" title=" When i populate pay component ID: q8dEIdcDuU2WGysbrjhZuF3nlQH0YLPq" width="1931"/>
+                <img src="efab08c049e9afcf21a531cc26f1efd72b2ca9bddbda54b0ba280f6152727808.png" title=" When i populate pay component ID: q8dEIdcDuU2WGysbrjhZuF3nlQH0YLPq (completed)" width="1931"/>
+                <img src="efab08c049e9afcf21a531cc26f1efd72b2ca9bddbda54b0ba280f6152727808.png" title=" Then a maximum character warning message is displayed: Pay Component ID, 32" width="1931"/>
+                <img src="10b9b8719a725856be8ffa773b620d06dcbc767256cb1a2ffc4b43de1937c1a5.png" title=" Then a maximum character warning message is displayed: Pay Component ID, 32 (completed)" width="1931"/>
+                <img src="10b9b8719a725856be8ffa773b620d06dcbc767256cb1a2ffc4b43de1937c1a5.png" title=" When i populate name: cPL5eVaOYELUpr71LcVPXdJFgJga2tTj" width="1931"/>
+                <img src="b458a6c581b76a078b63089c41915a6ec16727c3c9e06c18f3a9a17ba3ff0d5e.png" title=" When i populate name: cPL5eVaOYELUpr71LcVPXdJFgJga2tTj (completed)" width="1931"/>
+                <img src="b458a6c581b76a078b63089c41915a6ec16727c3c9e06c18f3a9a17ba3ff0d5e.png" title=" Then a maximum character warning message is displayed: Name, 32" width="1931"/>
+                <img src="bc3f455f7bc765a4c02352874ce2e537827bf2c712df9d04c253f3fc80a877f4.png" title=" Then a maximum character warning message is displayed: Name, 32 (completed)" width="1931"/>
+                <img src="bc3f455f7bc765a4c02352874ce2e537827bf2c712df9d04c253f3fc80a877f4.png" title=" When i populate description: XqHbDJBMfvH4XDsO0vk7dLOFrjLUoPVywYEPB0o6WoCkpKPWwG38WJOESc1wMAhIm9cZtDCM1ljikQmyLNfM7CQ4I6UnLbOM7RMXNnBEqsws0QOYv5XcAkO1DTIheJQb" width="1931"/>
+                <img src="205449898b9823bab541e5bf1a31e7aebea0ed030aaeff86e1653ddcaaa81252.png" title=" When i populate description: XqHbDJBMfvH4XDsO0vk7dLOFrjLUoPVywYEPB0o6WoCkpKPWwG38WJOESc1wMAhIm9cZtDCM1ljikQmyLNfM7CQ4I6UnLbOM7RMXNnBEqsws0QOYv5XcAkO1DTIheJQb (completed)" width="1931"/>
+                <img src="205449898b9823bab541e5bf1a31e7aebea0ed030aaeff86e1653ddcaaa81252.png" title=" When i populate status: Active" width="1931"/>
+                <img src="a4a81f76b4621a7c839bb28dd540d15f7759f16400ca42e044915e4e4876e457.png" title=" When i populate status: Active" width="1931"/>
+                <img src="749ef45f818ada9d948b76221685548890bf3df52cd44d72bb022e0ff44db203.png" title=" When i populate status: Active" width="1931"/>
+                <img src="749ef45f818ada9d948b76221685548890bf3df52cd44d72bb022e0ff44db203.png" title=" When i populate status: Active (completed)" width="1931"/>
+                <img src="749ef45f818ada9d948b76221685548890bf3df52cd44d72bb022e0ff44db203.png" title=" When i populate pay component type: Amount" width="1931"/>
+                <img src="1f08a22c1fc25e01c294c31c681fb9dd929ebe5cf3b77bd2a0b0a37caf3b46e2.png" title=" When i populate pay component type: Amount" width="1931"/>
+                <img src="fcfb4933f399ff8164bd43bab6ff0b65a83f028c22f2e7f9780bea5a87d65f47.png" title=" When i populate pay component type: Amount" width="1931"/>
+                <img src="fcfb4933f399ff8164bd43bab6ff0b65a83f028c22f2e7f9780bea5a87d65f47.png" title=" When i populate pay component type: Amount (completed)" width="1931"/>
+                <img src="fcfb4933f399ff8164bd43bab6ff0b65a83f028c22f2e7f9780bea5a87d65f47.png" title=" When i populate is earning: No" width="1931"/>
+                <img src="8eb427a93dc4e10accbbd4258ced082397def1b1ff5542692924ba1e26f12e06.png" title=" When i populate is earning: No" width="1931"/>
+                <img src="8b073883d4f6afad72773b2ffc419a9749a56ce0670a0a4aa5f402412e0189d9.png" title=" When i populate is earning: No" width="1931"/>
+                <img src="8b073883d4f6afad72773b2ffc419a9749a56ce0670a0a4aa5f402412e0189d9.png" title=" When i populate is earning: No (completed)" width="1931"/>
+                <img src="8b073883d4f6afad72773b2ffc419a9749a56ce0670a0a4aa5f402412e0189d9.png" title=" When i populate currency: CHF" width="1931"/>
+                <img src="d33b769beca6f060b3aecac9a0b2049978119a6dcb827c09d24aee1fc848aa0f.png" title=" When i populate currency: CHF" width="1931"/>
+                <img src="d33b769beca6f060b3aecac9a0b2049978119a6dcb827c09d24aee1fc848aa0f.png" title=" When i populate currency: CHF (completed)" width="1931"/>
+                <img src="d33b769beca6f060b3aecac9a0b2049978119a6dcb827c09d24aee1fc848aa0f.png" title=" When i populate pay component value: 100" width="1931"/>
+                <img src="a1277b0740ca2574935adfd21f2715242ce407efa28f66e7c4c428e4f1588534.png" title=" When i populate pay component value: 100 (completed)" width="1931"/>
+                <img src="a1277b0740ca2574935adfd21f2715242ce407efa28f66e7c4c428e4f1588534.png" title=" When i populate frequency: Annual" width="1931"/>
+                <img src="853927c4d04fd329d6cb614049d2d17bae05bba78a82c808fd36c41b2b2b8d33.png" title=" When i populate frequency: Annual" width="1931"/>
+                <img src="853927c4d04fd329d6cb614049d2d17bae05bba78a82c808fd36c41b2b2b8d33.png" title=" When i populate frequency: Annual (completed)" width="1931"/>
+                <img src="853927c4d04fd329d6cb614049d2d17bae05bba78a82c808fd36c41b2b2b8d33.png" title=" When i populate recurring: Yes" width="1931"/>
+                <img src="847b9f6494eac2bf4332af42dc921ac2c05a4ed2d129007bec9834a327bdc978.png" title=" When i populate recurring: Yes" width="1931"/>
+                <img src="106693f75f7b9b20928cd3987893c43b62d9132c578c4b519b564fd8e23d00e8.png" title=" When i populate recurring: Yes" width="1931"/>
+                <img src="106693f75f7b9b20928cd3987893c43b62d9132c578c4b519b564fd8e23d00e8.png" title=" When i populate recurring: Yes (completed)" width="1931"/>
+                <img src="106693f75f7b9b20928cd3987893c43b62d9132c578c4b519b564fd8e23d00e8.png" title=" When i populate tax treatment: Gross" width="1931"/>
+                <img src="e0eedb85532093d3fec9a8f2b9d7c0f2ac25c40b08bc5066b9d2bee24d6232ee.png" title=" When i populate tax treatment: Gross" width="1931"/>
+                <img src="48d1854dce719c67b81807e8eb99d06245807005cfd7bb643e49bbf4240d56fe.png" title=" When i populate tax treatment: Gross" width="1931"/>
+                <img src="48d1854dce719c67b81807e8eb99d06245807005cfd7bb643e49bbf4240d56fe.png" title=" When i populate tax treatment: Gross (completed)" width="1931"/>
+                <img src="48d1854dce719c67b81807e8eb99d06245807005cfd7bb643e49bbf4240d56fe.png" title=" When i populate can override: Yes" width="1931"/>
+                <img src="3528298b79f24eb03e64d0e7dbb32fd75200e84b283608b09b7e43ecf90a3fd3.png" title=" When i populate can override: Yes" width="1931"/>
+                <img src="ed8d8f0209f6b8cf878505c385948958a6e0961ffdbf36c9e20e6152fbb6435d.png" title=" When i populate can override: Yes" width="1931"/>
+                <img src="ed8d8f0209f6b8cf878505c385948958a6e0961ffdbf36c9e20e6152fbb6435d.png" title=" When i populate can override: Yes (completed)" width="1931"/>
+                <img src="ed8d8f0209f6b8cf878505c385948958a6e0961ffdbf36c9e20e6152fbb6435d.png" title=" When i populate self service description: fhg9Vg99pgxbpTcUUYWI480PBcub567r" width="1931"/>
+                <img src="e9893cea3641eeff191f48f28f84ab8ff19b25d1c578550d9faed4707a6c20d4.png" title=" When i populate self service description: fhg9Vg99pgxbpTcUUYWI480PBcub567r (completed)" width="1931"/>
+                <img src="e9893cea3641eeff191f48f28f84ab8ff19b25d1c578550d9faed4707a6c20d4.png" title=" Then a maximum character warning message is displayed: Self Service Description, 32" width="1931"/>
+                <img src="fecbdc0ed3397ee79be1156cbe90b27ba26a1428968b4390ae5a6d0e0bd8a1cd.png" title=" Then a maximum character warning message is displayed: Self Service Description, 32 (completed)" width="1931"/>
+                <img src="fecbdc0ed3397ee79be1156cbe90b27ba26a1428968b4390ae5a6d0e0bd8a1cd.png" title=" When i populate display on self service: Yes" width="1931"/>
+                <img src="c925dcecfe5d3e00a155c790d9ac78593d0470c5be6a6b86ce2f38d8e20592fe.png" title=" When i populate display on self service: Yes" width="1931"/>
+                <img src="858b2d2edfc0f2d49c467873c6e2dd32a6eddc400d9681eb3fd1cff78bbfd717.png" title=" When i populate display on self service: Yes" width="1931"/>
+                <img src="858b2d2edfc0f2d49c467873c6e2dd32a6eddc400d9681eb3fd1cff78bbfd717.png" title=" When i populate display on self service: Yes (completed)" width="1931"/>
+                <img src="858b2d2edfc0f2d49c467873c6e2dd32a6eddc400d9681eb3fd1cff78bbfd717.png" title=" When i populate used for comp planning: Comp" width="1931"/>
+                <img src="d68aec5c455eeecd2f374fa3f4d6b6ae822f4a7f364575a5e9d1392ef4f75a54.png" title=" When i populate used for comp planning: Comp" width="1931"/>
+                <img src="79df3e0cc51e39bfde1756f55968b640fdf6fe99c020b4f1e022dcc6990839eb.png" title=" When i populate used for comp planning: Comp" width="1931"/>
+                <img src="79df3e0cc51e39bfde1756f55968b640fdf6fe99c020b4f1e022dcc6990839eb.png" title=" When i populate used for comp planning: Comp (completed)" width="1931"/>
+                <img src="79df3e0cc51e39bfde1756f55968b640fdf6fe99c020b4f1e022dcc6990839eb.png" title=" When i populate target: No" width="1931"/>
+                <img src="c2361b5e37f0eecdadbfa2cdc1bc9c42158ff3961355702f65f61daa6e998e38.png" title=" When i populate target: No" width="1931"/>
+                <img src="8b1511b75625d65e118a93074aa14af2ceac56270f59266ca20b3f1d8affef37.png" title=" When i populate target: No" width="1931"/>
+                <img src="8b1511b75625d65e118a93074aa14af2ceac56270f59266ca20b3f1d8affef37.png" title=" When i populate target: No (completed)" width="1931"/>
+                <img src="8b1511b75625d65e118a93074aa14af2ceac56270f59266ca20b3f1d8affef37.png" title=" When i populate maximum decimal places: 2" width="1931"/>
+                <img src="e44a1a5604c2d2203969e4d3d9575e94547d9ef0ec9f7e87d7a5d0dd7e43db19.png" title=" When i populate maximum decimal places: 2" width="1931"/>
+                <img src="5b7f711e7acab9529b9df35773821099a4dd793633a287377fb6f14eed270de6.png" title=" When i populate maximum decimal places: 2" width="1931"/>
+                <img src="5b7f711e7acab9529b9df35773821099a4dd793633a287377fb6f14eed270de6.png" title=" When i populate maximum decimal places: 2 (completed)" width="1931"/>
+                <img src="5b7f711e7acab9529b9df35773821099a4dd793633a287377fb6f14eed270de6.png" title=" When i populate enable end dated payments: No" width="1931"/>
+                <img src="8a18fd3062c02ab230227244292b42a47a5ac97f974419d829ff40fae8738a69.png" title=" When i populate enable end dated payments: No" width="1931"/>
+                <img src="a039fee0abc074324235e03f62f3ec7be9a51a5d10904ff5c41a81fd5b861a84.png" title=" When i populate enable end dated payments: No" width="1931"/>
+                <img src="a039fee0abc074324235e03f62f3ec7be9a51a5d10904ff5c41a81fd5b861a84.png" title=" When i populate enable end dated payments: No (completed)" width="1931"/>
+                <img src="a039fee0abc074324235e03f62f3ec7be9a51a5d10904ff5c41a81fd5b861a84.png" title=" When i click cancel button" width="1931"/>
+                <img src="103ebea56028bf9e92691763d9c11784f50dc1ad84f3a62c10e8fef3744cfe01.png" title=" When i click cancel button" width="1931"/>
+                <img src="8b779359c019f5562ad2c6193c879faedcb88fead6bb491399eebb29d93c58eb.png" title=" When i click cancel button (completed)" width="1931"/>
+                <img src="8b779359c019f5562ad2c6193c879faedcb88fead6bb491399eebb29d93c58eb.png" title=" When i click dont save button" width="1931"/>
+                <img src="52b6c33bff28d773d93775154c1439fd884634d53f7a287c62363f928e1df17d.png" title=" When i click dont save button" width="1931"/>
+                <img src="52b6c33bff28d773d93775154c1439fd884634d53f7a287c62363f928e1df17d.png" title=" When i click dont save button (completed)" width="1931"/>
+                <img src="52b6c33bff28d773d93775154c1439fd884634d53f7a287c62363f928e1df17d.png" title=" When HRIS reviews pay component details field: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, q8dEIdcDuU2WGysbrjhZuF3nlQH0YLPq, cPL5eVaOYELUpr71LcVPXdJFgJga2tTj, XqHbDJBMfvH4XDsO0vk7dLOFrjLUoPVywYEPB0o6WoCkpKPWwG38WJOESc1wMAhIm9cZtDCM1ljikQmyLNfM7CQ4I6UnLbOM7RMXNnBEqsws0QOYv5XcAkO1DTIheJQb, Active, Amount, No, CHF, 100, Annual, Yes, Gross, Yes, fhg9Vg99pgxbpTcUUYWI480PBcub567r, Yes, Comp, No, 2, No (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" When HRIS adds and deletes a favourite: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="708695d600d735779a9e6fe3a7a6e0a453049cff98964483e5cf07a6adb64bbf.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="65743d58e5a5dc28bfde293f946b664bdd0c0230770a5d5203f86e130d398c4f.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="53b13266b53cd3fc17d71526c49eafc2b25683688bf127a354a81f17e881f29b.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="53b13266b53cd3fc17d71526c49eafc2b25683688bf127a354a81f17e881f29b.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="53b13266b53cd3fc17d71526c49eafc2b25683688bf127a354a81f17e881f29b.png" title=" Then the admin centre page is displayed (completed)" width="1931"/>
+                <img src="53b13266b53cd3fc17d71526c49eafc2b25683688bf127a354a81f17e881f29b.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="53b13266b53cd3fc17d71526c49eafc2b25683688bf127a354a81f17e881f29b.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="53b13266b53cd3fc17d71526c49eafc2b25683688bf127a354a81f17e881f29b.png" title=" Then the company process is displayed in my favourites portlet: Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="53b13266b53cd3fc17d71526c49eafc2b25683688bf127a354a81f17e881f29b.png" title=" Then the company process is displayed in my favourites portlet: Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="53b13266b53cd3fc17d71526c49eafc2b25683688bf127a354a81f17e881f29b.png" title=" When i remove the tool in favourites: Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="b0d7d2b9c6acab51350730e9c588c549404a4c314067bab094a820808679e453.png" title=" When i remove the tool in favourites: Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="081169f7b7fd3bb9c276b027dd85b244ef8011f039e467d6dbdefd04ea00f635.png" title=" When i remove the tool in favourites: Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="081169f7b7fd3bb9c276b027dd85b244ef8011f039e467d6dbdefd04ea00f635.png" title=" Then the company process is not displayed in my favourites portlet: Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="081169f7b7fd3bb9c276b027dd85b244ef8011f039e467d6dbdefd04ea00f635.png" title=" Then the company process is not displayed in my favourites portlet: Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="081169f7b7fd3bb9c276b027dd85b244ef8011f039e467d6dbdefd04ea00f635.png" title=" When HRIS adds and deletes a favourite: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" When HRIS submits a pay component: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, AbT2jPRjJX4, A7IIxudvA0x, HZvke6SPEmRTIAurydirOsJ1gjh0S3kADWQvOGYn18OgxkDdlC, Active, Amount, No, CHF, 100, Annual, Yes, Gross, Yes, PZfMxUl3OSYl3pGXJv1h67IGXrPiPMKF, Yes, Comp, No, 2, No" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="aa6c67f575ac3f1e291a4cd15cbca8081bd933cff0517027fffef0ae55abd5a8.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="31353cb14f9214c7fa447048ba30bc70a4b0a6716d87e2e12edc7b10281a39c2.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="31353cb14f9214c7fa447048ba30bc70a4b0a6716d87e2e12edc7b10281a39c2.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="31353cb14f9214c7fa447048ba30bc70a4b0a6716d87e2e12edc7b10281a39c2.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="31353cb14f9214c7fa447048ba30bc70a4b0a6716d87e2e12edc7b10281a39c2.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="31353cb14f9214c7fa447048ba30bc70a4b0a6716d87e2e12edc7b10281a39c2.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="31353cb14f9214c7fa447048ba30bc70a4b0a6716d87e2e12edc7b10281a39c2.png" title=" Then the admin centre page is displayed (completed)" width="1931"/>
+                <img src="31353cb14f9214c7fa447048ba30bc70a4b0a6716d87e2e12edc7b10281a39c2.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="fa6e0cdfbad4a09d61c7524345c2a2a3f47edd7393795631f61b8430a2bbef36.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="ea413b11ff0b663592e580c95f9e6e00274072b0c346681e719ab95638a7e029.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="ea413b11ff0b663592e580c95f9e6e00274072b0c346681e719ab95638a7e029.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="ea413b11ff0b663592e580c95f9e6e00274072b0c346681e719ab95638a7e029.png" title=" Then the manage organisation pay and job structure page is displayed" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" Then the manage organisation pay and job structure page is displayed (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i populate create new field: Pay Component" width="1931"/>
+                <img src="6bd11ba0ed98ce772344de3686238d98a9ed014342e804c7ab65d24273d8d291.png" title=" When i populate create new field: Pay Component" width="1931"/>
+                <img src="aecb3b342d89d2692564a6421fcff7aa0eefb2b8cb2f0ab852f7c20d88000259.png" title=" When i populate create new field: Pay Component" width="1931"/>
+                <img src="aecb3b342d89d2692564a6421fcff7aa0eefb2b8cb2f0ab852f7c20d88000259.png" title=" When i populate create new field: Pay Component (completed)" width="1931"/>
+                <img src="d89cddbb5cd69aae58f50d98e1251a6d192d30e8c3fe72156518f97fd1892108.png" title=" Then the portlet is displayed: Pay Component" width="1931"/>
+                <img src="f51d99a9a121fc98bead691328079215f283c82effea6e9453ada6fde119de3a.png" title=" Then the portlet is displayed: Pay Component (completed)" width="1931"/>
+                <img src="f51d99a9a121fc98bead691328079215f283c82effea6e9453ada6fde119de3a.png" title=" When i populate effective date: 11/12/2022" width="1931"/>
+                <img src="99093b01eb048d09093952db16e3e9cb3dc7b542895a569e6c65aefb87cae8cc.png" title=" When i populate effective date: 11/12/2022 (completed)" width="1931"/>
+                <img src="99093b01eb048d09093952db16e3e9cb3dc7b542895a569e6c65aefb87cae8cc.png" title=" When i populate pay component ID: AbT2jPRjJX4" width="1931"/>
+                <img src="b2fe81aeaa149b00559240e5e13e54e71c861e87b430e776099eaa0007b908c0.png" title=" When i populate pay component ID: AbT2jPRjJX4 (completed)" width="1931"/>
+                <img src="b2fe81aeaa149b00559240e5e13e54e71c861e87b430e776099eaa0007b908c0.png" title=" When i populate name: A7IIxudvA0x" width="1931"/>
+                <img src="f2a842f74ea53cc6edcce7fc8ae10e8826fe17c3744fd8a82e994beebae54a9b.png" title=" When i populate name: A7IIxudvA0x (completed)" width="1931"/>
+                <img src="f2a842f74ea53cc6edcce7fc8ae10e8826fe17c3744fd8a82e994beebae54a9b.png" title=" When i populate description: HZvke6SPEmRTIAurydirOsJ1gjh0S3kADWQvOGYn18OgxkDdlC" width="1931"/>
+                <img src="e07eb08f0e9293ca47c0c16b91b632821822daf19498cc55b1bffb7068517994.png" title=" When i populate description: HZvke6SPEmRTIAurydirOsJ1gjh0S3kADWQvOGYn18OgxkDdlC (completed)" width="1931"/>
+                <img src="e07eb08f0e9293ca47c0c16b91b632821822daf19498cc55b1bffb7068517994.png" title=" When i populate status: Active" width="1931"/>
+                <img src="9792e77f3a78fb27371ead18691666df21659bcbc627cb2d10f2347e41dffbd9.png" title=" When i populate status: Active" width="1931"/>
+                <img src="da8ce2d94a2ff4ab2956badccd99bbbfb113804d0638072dfecbafd3f582b985.png" title=" When i populate status: Active" width="1931"/>
+                <img src="da8ce2d94a2ff4ab2956badccd99bbbfb113804d0638072dfecbafd3f582b985.png" title=" When i populate status: Active (completed)" width="1931"/>
+                <img src="da8ce2d94a2ff4ab2956badccd99bbbfb113804d0638072dfecbafd3f582b985.png" title=" When i populate pay component type: Amount" width="1931"/>
+                <img src="61b726277186994d6f2f9d7b5ad95c38a6fab8ab35482b76f0bc762435dd2f03.png" title=" When i populate pay component type: Amount" width="1931"/>
+                <img src="3841a71916a83c463abb25c1b66eeee0becebe0437f0d4b87e1ca86922340746.png" title=" When i populate pay component type: Amount" width="1931"/>
+                <img src="3841a71916a83c463abb25c1b66eeee0becebe0437f0d4b87e1ca86922340746.png" title=" When i populate pay component type: Amount (completed)" width="1931"/>
+                <img src="3841a71916a83c463abb25c1b66eeee0becebe0437f0d4b87e1ca86922340746.png" title=" When i populate is earning: No" width="1931"/>
+                <img src="45ef811d14e8008624dfc9e3b8be4d9f56063fdc14a4791c64a2a86eddf7c382.png" title=" When i populate is earning: No" width="1931"/>
+                <img src="1c9d6270250604efac596ba3488eb0889cf418a6b61bddfca352912dcfa2dda2.png" title=" When i populate is earning: No" width="1931"/>
+                <img src="1c9d6270250604efac596ba3488eb0889cf418a6b61bddfca352912dcfa2dda2.png" title=" When i populate is earning: No (completed)" width="1931"/>
+                <img src="1c9d6270250604efac596ba3488eb0889cf418a6b61bddfca352912dcfa2dda2.png" title=" When i populate currency: CHF" width="1931"/>
+                <img src="ea0b7b71343cf83a011bda5c50483a1a4e6a37c1dcaac856609560b129be50bf.png" title=" When i populate currency: CHF" width="1931"/>
+                <img src="ea0b7b71343cf83a011bda5c50483a1a4e6a37c1dcaac856609560b129be50bf.png" title=" When i populate currency: CHF (completed)" width="1931"/>
+                <img src="ea0b7b71343cf83a011bda5c50483a1a4e6a37c1dcaac856609560b129be50bf.png" title=" When i populate pay component value: 100" width="1931"/>
+                <img src="ff1d93876c7b9871795af99b88c93623a32880b35bb4f7f3726d13116b6c2473.png" title=" When i populate pay component value: 100 (completed)" width="1931"/>
+                <img src="ff1d93876c7b9871795af99b88c93623a32880b35bb4f7f3726d13116b6c2473.png" title=" When i populate frequency: Annual" width="1931"/>
+                <img src="49ea27cd6cf3379c6119b5f32e04018b7600986d1a57d408beca000dae9e229b.png" title=" When i populate frequency: Annual" width="1931"/>
+                <img src="49ea27cd6cf3379c6119b5f32e04018b7600986d1a57d408beca000dae9e229b.png" title=" When i populate frequency: Annual (completed)" width="1931"/>
+                <img src="49ea27cd6cf3379c6119b5f32e04018b7600986d1a57d408beca000dae9e229b.png" title=" When i populate recurring: Yes" width="1931"/>
+                <img src="65239371be830c7f764e80ecbd3560fe52fe67607920957f51572ddf1298386f.png" title=" When i populate recurring: Yes" width="1931"/>
+                <img src="b1646e23caf912ec464f498e0d4f525533362c2a463a864ba7f76eb6ef0c5131.png" title=" When i populate recurring: Yes" width="1931"/>
+                <img src="b1646e23caf912ec464f498e0d4f525533362c2a463a864ba7f76eb6ef0c5131.png" title=" When i populate recurring: Yes (completed)" width="1931"/>
+                <img src="b1646e23caf912ec464f498e0d4f525533362c2a463a864ba7f76eb6ef0c5131.png" title=" When i populate tax treatment: Gross" width="1931"/>
+                <img src="2b8503974b20b9f94e8bb1c06ced42134bfd7ff148f4d67fd8d42c7374266b4c.png" title=" When i populate tax treatment: Gross" width="1931"/>
+                <img src="0d3bd083f9bd11369193575f65d1168aa6aad26bc453aa28839554ce7697ddec.png" title=" When i populate tax treatment: Gross" width="1931"/>
+                <img src="0d3bd083f9bd11369193575f65d1168aa6aad26bc453aa28839554ce7697ddec.png" title=" When i populate tax treatment: Gross (completed)" width="1931"/>
+                <img src="0d3bd083f9bd11369193575f65d1168aa6aad26bc453aa28839554ce7697ddec.png" title=" When i populate can override: Yes" width="1931"/>
+                <img src="cbf2740e13449139b8c6c2d25662a9e0530e59d8a5014b686cf1ea1f89b87f8f.png" title=" When i populate can override: Yes" width="1931"/>
+                <img src="31fd4d4cbd3490a86d036abdc7ab80e7071bc893a234369b258231eeaf9a58f9.png" title=" When i populate can override: Yes" width="1931"/>
+                <img src="31fd4d4cbd3490a86d036abdc7ab80e7071bc893a234369b258231eeaf9a58f9.png" title=" When i populate can override: Yes (completed)" width="1931"/>
+                <img src="31fd4d4cbd3490a86d036abdc7ab80e7071bc893a234369b258231eeaf9a58f9.png" title=" When i populate self service description: PZfMxUl3OSYl3pGXJv1h67IGXrPiPMKF" width="1931"/>
+                <img src="44904f802cf6b27ab4d49797827937cf45ce19407e5d43c7891577637583c71c.png" title=" When i populate self service description: PZfMxUl3OSYl3pGXJv1h67IGXrPiPMKF (completed)" width="1931"/>
+                <img src="44904f802cf6b27ab4d49797827937cf45ce19407e5d43c7891577637583c71c.png" title=" When i populate display on self service: Yes" width="1931"/>
+                <img src="3db0b12c3ab4e8ee21f5b36287744ab43eb16db8005b298d7233b3da2b8ec5fb.png" title=" When i populate display on self service: Yes" width="1931"/>
+                <img src="b114e458f48501f650ef339262657fbc2cd5e0b48e8f256d58e5ff079974cc3b.png" title=" When i populate display on self service: Yes" width="1931"/>
+                <img src="b114e458f48501f650ef339262657fbc2cd5e0b48e8f256d58e5ff079974cc3b.png" title=" When i populate display on self service: Yes (completed)" width="1931"/>
+                <img src="b114e458f48501f650ef339262657fbc2cd5e0b48e8f256d58e5ff079974cc3b.png" title=" When i populate used for comp planning: Comp" width="1931"/>
+                <img src="73638d007df20b93f1db81486f99a5ed9d6c029583d7e1970ed00db27dbaeb8b.png" title=" When i populate used for comp planning: Comp" width="1931"/>
+                <img src="688bea3b28aa4bae8f5cff838d3330fd905e09a8a83c97433f72ec16760c1178.png" title=" When i populate used for comp planning: Comp" width="1931"/>
+                <img src="688bea3b28aa4bae8f5cff838d3330fd905e09a8a83c97433f72ec16760c1178.png" title=" When i populate used for comp planning: Comp (completed)" width="1931"/>
+                <img src="688bea3b28aa4bae8f5cff838d3330fd905e09a8a83c97433f72ec16760c1178.png" title=" When i populate target: No" width="1931"/>
+                <img src="04b4979915bf7ed59bfe6ff6be49ae0ea2fac13600b9065e5b0eafa495714ae4.png" title=" When i populate target: No" width="1931"/>
+                <img src="821dbde02491c3e4470eb7ca476985e4c0ba573d48e1eba849cd4ad5e1212396.png" title=" When i populate target: No" width="1931"/>
+                <img src="821dbde02491c3e4470eb7ca476985e4c0ba573d48e1eba849cd4ad5e1212396.png" title=" When i populate target: No (completed)" width="1931"/>
+                <img src="821dbde02491c3e4470eb7ca476985e4c0ba573d48e1eba849cd4ad5e1212396.png" title=" When i populate maximum decimal places: 2" width="1931"/>
+                <img src="5feae668c09a7620214060b2248452582bb0309fe613e5f07f6be1af791a9ff6.png" title=" When i populate maximum decimal places: 2" width="1931"/>
+                <img src="daaaa9e79bcf36d1434db515f6f59cf60a2ab0c211d5102b22a1039da69fff9d.png" title=" When i populate maximum decimal places: 2" width="1931"/>
+                <img src="daaaa9e79bcf36d1434db515f6f59cf60a2ab0c211d5102b22a1039da69fff9d.png" title=" When i populate maximum decimal places: 2 (completed)" width="1931"/>
+                <img src="daaaa9e79bcf36d1434db515f6f59cf60a2ab0c211d5102b22a1039da69fff9d.png" title=" When i populate enable end dated payments: No" width="1931"/>
+                <img src="ed0b4a7decbded3e2b7377e2078ea79c7d1fd7df6ce52c7f9e1618f8749259f7.png" title=" When i populate enable end dated payments: No" width="1931"/>
+                <img src="21195cac9c0c679f22cfb49179b50fcc5c4bffa7fac6974b1a3c86c5485f1ce5.png" title=" When i populate enable end dated payments: No" width="1931"/>
+                <img src="21195cac9c0c679f22cfb49179b50fcc5c4bffa7fac6974b1a3c86c5485f1ce5.png" title=" When i populate enable end dated payments: No (completed)" width="1931"/>
+                <img src="21195cac9c0c679f22cfb49179b50fcc5c4bffa7fac6974b1a3c86c5485f1ce5.png" title=" When i click save button" width="1931"/>
+                <img src="bbf68041468fc8ca8cb07f217b748cd79edc3adac8bbb7754f09babb2eac2a5e.png" title=" When i click save button" width="1931"/>
+                <img src="75db777c95804dda3f37f36e1a09dd0a5e817992fc9af6c7b872c722b3cb7656.png" title=" When i click save button (completed)" width="1931"/>
+                <img src="75db777c95804dda3f37f36e1a09dd0a5e817992fc9af6c7b872c722b3cb7656.png" title=" Then the name and code is displayed in header: AbT2jPRjJX4, A7IIxudvA0x" width="1931"/>
+                <img src="75db777c95804dda3f37f36e1a09dd0a5e817992fc9af6c7b872c722b3cb7656.png" title=" Then the name and code is displayed in header: AbT2jPRjJX4, A7IIxudvA0x (completed)" width="1931"/>
+                <img src="75db777c95804dda3f37f36e1a09dd0a5e817992fc9af6c7b872c722b3cb7656.png" title=" Then a pay component is saved: AbT2jPRjJX4, A7IIxudvA0x, HZvke6SPEmRTIAurydirOsJ1gjh0S3kADWQvOGYn18OgxkDdlC, Active, Amount, No, CHF, 100, Annual, Yes, Gross, Yes, PZfMxUl3OSYl3pGXJv1h67IGXrPiPMKF, Yes, Comp, No, 2, No" width="1931"/>
+                <img src="75db777c95804dda3f37f36e1a09dd0a5e817992fc9af6c7b872c722b3cb7656.png" title=" Then a pay component is saved: AbT2jPRjJX4, A7IIxudvA0x, HZvke6SPEmRTIAurydirOsJ1gjh0S3kADWQvOGYn18OgxkDdlC, Active, Amount, No, CHF, 100, Annual, Yes, Gross, Yes, PZfMxUl3OSYl3pGXJv1h67IGXrPiPMKF, Yes, Comp, No, 2, No (completed)" width="1931"/>
+                <img src="75db777c95804dda3f37f36e1a09dd0a5e817992fc9af6c7b872c722b3cb7656.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="081169f7b7fd3bb9c276b027dd85b244ef8011f039e467d6dbdefd04ea00f635.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="081169f7b7fd3bb9c276b027dd85b244ef8011f039e467d6dbdefd04ea00f635.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="0089593e1da2a79842fd20e7a3f509973a0348753b859155c3d605c0bbc27bd4.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="c737e09f8c2db12849cdb57fd1e6ec1cfdf93ed67813cdd0b635bb71092674cc.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="234a763d8b38e0a9534bd8f1818c3524e607d634bea6c94038d09a456304a2a6.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="234a763d8b38e0a9534bd8f1818c3524e607d634bea6c94038d09a456304a2a6.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="234a763d8b38e0a9534bd8f1818c3524e607d634bea6c94038d09a456304a2a6.png" title=" When HRIS submits a pay component: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, AbT2jPRjJX4, A7IIxudvA0x, HZvke6SPEmRTIAurydirOsJ1gjh0S3kADWQvOGYn18OgxkDdlC, Active, Amount, No, CHF, 100, Annual, Yes, Gross, Yes, PZfMxUl3OSYl3pGXJv1h67IGXrPiPMKF, Yes, Comp, No, 2, No (completed)" width="1931"/>
+                <img src="60725be4ea914279a8b6e96db9b004a03f03c5bcf325cfc1a773f24fe654a827.png" title=" When HRIS modify a pay component: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, AsOpgKqn3JQ, A4uk9j2K1Yr, ZQ5iduZaM4k28EwxzHIgxRHbXnBViZJevyGy1N43hD7gKnt1AA, Active, Percentage, Yes, PHP, 90, Total Deduction Period, No, Regular, No, DcUQjTnADHZbtQ7G9DAlDlaBvpnF7VZw, No, Varpay, Yes, 1, Yes, AbT2jPRjJX4, A7IIxudvA0x, HZvke6SPEmRTIAurydirOsJ1gjh0S3kADWQvOGYn18OgxkDdlC, Active, Amount, No, CHF, 100, Annual, Yes, Gross, Yes, PZfMxUl3OSYl3pGXJv1h67IGXrPiPMKF, Yes, Comp, No, 2, No, Base Salary" width="1931"/>
+                <img src="60725be4ea914279a8b6e96db9b004a03f03c5bcf325cfc1a773f24fe654a827.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="1931"/>
+                <img src="60725be4ea914279a8b6e96db9b004a03f03c5bcf325cfc1a773f24fe654a827.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="ba7dab13b883c7226f61790ee2034304e870b1954ab13e38434b2954d8813cd1.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="53b13266b53cd3fc17d71526c49eafc2b25683688bf127a354a81f17e881f29b.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="53b13266b53cd3fc17d71526c49eafc2b25683688bf127a354a81f17e881f29b.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="53b13266b53cd3fc17d71526c49eafc2b25683688bf127a354a81f17e881f29b.png" title=" When I set the header module to 'Home'" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Home' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="c382ff9b02c4cd8c8678de7c2a137187cecf498735cd016348ec84209105914b.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="c382ff9b02c4cd8c8678de7c2a137187cecf498735cd016348ec84209105914b.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="c382ff9b02c4cd8c8678de7c2a137187cecf498735cd016348ec84209105914b.png" title=" Then the admin centre page is displayed (completed)" width="1931"/>
+                <img src="c382ff9b02c4cd8c8678de7c2a137187cecf498735cd016348ec84209105914b.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="fa6e0cdfbad4a09d61c7524345c2a2a3f47edd7393795631f61b8430a2bbef36.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" Then the manage organisation pay and job structure page is displayed" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" Then the manage organisation pay and job structure page is displayed (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i search for an event reason: Pay Component" width="1931"/>
+                <img src="6c4bfafd2db74f6dc22fc8fccf9d33a173264cf0a417a9c6a14c281815417de6.png" title=" When i search for an event reason: Pay Component" width="1931"/>
+                <img src="6c4bfafd2db74f6dc22fc8fccf9d33a173264cf0a417a9c6a14c281815417de6.png" title=" When i search for an event reason: Pay Component (completed)" width="1931"/>
+                <img src="6c4bfafd2db74f6dc22fc8fccf9d33a173264cf0a417a9c6a14c281815417de6.png" title=" When i search for an event reason name: A7IIxudvA0x" width="1931"/>
+                <img src="91e133d0cc7d9019366d70c2db59e68770662e0a99c359b2fc75ec79a1911082.png" title=" When i search for an event reason name: A7IIxudvA0x" width="1931"/>
+                <img src="91e133d0cc7d9019366d70c2db59e68770662e0a99c359b2fc75ec79a1911082.png" title=" When i search for an event reason name: A7IIxudvA0x (completed)" width="1931"/>
+                <img src="0d076b5dc9d61eb31f9ebbb74b6b762ee5b18f8ff9c367264183b231a9e83412.png" title=" When i click take action" width="1931"/>
+                <img src="e52ae8d003d780f608196f388c69c234af9494be57f764ef82ad1de490a2ab83.png" title=" When i click take action" width="1931"/>
+                <img src="e52ae8d003d780f608196f388c69c234af9494be57f764ef82ad1de490a2ab83.png" title=" When i click take action (completed)" width="1931"/>
+                <img src="e52ae8d003d780f608196f388c69c234af9494be57f764ef82ad1de490a2ab83.png" title=" When i populate effective date: 11/12/2022" width="1931"/>
+                <img src="bcfaa617ab08cdd168b498daec943b76d7db14062717163440acfecdc9d4bad5.png" title=" When i populate effective date: 11/12/2022 (completed)" width="1931"/>
+                <img src="bcfaa617ab08cdd168b498daec943b76d7db14062717163440acfecdc9d4bad5.png" title=" When i populate pay component ID: AsOpgKqn3JQ" width="1931"/>
+                <img src="a541668811aa053157fcef8147a9c235de6aaeb7e59da8da3fb6b3533ac2a3a6.png" title=" When i populate pay component ID: AsOpgKqn3JQ (completed)" width="1931"/>
+                <img src="a541668811aa053157fcef8147a9c235de6aaeb7e59da8da3fb6b3533ac2a3a6.png" title=" When i populate name: A4uk9j2K1Yr" width="1931"/>
+                <img src="cc993658512fe110cf5fbcfc0623ea923167b17cc438d0c4b83b753db4d21875.png" title=" When i populate name: A4uk9j2K1Yr (completed)" width="1931"/>
+                <img src="cc993658512fe110cf5fbcfc0623ea923167b17cc438d0c4b83b753db4d21875.png" title=" When i populate description: ZQ5iduZaM4k28EwxzHIgxRHbXnBViZJevyGy1N43hD7gKnt1AA" width="1931"/>
+                <img src="2fe835201697168db904093d2d5be0477557d85ddfb2ec458bf3630da351d753.png" title=" When i populate description: ZQ5iduZaM4k28EwxzHIgxRHbXnBViZJevyGy1N43hD7gKnt1AA (completed)" width="1931"/>
+                <img src="2fe835201697168db904093d2d5be0477557d85ddfb2ec458bf3630da351d753.png" title=" When i populate status: Active" width="1931"/>
+                <img src="3bf1e5bc8904c256e0f5d88ba5d0b1433488e8bc4e0d1ff4e7ab58a95f9e512c.png" title=" When i populate status: Active" width="1931"/>
+                <img src="d64037ea39e26af535b3df1820d57b1828af5eb3b19caf24bb09f59e29cb0df8.png" title=" When i populate status: Active" width="1931"/>
+                <img src="d64037ea39e26af535b3df1820d57b1828af5eb3b19caf24bb09f59e29cb0df8.png" title=" When i populate status: Active (completed)" width="1931"/>
+                <img src="d64037ea39e26af535b3df1820d57b1828af5eb3b19caf24bb09f59e29cb0df8.png" title=" When i populate pay component type: Percentage" width="1931"/>
+                <img src="af97f60f69540c61ed66cb12a61cc970d61de82528335b1ccbb9fe85810c1d82.png" title=" When i populate pay component type: Percentage" width="1931"/>
+                <img src="cfc008b1b2945121328f187c2a14172809ec8e2aba40463a89863a53007c28ce.png" title=" When i populate pay component type: Percentage" width="1931"/>
+                <img src="cfc008b1b2945121328f187c2a14172809ec8e2aba40463a89863a53007c28ce.png" title=" When i populate pay component type: Percentage (completed)" width="1931"/>
+                <img src="cfc008b1b2945121328f187c2a14172809ec8e2aba40463a89863a53007c28ce.png" title=" When i populate is earning: Yes" width="1931"/>
+                <img src="ce9ed32980be19a2e7c1849381c9166bcf8d24d1386f02faefff1e6c4861ca18.png" title=" When i populate is earning: Yes" width="1931"/>
+                <img src="0455305e5ceaf91716dc182bf7f88a9916961f048e384b10db9472192a96b7da.png" title=" When i populate is earning: Yes" width="1931"/>
+                <img src="0455305e5ceaf91716dc182bf7f88a9916961f048e384b10db9472192a96b7da.png" title=" When i populate is earning: Yes (completed)" width="1931"/>
+                <img src="0455305e5ceaf91716dc182bf7f88a9916961f048e384b10db9472192a96b7da.png" title=" When i populate currency: PHP" width="1931"/>
+                <img src="2917b57b8403659ecf07e21c4aebbf63302c33b1a8a669ad218e31d7a030cad3.png" title=" When i populate currency: PHP" width="1931"/>
+                <img src="2917b57b8403659ecf07e21c4aebbf63302c33b1a8a669ad218e31d7a030cad3.png" title=" When i populate currency: PHP (completed)" width="1931"/>
+                <img src="2917b57b8403659ecf07e21c4aebbf63302c33b1a8a669ad218e31d7a030cad3.png" title=" When i populate pay component value: 90" width="1931"/>
+                <img src="fd6319d4067c355fdee0580bffed1936ca20f0bf7f32db61b8313c3454b8ffc4.png" title=" When i populate pay component value: 90 (completed)" width="1931"/>
+                <img src="fd6319d4067c355fdee0580bffed1936ca20f0bf7f32db61b8313c3454b8ffc4.png" title=" When i populate frequency: Total Deduction Period" width="1931"/>
+                <img src="71a39c4acedec81e17c69d3ad9e51ded7292166ccab4330eb95556161e47db41.png" title=" When i populate frequency: Total Deduction Period" width="1931"/>
+                <img src="71a39c4acedec81e17c69d3ad9e51ded7292166ccab4330eb95556161e47db41.png" title=" When i populate frequency: Total Deduction Period (completed)" width="1931"/>
+                <img src="71a39c4acedec81e17c69d3ad9e51ded7292166ccab4330eb95556161e47db41.png" title=" When i populate recurring: No" width="1931"/>
+                <img src="c59ab91f2142ebdcabc491ef8f639e8e4bb394d0de2aa920226e4ebefdcfcfb5.png" title=" When i populate recurring: No" width="1931"/>
+                <img src="909adeaf6948c69ec9c02f2d74a968f466cf9c63e4324684e4d5c39900f415b6.png" title=" When i populate recurring: No" width="1931"/>
+                <img src="909adeaf6948c69ec9c02f2d74a968f466cf9c63e4324684e4d5c39900f415b6.png" title=" When i populate recurring: No (completed)" width="1931"/>
+                <img src="909adeaf6948c69ec9c02f2d74a968f466cf9c63e4324684e4d5c39900f415b6.png" title=" When i populate tax treatment: Regular" width="1931"/>
+                <img src="a7d16265941adec4aee81ef75de049ecd67aca7743a123825f97811588779f6c.png" title=" When i populate tax treatment: Regular" width="1931"/>
+                <img src="7c6dd16eeb99520be8ec4c1310032822afd2153cfd1f6f07e48f4330b33b2f2c.png" title=" When i populate tax treatment: Regular" width="1931"/>
+                <img src="7c6dd16eeb99520be8ec4c1310032822afd2153cfd1f6f07e48f4330b33b2f2c.png" title=" When i populate tax treatment: Regular (completed)" width="1931"/>
+                <img src="7c6dd16eeb99520be8ec4c1310032822afd2153cfd1f6f07e48f4330b33b2f2c.png" title=" When i populate can override: No" width="1931"/>
+                <img src="c47f34afeadb31d9d5ef31a5ded10ccc9d5cc7229295a9ad812ba9f389b1c6ad.png" title=" When i populate can override: No" width="1931"/>
+                <img src="2d0b46ad741385ff3b349c39a0566944d93906b91c2ef2033bf3132a2de18ad8.png" title=" When i populate can override: No" width="1931"/>
+                <img src="2d0b46ad741385ff3b349c39a0566944d93906b91c2ef2033bf3132a2de18ad8.png" title=" When i populate can override: No (completed)" width="1931"/>
+                <img src="2d0b46ad741385ff3b349c39a0566944d93906b91c2ef2033bf3132a2de18ad8.png" title=" When i populate self service description: DcUQjTnADHZbtQ7G9DAlDlaBvpnF7VZw" width="1931"/>
+                <img src="fdeb32624754100898e816aa2df788f03b9bb89ad60594cad1a917f14d23d81e.png" title=" When i populate self service description: DcUQjTnADHZbtQ7G9DAlDlaBvpnF7VZw (completed)" width="1931"/>
+                <img src="fdeb32624754100898e816aa2df788f03b9bb89ad60594cad1a917f14d23d81e.png" title=" When i populate display on self service: No" width="1931"/>
+                <img src="d1b34a76471c18fd3acc1e1a585646f42af050408b0c6907968e568f645966cc.png" title=" When i populate display on self service: No" width="1931"/>
+                <img src="0879d64128f449db0baf32dd10bc5f196d477c75fe5e21be5dee830a791f51df.png" title=" When i populate display on self service: No" width="1931"/>
+                <img src="0879d64128f449db0baf32dd10bc5f196d477c75fe5e21be5dee830a791f51df.png" title=" When i populate display on self service: No (completed)" width="1931"/>
+                <img src="0879d64128f449db0baf32dd10bc5f196d477c75fe5e21be5dee830a791f51df.png" title=" When i populate used for comp planning: Varpay" width="1931"/>
+                <img src="2fabe413a1b81e32a729d0ccbf868d8074269482ac2f0ad634b734297536fdba.png" title=" When i populate used for comp planning: Varpay" width="1931"/>
+                <img src="dd5cbd61e2d2844a8530d38fb1b3a093517b218b979a48881d483bec8b720738.png" title=" When i populate used for comp planning: Varpay" width="1931"/>
+                <img src="dd5cbd61e2d2844a8530d38fb1b3a093517b218b979a48881d483bec8b720738.png" title=" When i populate used for comp planning: Varpay (completed)" width="1931"/>
+                <img src="dd5cbd61e2d2844a8530d38fb1b3a093517b218b979a48881d483bec8b720738.png" title=" When i populate target: Yes" width="1931"/>
+                <img src="e9618644deba79a478d0cf7698bb11ecf96974674449e9b87a363fb6ace45e5b.png" title=" When i populate target: Yes" width="1931"/>
+                <img src="c36a959d5d5d620b38ac78f6e3611a29f1ab5a402ba92e0cfda8b7e7de36395d.png" title=" When i populate target: Yes" width="1931"/>
+                <img src="c36a959d5d5d620b38ac78f6e3611a29f1ab5a402ba92e0cfda8b7e7de36395d.png" title=" When i populate target: Yes (completed)" width="1931"/>
+                <img src="c36a959d5d5d620b38ac78f6e3611a29f1ab5a402ba92e0cfda8b7e7de36395d.png" title=" When i populate maximum decimal places: 1" width="1931"/>
+                <img src="8ac42cc7a74919cc9ef751624330475265469c545c7a23afe40756aebbd5cb30.png" title=" When i populate maximum decimal places: 1" width="1931"/>
+                <img src="05c223c1535fb7ab23ca6cf1ca6e006c8180ef652a98af1fab59ca2d256f3769.png" title=" When i populate maximum decimal places: 1" width="1931"/>
+                <img src="05c223c1535fb7ab23ca6cf1ca6e006c8180ef652a98af1fab59ca2d256f3769.png" title=" When i populate maximum decimal places: 1 (completed)" width="1931"/>
+                <img src="05c223c1535fb7ab23ca6cf1ca6e006c8180ef652a98af1fab59ca2d256f3769.png" title=" When i populate enable end dated payments: Yes" width="1931"/>
+                <img src="99424c91b474b2c75bf26e9afd0d9b65e1d6885ddb075d45734288e2b97d533d.png" title=" When i populate enable end dated payments: Yes" width="1931"/>
+                <img src="0a4c7950faa197ee0b72d4f671f0deaa1965cc320d91b852b611a6381b6c0bc3.png" title=" When i populate enable end dated payments: Yes" width="1931"/>
+                <img src="0a4c7950faa197ee0b72d4f671f0deaa1965cc320d91b852b611a6381b6c0bc3.png" title=" When i populate enable end dated payments: Yes (completed)" width="1931"/>
+                <img src="0a4c7950faa197ee0b72d4f671f0deaa1965cc320d91b852b611a6381b6c0bc3.png" title=" When i populate base pay component group: Base Salary" width="1931"/>
+                <img src="6e4106812ba9965d09688323b2de3ac2e3990a34906456fc74486f6c37a351f8.png" title=" When i populate base pay component group: Base Salary" width="1931"/>
+                <img src="6e4106812ba9965d09688323b2de3ac2e3990a34906456fc74486f6c37a351f8.png" title=" When i populate base pay component group: Base Salary (completed)" width="1931"/>
+                <img src="6e4106812ba9965d09688323b2de3ac2e3990a34906456fc74486f6c37a351f8.png" title=" Then the former value is displayed: Pay Component ID, AbT2jPRjJX4, Name, A7IIxudvA0x, Description, HZvke6SPEmRTIAurydirOsJ1gjh0S3kADWQvOGYn18OgxkDdlC, &lt;null&gt;, &lt;null&gt;, Pay Component Type, Amount, Is Earning, No, Currency, CHF" width="1931"/>
+                <img src="6e4106812ba9965d09688323b2de3ac2e3990a34906456fc74486f6c37a351f8.png" title=" Then the former value is displayed: Pay Component ID, AbT2jPRjJX4, Name, A7IIxudvA0x, Description, HZvke6SPEmRTIAurydirOsJ1gjh0S3kADWQvOGYn18OgxkDdlC, &lt;null&gt;, &lt;null&gt;, Pay Component Type, Amount, Is Earning, No, Currency, CHF (completed)" width="1931"/>
+                <img src="6e4106812ba9965d09688323b2de3ac2e3990a34906456fc74486f6c37a351f8.png" title=" Then the former value is displayed: Pay Component Value, 100, Frequency, Annual, Recurring, Yes, Tax Treatment, Gross, Can Override, Yes, Self Service Description, PZfMxUl3OSYl3pGXJv1h67IGXrPiPMKF, Display on Self Service, Yes" width="1931"/>
+                <img src="6e4106812ba9965d09688323b2de3ac2e3990a34906456fc74486f6c37a351f8.png" title=" Then the former value is displayed: Pay Component Value, 100, Frequency, Annual, Recurring, Yes, Tax Treatment, Gross, Can Override, Yes, Self Service Description, PZfMxUl3OSYl3pGXJv1h67IGXrPiPMKF, Display on Self Service, Yes (completed)" width="1931"/>
+                <img src="6e4106812ba9965d09688323b2de3ac2e3990a34906456fc74486f6c37a351f8.png" title=" Then the former value is displayed: Used for Comp Planning, Comp, Target, No, Maximum Decimal Places, 2, Enable End-Dated Payments, No, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;" width="1931"/>
+                <img src="6e4106812ba9965d09688323b2de3ac2e3990a34906456fc74486f6c37a351f8.png" title=" Then the former value is displayed: Used for Comp Planning, Comp, Target, No, Maximum Decimal Places, 2, Enable End-Dated Payments, No, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt; (completed)" width="1931"/>
+                <img src="6e4106812ba9965d09688323b2de3ac2e3990a34906456fc74486f6c37a351f8.png" title=" When i click save button" width="1931"/>
+                <img src="d75c6b5dda7be1d7637a38e944e28ff6dc5525e7efb35ab65cd3818f9dbd4b1b.png" title=" When i click save button" width="1931"/>
+                <img src="839eb177b4a1b313ff2a7b15648a5a91c9835e427a656c4f452cc93f5f51d213.png" title=" When i click save button (completed)" width="1931"/>
+                <img src="839eb177b4a1b313ff2a7b15648a5a91c9835e427a656c4f452cc93f5f51d213.png" title=" Then the record details is saved: Pay Component ID, AsOpgKqn3JQ, Name, A4uk9j2K1Yr, Description, ZQ5iduZaM4k28EwxzHIgxRHbXnBViZJevyGy1N43hD7gKnt1AA, Status, Active, Pay Component Type, Percentage, Is Earning, Yes, Currency, PHP, Pay Component Value, 90" width="1931"/>
+                <img src="839eb177b4a1b313ff2a7b15648a5a91c9835e427a656c4f452cc93f5f51d213.png" title=" Then the record details is saved: Pay Component ID, AsOpgKqn3JQ, Name, A4uk9j2K1Yr, Description, ZQ5iduZaM4k28EwxzHIgxRHbXnBViZJevyGy1N43hD7gKnt1AA, Status, Active, Pay Component Type, Percentage, Is Earning, Yes, Currency, PHP, Pay Component Value, 90 (completed)" width="1931"/>
+                <img src="839eb177b4a1b313ff2a7b15648a5a91c9835e427a656c4f452cc93f5f51d213.png" title=" Then the record details is saved: Frequency, Total Deduction Period, Recurring, No, Tax Treatment, Regular, Can Override, No, Self Service Description, DcUQjTnADHZbtQ7G9DAlDlaBvpnF7VZw, Display on Self Service, No, Used for Comp Planning, Varpay, Target, Yes" width="1931"/>
+                <img src="839eb177b4a1b313ff2a7b15648a5a91c9835e427a656c4f452cc93f5f51d213.png" title=" Then the record details is saved: Frequency, Total Deduction Period, Recurring, No, Tax Treatment, Regular, Can Override, No, Self Service Description, DcUQjTnADHZbtQ7G9DAlDlaBvpnF7VZw, Display on Self Service, No, Used for Comp Planning, Varpay, Target, Yes (completed)" width="1931"/>
+                <img src="839eb177b4a1b313ff2a7b15648a5a91c9835e427a656c4f452cc93f5f51d213.png" title=" Then the record details is saved: Maximum Decimal Places, 1, Enable End-Dated Payments, Yes, Base Pay Component Group, Base Salary, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;" width="1931"/>
+                <img src="839eb177b4a1b313ff2a7b15648a5a91c9835e427a656c4f452cc93f5f51d213.png" title=" Then the record details is saved: Maximum Decimal Places, 1, Enable End-Dated Payments, Yes, Base Pay Component Group, Base Salary, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt; (completed)" width="1931"/>
+                <img src="839eb177b4a1b313ff2a7b15648a5a91c9835e427a656c4f452cc93f5f51d213.png" title=" When HRIS modify a pay component: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, AsOpgKqn3JQ, A4uk9j2K1Yr, ZQ5iduZaM4k28EwxzHIgxRHbXnBViZJevyGy1N43hD7gKnt1AA, Active, Percentage, Yes, PHP, 90, Total Deduction Period, No, Regular, No, DcUQjTnADHZbtQ7G9DAlDlaBvpnF7VZw, No, Varpay, Yes, 1, Yes, AbT2jPRjJX4, A7IIxudvA0x, HZvke6SPEmRTIAurydirOsJ1gjh0S3kADWQvOGYn18OgxkDdlC, Active, Amount, No, CHF, 100, Annual, Yes, Gross, Yes, PZfMxUl3OSYl3pGXJv1h67IGXrPiPMKF, Yes, Comp, No, 2, No, Base Salary (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" When HRIS set the status to inactive: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Pay Component, A4uk9j2K1Yr, 11/12/2022" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="62b27de36674d9c49d4567bf6cecab39bb4757ce12bb40d4bc7396ab3c0f5f97.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="daf5d939f6e45874e488aa41e630181e237dac8ccc0f0d1fa4e4ae2993251c61.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Home'" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Home' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="c382ff9b02c4cd8c8678de7c2a137187cecf498735cd016348ec84209105914b.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="c382ff9b02c4cd8c8678de7c2a137187cecf498735cd016348ec84209105914b.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="c382ff9b02c4cd8c8678de7c2a137187cecf498735cd016348ec84209105914b.png" title=" Then the admin centre page is displayed (completed)" width="1931"/>
+                <img src="c382ff9b02c4cd8c8678de7c2a137187cecf498735cd016348ec84209105914b.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="fa6e0cdfbad4a09d61c7524345c2a2a3f47edd7393795631f61b8430a2bbef36.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" Then the manage organisation pay and job structure page is displayed" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" Then the manage organisation pay and job structure page is displayed (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i search for an event reason: Pay Component" width="1931"/>
+                <img src="6c4bfafd2db74f6dc22fc8fccf9d33a173264cf0a417a9c6a14c281815417de6.png" title=" When i search for an event reason: Pay Component" width="1931"/>
+                <img src="6c4bfafd2db74f6dc22fc8fccf9d33a173264cf0a417a9c6a14c281815417de6.png" title=" When i search for an event reason: Pay Component (completed)" width="1931"/>
+                <img src="6c4bfafd2db74f6dc22fc8fccf9d33a173264cf0a417a9c6a14c281815417de6.png" title=" When i search for an event reason name: A4uk9j2K1Yr" width="1931"/>
+                <img src="5f37fe5dd291c2b1184c624e4b0df25f232d19ddab49f1ce013e60f68db86c81.png" title=" When i search for an event reason name: A4uk9j2K1Yr" width="1931"/>
+                <img src="5f37fe5dd291c2b1184c624e4b0df25f232d19ddab49f1ce013e60f68db86c81.png" title=" When i search for an event reason name: A4uk9j2K1Yr (completed)" width="1931"/>
+                <img src="5f37fe5dd291c2b1184c624e4b0df25f232d19ddab49f1ce013e60f68db86c81.png" title=" When i click take action" width="1931"/>
+                <img src="ec01d6fb03089529ad7e6f3ad1d8a2ad4bec448d9bb0e11c5abd3f9abf9cef9f.png" title=" When i click take action" width="1931"/>
+                <img src="ec01d6fb03089529ad7e6f3ad1d8a2ad4bec448d9bb0e11c5abd3f9abf9cef9f.png" title=" When i click take action (completed)" width="1931"/>
+                <img src="ec01d6fb03089529ad7e6f3ad1d8a2ad4bec448d9bb0e11c5abd3f9abf9cef9f.png" title=" When i populate effective date: 11/12/2022" width="1931"/>
+                <img src="cc2f35cc5ee3efc0f0652cf217411b2194e9a3f488adfefd342e93049669b560.png" title=" When i populate effective date: 11/12/2022 (completed)" width="1931"/>
+                <img src="cc2f35cc5ee3efc0f0652cf217411b2194e9a3f488adfefd342e93049669b560.png" title=" When i populate status: InActive" width="1931"/>
+                <img src="08c7d3c5e43ae2e42c721af8d936e3a103bb309f461dfd9db1854afa42aeeb84.png" title=" When i populate status: InActive" width="1931"/>
+                <img src="9f99dd02a637f86575fa06db3290b956eaceda6f5b0b6b8bf5ca8d6426e2e86d.png" title=" When i populate status: InActive" width="1931"/>
+                <img src="9f99dd02a637f86575fa06db3290b956eaceda6f5b0b6b8bf5ca8d6426e2e86d.png" title=" When i populate status: InActive (completed)" width="1931"/>
+                <img src="9f99dd02a637f86575fa06db3290b956eaceda6f5b0b6b8bf5ca8d6426e2e86d.png" title=" When i click save button" width="1931"/>
+                <img src="566ba05d3c34c7542a54478856b7cf8be12ae9aca2cc9ad41f21ea20558e409b.png" title=" When i click save button" width="1931"/>
+                <img src="40c83232bfaed94aa554ea2f46b1222ccf63fc269194bd67234c888bbc912aee.png" title=" When i click save button (completed)" width="1931"/>
+                <img src="40c83232bfaed94aa554ea2f46b1222ccf63fc269194bd67234c888bbc912aee.png" title=" When i click yes button" width="1931"/>
+                <img src="3b505ad8deee4b74496263a6be8b7ca5f53bc8c91d79f68248fe06c050532fc8.png" title=" When i click yes button" width="1931"/>
+                <img src="9786a7c28131618b0119dce370eb147b6ca3816d13e37c57c2e9e7d20b1844a3.png" title=" When i click yes button (completed)" width="1931"/>
+                <img src="9786a7c28131618b0119dce370eb147b6ca3816d13e37c57c2e9e7d20b1844a3.png" title=" Then the status is set to inactive" width="1931"/>
+                <img src="9786a7c28131618b0119dce370eb147b6ca3816d13e37c57c2e9e7d20b1844a3.png" title=" Then the status is set to inactive (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i search for an event reason: Pay Component" width="1931"/>
+                <img src="6c4bfafd2db74f6dc22fc8fccf9d33a173264cf0a417a9c6a14c281815417de6.png" title=" When i search for an event reason: Pay Component" width="1931"/>
+                <img src="6c4bfafd2db74f6dc22fc8fccf9d33a173264cf0a417a9c6a14c281815417de6.png" title=" When i search for an event reason: Pay Component (completed)" width="1931"/>
+                <img src="6c4bfafd2db74f6dc22fc8fccf9d33a173264cf0a417a9c6a14c281815417de6.png" title=" Then the event is not displayed in search result: A4uk9j2K1Yr" width="1931"/>
+                <img src="2be8b1220e5e5a2d4c665da7c9b7c448b6df72e908d3cb1f1e3afbece1b45597.png" title=" Then the event is not displayed in search result: A4uk9j2K1Yr (completed)" width="1931"/>
+                <img src="2be8b1220e5e5a2d4c665da7c9b7c448b6df72e908d3cb1f1e3afbece1b45597.png" title=" When I set the header module to 'Home'" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Home' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When HRIS set the status to inactive: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Pay Component, A4uk9j2K1Yr, 11/12/2022 (completed): <span class='success-color'>SUCCESS</span>" width="1931"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.6</span>
+</div>
+</body>
+</html>

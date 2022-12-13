@@ -1,0 +1,461 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Selenium Serenity Tests FAD APPLIC</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="4143b54c09d9fa22846f04fc236441c51ddd596b585b5bf52c49033629793ea6.html">Foundation Objects</a></span>
+                > <span class="truncate-60"><a
+                    href="db934e314d8cee547ca6adbcfccabf964ad46e095036bf765c226f7e8ecf1598.html">Create delegation </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 13-12-2022 12:47</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Foundation Objects </span>
+                                    <span class="badge tag-badge" style="">Story</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Create delegation
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" When HRIS reviews delegation details field: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, de5UvLybBWkErY5BaCrGvUZaACnVYBH4, aXK5BLRC1XbDkOj27iToy5JDZAfVCpS8znWBnYM6MQEzDcdwpKfX6VU0dxC6iJztoZgf3PYTt6n0c5TNWfVKNqEeJ5, iiKs7v87JUDWy98Ct6CTiMA1uAJTCp5gRfxuRs77jAVFrhxneKaSRyt5JFdtNhC8kZgQuT65Lqq5Sxp0UMQbeWWnXM5JD7ojBZdMPYRDpWj4Kx0pKtTxMnjdxrefMdOB, Active, SYcwr3uho54RET9Gzql3, IMZNP1JCl4Bpmqad6jfU2qo8jpHbkn3MXzEv5CDjj04GxXLQ8qBCtlE6U9lVcG4UXGRAFHXvFtOPejCGUMpeUZImXgKGNqnphdpsJj5uTOvMk0twO0bMSUtOfbrf28qsYmsluTW2XXUSCHEo69GkDDbuUIlh7H8JVYVFIE2XKZITfp0DACqjU8FCuBr9KrSzBd8fWVMWFDJ9SSiA56IYEjZCcsslR5PzM1GsKALqvPP9QDNCKJuos7XENpgqCqpL, GqkWDHKpLSt3L81Pjg8X, nYlxBD2ETCoBFOmoBK1QvFglwYXZ2xWNPuuzUz90HzPKVkTZqTj4HI13BfvW6ED8nHpf6XOrCxg7rUZ5mligy64aEYjMYwlWTRZBVRZrMdZDceOInl4M55fxUVqcXJ8WQFQi7y9Yoni2iFn16yrxliIKbZYZI6TvXlKGVMBB1pQJWY0gcZF0OIoSXbfQ0Zv2SwLreO3ZOJmqRlDAILhNJbkeXE1h1oQjr7MpnPuJ0gaKi7JMsw8z48WZjLM3T5AT" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="941"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="d93884f6b34c113141015278b26bc2a0486d03985061870e2e04a3f75e8744b8.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="f00aaf61e8752d807cdefe94ae38b7a9da4f3797d4f0c05e515c88b5592128c8.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="f00aaf61e8752d807cdefe94ae38b7a9da4f3797d4f0c05e515c88b5592128c8.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="f00aaf61e8752d807cdefe94ae38b7a9da4f3797d4f0c05e515c88b5592128c8.png" title=" Then the admin centre page is displayed (completed)" width="1931"/>
+                <img src="f00aaf61e8752d807cdefe94ae38b7a9da4f3797d4f0c05e515c88b5592128c8.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="fa6e0cdfbad4a09d61c7524345c2a2a3f47edd7393795631f61b8430a2bbef36.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" Then the manage organisation pay and job structure page is displayed" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" Then the manage organisation pay and job structure page is displayed (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i populate create new field: Delegation" width="1931"/>
+                <img src="bc9b82141cffc92e78d511a5f21307dc559d9bf863f0038da9ac1548f2b6f78c.png" title=" When i populate create new field: Delegation" width="1931"/>
+                <img src="0c80b1c5f6c489cbae392c877a6ed86243013860c3ce8e7a6a1847465aa5d698.png" title=" When i populate create new field: Delegation" width="1931"/>
+                <img src="0c80b1c5f6c489cbae392c877a6ed86243013860c3ce8e7a6a1847465aa5d698.png" title=" When i populate create new field: Delegation (completed)" width="1931"/>
+                <img src="0c80b1c5f6c489cbae392c877a6ed86243013860c3ce8e7a6a1847465aa5d698.png" title=" Then the portlet is displayed: Delegation" width="1931"/>
+                <img src="8dc66963b390ee19d96149b43da60499be0b06e79f759d253f63b52feb37c22f.png" title=" Then the portlet is displayed: Delegation (completed)" width="1931"/>
+                <img src="8dc66963b390ee19d96149b43da60499be0b06e79f759d253f63b52feb37c22f.png" title=" When i populate effective date: 11/12/2022" width="1931"/>
+                <img src="4f1dfd8a6b0038ba2627ad60a11ebbfaf1ca6bd221de26c87fae695e8402ef14.png" title=" When i populate effective date: 11/12/2022 (completed)" width="1931"/>
+                <img src="4f1dfd8a6b0038ba2627ad60a11ebbfaf1ca6bd221de26c87fae695e8402ef14.png" title=" When i populate delegation code: de5UvLybBWkErY5BaCrGvUZaACnVYBH4" width="1931"/>
+                <img src="8c32b504138d806c136ca9151185cf9209cf63f4e2efbc2f5bb1a00464f96749.png" title=" When i populate delegation code: de5UvLybBWkErY5BaCrGvUZaACnVYBH4 (completed)" width="1931"/>
+                <img src="8c32b504138d806c136ca9151185cf9209cf63f4e2efbc2f5bb1a00464f96749.png" title=" Then a maximum character warning message is displayed: Delegation code, 32" width="1931"/>
+                <img src="94f971bacd8ae4669616ebab93d19f83d9eedb30213a598bee5f21ae9e6d9de7.png" title=" Then a maximum character warning message is displayed: Delegation code, 32 (completed)" width="1931"/>
+                <img src="94f971bacd8ae4669616ebab93d19f83d9eedb30213a598bee5f21ae9e6d9de7.png" title=" When i populate delegation name: aXK5BLRC1XbDkOj27iToy5JDZAfVCpS8znWBnYM6MQEzDcdwpKfX6VU0dxC6iJztoZgf3PYTt6n0c5TNWfVKNqEeJ5" width="1931"/>
+                <img src="c022d3c4c74216a3c917da56c3b833cc247bb37ebf79812f4805f617722cbb57.png" title=" When i populate delegation name: aXK5BLRC1XbDkOj27iToy5JDZAfVCpS8znWBnYM6MQEzDcdwpKfX6VU0dxC6iJztoZgf3PYTt6n0c5TNWfVKNqEeJ5 (completed)" width="1931"/>
+                <img src="c022d3c4c74216a3c917da56c3b833cc247bb37ebf79812f4805f617722cbb57.png" title=" Then a maximum character warning message is displayed: Delegation name, 90" width="1931"/>
+                <img src="9454eea68a56ae68add17abbca10e96be93b3319f147370ce18e1c10d056894d.png" title=" Then a maximum character warning message is displayed: Delegation name, 90 (completed)" width="1931"/>
+                <img src="9454eea68a56ae68add17abbca10e96be93b3319f147370ce18e1c10d056894d.png" title=" When i populate description: iiKs7v87JUDWy98Ct6CTiMA1uAJTCp5gRfxuRs77jAVFrhxneKaSRyt5JFdtNhC8kZgQuT65Lqq5Sxp0UMQbeWWnXM5JD7ojBZdMPYRDpWj4Kx0pKtTxMnjdxrefMdOB" width="1931"/>
+                <img src="b3ff87fc2fd1a681c993ec118a75773e57b65741d73fa892efcab65284ac4e5c.png" title=" When i populate description: iiKs7v87JUDWy98Ct6CTiMA1uAJTCp5gRfxuRs77jAVFrhxneKaSRyt5JFdtNhC8kZgQuT65Lqq5Sxp0UMQbeWWnXM5JD7ojBZdMPYRDpWj4Kx0pKtTxMnjdxrefMdOB (completed)" width="1931"/>
+                <img src="b3ff87fc2fd1a681c993ec118a75773e57b65741d73fa892efcab65284ac4e5c.png" title=" When i populate status: Active" width="1931"/>
+                <img src="db9ff0ed7c5c123e65ec280971be1b19f027aa08fe7bfe370c69c0a3de378093.png" title=" When i populate status: Active" width="1931"/>
+                <img src="822c5650f8ff6500a5b7553efbe2b911083f9a1bd9c4d465129306aaa9f20711.png" title=" When i populate status: Active" width="1931"/>
+                <img src="822c5650f8ff6500a5b7553efbe2b911083f9a1bd9c4d465129306aaa9f20711.png" title=" When i populate status: Active (completed)" width="1931"/>
+                <img src="822c5650f8ff6500a5b7553efbe2b911083f9a1bd9c4d465129306aaa9f20711.png" title=" When i populate region code: SYcwr3uho54RET9Gzql3" width="1931"/>
+                <img src="cf78edf8137d47e411184962da71cf15b038d9a9aca33aadad037fab2d5210d1.png" title=" When i populate region code: SYcwr3uho54RET9Gzql3 (completed)" width="1931"/>
+                <img src="cf78edf8137d47e411184962da71cf15b038d9a9aca33aadad037fab2d5210d1.png" title=" Then a maximum character warning message is displayed: Region code, 20" width="1931"/>
+                <img src="db13b5e53d975c56d68f96bd418152203505b44cbd32839362be780b9015d458.png" title=" Then a maximum character warning message is displayed: Region code, 20 (completed)" width="1931"/>
+                <img src="db13b5e53d975c56d68f96bd418152203505b44cbd32839362be780b9015d458.png" title=" When i populate region name: IMZNP1JCl4Bpmqad6jfU2qo8jpHbkn3MXzEv5CDjj04GxXLQ8qBCtlE6U9lVcG4UXGRAFHXvFtOPejCGUMpeUZImXgKGNqnphdpsJj5uTOvMk0twO0bMSUtOfbrf28qsYmsluTW2XXUSCHEo69GkDDbuUIlh7H8JVYVFIE2XKZITfp0DACqjU8FCuBr9KrSzBd8fWVMWFDJ9SSiA56IYEjZCcsslR5PzM1GsKALqvPP9QDNCKJuos7XENpgqCqpL" width="1931"/>
+                <img src="a2c6ea8729fbf711e9bf8733d18b05608404c4e56a1919e27a4080d53ed3bd44.png" title=" When i populate region name: IMZNP1JCl4Bpmqad6jfU2qo8jpHbkn3MXzEv5CDjj04GxXLQ8qBCtlE6U9lVcG4UXGRAFHXvFtOPejCGUMpeUZImXgKGNqnphdpsJj5uTOvMk0twO0bMSUtOfbrf28qsYmsluTW2XXUSCHEo69GkDDbuUIlh7H8JVYVFIE2XKZITfp0DACqjU8FCuBr9KrSzBd8fWVMWFDJ9SSiA56IYEjZCcsslR5PzM1GsKALqvPP9QDNCKJuos7XENpgqCqpL (completed)" width="1931"/>
+                <img src="a2c6ea8729fbf711e9bf8733d18b05608404c4e56a1919e27a4080d53ed3bd44.png" title=" Then a maximum character warning message is displayed: Region name, 256" width="1931"/>
+                <img src="e47923acef577cf56e3665f69410692e003f94e5d85e1e15ff1b96ffea283be3.png" title=" Then a maximum character warning message is displayed: Region name, 256 (completed)" width="1931"/>
+                <img src="e47923acef577cf56e3665f69410692e003f94e5d85e1e15ff1b96ffea283be3.png" title=" When i populate zone code: GqkWDHKpLSt3L81Pjg8X" width="1931"/>
+                <img src="8663498a45a763b3871cde69ec80e604949ac4958dc530e39bc1ca8d8a6e056f.png" title=" When i populate zone code: GqkWDHKpLSt3L81Pjg8X (completed)" width="1931"/>
+                <img src="8663498a45a763b3871cde69ec80e604949ac4958dc530e39bc1ca8d8a6e056f.png" title=" Then a maximum character warning message is displayed: Zone code, 20" width="1931"/>
+                <img src="849b7e8f625998673069299f20b2e2ab0dd4080eb4db8b929cbe9b643f098a8a.png" title=" Then a maximum character warning message is displayed: Zone code, 20 (completed)" width="1931"/>
+                <img src="849b7e8f625998673069299f20b2e2ab0dd4080eb4db8b929cbe9b643f098a8a.png" title=" When i populate zone name: nYlxBD2ETCoBFOmoBK1QvFglwYXZ2xWNPuuzUz90HzPKVkTZqTj4HI13BfvW6ED8nHpf6XOrCxg7rUZ5mligy64aEYjMYwlWTRZBVRZrMdZDceOInl4M55fxUVqcXJ8WQFQi7y9Yoni2iFn16yrxliIKbZYZI6TvXlKGVMBB1pQJWY0gcZF0OIoSXbfQ0Zv2SwLreO3ZOJmqRlDAILhNJbkeXE1h1oQjr7MpnPuJ0gaKi7JMsw8z48WZjLM3T5AT" width="1931"/>
+                <img src="f9b3306771e68795b1c7ec5d8b10eb4e8f54651f12e6584330aafa978fa030b5.png" title=" When i populate zone name: nYlxBD2ETCoBFOmoBK1QvFglwYXZ2xWNPuuzUz90HzPKVkTZqTj4HI13BfvW6ED8nHpf6XOrCxg7rUZ5mligy64aEYjMYwlWTRZBVRZrMdZDceOInl4M55fxUVqcXJ8WQFQi7y9Yoni2iFn16yrxliIKbZYZI6TvXlKGVMBB1pQJWY0gcZF0OIoSXbfQ0Zv2SwLreO3ZOJmqRlDAILhNJbkeXE1h1oQjr7MpnPuJ0gaKi7JMsw8z48WZjLM3T5AT (completed)" width="1931"/>
+                <img src="f9b3306771e68795b1c7ec5d8b10eb4e8f54651f12e6584330aafa978fa030b5.png" title=" Then a maximum character warning message is displayed: Zone name, 256" width="1931"/>
+                <img src="df29350c23727c9626a9510503fa01d93bf8c1c9c3e5776402aa81e1fa15c9a2.png" title=" Then a maximum character warning message is displayed: Zone name, 256 (completed)" width="1931"/>
+                <img src="df29350c23727c9626a9510503fa01d93bf8c1c9c3e5776402aa81e1fa15c9a2.png" title=" When i click cancel button" width="1931"/>
+                <img src="4f8eac1f9fa9d1e3c0f33caffbeedd1e19a3c166044afb7e1010c49850261579.png" title=" When i click cancel button" width="1931"/>
+                <img src="4f8eac1f9fa9d1e3c0f33caffbeedd1e19a3c166044afb7e1010c49850261579.png" title=" When i click cancel button (completed)" width="1931"/>
+                <img src="4f8eac1f9fa9d1e3c0f33caffbeedd1e19a3c166044afb7e1010c49850261579.png" title=" When i click dont save button" width="1931"/>
+                <img src="52b6c33bff28d773d93775154c1439fd884634d53f7a287c62363f928e1df17d.png" title=" When i click dont save button" width="1931"/>
+                <img src="52b6c33bff28d773d93775154c1439fd884634d53f7a287c62363f928e1df17d.png" title=" When i click dont save button (completed)" width="1931"/>
+                <img src="52b6c33bff28d773d93775154c1439fd884634d53f7a287c62363f928e1df17d.png" title=" When HRIS reviews delegation details field: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, de5UvLybBWkErY5BaCrGvUZaACnVYBH4, aXK5BLRC1XbDkOj27iToy5JDZAfVCpS8znWBnYM6MQEzDcdwpKfX6VU0dxC6iJztoZgf3PYTt6n0c5TNWfVKNqEeJ5, iiKs7v87JUDWy98Ct6CTiMA1uAJTCp5gRfxuRs77jAVFrhxneKaSRyt5JFdtNhC8kZgQuT65Lqq5Sxp0UMQbeWWnXM5JD7ojBZdMPYRDpWj4Kx0pKtTxMnjdxrefMdOB, Active, SYcwr3uho54RET9Gzql3, IMZNP1JCl4Bpmqad6jfU2qo8jpHbkn3MXzEv5CDjj04GxXLQ8qBCtlE6U9lVcG4UXGRAFHXvFtOPejCGUMpeUZImXgKGNqnphdpsJj5uTOvMk0twO0bMSUtOfbrf28qsYmsluTW2XXUSCHEo69GkDDbuUIlh7H8JVYVFIE2XKZITfp0DACqjU8FCuBr9KrSzBd8fWVMWFDJ9SSiA56IYEjZCcsslR5PzM1GsKALqvPP9QDNCKJuos7XENpgqCqpL, GqkWDHKpLSt3L81Pjg8X, nYlxBD2ETCoBFOmoBK1QvFglwYXZ2xWNPuuzUz90HzPKVkTZqTj4HI13BfvW6ED8nHpf6XOrCxg7rUZ5mligy64aEYjMYwlWTRZBVRZrMdZDceOInl4M55fxUVqcXJ8WQFQi7y9Yoni2iFn16yrxliIKbZYZI6TvXlKGVMBB1pQJWY0gcZF0OIoSXbfQ0Zv2SwLreO3ZOJmqRlDAILhNJbkeXE1h1oQjr7MpnPuJ0gaKi7JMsw8z48WZjLM3T5AT (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" When HRIS adds and deletes a favourite: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="18fcf451155bf32ee3405d32776b1f3a2e6ccfbabc0d51c72022d299c1480494.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="a24304155972c2c3778bda1c995d8c722e0375b3f8990eb93ecc44b91292928f.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="f00aaf61e8752d807cdefe94ae38b7a9da4f3797d4f0c05e515c88b5592128c8.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="f00aaf61e8752d807cdefe94ae38b7a9da4f3797d4f0c05e515c88b5592128c8.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="f00aaf61e8752d807cdefe94ae38b7a9da4f3797d4f0c05e515c88b5592128c8.png" title=" Then the admin centre page is displayed (completed)" width="1931"/>
+                <img src="f00aaf61e8752d807cdefe94ae38b7a9da4f3797d4f0c05e515c88b5592128c8.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="f00aaf61e8752d807cdefe94ae38b7a9da4f3797d4f0c05e515c88b5592128c8.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="f00aaf61e8752d807cdefe94ae38b7a9da4f3797d4f0c05e515c88b5592128c8.png" title=" Then the company process is displayed in my favourites portlet: Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="f00aaf61e8752d807cdefe94ae38b7a9da4f3797d4f0c05e515c88b5592128c8.png" title=" Then the company process is displayed in my favourites portlet: Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="f00aaf61e8752d807cdefe94ae38b7a9da4f3797d4f0c05e515c88b5592128c8.png" title=" When i remove the tool in favourites: Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="7de34e3920dd9e9a9da3da830bd12c5ccea1a6d3bc08544f184ccace1df5f8a8.png" title=" When i remove the tool in favourites: Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="d9af677d395f0e7428840577f075a7be7051da3134d75c92ce4d0ed986bf1318.png" title=" When i remove the tool in favourites: Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="d9af677d395f0e7428840577f075a7be7051da3134d75c92ce4d0ed986bf1318.png" title=" Then the company process is not displayed in my favourites portlet: Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="d9af677d395f0e7428840577f075a7be7051da3134d75c92ce4d0ed986bf1318.png" title=" Then the company process is not displayed in my favourites portlet: Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="d9af677d395f0e7428840577f075a7be7051da3134d75c92ce4d0ed986bf1318.png" title=" When HRIS adds and deletes a favourite: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" When HRIS submits a delegation: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, Aa1OyWeGixLx, AaXH2LosbNYxOa9ITA877p, bYBKbCZTaL0ebSIlUpApodMG4JYdgghUvwQUufXw3yoqnYdPPqaKL4QK5JkbvlvQmWBehEiR5DqMhanYQDdPMhu5Ah, Active, AExpnO19El, CkFCDuT3TgI2pj3BDu2zlof6Fp7by2VtY82rxdz5bae3PU9nfVT23PiHgmx6wLOfRr6HkSdUr16DG1AAaVAlvgphGJ, UGb0ItMP1z, 6OuRpMgRNA37TGbrkDwMT1SQkarzpUuu4j6FgY49h0cXy1szKbk0mqTnRr5cWkHGX94NZfnc1vzmetJJcTAQY4hSgY" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="11322172be04f4d69cb798520a53dc946cd8ade109f6e93a5bbaf4d1db9183f0.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="d9af677d395f0e7428840577f075a7be7051da3134d75c92ce4d0ed986bf1318.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="d9af677d395f0e7428840577f075a7be7051da3134d75c92ce4d0ed986bf1318.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="d9af677d395f0e7428840577f075a7be7051da3134d75c92ce4d0ed986bf1318.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="d9af677d395f0e7428840577f075a7be7051da3134d75c92ce4d0ed986bf1318.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="578d0d270c7e480696bd7d2d996d2ff835967d01349878a5c0cd8a6b9e8d934d.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="ea413b11ff0b663592e580c95f9e6e00274072b0c346681e719ab95638a7e029.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="ea413b11ff0b663592e580c95f9e6e00274072b0c346681e719ab95638a7e029.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="ea413b11ff0b663592e580c95f9e6e00274072b0c346681e719ab95638a7e029.png" title=" Then the manage organisation pay and job structure page is displayed" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" Then the manage organisation pay and job structure page is displayed (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i populate create new field: Delegation" width="1931"/>
+                <img src="6bd11ba0ed98ce772344de3686238d98a9ed014342e804c7ab65d24273d8d291.png" title=" When i populate create new field: Delegation" width="1931"/>
+                <img src="0c80b1c5f6c489cbae392c877a6ed86243013860c3ce8e7a6a1847465aa5d698.png" title=" When i populate create new field: Delegation" width="1931"/>
+                <img src="0c80b1c5f6c489cbae392c877a6ed86243013860c3ce8e7a6a1847465aa5d698.png" title=" When i populate create new field: Delegation (completed)" width="1931"/>
+                <img src="0c80b1c5f6c489cbae392c877a6ed86243013860c3ce8e7a6a1847465aa5d698.png" title=" Then the portlet is displayed: Delegation" width="1931"/>
+                <img src="c44b5ab569cc56d2dfab097f0421167417a722bbb8073b3fc38511feeef16e04.png" title=" Then the portlet is displayed: Delegation (completed)" width="1931"/>
+                <img src="c44b5ab569cc56d2dfab097f0421167417a722bbb8073b3fc38511feeef16e04.png" title=" When i populate effective date: 11/12/2022" width="1931"/>
+                <img src="4f1dfd8a6b0038ba2627ad60a11ebbfaf1ca6bd221de26c87fae695e8402ef14.png" title=" When i populate effective date: 11/12/2022 (completed)" width="1931"/>
+                <img src="4f1dfd8a6b0038ba2627ad60a11ebbfaf1ca6bd221de26c87fae695e8402ef14.png" title=" When i populate delegation code: Aa1OyWeGixLx" width="1931"/>
+                <img src="fc3b190cebb2fc293e260f8b2274a23cac736fb76dfb1ff1a16aabdf481ecff7.png" title=" When i populate delegation code: Aa1OyWeGixLx (completed)" width="1931"/>
+                <img src="fc3b190cebb2fc293e260f8b2274a23cac736fb76dfb1ff1a16aabdf481ecff7.png" title=" When i populate delegation name: AaXH2LosbNYxOa9ITA877p" width="1931"/>
+                <img src="09c4822a4b677b211ad157cf1cb5b51c881920d925df60209e78f265942390dc.png" title=" When i populate delegation name: AaXH2LosbNYxOa9ITA877p (completed)" width="1931"/>
+                <img src="09c4822a4b677b211ad157cf1cb5b51c881920d925df60209e78f265942390dc.png" title=" When i populate description: bYBKbCZTaL0ebSIlUpApodMG4JYdgghUvwQUufXw3yoqnYdPPqaKL4QK5JkbvlvQmWBehEiR5DqMhanYQDdPMhu5Ah" width="1931"/>
+                <img src="348932d808b8983222c508a7eff55388c151c560c5b358f00d6da239b8eaf271.png" title=" When i populate description: bYBKbCZTaL0ebSIlUpApodMG4JYdgghUvwQUufXw3yoqnYdPPqaKL4QK5JkbvlvQmWBehEiR5DqMhanYQDdPMhu5Ah (completed)" width="1931"/>
+                <img src="348932d808b8983222c508a7eff55388c151c560c5b358f00d6da239b8eaf271.png" title=" When i populate status: Active" width="1931"/>
+                <img src="be86e55952829778292d05fcc570bd7bc41bdda5bd4b17be7bb26376c0578c5b.png" title=" When i populate status: Active" width="1931"/>
+                <img src="746d3e156e6b6dcc796c93be864b4961cdef4b1b95e6a5ecea268a52ea88f91e.png" title=" When i populate status: Active" width="1931"/>
+                <img src="746d3e156e6b6dcc796c93be864b4961cdef4b1b95e6a5ecea268a52ea88f91e.png" title=" When i populate status: Active (completed)" width="1931"/>
+                <img src="746d3e156e6b6dcc796c93be864b4961cdef4b1b95e6a5ecea268a52ea88f91e.png" title=" When i populate region code: AExpnO19El" width="1931"/>
+                <img src="fcf01b576f2d1a2808a153f8accdc45ccba77162f3ff9f2c1111b9f91626272c.png" title=" When i populate region code: AExpnO19El (completed)" width="1931"/>
+                <img src="fcf01b576f2d1a2808a153f8accdc45ccba77162f3ff9f2c1111b9f91626272c.png" title=" When i populate region name: CkFCDuT3TgI2pj3BDu2zlof6Fp7by2VtY82rxdz5bae3PU9nfVT23PiHgmx6wLOfRr6HkSdUr16DG1AAaVAlvgphGJ" width="1931"/>
+                <img src="fbff9f76836d77b5431325d03d2edeb9bf56ddb35cf70750efc5062bbf075002.png" title=" When i populate region name: CkFCDuT3TgI2pj3BDu2zlof6Fp7by2VtY82rxdz5bae3PU9nfVT23PiHgmx6wLOfRr6HkSdUr16DG1AAaVAlvgphGJ (completed)" width="1931"/>
+                <img src="fbff9f76836d77b5431325d03d2edeb9bf56ddb35cf70750efc5062bbf075002.png" title=" When i populate zone code: UGb0ItMP1z" width="1931"/>
+                <img src="e3387f8ca4ca7869a6f62ee6b35d5614d869d43875e85b17f7f6050009cde398.png" title=" When i populate zone code: UGb0ItMP1z (completed)" width="1931"/>
+                <img src="e3387f8ca4ca7869a6f62ee6b35d5614d869d43875e85b17f7f6050009cde398.png" title=" When i populate zone name: 6OuRpMgRNA37TGbrkDwMT1SQkarzpUuu4j6FgY49h0cXy1szKbk0mqTnRr5cWkHGX94NZfnc1vzmetJJcTAQY4hSgY" width="1931"/>
+                <img src="9ddc9e7d793e40ef71f991a17fa875b1714215763b56ec9deeb13fdd9a6f4165.png" title=" When i populate zone name: 6OuRpMgRNA37TGbrkDwMT1SQkarzpUuu4j6FgY49h0cXy1szKbk0mqTnRr5cWkHGX94NZfnc1vzmetJJcTAQY4hSgY (completed)" width="1931"/>
+                <img src="9ddc9e7d793e40ef71f991a17fa875b1714215763b56ec9deeb13fdd9a6f4165.png" title=" When i click save button" width="1931"/>
+                <img src="cf773b7109495022c90da7f0d8b2d6c4243ff0870e0fcf6808414fe82acffcf8.png" title=" When i click save button" width="1931"/>
+                <img src="ab1ff9dbbfe89663af4e3968938332a1367ac63af17ecedc7432eee08d9bac09.png" title=" When i click save button (completed)" width="1931"/>
+                <img src="ab1ff9dbbfe89663af4e3968938332a1367ac63af17ecedc7432eee08d9bac09.png" title=" Then the name and code is displayed in header: Aa1OyWeGixLx, AaXH2LosbNYxOa9ITA877p" width="1931"/>
+                <img src="ab1ff9dbbfe89663af4e3968938332a1367ac63af17ecedc7432eee08d9bac09.png" title=" Then the name and code is displayed in header: Aa1OyWeGixLx, AaXH2LosbNYxOa9ITA877p (completed)" width="1931"/>
+                <img src="ab1ff9dbbfe89663af4e3968938332a1367ac63af17ecedc7432eee08d9bac09.png" title=" Then the record details is saved: Delegation code, Aa1OyWeGixLx, Delegation name, AaXH2LosbNYxOa9ITA877p, Description, bYBKbCZTaL0ebSIlUpApodMG4JYdgghUvwQUufXw3yoqnYdPPqaKL4QK5JkbvlvQmWBehEiR5DqMhanYQDdPMhu5Ah, Status, Active, Region code, AExpnO19El, Region name, CkFCDuT3TgI2pj3BDu2zlof6Fp7by2VtY82rxdz5bae3PU9nfVT23PiHgmx6wLOfRr6HkSdUr16DG1AAaVAlvgphGJ, Zone code, UGb0ItMP1z, Zone name, 6OuRpMgRNA37TGbrkDwMT1SQkarzpUuu4j6FgY49h0cXy1szKbk0mqTnRr5cWkHGX94NZfnc1vzmetJJcTAQY4hSgY" width="1931"/>
+                <img src="ab1ff9dbbfe89663af4e3968938332a1367ac63af17ecedc7432eee08d9bac09.png" title=" Then the record details is saved: Delegation code, Aa1OyWeGixLx, Delegation name, AaXH2LosbNYxOa9ITA877p, Description, bYBKbCZTaL0ebSIlUpApodMG4JYdgghUvwQUufXw3yoqnYdPPqaKL4QK5JkbvlvQmWBehEiR5DqMhanYQDdPMhu5Ah, Status, Active, Region code, AExpnO19El, Region name, CkFCDuT3TgI2pj3BDu2zlof6Fp7by2VtY82rxdz5bae3PU9nfVT23PiHgmx6wLOfRr6HkSdUr16DG1AAaVAlvgphGJ, Zone code, UGb0ItMP1z, Zone name, 6OuRpMgRNA37TGbrkDwMT1SQkarzpUuu4j6FgY49h0cXy1szKbk0mqTnRr5cWkHGX94NZfnc1vzmetJJcTAQY4hSgY (completed)" width="1931"/>
+                <img src="ab1ff9dbbfe89663af4e3968938332a1367ac63af17ecedc7432eee08d9bac09.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="b50c7d08ca834d1a977b967384d620f06ddd35633158ea17930a1e379d30f379.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="b50c7d08ca834d1a977b967384d620f06ddd35633158ea17930a1e379d30f379.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="b50c7d08ca834d1a977b967384d620f06ddd35633158ea17930a1e379d30f379.png" title=" Then the admin centre page is displayed (completed)" width="1931"/>
+                <img src="b50c7d08ca834d1a977b967384d620f06ddd35633158ea17930a1e379d30f379.png" title=" When HRIS submits a delegation: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, Aa1OyWeGixLx, AaXH2LosbNYxOa9ITA877p, bYBKbCZTaL0ebSIlUpApodMG4JYdgghUvwQUufXw3yoqnYdPPqaKL4QK5JkbvlvQmWBehEiR5DqMhanYQDdPMhu5Ah, Active, AExpnO19El, CkFCDuT3TgI2pj3BDu2zlof6Fp7by2VtY82rxdz5bae3PU9nfVT23PiHgmx6wLOfRr6HkSdUr16DG1AAaVAlvgphGJ, UGb0ItMP1z, 6OuRpMgRNA37TGbrkDwMT1SQkarzpUuu4j6FgY49h0cXy1szKbk0mqTnRr5cWkHGX94NZfnc1vzmetJJcTAQY4hSgY (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" When HRIS modify a delegation: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, AaXH2LosbNYxOa9ITA877p, 11/12/2022, Aa8alsJxfxuH, Aa1QnKfBPiXealfWJHftEj, VijIAUciYsnV1bCmSDNCHA7ULdsMbkb4ip6KY37oGRvu5cTKU2rNp5TZZKV2GR740rTu8rQAsKFXUs8SCf8tF3fzJh, Active, ybpp8hWxmi, G0jiZtDwcpDnKXQQxBENAbeTuLquYo7v5lfhfJUHelGDuGc07Dux9gkITHAmzV1lc3BkFM9HG3DfZID7cdZGpgOzaE, 0pH7xI16zw, 3O4wsfW5dZpaX9zNvY9mBtpSaiHvI5n1SaAgpEC3Z86EX9G6S0di6cGfCXXLkHODoMtgULQ6PV2o0FzZhSyxa1PwKB, Aa1OyWeGixLx, bYBKbCZTaL0ebSIlUpApodMG4JYdgghUvwQUufXw3yoqnYdPPqaKL4QK5JkbvlvQmWBehEiR5DqMhanYQDdPMhu5Ah, AExpnO19El, CkFCDuT3TgI2pj3BDu2zlof6Fp7by2VtY82rxdz5bae3PU9nfVT23PiHgmx6wLOfRr6HkSdUr16DG1AAaVAlvgphGJ, UGb0ItMP1z, 6OuRpMgRNA37TGbrkDwMT1SQkarzpUuu4j6FgY49h0cXy1szKbk0mqTnRr5cWkHGX94NZfnc1vzmetJJcTAQY4hSgY" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="ad20177578d0a02f8334367321061e0c999942c4d59dff9865cbe19e26af2eaa.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="b50c7d08ca834d1a977b967384d620f06ddd35633158ea17930a1e379d30f379.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="b50c7d08ca834d1a977b967384d620f06ddd35633158ea17930a1e379d30f379.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Home'" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="d9af677d395f0e7428840577f075a7be7051da3134d75c92ce4d0ed986bf1318.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="d9af677d395f0e7428840577f075a7be7051da3134d75c92ce4d0ed986bf1318.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="d9af677d395f0e7428840577f075a7be7051da3134d75c92ce4d0ed986bf1318.png" title=" Then the admin centre page is displayed (completed)" width="1931"/>
+                <img src="d9af677d395f0e7428840577f075a7be7051da3134d75c92ce4d0ed986bf1318.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="dda7389f84cb58351c73af2693aa43aaffccaef59c598ed17c6cde90e5d7b6c6.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" Then the manage organisation pay and job structure page is displayed" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" Then the manage organisation pay and job structure page is displayed (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i search for an event reason: Delegation" width="1931"/>
+                <img src="27dc26f53b13d224b94c3be37b54c7ffbe686dead8d147ff7cc678784608f00a.png" title=" When i search for an event reason: Delegation" width="1931"/>
+                <img src="27dc26f53b13d224b94c3be37b54c7ffbe686dead8d147ff7cc678784608f00a.png" title=" When i search for an event reason: Delegation (completed)" width="1931"/>
+                <img src="27dc26f53b13d224b94c3be37b54c7ffbe686dead8d147ff7cc678784608f00a.png" title=" When i search for an event reason name: AaXH2LosbNYxOa9ITA877p" width="1931"/>
+                <img src="d0417cac8106b35363a0f4dedf8aedf3f34f82881b0d79da23a4a714c0ee4ed2.png" title=" When i search for an event reason name: AaXH2LosbNYxOa9ITA877p" width="1931"/>
+                <img src="d0417cac8106b35363a0f4dedf8aedf3f34f82881b0d79da23a4a714c0ee4ed2.png" title=" When i search for an event reason name: AaXH2LosbNYxOa9ITA877p (completed)" width="1931"/>
+                <img src="d0417cac8106b35363a0f4dedf8aedf3f34f82881b0d79da23a4a714c0ee4ed2.png" title=" When i click take action" width="1931"/>
+                <img src="6f574b2caa6aacf91e983706e722d2119297d40c07d7811efb46574f7cc8e50a.png" title=" When i click take action" width="1931"/>
+                <img src="6f574b2caa6aacf91e983706e722d2119297d40c07d7811efb46574f7cc8e50a.png" title=" When i click take action (completed)" width="1931"/>
+                <img src="6f574b2caa6aacf91e983706e722d2119297d40c07d7811efb46574f7cc8e50a.png" title=" When i populate effective date: 11/12/2022" width="1931"/>
+                <img src="d786bb146bdfd2d7defd0d7554550ffd73c99736f7d94b28f5ad7151f68842fa.png" title=" When i populate effective date: 11/12/2022 (completed)" width="1931"/>
+                <img src="d786bb146bdfd2d7defd0d7554550ffd73c99736f7d94b28f5ad7151f68842fa.png" title=" When i populate delegation code: Aa8alsJxfxuH" width="1931"/>
+                <img src="e8d556baeb39152080a34d7add0dd8094a02f4d76da469db649381f804fc06fa.png" title=" When i populate delegation code: Aa8alsJxfxuH (completed)" width="1931"/>
+                <img src="e8d556baeb39152080a34d7add0dd8094a02f4d76da469db649381f804fc06fa.png" title=" When i populate delegation name: Aa1QnKfBPiXealfWJHftEj" width="1931"/>
+                <img src="72e8a41dce5f9d50e6b30bfbf227bb6d5e7f9a0932bdcb73d842ab58500b0df5.png" title=" When i populate delegation name: Aa1QnKfBPiXealfWJHftEj (completed)" width="1931"/>
+                <img src="72e8a41dce5f9d50e6b30bfbf227bb6d5e7f9a0932bdcb73d842ab58500b0df5.png" title=" When i clear the text area field: Description" width="1931"/>
+                <img src="bcb8dad31efb506b7f949147f51e12be197415989aca75e9553fd861b9b28bfa.png" title=" When i clear the text area field: Description (completed)" width="1931"/>
+                <img src="bcb8dad31efb506b7f949147f51e12be197415989aca75e9553fd861b9b28bfa.png" title=" When i populate description: VijIAUciYsnV1bCmSDNCHA7ULdsMbkb4ip6KY37oGRvu5cTKU2rNp5TZZKV2GR740rTu8rQAsKFXUs8SCf8tF3fzJh" width="1931"/>
+                <img src="1328cc55bf403d9147f157cb824feb22e71e0e96c00681d9ab142239dd29b08c.png" title=" When i populate description: VijIAUciYsnV1bCmSDNCHA7ULdsMbkb4ip6KY37oGRvu5cTKU2rNp5TZZKV2GR740rTu8rQAsKFXUs8SCf8tF3fzJh (completed)" width="1931"/>
+                <img src="1328cc55bf403d9147f157cb824feb22e71e0e96c00681d9ab142239dd29b08c.png" title=" When i populate region code: ybpp8hWxmi" width="1931"/>
+                <img src="5c453a272e8613c0dcc24f815b7ddf98b44b4c16848f3ddd2c8e9afee8d0dd0a.png" title=" When i populate region code: ybpp8hWxmi (completed)" width="1931"/>
+                <img src="5c453a272e8613c0dcc24f815b7ddf98b44b4c16848f3ddd2c8e9afee8d0dd0a.png" title=" When i populate region name: G0jiZtDwcpDnKXQQxBENAbeTuLquYo7v5lfhfJUHelGDuGc07Dux9gkITHAmzV1lc3BkFM9HG3DfZID7cdZGpgOzaE" width="1931"/>
+                <img src="c54931257265c1789c7347996b74943b16ef14e50dacf3c2d568818ead5439cf.png" title=" When i populate region name: G0jiZtDwcpDnKXQQxBENAbeTuLquYo7v5lfhfJUHelGDuGc07Dux9gkITHAmzV1lc3BkFM9HG3DfZID7cdZGpgOzaE (completed)" width="1931"/>
+                <img src="c54931257265c1789c7347996b74943b16ef14e50dacf3c2d568818ead5439cf.png" title=" When i populate zone code: 0pH7xI16zw" width="1931"/>
+                <img src="a378bd3e449cd1f82783aba017d21b6bb8ebececc490fc626a7b3a4c0a79c65f.png" title=" When i populate zone code: 0pH7xI16zw (completed)" width="1931"/>
+                <img src="a378bd3e449cd1f82783aba017d21b6bb8ebececc490fc626a7b3a4c0a79c65f.png" title=" When i populate zone name: 3O4wsfW5dZpaX9zNvY9mBtpSaiHvI5n1SaAgpEC3Z86EX9G6S0di6cGfCXXLkHODoMtgULQ6PV2o0FzZhSyxa1PwKB" width="1931"/>
+                <img src="43de779d5ebcea36eb426a794775e681c9485f92ad9c4429b57976292e56cbe1.png" title=" When i populate zone name: 3O4wsfW5dZpaX9zNvY9mBtpSaiHvI5n1SaAgpEC3Z86EX9G6S0di6cGfCXXLkHODoMtgULQ6PV2o0FzZhSyxa1PwKB (completed)" width="1931"/>
+                <img src="43de779d5ebcea36eb426a794775e681c9485f92ad9c4429b57976292e56cbe1.png" title=" Then the former value is displayed: Delegation code, Aa1OyWeGixLx, Delegation name, AaXH2LosbNYxOa9ITA877p, Description, bYBKbCZTaL0ebSIlUpApodMG4JYdgghUvwQUufXw3yoqnYdPPqaKL4QK5JkbvlvQmWBehEiR5DqMhanYQDdPMhu5Ah, Region code, AExpnO19El, Region name, CkFCDuT3TgI2pj3BDu2zlof6Fp7by2VtY82rxdz5bae3PU9nfVT23PiHgmx6wLOfRr6HkSdUr16DG1AAaVAlvgphGJ, Zone code, UGb0ItMP1z, Zone name, 6OuRpMgRNA37TGbrkDwMT1SQkarzpUuu4j6FgY49h0cXy1szKbk0mqTnRr5cWkHGX94NZfnc1vzmetJJcTAQY4hSgY" width="1931"/>
+                <img src="43de779d5ebcea36eb426a794775e681c9485f92ad9c4429b57976292e56cbe1.png" title=" Then the former value is displayed: Delegation code, Aa1OyWeGixLx, Delegation name, AaXH2LosbNYxOa9ITA877p, Description, bYBKbCZTaL0ebSIlUpApodMG4JYdgghUvwQUufXw3yoqnYdPPqaKL4QK5JkbvlvQmWBehEiR5DqMhanYQDdPMhu5Ah, Region code, AExpnO19El, Region name, CkFCDuT3TgI2pj3BDu2zlof6Fp7by2VtY82rxdz5bae3PU9nfVT23PiHgmx6wLOfRr6HkSdUr16DG1AAaVAlvgphGJ, Zone code, UGb0ItMP1z, Zone name, 6OuRpMgRNA37TGbrkDwMT1SQkarzpUuu4j6FgY49h0cXy1szKbk0mqTnRr5cWkHGX94NZfnc1vzmetJJcTAQY4hSgY (completed)" width="1931"/>
+                <img src="43de779d5ebcea36eb426a794775e681c9485f92ad9c4429b57976292e56cbe1.png" title=" When i click save button" width="1931"/>
+                <img src="bd17dfe31e80d1a52eaade09ba6ef486fa1904062da3d79e2eb4cebd2ee92ccc.png" title=" When i click save button" width="1931"/>
+                <img src="115db9c5a5deb42ee955b21d2430eb6e3949214eac02fda8b3ccf6d367eee3d3.png" title=" When i click save button (completed)" width="1931"/>
+                <img src="115db9c5a5deb42ee955b21d2430eb6e3949214eac02fda8b3ccf6d367eee3d3.png" title=" Then the record details is saved: Delegation code, Aa8alsJxfxuH, Delegation name, Aa1QnKfBPiXealfWJHftEj, Description, VijIAUciYsnV1bCmSDNCHA7ULdsMbkb4ip6KY37oGRvu5cTKU2rNp5TZZKV2GR740rTu8rQAsKFXUs8SCf8tF3fzJh, Region code, ybpp8hWxmi, Region name, G0jiZtDwcpDnKXQQxBENAbeTuLquYo7v5lfhfJUHelGDuGc07Dux9gkITHAmzV1lc3BkFM9HG3DfZID7cdZGpgOzaE, Zone code, 0pH7xI16zw, Zone name, 3O4wsfW5dZpaX9zNvY9mBtpSaiHvI5n1SaAgpEC3Z86EX9G6S0di6cGfCXXLkHODoMtgULQ6PV2o0FzZhSyxa1PwKB, &lt;null&gt;, &lt;null&gt;" width="1931"/>
+                <img src="115db9c5a5deb42ee955b21d2430eb6e3949214eac02fda8b3ccf6d367eee3d3.png" title=" Then the record details is saved: Delegation code, Aa8alsJxfxuH, Delegation name, Aa1QnKfBPiXealfWJHftEj, Description, VijIAUciYsnV1bCmSDNCHA7ULdsMbkb4ip6KY37oGRvu5cTKU2rNp5TZZKV2GR740rTu8rQAsKFXUs8SCf8tF3fzJh, Region code, ybpp8hWxmi, Region name, G0jiZtDwcpDnKXQQxBENAbeTuLquYo7v5lfhfJUHelGDuGc07Dux9gkITHAmzV1lc3BkFM9HG3DfZID7cdZGpgOzaE, Zone code, 0pH7xI16zw, Zone name, 3O4wsfW5dZpaX9zNvY9mBtpSaiHvI5n1SaAgpEC3Z86EX9G6S0di6cGfCXXLkHODoMtgULQ6PV2o0FzZhSyxa1PwKB, &lt;null&gt;, &lt;null&gt; (completed)" width="1931"/>
+                <img src="115db9c5a5deb42ee955b21d2430eb6e3949214eac02fda8b3ccf6d367eee3d3.png" title=" When HRIS modify a delegation: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, AaXH2LosbNYxOa9ITA877p, 11/12/2022, Aa8alsJxfxuH, Aa1QnKfBPiXealfWJHftEj, VijIAUciYsnV1bCmSDNCHA7ULdsMbkb4ip6KY37oGRvu5cTKU2rNp5TZZKV2GR740rTu8rQAsKFXUs8SCf8tF3fzJh, Active, ybpp8hWxmi, G0jiZtDwcpDnKXQQxBENAbeTuLquYo7v5lfhfJUHelGDuGc07Dux9gkITHAmzV1lc3BkFM9HG3DfZID7cdZGpgOzaE, 0pH7xI16zw, 3O4wsfW5dZpaX9zNvY9mBtpSaiHvI5n1SaAgpEC3Z86EX9G6S0di6cGfCXXLkHODoMtgULQ6PV2o0FzZhSyxa1PwKB, Aa1OyWeGixLx, bYBKbCZTaL0ebSIlUpApodMG4JYdgghUvwQUufXw3yoqnYdPPqaKL4QK5JkbvlvQmWBehEiR5DqMhanYQDdPMhu5Ah, AExpnO19El, CkFCDuT3TgI2pj3BDu2zlof6Fp7by2VtY82rxdz5bae3PU9nfVT23PiHgmx6wLOfRr6HkSdUr16DG1AAaVAlvgphGJ, UGb0ItMP1z, 6OuRpMgRNA37TGbrkDwMT1SQkarzpUuu4j6FgY49h0cXy1szKbk0mqTnRr5cWkHGX94NZfnc1vzmetJJcTAQY4hSgY (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" When HRIS set the status to inactive: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Delegation, Aa1QnKfBPiXealfWJHftEj, 11/12/2022" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="a948ea3032e3ec4beeacb3e56cf85893d654fb49171eaf96db0e3f2f788a9ed4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="daf5d939f6e45874e488aa41e630181e237dac8ccc0f0d1fa4e4ae2993251c61.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Home'" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Home' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="d9af677d395f0e7428840577f075a7be7051da3134d75c92ce4d0ed986bf1318.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="d9af677d395f0e7428840577f075a7be7051da3134d75c92ce4d0ed986bf1318.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="d9af677d395f0e7428840577f075a7be7051da3134d75c92ce4d0ed986bf1318.png" title=" Then the admin centre page is displayed (completed)" width="1931"/>
+                <img src="d9af677d395f0e7428840577f075a7be7051da3134d75c92ce4d0ed986bf1318.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="fa6e0cdfbad4a09d61c7524345c2a2a3f47edd7393795631f61b8430a2bbef36.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" Then the manage organisation pay and job structure page is displayed" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" Then the manage organisation pay and job structure page is displayed (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i search for an event reason: Delegation" width="1931"/>
+                <img src="27dc26f53b13d224b94c3be37b54c7ffbe686dead8d147ff7cc678784608f00a.png" title=" When i search for an event reason: Delegation" width="1931"/>
+                <img src="27dc26f53b13d224b94c3be37b54c7ffbe686dead8d147ff7cc678784608f00a.png" title=" When i search for an event reason: Delegation (completed)" width="1931"/>
+                <img src="27dc26f53b13d224b94c3be37b54c7ffbe686dead8d147ff7cc678784608f00a.png" title=" When i search for an event reason name: Aa1QnKfBPiXealfWJHftEj" width="1931"/>
+                <img src="e41589644a0e1883055216ea529899d32378d35aee9ffb2d5153f4d260769ae5.png" title=" When i search for an event reason name: Aa1QnKfBPiXealfWJHftEj" width="1931"/>
+                <img src="e41589644a0e1883055216ea529899d32378d35aee9ffb2d5153f4d260769ae5.png" title=" When i search for an event reason name: Aa1QnKfBPiXealfWJHftEj (completed)" width="1931"/>
+                <img src="e41589644a0e1883055216ea529899d32378d35aee9ffb2d5153f4d260769ae5.png" title=" When i click take action" width="1931"/>
+                <img src="c1ff228d1b2b669d86a7af84ec00f900efea4232ac5960bdf94fe2df12f8e746.png" title=" When i click take action" width="1931"/>
+                <img src="c1ff228d1b2b669d86a7af84ec00f900efea4232ac5960bdf94fe2df12f8e746.png" title=" When i click take action (completed)" width="1931"/>
+                <img src="c1ff228d1b2b669d86a7af84ec00f900efea4232ac5960bdf94fe2df12f8e746.png" title=" When i populate effective date: 11/12/2022" width="1931"/>
+                <img src="e46327efd358ce3f976107f2475b65ba3f228b769214a79c047a69d3f5625523.png" title=" When i populate effective date: 11/12/2022 (completed)" width="1931"/>
+                <img src="e46327efd358ce3f976107f2475b65ba3f228b769214a79c047a69d3f5625523.png" title=" When i populate status: InActive" width="1931"/>
+                <img src="f5150806b1f478575e1230aabeb26dd82d6056e6c8ae57282ab588f3cc6cacf2.png" title=" When i populate status: InActive" width="1931"/>
+                <img src="1e8175dfc58715e9d4435c218d16491f76dd1dbe03cce6b658c55c0153521530.png" title=" When i populate status: InActive" width="1931"/>
+                <img src="1e8175dfc58715e9d4435c218d16491f76dd1dbe03cce6b658c55c0153521530.png" title=" When i populate status: InActive (completed)" width="1931"/>
+                <img src="1e8175dfc58715e9d4435c218d16491f76dd1dbe03cce6b658c55c0153521530.png" title=" When i click save button" width="1931"/>
+                <img src="e53316643c413892789b3649b9ef07f8c08f92a5edea1c4400b233b4569772ec.png" title=" When i click save button" width="1931"/>
+                <img src="716b9e24cfaf93494d650d3cf1679cbe0ebe5afc2d92f5cc921ddb20ef472e1f.png" title=" When i click save button (completed)" width="1931"/>
+                <img src="716b9e24cfaf93494d650d3cf1679cbe0ebe5afc2d92f5cc921ddb20ef472e1f.png" title=" When i click yes button" width="1931"/>
+                <img src="d156adc5e38da0c34ad2d1cdbee561ae3c46b1eb903174508a79405843c34833.png" title=" When i click yes button" width="1931"/>
+                <img src="31c841f204b41ad8a7cfd0100396eccb8195a3c53238427298b9d9dd5bd26401.png" title=" When i click yes button (completed)" width="1931"/>
+                <img src="31c841f204b41ad8a7cfd0100396eccb8195a3c53238427298b9d9dd5bd26401.png" title=" Then the status is set to inactive" width="1931"/>
+                <img src="31c841f204b41ad8a7cfd0100396eccb8195a3c53238427298b9d9dd5bd26401.png" title=" Then the status is set to inactive (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i search for an event reason: Delegation" width="1931"/>
+                <img src="27dc26f53b13d224b94c3be37b54c7ffbe686dead8d147ff7cc678784608f00a.png" title=" When i search for an event reason: Delegation" width="1931"/>
+                <img src="27dc26f53b13d224b94c3be37b54c7ffbe686dead8d147ff7cc678784608f00a.png" title=" When i search for an event reason: Delegation (completed)" width="1931"/>
+                <img src="27dc26f53b13d224b94c3be37b54c7ffbe686dead8d147ff7cc678784608f00a.png" title=" Then the event is not displayed in search result: Aa1QnKfBPiXealfWJHftEj" width="1931"/>
+                <img src="facd3cc263d650794cacac2cf81d9c51d29f0c4eb120212b29b5df60391aab5b.png" title=" Then the event is not displayed in search result: Aa1QnKfBPiXealfWJHftEj (completed)" width="1931"/>
+                <img src="facd3cc263d650794cacac2cf81d9c51d29f0c4eb120212b29b5df60391aab5b.png" title=" When I set the header module to 'Home'" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Home' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When HRIS set the status to inactive: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Delegation, Aa1QnKfBPiXealfWJHftEj, 11/12/2022 (completed): <span class='success-color'>SUCCESS</span>" width="1931"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.6</span>
+</div>
+</body>
+</html>

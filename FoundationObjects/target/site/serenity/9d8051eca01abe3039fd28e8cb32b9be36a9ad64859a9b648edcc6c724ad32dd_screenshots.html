@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Selenium Serenity Tests FAD APPLIC</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="4143b54c09d9fa22846f04fc236441c51ddd596b585b5bf52c49033629793ea6.html">Foundation Objects</a></span>
+                > <span class="truncate-60"><a
+                    href="9d8051eca01abe3039fd28e8cb32b9be36a9ad64859a9b648edcc6c724ad32dd.html">Create frequency </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 13-12-2022 16:11</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Foundation Objects </span>
+                                    <span class="badge tag-badge" style="">Story</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Create frequency
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" When HRIS reviews frequency details field: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, tanVLVKfWmsEMkKW3OVYBoHuVLUNgDZ4, 1NVHP1sV2b16kyqKJFkM9fysFqrv3D5WRJ3lJ0icn1zDzQ3yZKkvyD4d4yrm3bZOs137IyilQA6VgCBBfx9h74gN1H, XqSV11oHPwpBYOM2JJApeT5mqAXFx8iO8GdLb3GIrSIuJfshGCyV9MB1hDSws0mITKfq5q6MhQU3KBCc4JXBvbrjmShumnGQmi36oajyy8EVC0CbqkjIfbprRFW0Hc6X, 9.9" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="941"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="60759ced109b4d51df91c02ad928fe2453b7994b0ac98eb79fbdd75fc023606c.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="11738d92f33c73896a34725d7de242a3c021f15cc00a32febb877d915b392cdf.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="11738d92f33c73896a34725d7de242a3c021f15cc00a32febb877d915b392cdf.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="11738d92f33c73896a34725d7de242a3c021f15cc00a32febb877d915b392cdf.png" title=" Then the admin centre page is displayed (completed)" width="1931"/>
+                <img src="11738d92f33c73896a34725d7de242a3c021f15cc00a32febb877d915b392cdf.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="fa6e0cdfbad4a09d61c7524345c2a2a3f47edd7393795631f61b8430a2bbef36.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="5619672cd5a6f3ae099c2934fbba18103860219301676a7da6cad5842be9dfb4.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="5619672cd5a6f3ae099c2934fbba18103860219301676a7da6cad5842be9dfb4.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" Then the manage organisation pay and job structure page is displayed" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" Then the manage organisation pay and job structure page is displayed (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i populate create new field: Frequency" width="1931"/>
+                <img src="bc9b82141cffc92e78d511a5f21307dc559d9bf863f0038da9ac1548f2b6f78c.png" title=" When i populate create new field: Frequency" width="1931"/>
+                <img src="48cb8b59f0196d2b9c27f8aa4d6dd253bf4b2f8dc63e3bff2ba351eedb4c5e5f.png" title=" When i populate create new field: Frequency" width="1931"/>
+                <img src="48cb8b59f0196d2b9c27f8aa4d6dd253bf4b2f8dc63e3bff2ba351eedb4c5e5f.png" title=" When i populate create new field: Frequency (completed)" width="1931"/>
+                <img src="cd2f9bef5177a611dc6bda547b31f088d39ef5b6856d848672b363f4685ba196.png" title=" Then the portlet is displayed: Frequency" width="1931"/>
+                <img src="b7078fc0c9ade1c39c0f851491d5bfa5afb92e2737e617cdc4d3709808599891.png" title=" Then the portlet is displayed: Frequency (completed)" width="1931"/>
+                <img src="b7078fc0c9ade1c39c0f851491d5bfa5afb92e2737e617cdc4d3709808599891.png" title=" When i populate frequency code: tanVLVKfWmsEMkKW3OVYBoHuVLUNgDZ4" width="1931"/>
+                <img src="4504280ec98f7357dc18d6dae77dd785d7e15e7aa2b88093b0e5f47fc66df35a.png" title=" When i populate frequency code: tanVLVKfWmsEMkKW3OVYBoHuVLUNgDZ4 (completed)" width="1931"/>
+                <img src="4504280ec98f7357dc18d6dae77dd785d7e15e7aa2b88093b0e5f47fc66df35a.png" title=" Then a maximum character warning message is displayed: Frequency code, 32" width="1931"/>
+                <img src="836d427e0a1b869d6ecb4e4e668ffe8ba0ad815b5d9660bac72ddbe43de0fe11.png" title=" Then a maximum character warning message is displayed: Frequency code, 32 (completed)" width="1931"/>
+                <img src="836d427e0a1b869d6ecb4e4e668ffe8ba0ad815b5d9660bac72ddbe43de0fe11.png" title=" When i populate frequency name: 1NVHP1sV2b16kyqKJFkM9fysFqrv3D5WRJ3lJ0icn1zDzQ3yZKkvyD4d4yrm3bZOs137IyilQA6VgCBBfx9h74gN1H" width="1931"/>
+                <img src="9fe01e3975bff51e04927082ad8399e9ba373c5e275c91b2f237a2eb20ca23f9.png" title=" When i populate frequency name: 1NVHP1sV2b16kyqKJFkM9fysFqrv3D5WRJ3lJ0icn1zDzQ3yZKkvyD4d4yrm3bZOs137IyilQA6VgCBBfx9h74gN1H (completed)" width="1931"/>
+                <img src="9fe01e3975bff51e04927082ad8399e9ba373c5e275c91b2f237a2eb20ca23f9.png" title=" Then a maximum character warning message is displayed: Frequency name, 90" width="1931"/>
+                <img src="4259841eadd5f285679b328bad002ddacfca3d4fbb911b30df398f194c7037f6.png" title=" Then a maximum character warning message is displayed: Frequency name, 90 (completed)" width="1931"/>
+                <img src="4259841eadd5f285679b328bad002ddacfca3d4fbb911b30df398f194c7037f6.png" title=" When i populate description: XqSV11oHPwpBYOM2JJApeT5mqAXFx8iO8GdLb3GIrSIuJfshGCyV9MB1hDSws0mITKfq5q6MhQU3KBCc4JXBvbrjmShumnGQmi36oajyy8EVC0CbqkjIfbprRFW0Hc6X" width="1931"/>
+                <img src="ed79717c28a7f360df3c026463c830fec0056251ce675eda4daec45868389d75.png" title=" When i populate description: XqSV11oHPwpBYOM2JJApeT5mqAXFx8iO8GdLb3GIrSIuJfshGCyV9MB1hDSws0mITKfq5q6MhQU3KBCc4JXBvbrjmShumnGQmi36oajyy8EVC0CbqkjIfbprRFW0Hc6X (completed)" width="1931"/>
+                <img src="ed79717c28a7f360df3c026463c830fec0056251ce675eda4daec45868389d75.png" title=" When i populate annualization factor: 9.9" width="1931"/>
+                <img src="e33bf65fe2628e0d579998d717651a1d423a855989100bb07a95663c2022eb3f.png" title=" When i populate annualization factor: 9.9 (completed)" width="1931"/>
+                <img src="e33bf65fe2628e0d579998d717651a1d423a855989100bb07a95663c2022eb3f.png" title=" When i click cancel button" width="1931"/>
+                <img src="466247f0b1ae54679b867025be93d68603d16bd1462da8570f33b4ceeff560f1.png" title=" When i click cancel button" width="1931"/>
+                <img src="466247f0b1ae54679b867025be93d68603d16bd1462da8570f33b4ceeff560f1.png" title=" When i click cancel button (completed)" width="1931"/>
+                <img src="466247f0b1ae54679b867025be93d68603d16bd1462da8570f33b4ceeff560f1.png" title=" When i click dont save button" width="1931"/>
+                <img src="52b6c33bff28d773d93775154c1439fd884634d53f7a287c62363f928e1df17d.png" title=" When i click dont save button" width="1931"/>
+                <img src="52b6c33bff28d773d93775154c1439fd884634d53f7a287c62363f928e1df17d.png" title=" When i click dont save button (completed)" width="1931"/>
+                <img src="52b6c33bff28d773d93775154c1439fd884634d53f7a287c62363f928e1df17d.png" title=" When HRIS reviews frequency details field: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, tanVLVKfWmsEMkKW3OVYBoHuVLUNgDZ4, 1NVHP1sV2b16kyqKJFkM9fysFqrv3D5WRJ3lJ0icn1zDzQ3yZKkvyD4d4yrm3bZOs137IyilQA6VgCBBfx9h74gN1H, XqSV11oHPwpBYOM2JJApeT5mqAXFx8iO8GdLb3GIrSIuJfshGCyV9MB1hDSws0mITKfq5q6MhQU3KBCc4JXBvbrjmShumnGQmi36oajyy8EVC0CbqkjIfbprRFW0Hc6X, 9.9 (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" When HRIS adds and deletes a favourite: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="2b8b7591231bb58816867bc39f66a9a07e28aad6cc3d6597eadba53d7b3a4f3a.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="69845027e1852d3a3a4adae5db65bd11b44824492be8dd6443de72311843ac80.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="11738d92f33c73896a34725d7de242a3c021f15cc00a32febb877d915b392cdf.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="11738d92f33c73896a34725d7de242a3c021f15cc00a32febb877d915b392cdf.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="11738d92f33c73896a34725d7de242a3c021f15cc00a32febb877d915b392cdf.png" title=" Then the admin centre page is displayed (completed)" width="1931"/>
+                <img src="11738d92f33c73896a34725d7de242a3c021f15cc00a32febb877d915b392cdf.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="03073baaf9f884bdecbc6af89471fc62470dc77760a8e826c647d2aa353d96ed.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="30df9502caa7f30113ceaf2c68b10f435df7004e3710e906c578a768829cc0b0.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="37652fde641b515ae3dccb5bcb887c1a1e6b72407188601dfa7b064245015ea6.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="37652fde641b515ae3dccb5bcb887c1a1e6b72407188601dfa7b064245015ea6.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="37652fde641b515ae3dccb5bcb887c1a1e6b72407188601dfa7b064245015ea6.png" title=" Then the company process is displayed in my favourites portlet: Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="37652fde641b515ae3dccb5bcb887c1a1e6b72407188601dfa7b064245015ea6.png" title=" Then the company process is displayed in my favourites portlet: Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="37652fde641b515ae3dccb5bcb887c1a1e6b72407188601dfa7b064245015ea6.png" title=" When i remove the tool in favourites: Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="99bdd49e91112ae2d9d2ab35897544bd99dfcb1cda7cee30d793607964d345d2.png" title=" When i remove the tool in favourites: Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="cbeee2914dd007a86f104f3034fded31a9885d05e6c7867654ec4a5499ff8518.png" title=" When i remove the tool in favourites: Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="cbeee2914dd007a86f104f3034fded31a9885d05e6c7867654ec4a5499ff8518.png" title=" Then the company process is not displayed in my favourites portlet: Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="11738d92f33c73896a34725d7de242a3c021f15cc00a32febb877d915b392cdf.png" title=" Then the company process is not displayed in my favourites portlet: Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="11738d92f33c73896a34725d7de242a3c021f15cc00a32febb877d915b392cdf.png" title=" When HRIS adds and deletes a favourite: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" When HRIS submits a frequency: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, A7iqinRUABf, A5YtQu9ku3ApMvAZUu7HJ, Y3op1VuhvS3atYHj7ITV5pYkBFpsojI44QvfXaNTxaZDwYuRRCyiN9FqHaBVZCf3QhgTLqg8bVxupQHrjNeiEwQBct, 9.9" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="f2636d5bbef45b750a4bc477ebbc635af435a96347856dd05131610cf18179ae.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="098eaa91c84ea2cd3eae87717baebbc3b32750f425d0f0d16c258be0e271232a.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="098eaa91c84ea2cd3eae87717baebbc3b32750f425d0f0d16c258be0e271232a.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="098eaa91c84ea2cd3eae87717baebbc3b32750f425d0f0d16c258be0e271232a.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="11738d92f33c73896a34725d7de242a3c021f15cc00a32febb877d915b392cdf.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="11738d92f33c73896a34725d7de242a3c021f15cc00a32febb877d915b392cdf.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="301cad1d91e63eaaa306f4058d6e9a921fa4c57c42c1cb247e6e5d5a7aa95a09.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="df2c3ef6cad164ae132e039eca026d6350a24a0e5bdc8394d341e2b22ab28c60.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="df2c3ef6cad164ae132e039eca026d6350a24a0e5bdc8394d341e2b22ab28c60.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="1564250a56f21886d87c246e8ec78365954e2b7a18768888a4da8e2faf7d7711.png" title=" Then the manage organisation pay and job structure page is displayed" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" Then the manage organisation pay and job structure page is displayed (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i populate create new field: Frequency" width="1931"/>
+                <img src="6bd11ba0ed98ce772344de3686238d98a9ed014342e804c7ab65d24273d8d291.png" title=" When i populate create new field: Frequency" width="1931"/>
+                <img src="ff0e300278de5e51ebc31ee7de7ceafeb850435a4efac5d90bac96f3786f833b.png" title=" When i populate create new field: Frequency" width="1931"/>
+                <img src="ff0e300278de5e51ebc31ee7de7ceafeb850435a4efac5d90bac96f3786f833b.png" title=" When i populate create new field: Frequency (completed)" width="1931"/>
+                <img src="ff0e300278de5e51ebc31ee7de7ceafeb850435a4efac5d90bac96f3786f833b.png" title=" Then the portlet is displayed: Frequency" width="1931"/>
+                <img src="b7078fc0c9ade1c39c0f851491d5bfa5afb92e2737e617cdc4d3709808599891.png" title=" Then the portlet is displayed: Frequency (completed)" width="1931"/>
+                <img src="b7078fc0c9ade1c39c0f851491d5bfa5afb92e2737e617cdc4d3709808599891.png" title=" When i populate frequency code: A7iqinRUABf" width="1931"/>
+                <img src="14ba2f48b523cb84748c68175d7aa445fcfde7979018358f4b2a320d9bdf052d.png" title=" When i populate frequency code: A7iqinRUABf (completed)" width="1931"/>
+                <img src="14ba2f48b523cb84748c68175d7aa445fcfde7979018358f4b2a320d9bdf052d.png" title=" When i populate frequency name: A5YtQu9ku3ApMvAZUu7HJ" width="1931"/>
+                <img src="8480b7963e890ad84f3201ba0b121647558078276e3ae00e998bfefd7b9dd186.png" title=" When i populate frequency name: A5YtQu9ku3ApMvAZUu7HJ (completed)" width="1931"/>
+                <img src="8480b7963e890ad84f3201ba0b121647558078276e3ae00e998bfefd7b9dd186.png" title=" When i populate description: Y3op1VuhvS3atYHj7ITV5pYkBFpsojI44QvfXaNTxaZDwYuRRCyiN9FqHaBVZCf3QhgTLqg8bVxupQHrjNeiEwQBct" width="1931"/>
+                <img src="c36ceb2eb1b7ecd083e35188dffdfb5124446f462fb7c559aa1a1edf55278915.png" title=" When i populate description: Y3op1VuhvS3atYHj7ITV5pYkBFpsojI44QvfXaNTxaZDwYuRRCyiN9FqHaBVZCf3QhgTLqg8bVxupQHrjNeiEwQBct (completed)" width="1931"/>
+                <img src="c36ceb2eb1b7ecd083e35188dffdfb5124446f462fb7c559aa1a1edf55278915.png" title=" When i populate annualization factor: 9.9" width="1931"/>
+                <img src="86a74c64fce45bb10682640526f34cbf4dc067973b70ecbb5c9aac6a9cc3e4fe.png" title=" When i populate annualization factor: 9.9 (completed)" width="1931"/>
+                <img src="86a74c64fce45bb10682640526f34cbf4dc067973b70ecbb5c9aac6a9cc3e4fe.png" title=" When i click save button" width="1931"/>
+                <img src="fe09ef5f036a81558c3a5f7534104f8c71c36f41a28f6e382d575c01c3a1f9e6.png" title=" When i click save button" width="1931"/>
+                <img src="bfa43250c20a7c98286538c3325025af12fb4910ff5a797418fe8c3df95c14b0.png" title=" When i click save button (completed)" width="1931"/>
+                <img src="bfa43250c20a7c98286538c3325025af12fb4910ff5a797418fe8c3df95c14b0.png" title=" Then the name and code is displayed in header: A7iqinRUABf, A5YtQu9ku3ApMvAZUu7HJ" width="1931"/>
+                <img src="bfa43250c20a7c98286538c3325025af12fb4910ff5a797418fe8c3df95c14b0.png" title=" Then the name and code is displayed in header: A7iqinRUABf, A5YtQu9ku3ApMvAZUu7HJ (completed)" width="1931"/>
+                <img src="bfa43250c20a7c98286538c3325025af12fb4910ff5a797418fe8c3df95c14b0.png" title=" Then a frequency is saved: A7iqinRUABf, A5YtQu9ku3ApMvAZUu7HJ, Y3op1VuhvS3atYHj7ITV5pYkBFpsojI44QvfXaNTxaZDwYuRRCyiN9FqHaBVZCf3QhgTLqg8bVxupQHrjNeiEwQBct, 9.9" width="1931"/>
+                <img src="bfa43250c20a7c98286538c3325025af12fb4910ff5a797418fe8c3df95c14b0.png" title=" Then a frequency is saved: A7iqinRUABf, A5YtQu9ku3ApMvAZUu7HJ, Y3op1VuhvS3atYHj7ITV5pYkBFpsojI44QvfXaNTxaZDwYuRRCyiN9FqHaBVZCf3QhgTLqg8bVxupQHrjNeiEwQBct, 9.9 (completed)" width="1931"/>
+                <img src="bfa43250c20a7c98286538c3325025af12fb4910ff5a797418fe8c3df95c14b0.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="098eaa91c84ea2cd3eae87717baebbc3b32750f425d0f0d16c258be0e271232a.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="098eaa91c84ea2cd3eae87717baebbc3b32750f425d0f0d16c258be0e271232a.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="098eaa91c84ea2cd3eae87717baebbc3b32750f425d0f0d16c258be0e271232a.png" title=" Then the admin centre page is displayed (completed)" width="1931"/>
+                <img src="098eaa91c84ea2cd3eae87717baebbc3b32750f425d0f0d16c258be0e271232a.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="ca460bfc906de7e89e2d36055379aca406497fdc246b2c01ad86ca2ab05685b4.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="c737e09f8c2db12849cdb57fd1e6ec1cfdf93ed67813cdd0b635bb71092674cc.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="4917e833d3fd1c3b6687985052eb9122efb26104a21d9233981ffa23ad631ef6.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="4917e833d3fd1c3b6687985052eb9122efb26104a21d9233981ffa23ad631ef6.png" title=" When i click star icon in company process in my favourites: Employee Files, Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="11797b4c91272dcc9dded888953b0940a3f58bd007e86cf435fca1c80a840893.png" title=" When HRIS submits a frequency: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, A7iqinRUABf, A5YtQu9ku3ApMvAZUu7HJ, Y3op1VuhvS3atYHj7ITV5pYkBFpsojI44QvfXaNTxaZDwYuRRCyiN9FqHaBVZCf3QhgTLqg8bVxupQHrjNeiEwQBct, 9.9 (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" When HRIS modify a frequency: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, AKFnVynkkci, AuFdY9ImMPktabGYeTcPD, CeWa22RzqBHcHnq9VSxGEJyhHZTHitR2IdNNXJAZW7DMlFFvpXstT0MI2GXowvW7EAp7FIUFqB47uMcgFnzOZvtsEu, 12, A7iqinRUABf, A5YtQu9ku3ApMvAZUu7HJ, Y3op1VuhvS3atYHj7ITV5pYkBFpsojI44QvfXaNTxaZDwYuRRCyiN9FqHaBVZCf3QhgTLqg8bVxupQHrjNeiEwQBct, 9.9" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="a41884bc460c946a4996908b1fdb3b67fde35538672c5f57b8183c82a635778a.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account" width="1931"/>
+                <img src="4a5675cab78b5985355878ed5f1b062852d8f49e659ddb3b500e404da5965acd.png" title=" Given that I'm logged in to HR space using 'a_kgoyena' account (completed)" width="1931"/>
+                <img src="4a5675cab78b5985355878ed5f1b062852d8f49e659ddb3b500e404da5965acd.png" title=" Given that I'm logged in to HR space as 'admin Katrin GOYENA' (completed)" width="1931"/>
+                <img src="4a5675cab78b5985355878ed5f1b062852d8f49e659ddb3b500e404da5965acd.png" title=" When I set the header module to 'Home'" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Home' (completed)" width="1931"/>
+                <img src="38a19ce9fd140289fc39d2dc0acbdce2eab19c834608354abab47412da84af52.png" title=" When I set the header module to 'Admin Centre'" width="1931"/>
+                <img src="2c1629effeafce5c5e080446dcf584504f78d73d0704eab5248f6464611fa9cd.png" title=" When I set the header module to 'Admin Centre' (completed)" width="1931"/>
+                <img src="2c1629effeafce5c5e080446dcf584504f78d73d0704eab5248f6464611fa9cd.png" title=" Then the admin centre page is displayed" width="1931"/>
+                <img src="2c1629effeafce5c5e080446dcf584504f78d73d0704eab5248f6464611fa9cd.png" title=" Then the admin centre page is displayed (completed)" width="1931"/>
+                <img src="2c1629effeafce5c5e080446dcf584504f78d73d0704eab5248f6464611fa9cd.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="4f530226a1bc5ddc22f716bce1274207f74aa4acd2117a64a7cfc30e30f9a7ef.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i click a company process: Employee Files, Manage Organisation, Pay and Job Structures (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" Then the manage organisation pay and job structure page is displayed" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" Then the manage organisation pay and job structure page is displayed (completed)" width="1931"/>
+                <img src="50a5fcab245e2ce6d64a956c7fa60b75a2254b5a0bbcc4cfc5e2b609566ef636.png" title=" When i search for an event reason: Frequency" width="1931"/>
+                <img src="3026aa593f61fdd2642a4c4db3323b7d013d1a45a127d15c0b1498493c6cecf3.png" title=" When i search for an event reason: Frequency" width="1931"/>
+                <img src="3026aa593f61fdd2642a4c4db3323b7d013d1a45a127d15c0b1498493c6cecf3.png" title=" When i search for an event reason: Frequency (completed)" width="1931"/>
+                <img src="3026aa593f61fdd2642a4c4db3323b7d013d1a45a127d15c0b1498493c6cecf3.png" title=" When i search for an event reason name: A5YtQu9ku3ApMvAZUu7HJ" width="1931"/>
+                <img src="e79bb335983a6f6cb8c7a14b4c6eb9bdf18a0b893d426c90ad8dd9d21ac43432.png" title=" When i search for an event reason name: A5YtQu9ku3ApMvAZUu7HJ" width="1931"/>
+                <img src="e79bb335983a6f6cb8c7a14b4c6eb9bdf18a0b893d426c90ad8dd9d21ac43432.png" title=" When i search for an event reason name: A5YtQu9ku3ApMvAZUu7HJ (completed)" width="1931"/>
+                <img src="f46e9d6fbcebbfad8678c6247f19b67635ed634e8517692fc2fb18d9b1293ec6.png" title=" When i click take action" width="1931"/>
+                <img src="a0c5527b5a1baceff5fb69445738b6bf0eef6adc3081952a054d6508803201a3.png" title=" When i click take action" width="1931"/>
+                <img src="a0c5527b5a1baceff5fb69445738b6bf0eef6adc3081952a054d6508803201a3.png" title=" When i click take action (completed)" width="1931"/>
+                <img src="a0c5527b5a1baceff5fb69445738b6bf0eef6adc3081952a054d6508803201a3.png" title=" When i populate frequency code: AKFnVynkkci" width="1931"/>
+                <img src="d6fcb5ec978b101b2e11ad296deb863de1d474f98212b4e21ba33b31efffb510.png" title=" When i populate frequency code: AKFnVynkkci (completed)" width="1931"/>
+                <img src="d6fcb5ec978b101b2e11ad296deb863de1d474f98212b4e21ba33b31efffb510.png" title=" When i populate frequency name: AuFdY9ImMPktabGYeTcPD" width="1931"/>
+                <img src="b392978ac9f9291becbe2b267bb2cfbd77c54180412992d8be44b43d2a132755.png" title=" When i populate frequency name: AuFdY9ImMPktabGYeTcPD (completed)" width="1931"/>
+                <img src="b392978ac9f9291becbe2b267bb2cfbd77c54180412992d8be44b43d2a132755.png" title=" When i clear the text area field: Description" width="1931"/>
+                <img src="cb3e609e62d6c14c0218d3981ff498b80cad71754c425d85987375b55b271919.png" title=" When i clear the text area field: Description (completed)" width="1931"/>
+                <img src="cb3e609e62d6c14c0218d3981ff498b80cad71754c425d85987375b55b271919.png" title=" When i populate description: CeWa22RzqBHcHnq9VSxGEJyhHZTHitR2IdNNXJAZW7DMlFFvpXstT0MI2GXowvW7EAp7FIUFqB47uMcgFnzOZvtsEu" width="1931"/>
+                <img src="ac1b6832a3385c30c3e3b7aa8ba6794680dbf5e1dfbf13f5ff927829e927d2c3.png" title=" When i populate description: CeWa22RzqBHcHnq9VSxGEJyhHZTHitR2IdNNXJAZW7DMlFFvpXstT0MI2GXowvW7EAp7FIUFqB47uMcgFnzOZvtsEu (completed)" width="1931"/>
+                <img src="ac1b6832a3385c30c3e3b7aa8ba6794680dbf5e1dfbf13f5ff927829e927d2c3.png" title=" When i populate annualization factor: 12" width="1931"/>
+                <img src="420219c3c1c4b8a0b31d6bd6eb7ca267bf5f8418c97c154e27771bd0904feedc.png" title=" When i populate annualization factor: 12 (completed)" width="1931"/>
+                <img src="420219c3c1c4b8a0b31d6bd6eb7ca267bf5f8418c97c154e27771bd0904feedc.png" title=" Then the former value is displayed: Frequency code, A7iqinRUABf, Frequency name, A5YtQu9ku3ApMvAZUu7HJ, Description, Y3op1VuhvS3atYHj7ITV5pYkBFpsojI44QvfXaNTxaZDwYuRRCyiN9FqHaBVZCf3QhgTLqg8bVxupQHrjNeiEwQBct, Annualization factor, 9.9, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;" width="1931"/>
+                <img src="420219c3c1c4b8a0b31d6bd6eb7ca267bf5f8418c97c154e27771bd0904feedc.png" title=" Then the former value is displayed: Frequency code, A7iqinRUABf, Frequency name, A5YtQu9ku3ApMvAZUu7HJ, Description, Y3op1VuhvS3atYHj7ITV5pYkBFpsojI44QvfXaNTxaZDwYuRRCyiN9FqHaBVZCf3QhgTLqg8bVxupQHrjNeiEwQBct, Annualization factor, 9.9, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt; (completed)" width="1931"/>
+                <img src="420219c3c1c4b8a0b31d6bd6eb7ca267bf5f8418c97c154e27771bd0904feedc.png" title=" When i click save button" width="1931"/>
+                <img src="a899392a4a0a1e05f5203720f922f0c542049cfd275b6092f8c9d25853d81773.png" title=" When i click save button" width="1931"/>
+                <img src="69ae4f3e2bf5e95846f483abc86ef094a94692a6b3cf36c325b570e79e8a25f1.png" title=" When i click save button (completed)" width="1931"/>
+                <img src="69ae4f3e2bf5e95846f483abc86ef094a94692a6b3cf36c325b570e79e8a25f1.png" title=" Then the record details is saved: Frequency code, AKFnVynkkci, Frequency name, AuFdY9ImMPktabGYeTcPD, Description, CeWa22RzqBHcHnq9VSxGEJyhHZTHitR2IdNNXJAZW7DMlFFvpXstT0MI2GXowvW7EAp7FIUFqB47uMcgFnzOZvtsEu, Annualization factor, 12, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;" width="1931"/>
+                <img src="69ae4f3e2bf5e95846f483abc86ef094a94692a6b3cf36c325b570e79e8a25f1.png" title=" Then the record details is saved: Frequency code, AKFnVynkkci, Frequency name, AuFdY9ImMPktabGYeTcPD, Description, CeWa22RzqBHcHnq9VSxGEJyhHZTHitR2IdNNXJAZW7DMlFFvpXstT0MI2GXowvW7EAp7FIUFqB47uMcgFnzOZvtsEu, Annualization factor, 12, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt; (completed)" width="1931"/>
+                <img src="69ae4f3e2bf5e95846f483abc86ef094a94692a6b3cf36c325b570e79e8a25f1.png" title=" When HRIS modify a frequency: admin Katrin GOYENA, a_kgoyena, Durin'sBane11, 11/12/2022, AKFnVynkkci, AuFdY9ImMPktabGYeTcPD, CeWa22RzqBHcHnq9VSxGEJyhHZTHitR2IdNNXJAZW7DMlFFvpXstT0MI2GXowvW7EAp7FIUFqB47uMcgFnzOZvtsEu, 12, A7iqinRUABf, A5YtQu9ku3ApMvAZUu7HJ, Y3op1VuhvS3atYHj7ITV5pYkBFpsojI44QvfXaNTxaZDwYuRRCyiN9FqHaBVZCf3QhgTLqg8bVxupQHrjNeiEwQBct, 9.9 (completed): <span class='success-color'>SUCCESS</span>" width="1931"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.6</span>
+</div>
+</body>
+</html>
