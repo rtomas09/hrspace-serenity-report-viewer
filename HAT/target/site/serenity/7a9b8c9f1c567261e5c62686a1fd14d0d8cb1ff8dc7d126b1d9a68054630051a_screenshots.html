@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Selenium Serenity Tests FAD APPLIC</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="7b3b5c8cd2c14ee869fe90c1ea638512f94580ecd8f9185816db302018ed1a20.html">Hire Assign Terminate</a></span>
+                > <span class="truncate-60"><a
+                    href="7a9b8c9f1c567261e5c62686a1fd14d0d8cb1ff8dc7d126b1d9a68054630051a.html">Hire pending hire assign extension comp modif terminate </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 21-12-2022 19:29</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Hire Assign Terminate </span>
+                                    <span class="badge tag-badge" style="">Story</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Hire pending hire assign extension comp modif terminate
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" When HR Admin Extends Assignment End Date (HAT09_2)" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space as 'Bea Fe TEJANO'" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space using 'A851754' account" width="941"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'A851754' account" width="1931"/>
+                <img src="47eda5572eb1685ee29fc08621a26932f43a6fa05e08098c598a7adbcecfc737.png" title=" Given that I'm logged in to HR space using 'A851754' account" width="1931"/>
+                <img src="cc06b1e8a8fa27ed3a31b5a82bee7d8204d36195363a44e6d4c32eab44ec9c43.png" title=" Given that I'm logged in to HR space using 'A851754' account (completed)" width="1931"/>
+                <img src="cc06b1e8a8fa27ed3a31b5a82bee7d8204d36195363a44e6d4c32eab44ec9c43.png" title=" Given that I'm logged in to HR space as 'Bea Fe TEJANO' (completed)" width="1931"/>
+                <img src="cc06b1e8a8fa27ed3a31b5a82bee7d8204d36195363a44e6d4c32eab44ec9c43.png" title=" When i search for an employee using the header search bar: Ahmad MOHANNA" width="1931"/>
+                <img src="6a5eaf6bf5461d2659b0288864e6950a47b8c7e5333530f706e2603908b79a6b.png" title=" When i search for an employee using the header search bar: Ahmad MOHANNA (completed)" width="1931"/>
+                <img src="6a5eaf6bf5461d2659b0288864e6950a47b8c7e5333530f706e2603908b79a6b.png" title=" When i click actions button" width="1931"/>
+                <img src="44a98ce31bbb61561d97cfa9ce4725f56762d0a0b8561fc64a2a6a9fd523ffc7.png" title=" When i click actions button" width="1931"/>
+                <img src="9475abeb0e50b4dcbc102f3c9680f7ee658e55bf735ae66e114ac73824c2e378.png" title=" When i click actions button (completed)" width="1931"/>
+                <img src="9475abeb0e50b4dcbc102f3c9680f7ee658e55bf735ae66e114ac73824c2e378.png" title=" When i click change job and compensation info" width="1931"/>
+                <img src="02dc90427df505e5bd5387cf4fa1534a6124f9ef8266947f291b9328754c8b14.png" title=" When i click change job and compensation info" width="1931"/>
+                <img src="771b3adf07f7547226f7a8d349d54bfb67f13f9b1954299ba224b2af2c6d4e4b.png" title=" When i click change job and compensation info (completed)" width="1931"/>
+                <img src="771b3adf07f7547226f7a8d349d54bfb67f13f9b1954299ba224b2af2c6d4e4b.png" title=" When i click job information checkbox" width="1931"/>
+                <img src="45e6395102903b1ae11ab7ebd0f02bcfb7f4125fb97ecc6d4213afbf9507d338.png" title=" When i click job information checkbox" width="1931"/>
+                <img src="45e6395102903b1ae11ab7ebd0f02bcfb7f4125fb97ecc6d4213afbf9507d338.png" title=" When i click job information checkbox (completed)" width="1931"/>
+                <img src="45e6395102903b1ae11ab7ebd0f02bcfb7f4125fb97ecc6d4213afbf9507d338.png" title=" When i populate effective date: 21/12/2022" width="1931"/>
+                <img src="98f5707932a6b2a13ce35a52dfbe06c7f5bf2c8bcaf32bc6c353dc45f26f5487.png" title=" When i populate effective date: 21/12/2022 (completed)" width="1931"/>
+                <img src="81558cc500168d5590143ef80cec72120d94ecacd585735474472cf6a6f52eb8.png" title=" When i set effective date: 22/06/2023" width="1931"/>
+                <img src="55936cf779fbb0cadc9ea09af5a6dec738ccfd673624368b000c102e1088203a.png" title=" When i set effective date: 22/06/2023 (completed)" width="1931"/>
+                <img src="55936cf779fbb0cadc9ea09af5a6dec738ccfd673624368b000c102e1088203a.png" title=" When i populate event: Change Assignment/Contract info" width="1931"/>
+                <img src="88b6bf105d24af14f54e5d866b458906bffd3ad51c4ec1d11aba7ebb7a9b87aa.png" title=" When i populate event: Change Assignment/Contract info" width="1931"/>
+                <img src="ecb0497a3232ebd6fa5043a48ddbf8c2961fa93f37acd57c55536415fc70923e.png" title=" When i populate event: Change Assignment/Contract info (completed)" width="1931"/>
+                <img src="ecb0497a3232ebd6fa5043a48ddbf8c2961fa93f37acd57c55536415fc70923e.png" title=" When i populate event reason: Assignment extension" width="1931"/>
+                <img src="649f1758962e462b2f0aa70a6a056eb3b16039b1f229e68680a9814f102b520f.png" title=" When i populate event reason: Assignment extension" width="1931"/>
+                <img src="649f1758962e462b2f0aa70a6a056eb3b16039b1f229e68680a9814f102b520f.png" title=" When i populate event reason: Assignment extension (completed)" width="1931"/>
+                <img src="2c84712b3767e4f53d34f0cf95a708c47f2373a1badc62c936ae9ecba1e47895.png" title=" When i extend assignment end date: 21/09/2023" width="1931"/>
+                <img src="20617cdc82d7aea7fb32ab4749bc998c042ab3f8e630c91d90bf258661178c1b.png" title=" When i extend assignment end date: 21/09/2023 (completed)" width="1931"/>
+                <img src="20617cdc82d7aea7fb32ab4749bc998c042ab3f8e630c91d90bf258661178c1b.png" title=" When i extend contract estimated end date: 21/09/2023" width="1931"/>
+                <img src="d787b9a2c705e396b184da200fb1fed1b046423efd51cc49a14560bdd80ff05f.png" title=" When i extend contract estimated end date: 21/09/2023 (completed)" width="1931"/>
+                <img src="d787b9a2c705e396b184da200fb1fed1b046423efd51cc49a14560bdd80ff05f.png" title=" When i save the assignment estimated end date" width="1931"/>
+                <img src="d787b9a2c705e396b184da200fb1fed1b046423efd51cc49a14560bdd80ff05f.png" title=" When i save the assignment estimated end date (completed)" width="1931"/>
+                <img src="d787b9a2c705e396b184da200fb1fed1b046423efd51cc49a14560bdd80ff05f.png" title=" Then the buttons in change job and compensation info should be correctly displayed" width="1931"/>
+                <img src="35163ffb3cb238c5e64feb7ba99ffba5eddb12400934cec3018d4ee12f9fe5c9.png" title=" Then the buttons in change job and compensation info should be correctly displayed (completed)" width="1931"/>
+                <img src="35163ffb3cb238c5e64feb7ba99ffba5eddb12400934cec3018d4ee12f9fe5c9.png" title=" When i click save button" width="1931"/>
+                <img src="55a3d2db8a4417a0f2c685fc5960a991d2b7ed2caaf1bb2a19102cc63aeac7a8.png" title=" When i click save button" width="1931"/>
+                <img src="f44c3cd2af9fdd218fe9ca251f0c5ad69c1e911de29b079149347a77dd3a0b12.png" title=" When i click save button (completed)" width="1931"/>
+                <img src="f44c3cd2af9fdd218fe9ca251f0c5ad69c1e911de29b079149347a77dd3a0b12.png" title=" When i go to job info" width="1931"/>
+                <img src="c8d2a8f8b4f1fb6ec99713c6a2ef0ed5059c938b2f744c5a3ad151eea444e1d2.png" title=" When i go to job info" width="1931"/>
+                <img src="78eccba02bfaf28abd5b5042099fd375210b9526ca21808103b05b2bf8eeca87.png" title=" When i go to job info" width="1931"/>
+                <img src="3c787d83227d33b364b3b061f960958c4dc20e63aa3d7217444c95f77c58f04f.png" title=" When i go to job info (completed)" width="1931"/>
+                <img src="3c787d83227d33b364b3b061f960958c4dc20e63aa3d7217444c95f77c58f04f.png" title=" Then i check future dated action: Job Information, 22/06/2023" width="1931"/>
+                <img src="907b1285d38e85ccc3fb7da5b2eae8de5e2de100367f293d296620e3b432d377.png" title=" Then i check future dated action: Job Information, 22/06/2023 (completed)" width="1931"/>
+                <img src="907b1285d38e85ccc3fb7da5b2eae8de5e2de100367f293d296620e3b432d377.png" title=" When i click on portlet history button: Job Information" width="1931"/>
+                <img src="127bb8564fbc3a88032aae05e6c3939d538a9032332629dc79838fdb39839eeb.png" title=" When i click on portlet history button: Job Information" width="1931"/>
+                <img src="842ee8411f7442d19df713fcb454fddb9b7d8f1ecd63621c0fc987a4e2decbba.png" title=" When i click on portlet history button: Job Information (completed)" width="1931"/>
+                <img src="842ee8411f7442d19df713fcb454fddb9b7d8f1ecd63621c0fc987a4e2decbba.png" title=" When i click change history list: Assignment extension" width="1931"/>
+                <img src="575b4a9fd849b13db9da645d5662f0c5e165761205bcee7fa122c2f26e376ac0.png" title=" When i click change history list: Assignment extension" width="1931"/>
+                <img src="f974ce725c69535614fb332257ffb1062e4b5a41e8218079d85c60fae6f3dedd.png" title=" When i click change history list: Assignment extension (completed)" width="1931"/>
+                <img src="f974ce725c69535614fb332257ffb1062e4b5a41e8218079d85c60fae6f3dedd.png" title=" Then the user who made the changes is reflected in history: Last updated by Bea Fe TEJANO" width="1931"/>
+                <img src="f974ce725c69535614fb332257ffb1062e4b5a41e8218079d85c60fae6f3dedd.png" title=" Then the user who made the changes is reflected in history: Last updated by Bea Fe TEJANO (completed)" width="1931"/>
+                <img src="f974ce725c69535614fb332257ffb1062e4b5a41e8218079d85c60fae6f3dedd.png" title=" Then the event is reflected in history: Change Assignment/Contract info" width="1931"/>
+                <img src="f974ce725c69535614fb332257ffb1062e4b5a41e8218079d85c60fae6f3dedd.png" title=" Then the event is reflected in history: Change Assignment/Contract info (completed)" width="1931"/>
+                <img src="f974ce725c69535614fb332257ffb1062e4b5a41e8218079d85c60fae6f3dedd.png" title=" Then the event reason is reflected in history: Assignment extension" width="1931"/>
+                <img src="f974ce725c69535614fb332257ffb1062e4b5a41e8218079d85c60fae6f3dedd.png" title=" Then the event reason is reflected in history: Assignment extension (completed)" width="1931"/>
+                <img src="f974ce725c69535614fb332257ffb1062e4b5a41e8218079d85c60fae6f3dedd.png" title=" Then the effective date is reflected in history: Effective as of: " width="1931"/>
+                <img src="f974ce725c69535614fb332257ffb1062e4b5a41e8218079d85c60fae6f3dedd.png" title=" Then the effective date is reflected in history: Effective as of:  (completed)" width="1931"/>
+                <img src="f974ce725c69535614fb332257ffb1062e4b5a41e8218079d85c60fae6f3dedd.png" title=" When i click cancel button" width="1931"/>
+                <img src="4bfb693a0a27c3d5c75b5cc9045f89aa1cf8a86a9228809cb58b6b1d4451d150.png" title=" When i click cancel button" width="1931"/>
+                <img src="a6c7247941f93ab44f1adcdf19f10de048bb2a483fe5ff6f15d5de18817e88cf.png" title=" When i click cancel button (completed)" width="1931"/>
+                <img src="a6c7247941f93ab44f1adcdf19f10de048bb2a483fe5ff6f15d5de18817e88cf.png" title=" When HR Admin Extends Assignment End Date (HAT09_2) (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" When HR Admin Modifies Compensation Information (HAT09_4)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'Bea Fe TEJANO'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'A851754' account" width="1931"/>
+                <img src="148867d801bbb9d475cbfc3a3608b33296404e06daa8eb46d104daae32f9c2bb.png" title=" Given that I'm logged in to HR space using 'A851754' account" width="1931"/>
+                <img src="194b68c169513886957a965b7f2ba4a2ecf0ae752379820098e8531907e92fd2.png" title=" Given that I'm logged in to HR space using 'A851754' account (completed)" width="1931"/>
+                <img src="dc385e14a2375188b4fb3d2d077b75276043ffc229ffdc926894e5b7ebd07057.png" title=" Given that I'm logged in to HR space as 'Bea Fe TEJANO' (completed)" width="1931"/>
+                <img src="dc385e14a2375188b4fb3d2d077b75276043ffc229ffdc926894e5b7ebd07057.png" title=" When i search for an employee using the header search bar: Ahmad MOHANNA" width="1931"/>
+                <img src="a7defdfe1ced48e525babd28e0a3d89c0c2855c982ca6a0d731026d32ae99712.png" title=" When i search for an employee using the header search bar: Ahmad MOHANNA (completed)" width="1931"/>
+                <img src="a7defdfe1ced48e525babd28e0a3d89c0c2855c982ca6a0d731026d32ae99712.png" title=" When i click actions button" width="1931"/>
+                <img src="c5f49fa83b3d9cf674cb5fbbad1ed3474344e5212f53da6a5242d659d96521be.png" title=" When i click actions button" width="1931"/>
+                <img src="efda0064547e50e32f7636d9a1ce099e367c1a8be28543955f4f01eca3968f41.png" title=" When i click actions button (completed)" width="1931"/>
+                <img src="efda0064547e50e32f7636d9a1ce099e367c1a8be28543955f4f01eca3968f41.png" title=" When i click change job and compensation info" width="1931"/>
+                <img src="77b1fadd778d5c4199b2b228126e89ba45fd38605b5c5e4b4dede4f8f5990c08.png" title=" When i click change job and compensation info" width="1931"/>
+                <img src="8d8e0fe45931dbfb5c504d48d3a2167870452753915a80d0fdfb0d1e3a973b80.png" title=" When i click change job and compensation info (completed)" width="1931"/>
+                <img src="8d8e0fe45931dbfb5c504d48d3a2167870452753915a80d0fdfb0d1e3a973b80.png" title=" When i click compensation information checkbox" width="1931"/>
+                <img src="7d8e3e92032e8ae662bd4acf03c8594aba23da88dab9ce9e45f59624729101cc.png" title=" When i click compensation information checkbox" width="1931"/>
+                <img src="7d8e3e92032e8ae662bd4acf03c8594aba23da88dab9ce9e45f59624729101cc.png" title=" When i click compensation information checkbox (completed)" width="1931"/>
+                <img src="7d8e3e92032e8ae662bd4acf03c8594aba23da88dab9ce9e45f59624729101cc.png" title=" When i populate effective date: 21/12/2022" width="1931"/>
+                <img src="f7ff78f723d6622cbaaeb24954eeda959626f50f98472b9343b0d79cf2f058e9.png" title=" When i populate effective date: 21/12/2022 (completed)" width="1931"/>
+                <img src="f7ff78f723d6622cbaaeb24954eeda959626f50f98472b9343b0d79cf2f058e9.png" title=" When i populate event: Change Compensation info" width="1931"/>
+                <img src="36ce2824d965544d12c30d397ab23354b7a375b419cebfb47daf623d81dbeb55.png" title=" When i populate event: Change Compensation info" width="1931"/>
+                <img src="d26cf03b1d70a84f30c870a6757a5b7c7461ebe27fc95f321245e4b3701ab427.png" title=" When i populate event: Change Compensation info (completed)" width="1931"/>
+                <img src="d26cf03b1d70a84f30c870a6757a5b7c7461ebe27fc95f321245e4b3701ab427.png" title=" When i populate event reason: CHANGE IN PERCENTAGE WORKED" width="1931"/>
+                <img src="389d79a0742221fa294e301c60d836322887211c6cea5aa248e8164a3c86344b.png" title=" When i populate event reason: CHANGE IN PERCENTAGE WORKED" width="1931"/>
+                <img src="389d79a0742221fa294e301c60d836322887211c6cea5aa248e8164a3c86344b.png" title=" When i populate event reason: CHANGE IN PERCENTAGE WORKED (completed)" width="1931"/>
+                <img src="389d79a0742221fa294e301c60d836322887211c6cea5aa248e8164a3c86344b.png" title=" When i populate next revision date: 01/04/2023" width="1931"/>
+                <img src="c21537841161ee984b4a670a6049abda66154ec771ad16a1cbec3b6e8594f16d.png" title=" When i populate next revision date: 01/04/2023 (completed)" width="1931"/>
+                <img src="c21537841161ee984b4a670a6049abda66154ec771ad16a1cbec3b6e8594f16d.png" title=" When i change base salary amount: 53759" width="1931"/>
+                <img src="56e880a60ad93c8db1ad36e56210b925fc0e1cebac7d6ca9ca9ea7588a0bcc62.png" title=" When i change base salary amount: 53759 (completed)" width="1931"/>
+                <img src="56e880a60ad93c8db1ad36e56210b925fc0e1cebac7d6ca9ca9ea7588a0bcc62.png" title=" Then a reminder pop up message is displayed" width="1931"/>
+                <img src="82f73d53ebc8eb2da90e56ada031078aa4f740a8c7a70fe8ca99c775338577ff.png" title=" When i click OK button" width="1931"/>
+                <img src="e3c68c419df8bdb200eebdb4c7afd7008c860c56e34ab1b0c71673d59b3ab199.png" title=" When i click OK button" width="1931"/>
+                <img src="e88606d67856988fba065ebd3f22a9a4cefb35e28fbeccb09797ff9483d889a8.png" title=" When i click OK button (completed)" width="1931"/>
+                <img src="e88606d67856988fba065ebd3f22a9a4cefb35e28fbeccb09797ff9483d889a8.png" title=" Then a reminder pop up message is displayed (completed)" width="1931"/>
+                <img src="e31d68ecc072a39fc91cc0dbaee66160126f800bb8ac14ef4cc4bdb5c9ef30e0.png" title=" Then the difference between the previous base salary amount is displayed" width="1931"/>
+                <img src="e31d68ecc072a39fc91cc0dbaee66160126f800bb8ac14ef4cc4bdb5c9ef30e0.png" title=" Then the difference between the previous base salary amount is displayed (completed)" width="1931"/>
+                <img src="e31d68ecc072a39fc91cc0dbaee66160126f800bb8ac14ef4cc4bdb5c9ef30e0.png" title=" When i click save button" width="1931"/>
+                <img src="75d610390da28123747fe4b0124ce375277ba843587d94c40774ced5967f7e48.png" title=" When i click save button" width="1931"/>
+                <img src="96d20d5ebe7fbc814b24d319e1cb7f5ce66e09906b6c3da200f9cfb0b763d09a.png" title=" When i click save button (completed)" width="1931"/>
+                <img src="ac23f8679058777aa6569991299b4db8bbb9af2f68aba94df9d3cdfd553f96fb.png" title=" When i go to compensation info" width="1931"/>
+                <img src="cdcc33ea51dd0802f608d6ec18629a6d3e103dd800877c4cffeb9d0ef91a1563.png" title=" When i go to compensation info" width="1931"/>
+                <img src="1417c37d9e57abf2dcb9d8c9d479eb676845997e758b3743b36d505e90ed5a45.png" title=" When i go to compensation info" width="1931"/>
+                <img src="1e92c7715e3f841ef775f81e16194ac35b1ac6c0885e0036fc6307477152f45e.png" title=" When i go to compensation info (completed)" width="1931"/>
+                <img src="1e92c7715e3f841ef775f81e16194ac35b1ac6c0885e0036fc6307477152f45e.png" title=" When i click on portlet history button: Compensation Information" width="1931"/>
+                <img src="f320c9356e22acc71e89d0029fbd220f9b24c3329fb57f44b2b55ffe57da4c63.png" title=" When i click on portlet history button: Compensation Information" width="1931"/>
+                <img src="5f3777fa964f712243e3a0a40ecac33c9372e2f43336218cb8f0c4c0e8c4cd0a.png" title=" When i click on portlet history button: Compensation Information (completed)" width="1931"/>
+                <img src="5f3777fa964f712243e3a0a40ecac33c9372e2f43336218cb8f0c4c0e8c4cd0a.png" title=" When i click change history list in compensation: CHANGE IN PERCENTAGE WORKED" width="1931"/>
+                <img src="f9d4ada15f35a818726051262ddfba79b9a2590d6a79e2aa658d91e1131f3ba0.png" title=" When i click change history list in compensation: CHANGE IN PERCENTAGE WORKED" width="1931"/>
+                <img src="98acac4d0f7c23934d44d0421ad035e988b6853c177bdb02290930f5f3ef971e.png" title=" When i click change history list in compensation: CHANGE IN PERCENTAGE WORKED (completed)" width="1931"/>
+                <img src="98acac4d0f7c23934d44d0421ad035e988b6853c177bdb02290930f5f3ef971e.png" title=" Then the user who made the changes is reflected in history: Last updated by Bea Fe TEJANO" width="1931"/>
+                <img src="98acac4d0f7c23934d44d0421ad035e988b6853c177bdb02290930f5f3ef971e.png" title=" Then the user who made the changes is reflected in history: Last updated by Bea Fe TEJANO (completed)" width="1931"/>
+                <img src="98acac4d0f7c23934d44d0421ad035e988b6853c177bdb02290930f5f3ef971e.png" title=" Then the event is reflected in history: Change Compensation info" width="1931"/>
+                <img src="98acac4d0f7c23934d44d0421ad035e988b6853c177bdb02290930f5f3ef971e.png" title=" Then the event is reflected in history: Change Compensation info (completed)" width="1931"/>
+                <img src="98acac4d0f7c23934d44d0421ad035e988b6853c177bdb02290930f5f3ef971e.png" title=" Then the event reason is reflected in history: CHANGE IN PERCENTAGE WORKED" width="1931"/>
+                <img src="98acac4d0f7c23934d44d0421ad035e988b6853c177bdb02290930f5f3ef971e.png" title=" Then the event reason is reflected in history: CHANGE IN PERCENTAGE WORKED (completed)" width="1931"/>
+                <img src="98acac4d0f7c23934d44d0421ad035e988b6853c177bdb02290930f5f3ef971e.png" title=" Then the effective date is reflected in history: Effective as of:" width="1931"/>
+                <img src="98acac4d0f7c23934d44d0421ad035e988b6853c177bdb02290930f5f3ef971e.png" title=" Then the effective date is reflected in history: Effective as of: (completed)" width="1931"/>
+                <img src="98acac4d0f7c23934d44d0421ad035e988b6853c177bdb02290930f5f3ef971e.png" title=" Then the base salary is reflected in history: 53,759" width="1931"/>
+                <img src="98acac4d0f7c23934d44d0421ad035e988b6853c177bdb02290930f5f3ef971e.png" title=" Then the base salary is reflected in history: 53,759 (completed)" width="1931"/>
+                <img src="98acac4d0f7c23934d44d0421ad035e988b6853c177bdb02290930f5f3ef971e.png" title=" When i click cancel button" width="1931"/>
+                <img src="e60d83f84e6e603e705910d727dc16903ec88b9c256f1846b7873bdc6a8bb356.png" title=" When i click cancel button" width="1931"/>
+                <img src="0d41905af325a1e410f9ce4e1a2acc07c90eff30129df0cb55f032357e69b0ba.png" title=" When i click cancel button (completed)" width="1931"/>
+                <img src="0d41905af325a1e410f9ce4e1a2acc07c90eff30129df0cb55f032357e69b0ba.png" title=" When HR Admin Modifies Compensation Information (HAT09_4) (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" When HR Admin Terminates Employee (HAT09_5)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'Bea Fe TEJANO'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'A851754' account" width="1931"/>
+                <img src="501ac76cd2cd4d58433667c9b8cce4ff875d01b1516ca1762cf32ac93e3e96c7.png" title=" Given that I'm logged in to HR space using 'A851754' account" width="1931"/>
+                <img src="7498e2abe4c0a468c54f3583db919b0b7a8af22da462ff5a9a8a46a132c8e3d7.png" title=" Given that I'm logged in to HR space using 'A851754' account (completed)" width="1931"/>
+                <img src="dc385e14a2375188b4fb3d2d077b75276043ffc229ffdc926894e5b7ebd07057.png" title=" Given that I'm logged in to HR space as 'Bea Fe TEJANO' (completed)" width="1931"/>
+                <img src="dc385e14a2375188b4fb3d2d077b75276043ffc229ffdc926894e5b7ebd07057.png" title=" When i search for an employee using the header search bar: Ahmad MOHANNA" width="1931"/>
+                <img src="a7defdfe1ced48e525babd28e0a3d89c0c2855c982ca6a0d731026d32ae99712.png" title=" When i search for an employee using the header search bar: Ahmad MOHANNA (completed)" width="1931"/>
+                <img src="a7defdfe1ced48e525babd28e0a3d89c0c2855c982ca6a0d731026d32ae99712.png" title=" When i click actions button" width="1931"/>
+                <img src="8fe5762a26520e1d630c92a559246013d32299525da5e4618f9f8a3c4545a3a0.png" title=" When i click actions button" width="1931"/>
+                <img src="203a65716296a0c8dc563ee313c472d7d4452448509936ac2b5ce2f2f082e478.png" title=" When i click actions button (completed)" width="1931"/>
+                <img src="203a65716296a0c8dc563ee313c472d7d4452448509936ac2b5ce2f2f082e478.png" title=" When i click terminate" width="1931"/>
+                <img src="dfabcd06cea87a78c632bf6b5529e82172917c16d9dd70d5422c88625499bd53.png" title=" When i click terminate" width="1931"/>
+                <img src="5eaf3d3df8a4135fcf03543297c34047ebb2fdccb8ca8c9fb5713ac6ecdc6582.png" title=" When i click terminate (completed)" width="1931"/>
+                <img src="5eaf3d3df8a4135fcf03543297c34047ebb2fdccb8ca8c9fb5713ac6ecdc6582.png" title=" When i populate contract effective end date: 01/03/2024" width="1931"/>
+                <img src="8f3026d32512b7a71a2b3142759ed10cf91b542e4c0a87811b3e1f2457431419.png" title=" When i populate contract effective end date: 01/03/2024 (completed)" width="1931"/>
+                <img src="8f3026d32512b7a71a2b3142759ed10cf91b542e4c0a87811b3e1f2457431419.png" title=" When i populate termination reason: End of contract" width="1931"/>
+                <img src="0a71e7ede90d0cff7de1eb563e1a8eb82bb855e3071886c692b4ef347c3710ca.png" title=" When i populate termination reason: End of contract" width="1931"/>
+                <img src="0a71e7ede90d0cff7de1eb563e1a8eb82bb855e3071886c692b4ef347c3710ca.png" title=" When i populate termination reason: End of contract (completed)" width="1931"/>
+                <img src="0a71e7ede90d0cff7de1eb563e1a8eb82bb855e3071886c692b4ef347c3710ca.png" title=" When i populate exit reason: End of contract" width="1931"/>
+                <img src="0643b4046e593b70cab683ad7c2a988912a695fb12231ffcf0cdbe2da61e3da9.png" title=" When i populate exit reason: End of contract" width="1931"/>
+                <img src="0643b4046e593b70cab683ad7c2a988912a695fb12231ffcf0cdbe2da61e3da9.png" title=" When i populate exit reason: End of contract (completed)" width="1931"/>
+                <img src="0643b4046e593b70cab683ad7c2a988912a695fb12231ffcf0cdbe2da61e3da9.png" title=" When i populate OK to rehire: Yes" width="1931"/>
+                <img src="44757b9b1126a30b9a62f4a58c04163bfcf5543bc49f7325e3089af8fe575df6.png" title=" When i populate OK to rehire: Yes" width="1931"/>
+                <img src="44757b9b1126a30b9a62f4a58c04163bfcf5543bc49f7325e3089af8fe575df6.png" title=" When i populate OK to rehire: Yes (completed)" width="1931"/>
+                <img src="44757b9b1126a30b9a62f4a58c04163bfcf5543bc49f7325e3089af8fe575df6.png" title=" When i populate is willing to work again for us: Yes" width="1931"/>
+                <img src="56335bfc54bb5c5be65a447639e122393b94d0cd5f9a0ba0c1de9fcf80c59c35.png" title=" When i populate is willing to work again for us: Yes" width="1931"/>
+                <img src="56335bfc54bb5c5be65a447639e122393b94d0cd5f9a0ba0c1de9fcf80c59c35.png" title=" When i populate is willing to work again for us: Yes (completed)" width="1931"/>
+                <img src="56335bfc54bb5c5be65a447639e122393b94d0cd5f9a0ba0c1de9fcf80c59c35.png" title=" When i populate wished return date: 12/12/2029" width="1931"/>
+                <img src="8c3bb9404f9084688b317b8017803bdb4c589a7924f673ce7d4b11a141c3228f.png" title=" When i populate wished return date: 12/12/2029 (completed)" width="1931"/>
+                <img src="8c3bb9404f9084688b317b8017803bdb4c589a7924f673ce7d4b11a141c3228f.png" title=" When i populate wished types of assignment: All" width="1931"/>
+                <img src="8c3bb9404f9084688b317b8017803bdb4c589a7924f673ce7d4b11a141c3228f.png" title=" When i populate wished types of assignment: All (completed)" width="1931"/>
+                <img src="8c3bb9404f9084688b317b8017803bdb4c589a7924f673ce7d4b11a141c3228f.png" title=" When i populate pool manager comment: TEST" width="1931"/>
+                <img src="1b0a8dec8efd809606ea9c53160f4578c5e632ee4c3fbdf553c9f8e91103c835.png" title=" When i populate pool manager comment: TEST (completed)" width="1931"/>
+                <img src="1b0a8dec8efd809606ea9c53160f4578c5e632ee4c3fbdf553c9f8e91103c835.png" title=" When i populate physical departure: 01/03/2024" width="1931"/>
+                <img src="31dfb2e6fc9a5e5ea9387a2139cd63f66b5de3e6738b16bc237e741f9500a672.png" title=" When i populate physical departure: 01/03/2024 (completed)" width="1931"/>
+                <img src="31dfb2e6fc9a5e5ea9387a2139cd63f66b5de3e6738b16bc237e741f9500a672.png" title=" When i populate comments: Comments" width="1931"/>
+                <img src="0c24ae81d1d3f92bf09eeaf9ee057535cb31cafe984edfe7ea465c32c61116de.png" title=" When i populate comments: Comments (completed)" width="1931"/>
+                <img src="0c24ae81d1d3f92bf09eeaf9ee057535cb31cafe984edfe7ea465c32c61116de.png" title=" When i populate indebted to ICRC: No" width="1931"/>
+                <img src="6cffa8b9c192b2bf42ca58b3f31c69035010073f4b8e0537d9928cb9dcc678be.png" title=" When i populate indebted to ICRC: No" width="1931"/>
+                <img src="6cffa8b9c192b2bf42ca58b3f31c69035010073f4b8e0537d9928cb9dcc678be.png" title=" When i populate indebted to ICRC: No (completed)" width="1931"/>
+                <img src="6cffa8b9c192b2bf42ca58b3f31c69035010073f4b8e0537d9928cb9dcc678be.png" title=" When i populate indebted amount in CHF: &lt;null&gt;" width="1931"/>
+                <img src="6cffa8b9c192b2bf42ca58b3f31c69035010073f4b8e0537d9928cb9dcc678be.png" title=" When i populate indebted amount in CHF: &lt;null&gt; (completed)" width="1931"/>
+                <img src="6cffa8b9c192b2bf42ca58b3f31c69035010073f4b8e0537d9928cb9dcc678be.png" title=" When i populate transfer event reason: TRANINTRECACH" width="1931"/>
+                <img src="6cffa8b9c192b2bf42ca58b3f31c69035010073f4b8e0537d9928cb9dcc678be.png" title=" When i populate transfer event reason: TRANINTRECACH (completed)" width="1931"/>
+                <img src="6cffa8b9c192b2bf42ca58b3f31c69035010073f4b8e0537d9928cb9dcc678be.png" title=" When i click save button" width="1931"/>
+                <img src="efe4fbf5855abea382468d2053227e8dd119471294ac25f517f68d99e91e1900.png" title=" When i click save button" width="1931"/>
+                <img src="2b8336031d161ad1b36e41bbdac2ec657679232e89639a6c69d5ce5cca505109.png" title=" When i click save button (completed)" width="1931"/>
+                <img src="2b8336031d161ad1b36e41bbdac2ec657679232e89639a6c69d5ce5cca505109.png" title=" When i go to job info" width="1931"/>
+                <img src="cdcc33ea51dd0802f608d6ec18629a6d3e103dd800877c4cffeb9d0ef91a1563.png" title=" When i go to job info" width="1931"/>
+                <img src="f630c332e25def270cf7a14f7420cc49a0762fa0fa1602161e6ac6a69c30f330.png" title=" When i go to job info" width="1931"/>
+                <img src="5d5f3a715f7391d7925df666e98d37158e34056424a152b590343d40c6ea2e08.png" title=" When i go to job info (completed)" width="1931"/>
+                <img src="5d5f3a715f7391d7925df666e98d37158e34056424a152b590343d40c6ea2e08.png" title=" When i click on portlet history button: Job Information" width="1931"/>
+                <img src="3ac5db409558696423b733f4682c12e92cc64fcea8b68b8919dcb797a4906091.png" title=" When i click on portlet history button: Job Information" width="1931"/>
+                <img src="fed4668657f18ce5909eb4a825638f6e2a0e7e86abeb9e883e78fc484fb02875.png" title=" When i click on portlet history button: Job Information (completed)" width="1931"/>
+                <img src="fed4668657f18ce5909eb4a825638f6e2a0e7e86abeb9e883e78fc484fb02875.png" title=" When i click change history list: End of contract" width="1931"/>
+                <img src="623654310d432e5af5625d7748691775846d2a049775402e0b4e1580dcb76df6.png" title=" When i click change history list: End of contract" width="1931"/>
+                <img src="6a807fef02b4ae5f4c4000fb7a2bc2bbf2d90090856f1e76757a971b661d9799.png" title=" When i click change history list: End of contract (completed)" width="1931"/>
+                <img src="6a807fef02b4ae5f4c4000fb7a2bc2bbf2d90090856f1e76757a971b661d9799.png" title=" Then the employment status should be displayed as terminated" width="1931"/>
+                <img src="6a807fef02b4ae5f4c4000fb7a2bc2bbf2d90090856f1e76757a971b661d9799.png" title=" Then the employment status should be displayed as terminated (completed)" width="1931"/>
+                <img src="6a807fef02b4ae5f4c4000fb7a2bc2bbf2d90090856f1e76757a971b661d9799.png" title=" When i click cancel button" width="1931"/>
+                <img src="f3ebe1ae16d16605dcee85218a1a7f3497b51de85fdbe81127dba177b9ef2d08.png" title=" When i click cancel button" width="1931"/>
+                <img src="b055d8a152d06ffb7895d04e20ffd353cbcdd11912546c19a8a1d904c2b662bc.png" title=" When i click cancel button (completed)" width="1931"/>
+                <img src="b055d8a152d06ffb7895d04e20ffd353cbcdd11912546c19a8a1d904c2b662bc.png" title=" When HR Admin Terminates Employee (HAT09_5) (completed): <span class='success-color'>SUCCESS</span>" width="1931"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.6</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Selenium Serenity Tests FAD APPLIC</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="7b3b5c8cd2c14ee869fe90c1ea638512f94580ecd8f9185816db302018ed1a20.html">Hire Assign Terminate</a></span>
+                > <span class="truncate-60"><a
+                    href="29d68bd3b6da576495064756f134707723fc49ad61944cc25836bf811b275ff4.html">Hire new employee save draft and delete draft </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 22-12-2022 08:03</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Hire Assign Terminate </span>
+                                    <span class="badge tag-badge" style="">Story</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Hire new employee save draft and delete draft
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" When HR admin hires new employee: Bea Fe TEJANO, A851754, HRIS2022, 22/12/2022, Switzerland - Resident Staff HQ, New Hire, Mr., ZCtVSF, ZAjAOT, &lt;null&gt;, ZCtVSF ZAjAOT, 22/06/1997, Testing, Uri, Switzerland, PeopleNet, Switzerland, Social Security Number, 7568604712491, Yes, Male, Switzerland, &lt;null&gt;, &lt;null&gt;, MARRIED, 09/09/2005, English, Test, Test, 5, &lt;null&gt;, Switzerland, St. Gallen, Private, Personal, asdasd@asdsa.com, Yes, Cell, Philippines, 63, 09453364115, Yes, Mailing, Switzerland, No, TEST, Basel-Landschaft, TEST, TEST, TEST, 1234, Mr. Testing, PARTNER, Philippines, 09988727086, Yes, CH_RES_HQ, 22/12/2022, 22/12/2022, 40, 26/12/2021, Automation Testing, The Philippine National Red Cross, NOT APPLICABLE, No, Mobile staff - Maximum term contract, &lt;null&gt;, 100% in pay, 1-1-1-1-1-0-0, Switzerland, CH Field Family, 22/12/2022, 22/12/2022, COMMENTS_IN_COMPENSATION_INFORMATION, 01/04/2022, Base Salary, 30000, &lt;null&gt;, &lt;null&gt;" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space as 'Bea Fe TEJANO'" width="941"/>
+                <img src="c4fc17dd900931ae347d79700f0267cb591dd8aa07f352acf66cc05f07446cca.png" title=" Given that I'm logged in to HR space using 'A851754' account" width="941"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'A851754' account" width="1931"/>
+                <img src="76168387738e18b923b71992a49ff31215c687fa8ebefdbae11c288913deb0fa.png" title=" Given that I'm logged in to HR space using 'A851754' account" width="1931"/>
+                <img src="76168387738e18b923b71992a49ff31215c687fa8ebefdbae11c288913deb0fa.png" title=" Given that I'm logged in to HR space using 'A851754' account (completed)" width="1931"/>
+                <img src="76168387738e18b923b71992a49ff31215c687fa8ebefdbae11c288913deb0fa.png" title=" Given that I'm logged in to HR space as 'Bea Fe TEJANO' (completed)" width="1931"/>
+                <img src="76168387738e18b923b71992a49ff31215c687fa8ebefdbae11c288913deb0fa.png" title=" When i search for an action using the header search bar: Add New Employee" width="1931"/>
+                <img src="1bd1dbe34755a80762da9bc01e12e9736b9590a3bb6be256ab159f24f95c2636.png" title=" When i search for an action using the header search bar: Add New Employee (completed)" width="1931"/>
+                <img src="1bd1dbe34755a80762da9bc01e12e9736b9590a3bb6be256ab159f24f95c2636.png" title=" When i populate hire date field: 22/12/2022" width="1931"/>
+                <img src="3d54d2781341959e03461a011fe53388ac5f2f42dd9c650a4385b27132282678.png" title=" When i populate hire date field: 22/12/2022 (completed)" width="1931"/>
+                <img src="3d54d2781341959e03461a011fe53388ac5f2f42dd9c650a4385b27132282678.png" title=" When i populate legal entity field: Switzerland - Resident Staff HQ" width="1931"/>
+                <img src="d77a8ae4286b61695d60493517a984a45935a08e3e9b1583f281924f112fa589.png" title=" When i populate legal entity field: Switzerland - Resident Staff HQ" width="1931"/>
+                <img src="fc135b13e373bcd4c990a4a17a6157e0c0f39e78d8ab020c1ab72c62b1f141ed.png" title=" When i populate legal entity field: Switzerland - Resident Staff HQ (completed)" width="1931"/>
+                <img src="fc135b13e373bcd4c990a4a17a6157e0c0f39e78d8ab020c1ab72c62b1f141ed.png" title=" When i populate event reason field: New Hire" width="1931"/>
+                <img src="cc573685deab7d84d1a6dc847215241bfaa0d9db103ba635e58815af48121f1b.png" title=" When i populate event reason field: New Hire" width="1931"/>
+                <img src="cc573685deab7d84d1a6dc847215241bfaa0d9db103ba635e58815af48121f1b.png" title=" When i populate event reason field: New Hire (completed)" width="1931"/>
+                <img src="cc573685deab7d84d1a6dc847215241bfaa0d9db103ba635e58815af48121f1b.png" title=" When i populate title field: Mr." width="1931"/>
+                <img src="a4d7e6a78bc69eaf285c4c46368567cffbfac14e055d1e380f3b192e102604a5.png" title=" When i populate title field: Mr." width="1931"/>
+                <img src="a4d7e6a78bc69eaf285c4c46368567cffbfac14e055d1e380f3b192e102604a5.png" title=" When i populate title field: Mr. (completed)" width="1931"/>
+                <img src="a4d7e6a78bc69eaf285c4c46368567cffbfac14e055d1e380f3b192e102604a5.png" title=" When i populate first name field: ZCtVSF" width="1931"/>
+                <img src="1acf34cc8275ce5ac36614c966b02466eb740ce158cf3659d31182887a1e271f.png" title=" When i populate first name field: ZCtVSF (completed)" width="1931"/>
+                <img src="1acf34cc8275ce5ac36614c966b02466eb740ce158cf3659d31182887a1e271f.png" title=" When i populate last name field: ZAjAOT" width="1931"/>
+                <img src="91f3da21e4ad7fb8b975cac8182859435c54dcf1cdeb42e6348d24d485a1541a.png" title=" When i populate last name field: ZAjAOT (completed)" width="1931"/>
+                <img src="91f3da21e4ad7fb8b975cac8182859435c54dcf1cdeb42e6348d24d485a1541a.png" title=" When i populate maiden name field: &lt;null&gt;" width="1931"/>
+                <img src="91f3da21e4ad7fb8b975cac8182859435c54dcf1cdeb42e6348d24d485a1541a.png" title=" When i populate maiden name field: &lt;null&gt; (completed)" width="1931"/>
+                <img src="91f3da21e4ad7fb8b975cac8182859435c54dcf1cdeb42e6348d24d485a1541a.png" title=" When i populate date of birth field: 22/06/1997" width="1931"/>
+                <img src="22af3f95e1f0a8954e2aa52c7ea05ccd35aa2b3ea1f37b9cf79b4a02a9bccfdb.png" title=" When i populate date of birth field: 22/06/1997 (completed)" width="1931"/>
+                <img src="22af3f95e1f0a8954e2aa52c7ea05ccd35aa2b3ea1f37b9cf79b4a02a9bccfdb.png" title=" When i populate town of birth field: Testing" width="1931"/>
+                <img src="8926fe555e6363e878d52dc8852510371b5c4f60f3048304d1472dcb7f3a3ddf.png" title=" When i populate town of birth field: Testing (completed)" width="1931"/>
+                <img src="8926fe555e6363e878d52dc8852510371b5c4f60f3048304d1472dcb7f3a3ddf.png" title=" When i populate county of birth field: Uri" width="1931"/>
+                <img src="8926fe555e6363e878d52dc8852510371b5c4f60f3048304d1472dcb7f3a3ddf.png" title=" When i populate county of birth field: Uri (completed)" width="1931"/>
+                <img src="8926fe555e6363e878d52dc8852510371b5c4f60f3048304d1472dcb7f3a3ddf.png" title=" When i populate country of birth field: Switzerland" width="1931"/>
+                <img src="39426440f4f75ea4641ae25beb8c78c5265641e938a852678d83675deda75eda.png" title=" When i populate country of birth field: Switzerland" width="1931"/>
+                <img src="39426440f4f75ea4641ae25beb8c78c5265641e938a852678d83675deda75eda.png" title=" When i populate country of birth field: Switzerland (completed)" width="1931"/>
+                <img src="39426440f4f75ea4641ae25beb8c78c5265641e938a852678d83675deda75eda.png" title=" When i populate interface routing field: PeopleNet" width="1931"/>
+                <img src="1a1e8faabdc476947d199b53de8a056cf983d4853239ca263e66b0a8493729eb.png" title=" When i populate interface routing field: PeopleNet" width="1931"/>
+                <img src="157d12f2e1c601a06cff5342c4794db3d32be53b13923a7dc0b76145fbf49257.png" title=" When i populate interface routing field: PeopleNet (completed)" width="1931"/>
+                <img src="157d12f2e1c601a06cff5342c4794db3d32be53b13923a7dc0b76145fbf49257.png" title=" When i click add button in national ID: 7568604712491" width="1931"/>
+                <img src="5e68e785d42f65d1c80dd9b3bbdc771f8e3d2e2192c80160abf6742c319c0949.png" title=" When i click add button in national ID: 7568604712491" width="1931"/>
+                <img src="5e68e785d42f65d1c80dd9b3bbdc771f8e3d2e2192c80160abf6742c319c0949.png" title=" When i click add button in national ID: 7568604712491 (completed)" width="1931"/>
+                <img src="5e68e785d42f65d1c80dd9b3bbdc771f8e3d2e2192c80160abf6742c319c0949.png" title=" When i populate country in national ID: Switzerland" width="1931"/>
+                <img src="f5b39a3e467b61ff95382956b7b8413585e075926357b0a1ec8ebf8f622979b1.png" title=" When i populate country in national ID: Switzerland" width="1931"/>
+                <img src="f5b39a3e467b61ff95382956b7b8413585e075926357b0a1ec8ebf8f622979b1.png" title=" When i populate country in national ID: Switzerland (completed)" width="1931"/>
+                <img src="f5b39a3e467b61ff95382956b7b8413585e075926357b0a1ec8ebf8f622979b1.png" title=" When i populate national ID card type in national ID: Social Security Number" width="1931"/>
+                <img src="ac4b322d3616b4327037fd9fd7cde408a930105c849ac548337259a8612d4507.png" title=" When i populate national ID card type in national ID: Social Security Number" width="1931"/>
+                <img src="540137a7a2aeef3ad6637e19ab20cc0298df76eaaedfaacde6eecd539c5e3a4e.png" title=" When i populate national ID card type in national ID: Social Security Number (completed)" width="1931"/>
+                <img src="540137a7a2aeef3ad6637e19ab20cc0298df76eaaedfaacde6eecd539c5e3a4e.png" title=" When i populate national ID: 7568604712491" width="1931"/>
+                <img src="300d38d303a15b3cebc8f364bed53217b39746ea13e3f5711ddb62e6b3969ede.png" title=" When i populate national ID: 7568604712491 (completed)" width="1931"/>
+                <img src="300d38d303a15b3cebc8f364bed53217b39746ea13e3f5711ddb62e6b3969ede.png" title=" When i populate is primary in national ID: Yes" width="1931"/>
+                <img src="dbf2eb500f599fa55fec4b212c1e476b9bfaf1637b9d7c099700c46af6678adf.png" title=" When i populate is primary in national ID: Yes" width="1931"/>
+                <img src="4ab007b4d8bca6a718827f0aea3693fa873b84573e4e5e94c9ccf52367da79df.png" title=" When i populate is primary in national ID: Yes" width="1931"/>
+                <img src="4ab007b4d8bca6a718827f0aea3693fa873b84573e4e5e94c9ccf52367da79df.png" title=" When i populate is primary in national ID: Yes (completed)" width="1931"/>
+                <img src="4ab007b4d8bca6a718827f0aea3693fa873b84573e4e5e94c9ccf52367da79df.png" title=" When i click continue button" width="1931"/>
+                <img src="60623d17867d0568dbbce4d7a2bca245511e770f1a5e4b8119726a23112d7c03.png" title=" When i click continue button" width="1931"/>
+                <img src="2309288417a010810a82a4044fd44b94ebe883c836865eea93045ebc1c1e836e.png" title=" When i click continue button (completed)" width="1931"/>
+                <img src="2309288417a010810a82a4044fd44b94ebe883c836865eea93045ebc1c1e836e.png" title=" When i click button in duplicate check: Ignore Matches" width="1931"/>
+                <img src="70271d2b3ab9cb84c301d0cb7b50d4f7e0caddcbc9f0b2700aed5184a69e40d3.png" title=" When i click button in duplicate check: Ignore Matches (completed)" width="1931"/>
+                <img src="70271d2b3ab9cb84c301d0cb7b50d4f7e0caddcbc9f0b2700aed5184a69e40d3.png" title=" When i populate gender: Male" width="1931"/>
+                <img src="fad172c58694b0486c6a7342762e233509df59fe47bb723c669154b1fada6b5f.png" title=" When i populate gender: Male" width="1931"/>
+                <img src="fad172c58694b0486c6a7342762e233509df59fe47bb723c669154b1fada6b5f.png" title=" When i populate gender: Male (completed)" width="1931"/>
+                <img src="fad172c58694b0486c6a7342762e233509df59fe47bb723c669154b1fada6b5f.png" title=" When i populate nationality at birth: Switzerland" width="1931"/>
+                <img src="1c65136e8df070b05d344bb1c96cdfbac5f3ccbf4cf5f80d63f5f7a2dc6475c2.png" title=" When i populate nationality at birth: Switzerland" width="1931"/>
+                <img src="9c020a467da066a1d176ba5eef6c8bf3ea94413dba1be85f22f7212a3f895241.png" title=" When i populate nationality at birth: Switzerland (completed)" width="1931"/>
+                <img src="9c020a467da066a1d176ba5eef6c8bf3ea94413dba1be85f22f7212a3f895241.png" title=" When i populate current nationality: &lt;null&gt;" width="1931"/>
+                <img src="9c020a467da066a1d176ba5eef6c8bf3ea94413dba1be85f22f7212a3f895241.png" title=" When i populate current nationality: &lt;null&gt; (completed)" width="1931"/>
+                <img src="9c020a467da066a1d176ba5eef6c8bf3ea94413dba1be85f22f7212a3f895241.png" title=" When i populate other nationality: &lt;null&gt;" width="1931"/>
+                <img src="9c020a467da066a1d176ba5eef6c8bf3ea94413dba1be85f22f7212a3f895241.png" title=" When i populate other nationality: &lt;null&gt; (completed)" width="1931"/>
+                <img src="9c020a467da066a1d176ba5eef6c8bf3ea94413dba1be85f22f7212a3f895241.png" title=" When i populate marital status: MARRIED" width="1931"/>
+                <img src="466dfea9302d9917431114f04180c0df5684eb1b52d58c5f37b9165e3d0bb839.png" title=" When i populate marital status: MARRIED" width="1931"/>
+                <img src="5046777c52ad6d491480ae7de9931a7e3ca4291ada72e408161ef9146c6f0723.png" title=" When i populate marital status: MARRIED (completed)" width="1931"/>
+                <img src="5046777c52ad6d491480ae7de9931a7e3ca4291ada72e408161ef9146c6f0723.png" title=" When i populate marital status since: 09/09/2005" width="1931"/>
+                <img src="91ec68ef76fe768bec5ac38bb94f4ce87d5e551226ab90be1bcf6a5603cdded1.png" title=" When i populate marital status since: 09/09/2005 (completed)" width="1931"/>
+                <img src="91ec68ef76fe768bec5ac38bb94f4ce87d5e551226ab90be1bcf6a5603cdded1.png" title=" When i populate mailing preferred language: English" width="1931"/>
+                <img src="704007ee9d6c1b4688de59184f51d5cb2d9b70be131f6568cf380b8dee318566.png" title=" When i populate mailing preferred language: English" width="1931"/>
+                <img src="791dd0cbf51256e5c47558902271c32f79f960cb22f5cf9516caf7f4bc2a50bf.png" title=" When i populate mailing preferred language: English (completed)" width="1931"/>
+                <img src="791dd0cbf51256e5c47558902271c32f79f960cb22f5cf9516caf7f4bc2a50bf.png" title=" When i populate religion: Test" width="1931"/>
+                <img src="2298966a58fb39be470fe6094683bbf2c90930ccb9460d52a84f7806c019117a.png" title=" When i populate religion: Test (completed)" width="1931"/>
+                <img src="2298966a58fb39be470fe6094683bbf2c90930ccb9460d52a84f7806c019117a.png" title=" When i populate ethnic group: Test" width="1931"/>
+                <img src="d6b0f4bca34911929797cf608a28fac073b6994dd0edb0548477b6a6a7d1603f.png" title=" When i populate ethnic group: Test (completed)" width="1931"/>
+                <img src="d6b0f4bca34911929797cf608a28fac073b6994dd0edb0548477b6a6a7d1603f.png" title=" When i populate number of children: 5" width="1931"/>
+                <img src="f26038dbf9d3d56d301f61a01681ce1100e01c238cc9af4c70c47ca575140580.png" title=" When i populate number of children: 5 (completed)" width="1931"/>
+                <img src="f26038dbf9d3d56d301f61a01681ce1100e01c238cc9af4c70c47ca575140580.png" title=" When i populate rapid deployment: &lt;null&gt;" width="1931"/>
+                <img src="f26038dbf9d3d56d301f61a01681ce1100e01c238cc9af4c70c47ca575140580.png" title=" When i populate rapid deployment: &lt;null&gt; (completed)" width="1931"/>
+                <img src="f26038dbf9d3d56d301f61a01681ce1100e01c238cc9af4c70c47ca575140580.png" title=" When i populate country region: Switzerland" width="1931"/>
+                <img src="2316274c4b6753b317f5a64c9f1b0c842fdf0bc69ea7fced019fcfbce318e2df.png" title=" When i populate country region: Switzerland (completed)" width="1931"/>
+                <img src="2316274c4b6753b317f5a64c9f1b0c842fdf0bc69ea7fced019fcfbce318e2df.png" title=" When i populate canton of origin: St. Gallen" width="1931"/>
+                <img src="d16ebe3342711df62b7e1a244bfae7581d994420d6e0087642fe1cb7085343dd.png" title=" When i populate canton of origin: St. Gallen" width="1931"/>
+                <img src="d16ebe3342711df62b7e1a244bfae7581d994420d6e0087642fe1cb7085343dd.png" title=" When i populate canton of origin: St. Gallen (completed)" width="1931"/>
+                <img src="d16ebe3342711df62b7e1a244bfae7581d994420d6e0087642fe1cb7085343dd.png" title=" When i populate military rank: Private" width="1931"/>
+                <img src="d3e790e81d07d05f64994032d2ee2af8e14763d135e398c5669e905ab7a70521.png" title=" When i populate military rank: Private (completed)" width="1931"/>
+                <img src="d3e790e81d07d05f64994032d2ee2af8e14763d135e398c5669e905ab7a70521.png" title=" When i click add button in email information" width="1931"/>
+                <img src="7628a0211532af62986be6292ff3ebb23d90ab817cf28cf274d211449461c915.png" title=" When i click add button in email information" width="1931"/>
+                <img src="7628a0211532af62986be6292ff3ebb23d90ab817cf28cf274d211449461c915.png" title=" When i click add button in email information (completed)" width="1931"/>
+                <img src="7628a0211532af62986be6292ff3ebb23d90ab817cf28cf274d211449461c915.png" title=" When i populate email type: Personal" width="1931"/>
+                <img src="2dde9ff70dce42ea8079893e19c4b5e04e1d0ce73c5e2c0df95897134c16552e.png" title=" When i populate email type: Personal" width="1931"/>
+                <img src="2dde9ff70dce42ea8079893e19c4b5e04e1d0ce73c5e2c0df95897134c16552e.png" title=" When i populate email type: Personal (completed)" width="1931"/>
+                <img src="2dde9ff70dce42ea8079893e19c4b5e04e1d0ce73c5e2c0df95897134c16552e.png" title=" When i populate email address: asdasd@asdsa.com" width="1931"/>
+                <img src="59145150cf7d45da5c38c09a2575c1bb9a4d77b4293e26b7047e7171b5e6a705.png" title=" When i populate email address: asdasd@asdsa.com (completed)" width="1931"/>
+                <img src="59145150cf7d45da5c38c09a2575c1bb9a4d77b4293e26b7047e7171b5e6a705.png" title=" When i populate is primary in email information: Yes" width="1931"/>
+                <img src="1babec0ae4673447aed613ee26ed03988328a62ed2cbb747ce562a3bc3307c57.png" title=" When i populate is primary in email information: Yes" width="1931"/>
+                <img src="946893ddaf2859e6b26255c4222e54a906e35843343bdd72902f617d38e28160.png" title=" When i populate is primary in email information: Yes" width="1931"/>
+                <img src="946893ddaf2859e6b26255c4222e54a906e35843343bdd72902f617d38e28160.png" title=" When i populate is primary in email information: Yes (completed)" width="1931"/>
+                <img src="946893ddaf2859e6b26255c4222e54a906e35843343bdd72902f617d38e28160.png" title=" When i click add button in phone information" width="1931"/>
+                <img src="268b7a0e9b662281b07b4729e3b80c7b49eb009b064d9b9f83a29f6997e83fd3.png" title=" When i click add button in phone information" width="1931"/>
+                <img src="268b7a0e9b662281b07b4729e3b80c7b49eb009b064d9b9f83a29f6997e83fd3.png" title=" When i click add button in phone information (completed)" width="1931"/>
+                <img src="268b7a0e9b662281b07b4729e3b80c7b49eb009b064d9b9f83a29f6997e83fd3.png" title=" When i populate phone type: Cell" width="1931"/>
+                <img src="63c2fdb8a8a4043749a58ee347045a4e5bdb0326ed7058aa38bb9975a14c420b.png" title=" When i populate phone type: Cell" width="1931"/>
+                <img src="3a93b0898596d5516715e3529bdfcb07242176c99808c249463e9d9f3657fa3e.png" title=" When i populate phone type: Cell (completed)" width="1931"/>
+                <img src="3a93b0898596d5516715e3529bdfcb07242176c99808c249463e9d9f3657fa3e.png" title=" When i populate country in phone information: Philippines" width="1931"/>
+                <img src="557b3f32332bdd44e5c6804ae2d2000c21ac107658676cbaa48af8b601b25355.png" title=" When i populate country in phone information: Philippines" width="1931"/>
+                <img src="af81a7d4fb7d946bfa57260a1d24615eed6ce95c18973025e67bd34b34e6e4f9.png" title=" When i populate country in phone information: Philippines (completed)" width="1931"/>
+                <img src="af81a7d4fb7d946bfa57260a1d24615eed6ce95c18973025e67bd34b34e6e4f9.png" title=" When i populate country code: 63" width="1931"/>
+                <img src="43842b0961a206cb651b67969f295edf255c91c5ae61ac41740ab12470b78f44.png" title=" When i populate country code: 63" width="1931"/>
+                <img src="43842b0961a206cb651b67969f295edf255c91c5ae61ac41740ab12470b78f44.png" title=" When i populate country code: 63 (completed)" width="1931"/>
+                <img src="43842b0961a206cb651b67969f295edf255c91c5ae61ac41740ab12470b78f44.png" title=" When i populate phone number in phone information: 09453364115" width="1931"/>
+                <img src="03161f1ca865ba9a9508f04541abf0c8aba71b701e3e040889b4d54fcee62c9e.png" title=" When i populate phone number in phone information: 09453364115 (completed)" width="1931"/>
+                <img src="03161f1ca865ba9a9508f04541abf0c8aba71b701e3e040889b4d54fcee62c9e.png" title=" When i populate is primary in phone information: Yes" width="1931"/>
+                <img src="2dd10bf2bc95de1668d313a8c805544848089f7f2d24aac2c6dcda4f1c4bc60d.png" title=" When i populate is primary in phone information: Yes" width="1931"/>
+                <img src="111faf782a93f4d47ef02227fac2dcadb998bd263d8d052c892369d1cd002c4d.png" title=" When i populate is primary in phone information: Yes" width="1931"/>
+                <img src="111faf782a93f4d47ef02227fac2dcadb998bd263d8d052c892369d1cd002c4d.png" title=" When i populate is primary in phone information: Yes (completed)" width="1931"/>
+                <img src="111faf782a93f4d47ef02227fac2dcadb998bd263d8d052c892369d1cd002c4d.png" title=" When i populate address type: Mailing" width="1931"/>
+                <img src="111faf782a93f4d47ef02227fac2dcadb998bd263d8d052c892369d1cd002c4d.png" title=" When i populate address type: Mailing (completed)" width="1931"/>
+                <img src="111faf782a93f4d47ef02227fac2dcadb998bd263d8d052c892369d1cd002c4d.png" title=" When i populate country: Switzerland" width="1931"/>
+                <img src="d54622168f7427d365a8fbfdcf340c3f437f945f232562d5f2edbb73027c16b7.png" title=" When i populate country: Switzerland (completed)" width="1931"/>
+                <img src="d54622168f7427d365a8fbfdcf340c3f437f945f232562d5f2edbb73027c16b7.png" title=" When i populate for employees under swiss contract: No" width="1931"/>
+                <img src="4b71675e35f48368a2e59f5947de2dc2658f77b2fea60261a14885404072a8ae.png" title=" When i populate for employees under swiss contract: No" width="1931"/>
+                <img src="f64fa6fb519f24ad5923b06e818d9ac3c53762ad5123cbe4a92b36181562ade4.png" title=" When i populate for employees under swiss contract: No (completed)" width="1931"/>
+                <img src="f64fa6fb519f24ad5923b06e818d9ac3c53762ad5123cbe4a92b36181562ade4.png" title=" When i populate town: TEST" width="1931"/>
+                <img src="fb8065d42fc5a8ed5f88fd479725cd9e98367f07781d47235cf9fac23ef1a79f.png" title=" When i populate town: TEST (completed)" width="1931"/>
+                <img src="fb8065d42fc5a8ed5f88fd479725cd9e98367f07781d47235cf9fac23ef1a79f.png" title=" When i populate county: Basel-Landschaft" width="1931"/>
+                <img src="3d614d8533f447a8691341f3817a7fc1cef631dff6ee87064c1e0d05b97efeba.png" title=" When i populate county: Basel-Landschaft" width="1931"/>
+                <img src="3d614d8533f447a8691341f3817a7fc1cef631dff6ee87064c1e0d05b97efeba.png" title=" When i populate county: Basel-Landschaft (completed)" width="1931"/>
+                <img src="3d614d8533f447a8691341f3817a7fc1cef631dff6ee87064c1e0d05b97efeba.png" title=" When i populate address line 1: TEST" width="1931"/>
+                <img src="5772d5f58cf44e994d906103043a312753080a7de089d7f6264ce61e404b34ea.png" title=" When i populate address line 1: TEST (completed)" width="1931"/>
+                <img src="5772d5f58cf44e994d906103043a312753080a7de089d7f6264ce61e404b34ea.png" title=" When i populate address line 2: TEST" width="1931"/>
+                <img src="d842820c8cbc36009f800b74edd3140d30afee13887ca78deb341666d902ba3d.png" title=" When i populate address line 2: TEST (completed)" width="1931"/>
+                <img src="d842820c8cbc36009f800b74edd3140d30afee13887ca78deb341666d902ba3d.png" title=" When i populate address line 3: TEST" width="1931"/>
+                <img src="84a015b8bb9d6291d7b9c29c3ebc9da29323c82deff796be430f8bc753853dd3.png" title=" When i populate address line 3: TEST (completed)" width="1931"/>
+                <img src="84a015b8bb9d6291d7b9c29c3ebc9da29323c82deff796be430f8bc753853dd3.png" title=" When i populate postal code: 1234" width="1931"/>
+                <img src="a35322f801fa124b18cd59c65675338175fa4635fc58e5efe91cbed55d168e4f.png" title=" When i populate postal code: 1234 (completed)" width="1931"/>
+                <img src="a35322f801fa124b18cd59c65675338175fa4635fc58e5efe91cbed55d168e4f.png" title=" When i click add emergency contact information button" width="1931"/>
+                <img src="b4a3d5668ca79c0b4543b019ffc48cca2e0549618fed908a5ce34de3b5a622d1.png" title=" When i click add emergency contact information button" width="1931"/>
+                <img src="b6c9eaca9158df9ff2c63e9c4ef2900e4067f9e614b544d7b30a5fbf97135ec3.png" title=" When i click add emergency contact information button (completed)" width="1931"/>
+                <img src="b6c9eaca9158df9ff2c63e9c4ef2900e4067f9e614b544d7b30a5fbf97135ec3.png" title=" When i populate title and contract name: Mr. Testing" width="1931"/>
+                <img src="2acf5f71bdb9c8dbf16e43ccc3eb7bfbd95d36744ed8d0fae5669c37e077d7a7.png" title=" When i populate title and contract name: Mr. Testing (completed)" width="1931"/>
+                <img src="2acf5f71bdb9c8dbf16e43ccc3eb7bfbd95d36744ed8d0fae5669c37e077d7a7.png" title=" When i populate dependent type: PARTNER" width="1931"/>
+                <img src="9aac782b0726b7bf5813325fab226e2d288109271318cebf59459d5e97fb5fc3.png" title=" When i populate dependent type: PARTNER" width="1931"/>
+                <img src="9aac782b0726b7bf5813325fab226e2d288109271318cebf59459d5e97fb5fc3.png" title=" When i populate dependent type: PARTNER (completed)" width="1931"/>
+                <img src="9aac782b0726b7bf5813325fab226e2d288109271318cebf59459d5e97fb5fc3.png" title=" When i populate country in emergency contact information: Philippines" width="1931"/>
+                <img src="78e4f30a30df882092a01d17f1d0f76a4afec30f31597565662569d9a9a04bd6.png" title=" When i populate country in emergency contact information: Philippines" width="1931"/>
+                <img src="78e4f30a30df882092a01d17f1d0f76a4afec30f31597565662569d9a9a04bd6.png" title=" When i populate country in emergency contact information: Philippines (completed)" width="1931"/>
+                <img src="78e4f30a30df882092a01d17f1d0f76a4afec30f31597565662569d9a9a04bd6.png" title=" When i populate phone number: 09453364115" width="1931"/>
+                <img src="23c2f620d12d2c4b8c52a50c66c8eb0056dbbdf09757ade3d390f41f97ea6f76.png" title=" When i populate phone number: 09453364115 (completed)" width="1931"/>
+                <img src="23c2f620d12d2c4b8c52a50c66c8eb0056dbbdf09757ade3d390f41f97ea6f76.png" title=" When i populate yes will be contacted first: Yes" width="1931"/>
+                <img src="fb7203af649eb9813eb209875ac03e1b8d5f7a68b68f542e8fb92a3711eae962.png" title=" When i populate yes will be contacted first: Yes" width="1931"/>
+                <img src="fb7203af649eb9813eb209875ac03e1b8d5f7a68b68f542e8fb92a3711eae962.png" title=" When i populate yes will be contacted first: Yes (completed)" width="1931"/>
+                <img src="fb7203af649eb9813eb209875ac03e1b8d5f7a68b68f542e8fb92a3711eae962.png" title=" When i click continue button in address portlet" width="1931"/>
+                <img src="3f59929ad2dee9a1fd0a75eed7667f29fd2abd7256a4fb67d727e70e5d3922e3.png" title=" When i click continue button in address portlet" width="1931"/>
+                <img src="9f65d7fbe01d6e664a7ca472a780c455ed4dd390199b6e87f3248edf6576bb3d.png" title=" When i click continue button in address portlet (completed)" width="1931"/>
+                <img src="5190ae023549605d033939561f23f16ff2699ef8177743bdeb29b28e70c5009c.png" title=" When i populate position: CH_RES_HQ" width="1931"/>
+                <img src="6e74f33a42daf0d5c5b3316deb1650595bbb454094cf611a12e2b7926804f926.png" title=" When i populate position: CH_RES_HQ" width="1931"/>
+                <img src="e2dbea511ea89e2e00ed980f16863f66c459cd78009364f1da91d5d1f6e9c597.png" title=" When i populate position: CH_RES_HQ (completed)" width="1931"/>
+                <img src="e2dbea511ea89e2e00ed980f16863f66c459cd78009364f1da91d5d1f6e9c597.png" title=" When i populate comments: Automation Testing" width="1931"/>
+                <img src="62af2e20d58b29c2bd09db93d13d9a3a8b77288b2e17707b76a6d75c8ce4731d.png" title=" When i populate comments: Automation Testing (completed)" width="1931"/>
+                <img src="62af2e20d58b29c2bd09db93d13d9a3a8b77288b2e17707b76a6d75c8ce4731d.png" title=" When i populate assignment estimated end date: 22/12/2022" width="1931"/>
+                <img src="a541d22f165ae22747a5842b04cfdccebfe2020cba434dd3cf55afb652af6d83.png" title=" When i populate assignment estimated end date: 22/12/2022 (completed)" width="1931"/>
+                <img src="a541d22f165ae22747a5842b04cfdccebfe2020cba434dd3cf55afb652af6d83.png" title=" When i populate contract estimated end date: 22/12/2022" width="1931"/>
+                <img src="2ff0990eb03550a7c5ec17714f01b73433f4750d44c2111e7f37fc2b7f55cac5.png" title=" When i populate contract estimated end date: 22/12/2022 (completed)" width="1931"/>
+                <img src="2ff0990eb03550a7c5ec17714f01b73433f4750d44c2111e7f37fc2b7f55cac5.png" title=" When i populate effective weekly hours: 40" width="1931"/>
+                <img src="2ff0990eb03550a7c5ec17714f01b73433f4750d44c2111e7f37fc2b7f55cac5.png" title=" When i populate effective weekly hours: 40 (completed)" width="1931"/>
+                <img src="2ff0990eb03550a7c5ec17714f01b73433f4750d44c2111e7f37fc2b7f55cac5.png" title=" When i populate probation period end date: 26/12/2021" width="1931"/>
+                <img src="76f9741aac044247086f49cff93dba8f5077bc4b9f8cf51e9aeb89c4fc427457.png" title=" When i populate probation period end date: 26/12/2021 (completed)" width="1931"/>
+                <img src="76f9741aac044247086f49cff93dba8f5077bc4b9f8cf51e9aeb89c4fc427457.png" title=" When i populate national society code: The Philippine National Red Cross" width="1931"/>
+                <img src="f835cb62145bdba3f44e82ad76870771cf69c4065ad040befacbaf48027f8275.png" title=" When i populate national society code: The Philippine National Red Cross" width="1931"/>
+                <img src="f835cb62145bdba3f44e82ad76870771cf69c4065ad040befacbaf48027f8275.png" title=" When i populate national society code: The Philippine National Red Cross (completed)" width="1931"/>
+                <img src="f835cb62145bdba3f44e82ad76870771cf69c4065ad040befacbaf48027f8275.png" title=" When i populate position person fit: NOT APPLICABLE" width="1931"/>
+                <img src="9a473e846dbce8fbf1556df643971957bf868f9203bde74293a2f2959d0e3c50.png" title=" When i populate position person fit: NOT APPLICABLE" width="1931"/>
+                <img src="9a473e846dbce8fbf1556df643971957bf868f9203bde74293a2f2959d0e3c50.png" title=" When i populate position person fit: NOT APPLICABLE (completed)" width="1931"/>
+                <img src="9a473e846dbce8fbf1556df643971957bf868f9203bde74293a2f2959d0e3c50.png" title=" When i populate confirmed: No" width="1931"/>
+                <img src="cede7af8bfda1709cdd543cf02c5140285c353a5a90fe2d5122a73a26b454f77.png" title=" When i populate confirmed: No" width="1931"/>
+                <img src="cede7af8bfda1709cdd543cf02c5140285c353a5a90fe2d5122a73a26b454f77.png" title=" When i populate confirmed: No (completed)" width="1931"/>
+                <img src="cede7af8bfda1709cdd543cf02c5140285c353a5a90fe2d5122a73a26b454f77.png" title=" When i populate contract type: Mobile staff - Maximum term contract" width="1931"/>
+                <img src="917ed2be8fb38aa85da9fe9250fec8712687fff45fd39d62bda494b2c841a77d.png" title=" When i populate contract type: Mobile staff - Maximum term contract" width="1931"/>
+                <img src="cd3ed23cc18924ac669f6fc3dd63b5df4b7ad25c24550009068cdaf5f143d0d0.png" title=" When i populate contract type: Mobile staff - Maximum term contract (completed)" width="1931"/>
+                <img src="cd3ed23cc18924ac669f6fc3dd63b5df4b7ad25c24550009068cdaf5f143d0d0.png" title=" Then a confirmation message is displayed after populating contract type" width="1931"/>
+                <img src="cd3ed23cc18924ac669f6fc3dd63b5df4b7ad25c24550009068cdaf5f143d0d0.png" title=" When i click ok button" width="1931"/>
+                <img src="57d148b9e9ba736026b5c381e89449b57a7070830ee7630f1efe31d629c39a85.png" title=" When i click ok button" width="1931"/>
+                <img src="f6974681b3187dcb5ec06c1352bd57ad35b057a46b2720b5b44c958e57641449.png" title=" When i click ok button (completed)" width="1931"/>
+                <img src="f6974681b3187dcb5ec06c1352bd57ad35b057a46b2720b5b44c958e57641449.png" title=" Then a confirmation message is displayed after populating contract type (completed)" width="1931"/>
+                <img src="f6974681b3187dcb5ec06c1352bd57ad35b057a46b2720b5b44c958e57641449.png" title=" When i populate UCC assignment: ADMIN" width="1931"/>
+                <img src="66974ed1a09e1f2b0dc02782dae870d553b9ff8b5b870f43abccd03881f72d7a.png" title=" When i populate UCC assignment: ADMIN" width="1931"/>
+                <img src="66974ed1a09e1f2b0dc02782dae870d553b9ff8b5b870f43abccd03881f72d7a.png" title=" When i populate UCC assignment: ADMIN (completed)" width="1931"/>
+                <img src="66974ed1a09e1f2b0dc02782dae870d553b9ff8b5b870f43abccd03881f72d7a.png" title=" When i populate assignment mailing language: English" width="1931"/>
+                <img src="934fe09fe680495f08958da4d2bb37f4456ffe189dc907b9d2d65c00f3c2f52e.png" title=" When i populate assignment mailing language: English" width="1931"/>
+                <img src="184b85be7694df289010ee4995c6643cc4c34ef96f6332d819c9b6e779b0215c.png" title=" When i populate assignment mailing language: English" width="1931"/>
+                <img src="184b85be7694df289010ee4995c6643cc4c34ef96f6332d819c9b6e779b0215c.png" title=" When i populate assignment mailing language: English (completed)" width="1931"/>
+                <img src="184b85be7694df289010ee4995c6643cc4c34ef96f6332d819c9b6e779b0215c.png" title=" When i populate hardship incentive option: 100% in pay" width="1931"/>
+                <img src="4cbb370fc557e5fbed8233b8f12cadeafcfd135d0e9a41a5d15959cdc274deaa.png" title=" When i populate hardship incentive option: 100% in pay" width="1931"/>
+                <img src="4cbb370fc557e5fbed8233b8f12cadeafcfd135d0e9a41a5d15959cdc274deaa.png" title=" When i populate hardship incentive option: 100% in pay (completed)" width="1931"/>
+                <img src="4cbb370fc557e5fbed8233b8f12cadeafcfd135d0e9a41a5d15959cdc274deaa.png" title=" When I populate Work Schedule" width="1931"/>
+                <img src="a00dbb83127ae314d24ecec2ac12b57aa85f55b816dc1be7b75a1a0e714fcc9d.png" title=" When I populate Work Schedule" width="1931"/>
+                <img src="a00dbb83127ae314d24ecec2ac12b57aa85f55b816dc1be7b75a1a0e714fcc9d.png" title=" When I populate Work Schedule (completed)" width="1931"/>
+                <img src="a00dbb83127ae314d24ecec2ac12b57aa85f55b816dc1be7b75a1a0e714fcc9d.png" title=" When i populate holiday calendar: Switzerland" width="1931"/>
+                <img src="37732de89e23284a0c4574185d74fb682ca44aa854b6c5b49f3c78e1b11f6c30.png" title=" When i populate holiday calendar: Switzerland" width="1931"/>
+                <img src="37732de89e23284a0c4574185d74fb682ca44aa854b6c5b49f3c78e1b11f6c30.png" title=" When i populate holiday calendar: Switzerland (completed)" width="1931"/>
+                <img src="37732de89e23284a0c4574185d74fb682ca44aa854b6c5b49f3c78e1b11f6c30.png" title=" When i populate time profile: CH Field Family" width="1931"/>
+                <img src="ff7794243ef013852353f26e8e11a5f0c84134b0dc5b40e7aca71d29c311c764.png" title=" When i populate time profile: CH Field Family" width="1931"/>
+                <img src="c0182a3d96856d42c0778ea3103f46b531c6efafec54848c557ef96f836ee977.png" title=" When i populate time profile: CH Field Family (completed)" width="1931"/>
+                <img src="c0182a3d96856d42c0778ea3103f46b531c6efafec54848c557ef96f836ee977.png" title=" When i populate hire date under employment details: 22/12/2022" width="1931"/>
+                <img src="dbb11210623cb5178d58cd50c352dce1f2097bb674cc20f957abb1bd52684506.png" title=" When i populate hire date under employment details: 22/12/2022 (completed)" width="1931"/>
+                <img src="dbb11210623cb5178d58cd50c352dce1f2097bb674cc20f957abb1bd52684506.png" title=" When i populate start date of 1st ICRC contract: 22/12/2022" width="1931"/>
+                <img src="dbb11210623cb5178d58cd50c352dce1f2097bb674cc20f957abb1bd52684506.png" title=" When i populate start date of 1st ICRC contract: 22/12/2022 (completed)" width="1931"/>
+                <img src="dbb11210623cb5178d58cd50c352dce1f2097bb674cc20f957abb1bd52684506.png" title=" When i populate eosi start date: 22/12/2022" width="1931"/>
+                <img src="dbb11210623cb5178d58cd50c352dce1f2097bb674cc20f957abb1bd52684506.png" title=" When i populate eosi start date: 22/12/2022 (completed)" width="1931"/>
+                <img src="ff7794243ef013852353f26e8e11a5f0c84134b0dc5b40e7aca71d29c311c764.png" title=" When i click continue button in job information" width="1931"/>
+                <img src="41e8a55bd2c9f123b9912480d6fd72dbd278fcaf18492f5ac7ce8981a5c6057d.png" title=" When i click continue button in job information" width="1931"/>
+                <img src="3de9af1a1f329b44f60f407815b6c7db9f2104089a7d60f7e545d121feda18c1.png" title=" When i click continue button in job information (completed)" width="1931"/>
+                <img src="62fb2efc17a5482b0c8a4f390a03795279e737b84735b8079dff53263a9efd83.png" title=" When i populate pay group: PeopleNet" width="1931"/>
+                <img src="f17cdf404d97bde0c9354dd8c1fcd98c4c448cb87e48ad18be09fe9c1ed80232.png" title=" When i populate pay group: PeopleNet" width="1931"/>
+                <img src="170196196f209832da9809a2b9a8506ea230787aa7f034f5cfc141f15ab15ac7.png" title=" When i populate pay group: PeopleNet (completed)" width="1931"/>
+                <img src="170196196f209832da9809a2b9a8506ea230787aa7f034f5cfc141f15ab15ac7.png" title=" When i populate comments in compensation information: COMMENTS_IN_COMPENSATION_INFORMATION" width="1931"/>
+                <img src="619268f2c1893308e8009a0306cd0d16ae60a363909c255992f1062a3a1b0c58.png" title=" When i populate comments in compensation information: COMMENTS_IN_COMPENSATION_INFORMATION (completed)" width="1931"/>
+                <img src="62c1fd33353cc7c85ffa6b2da2de637a097dd7f83c32fd7bb3cf41685ed42eb3.png" title=" When i populate next revision date: 01/04/2022" width="1931"/>
+                <img src="1bd55f4642103de98220d4fe7a2b039aac32cca6c49c20c020de6aaee61d65f1.png" title=" When i populate next revision date: 01/04/2022 (completed)" width="1931"/>
+                <img src="3704a9028ff6c015a23c705ba0b399e78e7bd82fb40e9fab0df463bc31ef198c.png" title=" When i click add button in compensation" width="1931"/>
+                <img src="1acd30fa828a2a29dae0137c530f1a386036c82b5af33daa85cfd36a56da6ef9.png" title=" When i click add button in compensation" width="1931"/>
+                <img src="1acd30fa828a2a29dae0137c530f1a386036c82b5af33daa85cfd36a56da6ef9.png" title=" When i click add button in compensation (completed)" width="1931"/>
+                <img src="1acd30fa828a2a29dae0137c530f1a386036c82b5af33daa85cfd36a56da6ef9.png" title=" When i populate pay component: Base Salary" width="1931"/>
+                <img src="6c3354f262b609c2031a520e221e1c79badab6f1e0f8c416ee5fadf5c340fc4e.png" title=" When i populate pay component: Base Salary" width="1931"/>
+                <img src="4523e4429529a9f965694d6aa84ccdaa3515418d840c7ecb23814bab6c3deef4.png" title=" When i populate pay component: Base Salary (completed)" width="1931"/>
+                <img src="4523e4429529a9f965694d6aa84ccdaa3515418d840c7ecb23814bab6c3deef4.png" title=" When i populate amount: 30000" width="1931"/>
+                <img src="364f7668158c9134c96a9479982bfa16e02797e6fc2e4218175379be1ca46f1d.png" title=" When i populate amount: 30000 (completed)" width="1931"/>
+                <img src="364f7668158c9134c96a9479982bfa16e02797e6fc2e4218175379be1ca46f1d.png" title=" Then a reminder pop up message is displayed" width="1931"/>
+                <img src="364f7668158c9134c96a9479982bfa16e02797e6fc2e4218175379be1ca46f1d.png" title=" When i click OK button" width="1931"/>
+                <img src="f15fb59fe345e178c7eb4bbe5e80e6b54e7023a57b781d3a6ab0b6d01e558358.png" title=" When i click OK button" width="1931"/>
+                <img src="388141b6e2c2c571f6b8e9812100568c52a6f1ecfacabfb79963eebef5db22c4.png" title=" When i click OK button (completed)" width="1931"/>
+                <img src="388141b6e2c2c571f6b8e9812100568c52a6f1ecfacabfb79963eebef5db22c4.png" title=" Then a reminder pop up message is displayed (completed)" width="1931"/>
+                <img src="388141b6e2c2c571f6b8e9812100568c52a6f1ecfacabfb79963eebef5db22c4.png" title=" When i populate currency: &lt;null&gt;" width="1931"/>
+                <img src="388141b6e2c2c571f6b8e9812100568c52a6f1ecfacabfb79963eebef5db22c4.png" title=" When i populate currency: &lt;null&gt; (completed)" width="1931"/>
+                <img src="388141b6e2c2c571f6b8e9812100568c52a6f1ecfacabfb79963eebef5db22c4.png" title=" When i populate frequency: &lt;null&gt;" width="1931"/>
+                <img src="388141b6e2c2c571f6b8e9812100568c52a6f1ecfacabfb79963eebef5db22c4.png" title=" When i populate frequency: &lt;null&gt; (completed)" width="1931"/>
+                <img src="388141b6e2c2c571f6b8e9812100568c52a6f1ecfacabfb79963eebef5db22c4.png" title=" When HR admin hires new employee: Bea Fe TEJANO, A851754, HRIS2022, 22/12/2022, Switzerland - Resident Staff HQ, New Hire, Mr., ZCtVSF, ZAjAOT, &lt;null&gt;, ZCtVSF ZAjAOT, 22/06/1997, Testing, Uri, Switzerland, PeopleNet, Switzerland, Social Security Number, 7568604712491, Yes, Male, Switzerland, &lt;null&gt;, &lt;null&gt;, MARRIED, 09/09/2005, English, Test, Test, 5, &lt;null&gt;, Switzerland, St. Gallen, Private, Personal, asdasd@asdsa.com, Yes, Cell, Philippines, 63, 09453364115, Yes, Mailing, Switzerland, No, TEST, Basel-Landschaft, TEST, TEST, TEST, 1234, Mr. Testing, PARTNER, Philippines, 09988727086, Yes, CH_RES_HQ, 22/12/2022, 22/12/2022, 40, 26/12/2021, Automation Testing, The Philippine National Red Cross, NOT APPLICABLE, No, Mobile staff - Maximum term contract, &lt;null&gt;, 100% in pay, 1-1-1-1-1-0-0, Switzerland, CH Field Family, 22/12/2022, 22/12/2022, COMMENTS_IN_COMPENSATION_INFORMATION, 01/04/2022, Base Salary, 30000, &lt;null&gt;, &lt;null&gt; (completed)" width="1931"/>
+                <img src="068c4c3790b459f90499069b4425972e2b3c9ff799cbcc089103b8f6846640bf.png" title=" When HR admin saves draft: ZCtVSF ZAjAOT" width="1931"/>
+                <img src="068c4c3790b459f90499069b4425972e2b3c9ff799cbcc089103b8f6846640bf.png" title=" When i click save draft button" width="1931"/>
+                <img src="b6acbda4516c3d0d7010d9e5c2239d240b20f7d0a9065f6f59687b5e15ec7b49.png" title=" When i click save draft button (completed)" width="1931"/>
+                <img src="b6acbda4516c3d0d7010d9e5c2239d240b20f7d0a9065f6f59687b5e15ec7b49.png" title=" Then a confirmation message is displayed after saving draft" width="1931"/>
+                <img src="b6acbda4516c3d0d7010d9e5c2239d240b20f7d0a9065f6f59687b5e15ec7b49.png" title=" Then a confirmation message is displayed after saving draft (completed)" width="1931"/>
+                <img src="b6acbda4516c3d0d7010d9e5c2239d240b20f7d0a9065f6f59687b5e15ec7b49.png" title=" When HR admin saves draft: ZCtVSF ZAjAOT (completed)" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" When HR admin deletes draft: Bea Fe TEJANO, A851754, HRIS2022, Manage Pending Recruits, ZCtVSF ZAjAOT" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space as 'Bea Fe TEJANO'" width="1931"/>
+                <img src="5286f211277bab15e57c8948ca4656f3f5d76cf0f9081467820a853560a48fc4.png" title=" Given that I'm logged in to HR space using 'A851754' account" width="1931"/>
+                <img src="efc2834235131558235f92a5bb93263311c18adc8c8ae01981237dc1b27d3926.png" title=" Given that I'm logged in to HR space using 'A851754' account" width="1931"/>
+                <img src="3d68a564e04466f3059cb5bd3809dc7609d1d393cc87e88f7c11adf9605a7e3f.png" title=" Given that I'm logged in to HR space using 'A851754' account (completed)" width="1931"/>
+                <img src="9e075c238b4c4cc534961cb46f5cf13a9943d4b60c0c781727ce2b88a42ee190.png" title=" Given that I'm logged in to HR space as 'Bea Fe TEJANO' (completed)" width="1931"/>
+                <img src="9e075c238b4c4cc534961cb46f5cf13a9943d4b60c0c781727ce2b88a42ee190.png" title=" When i search for an action using the header search bar: Manage Pending Recruits" width="1931"/>
+                <img src="3cea34de274ffc1b56031b2c20a0a82769218c73844662f042880fdcf4862549.png" title=" When i search for an action using the header search bar: Manage Pending Recruits (completed)" width="1931"/>
+                <img src="3cea34de274ffc1b56031b2c20a0a82769218c73844662f042880fdcf4862549.png" title=" When i set the filter to drafts: 3" width="1931"/>
+                <img src="abd3eeb0673e2e71fec5f08765d08663d3cfe0c8674b9e32333463300c15fc58.png" title=" When i set the filter to drafts: 3" width="1931"/>
+                <img src="09394858a3ca8e16b18ee1273fccb9561e465c575e41d5105df9b46e40fe4a55.png" title=" When i set the filter to drafts: 3" width="1931"/>
+                <img src="221d6c1858cbb3ba7c83350950748828c28f5841e725e6bb992600dbceb9c273.png" title=" When i set the filter to drafts: 3 (completed)" width="1931"/>
+                <img src="221d6c1858cbb3ba7c83350950748828c28f5841e725e6bb992600dbceb9c273.png" title=" When i delete the employee draft: ZCtVSF ZAjAOT" width="1931"/>
+                <img src="37a48d0f52863a0715baaae598eb783bcef846d081550d533b6eb57a0e7bace6.png" title=" When i delete the employee draft: ZCtVSF ZAjAOT" width="1931"/>
+                <img src="1f5567b106e15534685efa267a7124879bb776e2e97c6c1a5ac8671902dc2742.png" title=" When i delete the employee draft: ZCtVSF ZAjAOT" width="1931"/>
+                <img src="a2fc8f4e2dcabfb0cc9c959c6571921635ec5697a1a864d1fb0bc9fc223f8fe4.png" title=" When i delete the employee draft: ZCtVSF ZAjAOT (completed)" width="1931"/>
+                <img src="a2fc8f4e2dcabfb0cc9c959c6571921635ec5697a1a864d1fb0bc9fc223f8fe4.png" title=" Then the employee name should not be displayed: ZCtVSF ZAjAOT" width="1931"/>
+                <img src="a2fc8f4e2dcabfb0cc9c959c6571921635ec5697a1a864d1fb0bc9fc223f8fe4.png" title=" Then the employee name should not be displayed: ZCtVSF ZAjAOT (completed)" width="1931"/>
+                <img src="a2fc8f4e2dcabfb0cc9c959c6571921635ec5697a1a864d1fb0bc9fc223f8fe4.png" title=" When HR admin deletes draft: Bea Fe TEJANO, A851754, HRIS2022, Manage Pending Recruits, ZCtVSF ZAjAOT (completed): <span class='success-color'>SUCCESS</span>" width="1931"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.6</span>
+</div>
+</body>
+</html>
